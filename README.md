@@ -1,3 +1,5 @@
+GoJS 中文文档 欢迎提供PR
+
 GoJS, a JavaScript Library for HTML Diagrams
 ============================================
 
