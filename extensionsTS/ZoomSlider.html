@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Zoom Slider</title>
+  <!-- Copyright 1998-2020 by Northwoods Software Corporation. -->
+  <meta name="description" content="TypeScript: HTML controls for panning and zooming that are shown in front of a Diagram." />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="../samples/assets/require.js"></script>
+  <script src="../assets/js/goSamples.js"></script>
+  <!-- this is only for the GoJS Samples framework -->
+  <link rel='stylesheet' href='ZoomSlider.css' />
+  <script id='code'>
+    require(["ZoomSliderScript"], function(app) {
+      app.init();
+    });
+  </script>
+</head>
+<body>
+  <div id="sample" style="position: relative;">
+    <div id="myDiagramDiv" style="border: solid 1px black; width:400px; height:400px"></div>
+    <p>
+      This sample demostrates the use of the ZoomSlider extension.
+      When using the ZoomSlider extension, the diagram Div must always be a direct child
+      of a Div using <code>position: relative</code> or <code>position: absolute</code>,
+      so that the ZoomSlider HTML DOM can be positioned correctly relative to the Diagram Div.
+</div>
+</body>
+</html>
