@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,26 +10,27 @@
   <script src="../extensions/Figures.js"></script>
   <script src="goIntro.js"></script>
 </head>
+
 <body onload="goIntro()">
-<div id="container" class="container-fluid">
-<div id="content">
+  <div id="container" class="container-fluid">
+    <div id="content">
 
-<h1>Building Parts with GraphObjects</h1>
-<p>
-You can construct a <a>Node</a> or other kind of <a>Part</a> in traditional JavaScript code.
-<b>GoJS</b> also offers a more declarative-looking manner of building parts that has several advantages over code.
-</p>
-<p>
-The following pages will discuss the basic kinds of objects you can use to build a node.
-These pages build up a diagram by explicitly creating and adding nodes and links.
-Later pages will show how to build diagrams using models rather than using such code.
-</p>
+      <h1>使用GraphObjects创建部件</h1>
+      <p>
+        你可以使用传统的JavaScript代码构建<a>Node</a>或其他类型的<a>Part</a>。
+        <b>GoJS</b> 还提供了一个更具声明性的构建组成部件的方式，它比代码有几个优点。.
+      </p>
+      <p>
+        下面页面将讨论可用于构建节点的基本对象类型.
+        这些页面通过显式创建和添加节点和链接来构建图
+        后面的页面将显示如何使用模型而不是使用此类代码来构建图。
+      </p>
 
-<h2 id="VisualStructureOfNodesAndLinks">The Visual Structure of Nodes and Links</h2>
-<p>
-First, look at a diagram that includes comments about the GraphObjects used to build some example nodes and links:
-</p>
-<pre class="lang-js" id="commented" style="display:none">
+      <h2 id="VisualStructureOfNodesAndLinks">节点和链接的视觉结构</h2>
+      <p>
+        首先，查看一个图，其中包含有关用于构建一些示例节点和链接的GraphObjects的注释:
+      </p>
+      <pre class="lang-js" id="commented" style="display:none">
   diagram.nodeTemplate =
     $(go.Node, "Auto",
       { scale: 2 },  // make it easier to see
@@ -213,25 +215,23 @@ First, look at a diagram that includes comments about the GraphObjects used to b
   ];
   diagram.model = model;
 </pre>
-<script>goCode("commented", 650, 450)</script>
-<p>
-As you can see, a node or a link can be composed of many GraphObjects, including <a>Panel</a>s that may be nested.
-You can drag around any comment in order to see the area covered by the GraphObject at the end of the comment link to it,
-except for the GraphObjects within the Link itself.
-</p>
+      <script>goCode("commented", 650, 450)</script>
+      <p>
+        如你所见，节点或链接可以由许多GraphObject组成, 包括可能嵌套的<a>Panel</a>
+        您可以在任何注释周围拖动，以查看GraphObject所指向的注释链接末尾的区域，链接本身内的GraphObjects除外。
+      </p>
 
-<h2 id="BuildingWithCode">Building with Code</h2>
-<p>
-A <a>GraphObject</a> is a JavaScript object that can be constructed and initialized
-in the same manner as any other object.
-A <a>Node</a> is a <a>GraphObject</a> that contains <a>GraphObject</a>s such as <a>TextBlock</a>s, <a>Shape</a>s,
-<a>Picture</a>s, and <a>Panel</a>s that may contain yet more GraphObjects.
-</p>
-<p>
-A very simple Node might consist of a Shape and a TextBlock.
-You can build such a visual tree of GraphObjects using code such as:
-</p>
-<pre class="lang-js" id="simpleCode">
+      <h2 id="BuildingWithCode">用代码构建</h2>
+      <p>
+        <a>GraphObject</a>是一个JavaScript对象，可以像任何其他对象一样构造和初始化
+        <a>Node</a>是一个<a>GraphObject</a> 包含 <a>GraphObject</a>s 如 <a>TextBlock</a>s, <a>Shape</a>s,
+        <a>Picture</a>s, and <a>Panel</a>s 它们可能包含更多的GraphObjects.
+      </p>
+      <p>
+        一个非常简单的节点可能由一个形状和一个文本块组成
+        您可以使用以下代码构建GraphObjects的可视树：
+      </p>
+      <pre class="lang-js" id="simpleCode">
   var node = new go.Node(go.Panel.Auto);
   var shape = new go.Shape();
   shape.figure = "RoundedRectangle";
@@ -243,49 +243,42 @@ You can build such a visual tree of GraphObjects using code such as:
   node.add(textblock);
   diagram.add(node);
 </pre>
-<p>
-This code produces the following diagram.  It is a "live" diagram, not a screenshot image,
-so you can click on the node to select it and then drag it around.
-</p>
-<script>goCode("simpleCode", 250, 150)</script>
-<p>
-Although building a node in this manner will work, as the nodes get more complicated
-the code will become more complicated to read and to maintain.
-Fortunately <b>GoJS</b> has a better way to make Parts out of GraphObjects.
-</p>
-<p>
-Furthermore, later sections will discuss how Nodes and Links should be created automatically using models, templates, and data-binding.
-Until that time, these pages will create Nodes explicitly and add them to Diagrams directly.
-</p>
+      <p>
+        这块代码产生下图。这是一个“实时”图，而不是屏幕快照图像，因此您可以单击该节点以选择它，然后将其拖动。
+      </p>
+      <script>goCode("simpleCode", 250, 150)</script>
+      <p>
+        尽管以这种方式构建节点是可行的，但是随着节点变得越来越复杂，代码将变得更加难以阅读和维护。幸运的是，<b>GoJS</b>有一个更好的方法可以用GraphObjects制作部件。
+      </p>
+      <p>
+        此外，后面的部分将讨论如何使用模型，模板和数据绑定自动创建节点和链接。在此之前，这些页面将显式创建节点并将其直接添加到图。
+      </p>
 
-<h2 id="BuildingWithMake">Building with <b>GraphObject.make</b></h2>
-<p>
-<b>GoJS</b> defines a static function, <a>GraphObject,make</a>, that is very useful in
-constructing GraphObjects without having to think of and keep track of temporary variable names.
-This static function also supports building objects in a nested fashion,
-where the indentation gives you a clue about depth in the visual tree,
-unlike the simple linear code shown above.
-</p>
-<p>
-<a>GraphObject,make</a> is a function whose first argument must be a class type,
-typically a subclass of <a>GraphObject</a>.
-</p>
-<p>
-Additional arguments to <a>GraphObject,make</a> may be of several types:
-</p>
-<ul>
-<li>a plain JavaScript object with property/value pairs -- these property values are set on the object being constructed</li>
-<li>a <a>GraphObject</a>, which is added as an element to the <a>Panel</a> that is being constructed</li>
-<li>a <b>GoJS</b> enumerated value constant, which is used as the value of the unique property of the object being constructed that can accept such a value</li>
-<li>a string, which sets the <a>TextBlock.text</a>, <a>Shape.figure</a>, <a>Picture.source</a>, or <a>Panel.type</a> property of the object that is being constructed</li>
-<li>a <a>RowColumnDefinition</a>, for describing rows or columns in Table <a>Panel</a>s</li>
-<li>a JavaScript Array, holding arguments to <a>GraphObject,make</a>, useful when returning more than one argument from a function</li>
-<li>other specialized objects that are used in the appropriate manner for the object being constructed</li>
-</ul>
-<p>
-We can rewrite the code above with <b>go.GraphObject.make</b> to produce exactly the same results:
-</p>
-<pre class="lang-js" id="simpleJSAML">
+      <h2 id="BuildingWithMake">使用<b>GraphObject.make</b>构建</h2>
+      <p>
+        <b>GoJS</b> 定义了一个静态函数<a>GraphObject,make</a>, 它在构造GraphObjects时非常有用
+        无需考虑和跟踪临时变量名。该静态函数还支持以嵌套方式构建对象，缩进为您提供了可视树深度的线索，这与上面显示的简单线性代码不同。
+      </p>
+      <p>
+        <a>GraphObject.make</a>是一个函数，其第一个参数必须是类类型，通常是<a>GraphObject</a>的子类
+      </p>
+      <p>
+        <a>GraphObject.make</a>的其他参数可能有以下几种类型
+      </p>
+      <ul>
+        <li>一个带有属性/值对的普通JavaScript对象 - 这些属性值在被构造的对象上设置</li>
+        <li>一个<a>GraphObject</a>, 作为一个元素添加到正在构建的<a>Panel</a>中</li>
+        <li>一个<b>GoJS</b>枚举常量值,用作被构造对象的唯一属性的值，该属性可以接受这样的值</li>
+        <li>一个字符串,用于设置正在构造的对象的<a>TextBlock.text</a>, <a>Shape.figure</a>, <a>Picture.source</a>, 或者
+          <a>Panel.type</a> 等属性</li>
+        <li>一个<a>RowColumnDefinition</a>(行列定义), 用于描述Table <a>Panel</a>中的行或列</li>
+        <li>一个JavaScript数组, 持有参数 <a>GraphObject,make</a>，从函数返回多个参数时很有用</li>
+        <li>其他专门的对象，以正确的方式用于构造对象</li>
+      </ul>
+      <p>
+        我们可以用<b>go.GraphObject.make</b>重写上面的代码，以产生完全相同的结果:
+      </p>
+      <pre class="lang-js" id="simpleJSAML">
   var $ = go.GraphObject.make;
   diagram.add(
     $(go.Node, go.Panel.Auto,
@@ -297,11 +290,11 @@ We can rewrite the code above with <b>go.GraphObject.make</b> to produce exactly
           margin: 5 })
     ));
 </pre>
-<script>goCode("simpleJSAML", 250, 150)</script>
-<p>
-This can be simplified a bit by using string arguments:
-</p>
-<pre class="lang-js" id="simpleJSAML2">
+      <script>goCode("simpleJSAML", 250, 150)</script>
+      <p>
+        使用字符串参数可以简洁一点:
+      </p>
+      <pre class="lang-js" id="simpleJSAML2">
   var $ = go.GraphObject.make;
   diagram.add(
     $(go.Node, "Auto",
@@ -309,35 +302,26 @@ This can be simplified a bit by using string arguments:
       $(go.TextBlock, "Hello!", { margin: 5 })
     ));
 </pre>
-<script>goCode("simpleJSAML2", 250, 150)</script>
-<p>
-Notice how we set the <a>Panel.type</a>, <a>Shape.figure</a>, and <a>TextBlock.text</a> properties by just using the string value.
-</p>
-<p>
-The use of <b>$</b> as an abbreviation for <b>go.GraphObject.make</b> is so handy
-that we will assume its use from now on.
-Having the call to <b>go.GraphObject.make</b> be minimized into a single character
-helps remove clutter from the code and lets the indentation match the nesting of
-<a>GraphObject</a>s in the visual tree that is being constructed.
-</p>
-<p>
-Some other JavaScript libraries automatically define "$" to be a handy-to-type function name,
-assuming that they are the only library that matters.
-But you cannot have the same symbol have two different meanings at the same time in the same scope, of course.
-So you may want to choose to use a different short name, such as "$$" or "GO" when using <b>GoJS</b>.
-The <b>GoJS</b> documentation and samples make use of "$" because it makes the resulting code most clear.
-</p>
-<p class="box bg-info">
-  Another advantage of using <a>GraphObject,make</a> is that it will make sure that any
-  properties that you set are defined properties on the class.
-  If you have a typo in the name of the property, it will throw an error, for which you can see a message in the console log.
-</p>
-<p>
-<a>GraphObject,make</a> also works to build <b>GoJS</b> classes other than ones inheriting from <a>GraphObject</a>.
-Here is an example of using <b>go.GraphObject.make</b> to build a <a>Brush</a>
-rather than a <a>GraphObject</a> subclass.
-</p>
-<pre class="lang-js" id="gradientJSAML">
+      <script>goCode("simpleJSAML2", 250, 150)</script>
+      <p>
+        注意，我们如何仅使用字符串值来设置<a>Panel.type</a>，, <a>Shape.figure</a>, 和 <a>TextBlock.text</a> 属性。
+      </p>
+      <p>
+        使用 <b>$</b> 作为 <b>go.GraphObject.make</b> 的缩写非常方便，从现在开始我们将假定使用它
+        将<b>go.GraphObject.make</b> 的调用最小化为单个字符有助于消除代码中的混乱，并使用缩进与正在构造的可视化树中
+        <a>GraphObject</a>的嵌套相匹配
+      </p>
+      <p>
+        其他一些JavaScript库自动将“$”定义为一个方便类型的函数名，假设它们是唯一重要的库。当然，你不能让同一个符号在同一时间同一范围内有两种不同的含义。因此，在使用<b>GoJS</b>时，您可能需要选择使用不同的短名称，例如“$$”或“GO”。<b>GoJS</b>文档和示例使用“$”，因为它使生成的代码最为清晰。
+      </p>
+      <p class="box bg-info">
+        使用另一个优点<a>GraphObject,make</a> 是，它将确保您设置的任何属性都是在类上定义的属性。如果属性名称中有错字，它将引发错误，您可以在控制台日志中看到一条错误消息
+      </p>
+      <p>
+        <a>GraphObject,make</a>也可以用来构建除了从<a>GraphObject</a>继承的<b>GoJS</b>类。
+        这是一个使用<b>go.GraphObject.make</b>构建一个<a>Brush</a>而不是<a>GraphObject</a>子类的例子。
+      </p>
+      <pre class="lang-js" id="gradientJSAML">
   diagram.add(
     $(go.Node, "Auto",
       $(go.Shape, "RoundedRectangle",
@@ -347,27 +331,24 @@ rather than a <a>GraphObject</a> subclass.
         { margin: 5 })
     ));
 </pre>
-<script>goCode("gradientJSAML", 250, 150)</script>
-<p>
-It is also common to use <a>GraphObject,make</a> to build a <a>Diagram</a>.
-In such a use a string argument, which if provided must be the second argument, will name the DIV HTML element that the Diagram should use.
-Equivalently you can pass a direct reference to the DIV element as the second argument.
-</p>
-<p>
-Also, when setting properties on a Diagram, you can use property names that are strings consisting of two identifiers separated by a period.
-The name before the period is used as the name of a property on the Diagram or on the <a>Diagram.toolManager</a> that returns an object whose property is to be set.
-The name after the period is the name of the property that is set.
-Note that because there is an embedded period, JavaScript property syntax requires that you use quotes.
-</p>
-<p>
-You can also declare <a>DiagramEvent</a> listeners, as if calling <a>Diagram.addDiagramListener</a>,
-by pretending to set a Diagram property that is actually the name of a DiagramEvent.
-Because all DiagramEvents have names that are capitalized, the names will not conflict with any Diagram property names.
-</p>
-<p>
-Here is a moderately extensive usage of GraphObject.make to build a Diagram:
-</p>
-<pre class="lang-js">
+      <script>goCode("gradientJSAML", 250, 150)</script>
+      <p>
+        使用<a>GraphObject,make</a>来构建一个<a>Diagram</a>也很常见
+        在这样的用法中，字符串参数（如果提供该参数必须是第二个参数）将命名图应使用的DIV HTML元素
+        同样，您可以将直接引用DIV元素作为第二个参数。
+      </p>
+      <p>
+        另外，在图上设置属性时，可以使用属性名称，这些属性名称是由用句点分隔的两个标识符组成的字符串。
+        句点之前的名称用作图表上的属性的名称，或者用作返回要设置其属性的对象的<a>Diagram.toolManager</a>。句号之后的名称是设置的属性的名称。请注意，由于存在嵌入式句点，因此JavaScript属性语法要求使用引号。
+      </p>
+      <p>
+        你还可以声明<a>DiagramEvent</a>侦听器, 就好像调用 <a>Diagram.addDiagramListener</a>,
+        假装设置一个Diagram属性，该属性实际上是一个DiagramEvent的名称。因为所有的DiagramEvent都有大写的名字，所以这些名字不会和任何图表属性名称冲突。
+      </p>
+      <p>
+        这是GraphObject.make的广泛用法，用于构建图
+      </p>
+      <pre class="lang-js">
   var myDiagram =
     $(go.Diagram, "myDiagramDiv",  // must name or refer to the DIV HTML element
       {
@@ -385,11 +366,10 @@ Here is a moderately extensive usage of GraphObject.make to build a Diagram:
   function loadDiagramProperties(e) { . . . }
 </pre>
 
-<p>
-All of this initialization using <a>GraphObject,make</a> is still JavaScript code, so we can call functions
-and easily share objects such as brushes:
-</p>
-<pre class="lang-js" id="codeJSAML">
+      <p>
+        有使用初始化<a>GraphObject,make</a>仍然是JavaScript代码，因此我们可以调用函数并轻松共享画笔等对象：
+      </p>
+      <pre class="lang-js" id="codeJSAML">
   var violetbrush = $(go.Brush, "Linear", { 0.0: "Violet", 1.0: "Lavender" });
 
   diagram.add(
@@ -408,17 +388,17 @@ and easily share objects such as brushes:
         { margin: 5 })
     ));
 </pre>
-<script>goCode("codeJSAML", 250, 150)</script>
-<p>
-<a>Brush</a>es and <a>Geometry</a> objects may be shared, but <a>GraphObject</a>s may not be shared.
-</p>
+      <script>goCode("codeJSAML", 250, 150)</script>
+      <p>
+        <a>Brush</a>和<a>Geometry</a> 对象可以共享, 但是 <a>GraphObject</a>不可以被共享.
+      </p>
 
-<p>
-The following pages will provide more details about the basic building block classes,
-<a>TextBlock</a>, <a>Shape</a>, and <a>Picture</a>, and about ways of aggregating them with the <a>Panel</a> class.
-</p>
-
-</div>
-</div>
+      <p>
+        以下页面将提供有关基本构建<a>TextBlock</a>, <a>Shape</a>, 和 <a>Picture</a>, 的更多详细信息，以及它们与<a>Panel</a>
+        类聚合的方法
+      </p>
+    </div>
+  </div>
 </body>
+
 </html>
