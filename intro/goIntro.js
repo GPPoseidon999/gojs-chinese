@@ -126,13 +126,13 @@ function goIntro() {
   var pagenav = document.createElement("div");
   var nav = "<div>";
   if (currentindex > 0) {
-    var prevurl = lis[currentindex - 1].childNodes[0].href.toLowerCase();
+    var prevurl = lis[currentindex - 1].childNodes[0].href
     nav += "<a href='" + prevurl + "'>&lt;Previous Intro Page</a>";
   } else {
     nav += "<a href='../learn/index.html'>&lt;Learn</a>";
   }
   if (currentindex < lis.length - 1) {
-    var nexturl = lis[currentindex + 1].childNodes[0].href.toLowerCase();
+    var nexturl = lis[currentindex + 1].childNodes[0].href
     nav += "<a style='float:right' href='" + nexturl + "'>Next Intro Page&gt;</a>";
   }
   nav += "</div>";
