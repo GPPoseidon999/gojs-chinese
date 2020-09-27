@@ -94,73 +94,68 @@
     <p>
       你可以从<a target="_blank" href="../download.html">此处</a>下载
       <b>GoJS</b> 以及所有文档和示例。或者，您可以直接链接到<a target="_blank"
-          href="https://developer.mozilla.org/en-US/docs/Glossary/CDN">CDN</a>提供的<b>GoJS</b>库， 例如：
-        <pre class="lang-html">&lt;script src="https://unpkg.com/gojs/release/go-debug.js"&gt;&lt;/script&gt;</pre>
-        <p>
-         每个<b>GoJS</b>图都包含在HTML元素中，在你的HTML页面中，你可以给它一个显示的大小:
-        </p>
+        href="https://developer.mozilla.org/en-US/docs/Glossary/CDN">CDN</a>提供的<b>GoJS</b>库， 例如：
+    <pre class="lang-html">&lt;script src="https://unpkg.com/gojs/release/go-debug.js"&gt;&lt;/script&gt;</pre>
+    <p>
+      每个<b>GoJS</b>图都包含在HTML元素中，在你的HTML页面中，你可以给它一个显示的大小:
+    </p>
 
-        <pre class="lang-html">
+    <pre class="lang-html">
 &lt;!-- The DIV for a Diagram needs an explicit size or else we will not see anything.
      In this case we also add a background color so we can see that area. --&gt;
 &lt;div id="myDiagramDiv"
      style="width:400px; height:150px; background-color: #DAE4E4;"&gt;&lt;/div&gt;
       </pre>
 
-        <p>
-          在JavaScript代码中，你在制作图时传递<code>&lt;div&gt;</code>的<code>id</code>
-        </p>
+    <p>
+      在JavaScript代码中，你在制作图时传递<code>&lt;div&gt;</code>的<code>id</code>
+    </p>
 
-        <pre class="lang-js">
+    <pre class="lang-js">
 var $ = go.GraphObject.make;
 var myDiagram =
   $(go.Diagram, "myDiagramDiv");
       </pre>
 
-        <p>
-          这将创建一个空图
-        </p>
+    <p>
+      这将创建一个空图
+    </p>
 
-        <!-- LIVE -->
-        <div id="myDiagramDiv" class="diagramStyling" style="width:400px; height:150px"></div>
-        <script>
-          var $ = go.GraphObject.make;
-          var myDiagram = $(go.Diagram, "myDiagramDiv");
-        </script>
+    <!-- LIVE -->
+    <div id="myDiagramDiv" class="diagramStyling" style="width:400px; height:150px"></div>
+    <script>
+      var $ = go.GraphObject.make;
+      var myDiagram = $(go.Diagram, "myDiagramDiv");
+    </script>
 
-        <p>
-          Notice that <code>go</code> is the "namespace" in which all <b>GoJS</b> types reside.
-          All code uses of <b>GoJS</b> classes such as Diagram or Node or Panel or Shape or TextBlock
-          will be prefixed with "<code>go.</code>".
-        </p>
-        <p>
-          This article will show you by example how to use <code>go.GraphObject.make</code> to build <b>GoJS</b>
-          objects.
-          For more detail, read <a href="../intro/buildingObjects.html">Building Objects in GoJS</a>.
-          Using <code>$</code> as an abbreviation for <code>go.GraphObject.make</code>
-          is so handy that we will assume its use from now on.
-          If you use <code>$</code> for something else in your code,
-          you can always pick a different short variable name,
-          such as <code>$$</code> or <code>MAKE</code> or <code>GO</code>.
-        </p>
+    <p>
+      注意，<code>go</code>是所有<b>GoJS</b>类型所在的“命名空间”。<b>GoJS</b>类的所有代码使用，例如Diagram、Node、Panel、Shape或TextBlock都将以
+      "<code>go.</code>"作为前缀。
+    </p>
+    <p>
+      本文将通过示例向你展示如何使用<code>go.GraphObject.make</code>构建<b>GoJS</b>对象
+      更多细节请阅读 <a href="../intro/buildingObjects.html">构建GoJs对象</a>
+      使用 <code>$</code> 作为 <code>go.GraphObject.make</code>
+      的缩写非常方便，我们将从现在使用它
+      如果你使用 <code>$</code> 作为其他变量,
+      你可以选择不同的短变量名例如<code>$$</code> 或 <code>MAKE</code> 或 <code>GO</code>.
+    </p>
 
-        <h2 id="DiagramsAndModels">Diagrams and Models</h2>
+    <h2 id="DiagramsAndModels">图和模型</h2>
 
-        <p>
-          The Nodes and Links of a Diagram are visualizations of data that is managed by a Model.
-          <b>GoJS</b> has a model-view architecture,
-          where Models hold the data (arrays of JavaScript objects) that describe nodes and links,
-          and Diagrams act as views to visualize this data using actual Node and Link objects.
-          Models, not Diagrams, are what you load and then save after editing.
-          You add whatever properties you need for your app on the data objects in the model;
-          you do not add properties to or modify the prototype of the Diagram and GraphObject classes.
-        </p>
+    <p>
+      图的节点和链接是由模型数据的可视化
+      <b>GoJS</b> 具有 model-view 架构,
+      模型保存描述节点和链接的数据(JavaScript对象数组)Diagrams充当视图，使用实际的节点和链接对象来可视化这些数据.
+      模型，而不是图，是您在编辑后加载并保存的内容。
+      你可以在模型数据对象上添加应用所需的任何属性；你不能向Diagram和GraphObject类的原型添加或修改属性。
+    </p>
 
-        <p>
-          Here's an example of a Model and Diagram, followed by the actual diagram it generates:
-        </p>
+    <p>
+      下面是一个模型和图的例子，下面是它生成的实际图:
+    </p>
 
-        <pre class="lang-js">
+    <pre class="lang-js">
 var $ = go.GraphObject.make;
 var myDiagram =
   $(go.Diagram, "myDiagramDiv",
@@ -178,88 +173,79 @@ myModel.nodeDataArray = [
 myDiagram.model = myModel;
       </pre>
 
-        <!-- LIVE -->
-        <div id="myDiagramDiv2" class="diagramStyling" style="width:400px; height:150px"></div>
-        <script>
-          var $ = go.GraphObject.make;
-          var myDiagram =
-            $(go.Diagram, "myDiagramDiv2",
-              { // enable Ctrl-Z to undo and Ctrl-Y to redo
-                "undoManager.isEnabled": true
-              });
+    <!-- LIVE -->
+    <div id="myDiagramDiv2" class="diagramStyling" style="width:400px; height:150px"></div>
+    <script>
+      var $ = go.GraphObject.make;
+      var myDiagram =
+        $(go.Diagram, "myDiagramDiv2",
+          { // enable Ctrl-Z to undo and Ctrl-Y to redo
+            "undoManager.isEnabled": true
+          });
 
-          var myModel = $(go.Model);
-          // for each object in this Array, the Diagram creates a Node to represent it
-          myModel.nodeDataArray = [
-            { key: "Alpha" },
-            { key: "Beta" },
-            { key: "Gamma" }
-          ];
-          myDiagram.model = myModel;
-        </script>
+      var myModel = $(go.Model);
+      // for each object in this Array, the Diagram creates a Node to represent it
+      myModel.nodeDataArray = [
+        { key: "Alpha" },
+        { key: "Beta" },
+        { key: "Gamma" }
+      ];
+      myDiagram.model = myModel;
+    </script>
 
-        <p>
-          The diagram displays the three nodes that are in the model. Some interaction is already possible:
-        </p>
-        <ul>
-          <li>Click and drag the background in the above diagram to pan the view.</li>
-          <li>Click a node to select it, or press down on and drag a node to move it around.</li>
-          <li>To create a selection box, click and hold on the background, then start dragging.</li>
-          <li>Use CTRL-C and CTRL-V, or control-drag-and-drop, to make a copy of the selection.</li>
-          <li>
-            Press the Delete key to delete selected nodes.
-            (Read about more <a href="../intro/commands.html">Keyboard Commands</a>.)
-          </li>
-          <li>
-            On touch devices, press and hold to bring up a context menu.
-            (Read about <a href="../intro/contextMenus.html">Context Menus</a>.)
-          </li>
-          <li>Since the undo manager was enabled, CTRL-Z and CTRL-Y will undo and redo moves and copies and deletions.
-          </li>
-        </ul>
+    <p>
+      这个图显示了该模型中的三个节点，可以进行一些交互
+    </p>
+    <ul>
+      <li>单击并拖动上图中的背景以平移视图。</li>
+      <li>单击一个节点以将其选中，或按下并拖动一个节点以将其移动</li>
+      <li>要创建选择框，请单击并按住背景，然后开始拖动。</li>
+      <li>使用CTRL-C和CTRL-V或按住Control并拖放来制作所选内容的副本。</li>
+      <li>
+        按Delete键删除选定的节点。
+        (了解有关更多 <a href="../intro/commands.html">键盘命令的信息</a>.)
+      </li>
+      <li>
+        在触摸设备上，按住以显示上下文菜单。
+        (阅读有关<a href="../intro/contextMenus.html">上下文菜单的信息</a>.)
+      </li>
+      <li>由于启用了撤消管理器，因此CTRL-Z和CTRL-Y将撤消和重做移动以及复制和删除操作。
+      </li>
+    </ul>
 
-        <h2 id="StylingNodes">Styling Nodes</h2>
+    <h2 id="StylingNodes">节点样式</h2>
 
-        <p>
-          Nodes are styled by creating templates consisting of GraphObjects and setting properties on those objects.
-          To create a <a href="../intro/nodes.html">Node</a>, we have several building block classes at our disposal:
-        </p>
-        <ul>
-          <li><a href="../intro/shapes.html">Shape</a>, to display pre-defined or custom geometry with colors</li>
-          <li><a href="../intro/textblocks.html">TextBlock</a>, to display (potentially editable) text in various fonts
-          </li>
-          <li><a href="../intro/pictures.html">Picture</a>, to display images, including SVG files</li>
-          <li>
-            <a href="../intro/panels.html">Panel</a>, containers to hold a collection of other objects that
-            can be positioned and sized in different manners according to the type of the Panel (like tables,
-            vertical stacks, and stretching containers)
-          </li>
-        </ul>
+    <p>
+      通过创建由GraphObject组成的模板并在这些对象上设置属性来设置节点的样式。
+      要创建<a href="../intro/nodes.html">Node</a>, 我们可以使用几个构建基块类:
+    </p>
+    <ul>
+      <li><a href="../intro/shapes.html">Shape</a>,以显示带有颜色的预定义或自定义几何</li>
+      <li><a href="../intro/textblocks.html">TextBlock</a>, 以显示（可能是可编辑的）各种字体的文本
+      </li>
+      <li><a href="../intro/pictures.html">Picture</a>, 显示图像包括SVG文件</li>
+      <li>
+        <a href="../intro/panels.html">Panel</a>, 用于容纳其他对象集合的容器，这些对象可以根据Panel的类型以不同的方式放置和调整大小（例如表格，垂直堆栈和拉伸容器）
+      </li>
+    </ul>
 
-        <p>
-          All of these building blocks are derived from the
-          <a href="../api/symbols/GraphObject.html">GraphObject</a> abstract class,
-          so we casually refer to them as GraphObjects or objects or elements.
-          Note that a GraphObject is <em>not</em> an HTML DOM element, so much less overhead in
-          creating or modifying such objects.
-        </p>
+    <p>
+      所有这些构建基块均来自
+      <a href="../api/symbols/GraphObject.html">GraphObject</a> 抽象类,
+      因此我们随便将它们称为GraphObjects或对象或元素.
+      请注意，GraphObject <em>不是</em> HTML DOM元素，因此创建或修改此类对象的开销要少得多。
+    </p>
 
-        <p>
-          We want the model data properties to affect our Nodes, and this is done by way of data bindings.
-          Data bindings allow us to change the appearance and behavior of GraphObjects in Nodes by automatically setting
-          properties on those GraphObjects to values that are taken from the model data.
-          The model data objects are plain JavaScript objects.
-          You can choose to use whatever property names you like on the node data in the model.
-        </p>
+    <p>
+      我们希望模型数据属性影响我们的节点，这是通过数据绑定来完成的。数据绑定使我们可以通过将GraphObject上的属性自动设置为从模型数据中获取的值来更改GraphObject在Nodes中的外观和行为。模型数据对象是普通的JavaScript对象。您可以选择在模型的节点数据上使用所需的任何属性名称。
+    </p>
 
-        <p>
-          The default Node template is simple: A Node which contains one TextBlock.
-          There is a data binding between a TextBlock's <code>text</code> property and
-          the model data's <code>key</code> property.
-          In code, the template looks something like this:
-        </p>
+    <p>
+      默认的Node模板很简单: 一个包含一个TextBlock的Node.
+      TextBlock的<code>text</code> 属性和模型数据的 <code>key</code>属性之间存在数据绑定。在代码中，模板看起来像这样：
+    </p>
 
-        <pre class="lang-js">
+    <pre class="lang-js">
 myDiagram.nodeTemplate =
   $(go.Node,
     $(go.TextBlock,
@@ -267,17 +253,17 @@ myDiagram.nodeTemplate =
       new go.Binding("text", "key"))
   );
       </pre>
-        <p>
-          TextBlocks, Shapes, and Pictures are the primitive building blocks of <b>GoJS</b>.
-          TextBlocks cannot contain images; Shapes cannot contain text.
-          If you want your node to show some text, you must use a TextBlock.
-          If you want to draw or fill some geometrical figures, you must use a Shape.
-        </p>
-        <p>
-          More generally, the skeleton of a Node template will look something like this:
-        </p>
+    <p>
+      TextBlocks，Shape和Pictures是<b>GoJS</b>的原始构建块.
+      TextBlocks 不能包含图像; Shapes 不能包含文本.
+      如果要让节点显示一些文本，则必须使用TextBlock.
+      如果要绘制或填充一些几何图形，则必须使用Shape.
+    </p>
+    <p>
+      更一般地，Node模板的框架看起来像这样:
+    </p>
 
-        <pre class="lang-js">
+    <pre class="lang-js">
 myDiagram.nodeTemplate =
   $(go.Node, "Vertical", // second argument of a Node (or any Panel) can be a Panel type
     /* set Node properties here */
@@ -305,29 +291,24 @@ myDiagram.nodeTemplate =
   );
       </pre>
 
-        <p>
-          The nesting of GraphObjects within Panels can be arbitrarily deep,
-          and every class has its own unique set of properties to utilize,
-          but this shows the general idea.
-        </p>
+    <p>
+      Panel中GraphObjects的嵌套可以任意深，每个类都有其自己独特的属性集可以使用，但这只是大致的意思
+    </p>
 
-        <p>
-          Now that we have seen how to make a Node template, let's see a live example.
-          We will make a simple template commonly seen in organizational diagrams — an image next to a name.
-          Consider the following Node template:
-        </p>
+    <p>
+      既然我们已经了解了如何制作Node模板，那么让我们来看一个实时示例。我们将制作一个在组织结构图中常见的简单模板-名称旁边的图像。考虑以下节点模板：
+    </p>
+    <ul>
+      <li>
+        一个“水平”面板类型的节点，这意味着其元素将水平并排放置。它包含两个元素:
         <ul>
-          <li>
-            A Node of "Horizontal" Panel type, meaning that its elements will be laid out horizontally side-by-side.
-            It has two elements:
-            <ul>
-              <li>A Picture for the portrait, with the image source data bound</li>
-              <li>A TextBlock for the name, with the text data bound</li>
-            </ul>
-          </li>
+          <li>一个肖像的图片，已绑定图像源数据</li>
+          <li>一个名称的TextBlock，绑定了文本数据</li>
         </ul>
+      </li>
+    </ul>
 
-        <pre class="lang-js">
+    <pre class="lang-js">
 var $ = go.GraphObject.make;
 var myDiagram =
   $(go.Diagram, "myDiagramDiv",
@@ -367,81 +348,74 @@ model.nodeDataArray =
 myDiagram.model = model;
       </pre>
 
-        <p>That code produces this diagram:</p>
+    <p>该代码产生以下图表:</p>
 
-        <!-- LIVE -->
-        <div id="myDiagramDiv3" class="diagramStyling" style="width:700px; height:200px"></div>
-        <script>
-          var $ = go.GraphObject.make;
-          var myDiagram =
-            $(go.Diagram, "myDiagramDiv3",
-              { // enable Ctrl-Z to undo and Ctrl-Y to redo
-                "undoManager.isEnabled": true
-              });
+    <!-- LIVE -->
+    <div id="myDiagramDiv3" class="diagramStyling" style="width:700px; height:200px"></div>
+    <script>
+      var $ = go.GraphObject.make;
+      var myDiagram =
+        $(go.Diagram, "myDiagramDiv3",
+          { // enable Ctrl-Z to undo and Ctrl-Y to redo
+            "undoManager.isEnabled": true
+          });
 
-          // define a simple Node template
-          myDiagram.nodeTemplate =
-            $(go.Node, "Horizontal",
-              // the entire node will have a light-blue background
-              { background: "#44CCFF" },
-              $(go.Picture,
-                // Pictures should normally have an explicit width and height.
-                // This picture has a red background, only visible when there is no source set
-                // or when the image is partially transparent.
-                { margin: 10, width: 50, height: 50, background: "red" },
-                // Picture.source is data bound to the "source" attribute of model data:
-                new go.Binding("source")),
-              $(go.TextBlock,
-                "Default Text",  // the initial value for TextBlock.text
-                // some room around the text, a larger font, and a white stroke
-                { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
-                // TextBlock.text is data bound to the "name" property of model data:
-                new go.Binding("text", "name"))
-            );
+      // define a simple Node template
+      myDiagram.nodeTemplate =
+        $(go.Node, "Horizontal",
+          // the entire node will have a light-blue background
+          { background: "#44CCFF" },
+          $(go.Picture,
+            // Pictures should normally have an explicit width and height.
+            // This picture has a red background, only visible when there is no source set
+            // or when the image is partially transparent.
+            { margin: 10, width: 50, height: 50, background: "red" },
+            // Picture.source is data bound to the "source" attribute of model data:
+            new go.Binding("source")),
+          $(go.TextBlock,
+            "Default Text",  // the initial value for TextBlock.text
+            // some room around the text, a larger font, and a white stroke
+            { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
+            // TextBlock.text is data bound to the "name" property of model data:
+            new go.Binding("text", "name"))
+        );
 
-          var model = $(go.Model);
-          model.nodeDataArray =
-            [ // note that each node data object holds whatever properties it needs;
-              // for this app we add the "name" and "source" properties
-              { name: "Don Meow", source: "cat1.png" },
-              { name: "Copricat", source: "cat2.png" },
-              { name: "Demeter", source: "cat3.png" },
-              { /* Empty node data */ }
-            ];
-          myDiagram.model = model;
-        </script>
+      var model = $(go.Model);
+      model.nodeDataArray =
+        [ // note that each node data object holds whatever properties it needs;
+          // for this app we add the "name" and "source" properties
+          { name: "Don Meow", source: "cat1.png" },
+          { name: "Copricat", source: "cat2.png" },
+          { name: "Demeter", source: "cat3.png" },
+          { /* Empty node data */ }
+        ];
+      myDiagram.model = model;
+    </script>
 
-        <p>
-          We may want to show some "default" state when not all information is present,
-          for instance when an image does not load or when a name is not known.
-          The "empty" node data in this example is used to show that node templates can work
-          perfectly well without any of the properties on the bound data.
-        </p>
+    <p>
+      当并非所有信息都存在时，例如当图像未加载或名称未知时，我们可能希望显示一些“默认”状态。此示例中的“空”节点数据用于显示节点模板可以很好地工作，而无需绑定数据上的任何属性。
+    </p>
 
-        <h2 id="KindsOfNodes">Kinds of Models</h2>
+    <h2 id="KindsOfNodes">各种模型</h2>
 
-        <p>
-          With a custom node template our diagram is becoming a pretty sight, but perhaps we want to show more.
-          Perhaps we want an organizational chart to show that Don Meow is really the boss of a cat cartel.
-          So we will create a complete organization chart diagram by adding some Links to show the relationship
-          between individual nodes and a Layout to automatically position the nodes.
-        </p>
+    <p>
+      使用自定义节点模板，我们的图变得很漂亮，但是也许我们想展示更多。也许我们希望组织结构图显示Don Meow确实是卡特尔的老板。因此，我们将通过添加一些链接以显示各个节点之间的关系以及一个自动放置节点的布局来创建完整的组织结构图。
+    </p>
 
-        <p>
-          In order to get links into our diagram, the basic <code>Model</code> is not going to cut it.
-          We are going to have to pick one of the other two models in <b>GoJS</b>, both of which support Links.
-          These are <code>GraphLinksModel</code> and <code>TreeModel</code>.
-          (Read more about models <a href="../intro/usingModels.html">here</a>.)
-        </p>
+    <p>
+      为了使我们的图中的链接，基本 <code>Model</code> 不会削减它.
+      们将不得不在<b>GoJS</b>中选择其他两个模型之一，它们都支持Links.
+      这些是<code>GraphLinksModel</code> 和 <code>TreeModel</code>.
+      (<a href="../intro/usingModels.html">此处</a>阅读有关模型的更多信息.)
+    </p>
 
-        <p>
-          In GraphLinksModel, we have a <code>model.linkDataArray</code> in addition to the
-          <code>model.nodeDataArray</code>.
-          It holds an array of JavaScript objects, each describing a link by specifying the "to" and "from" node keys.
-          Here's an example where node A links to node B and where node B links to node C:
-        </p>
+    <p>
+      在GraphLinksModel中<code>model.linkDataArray</code>除了
+      <code>model.nodeDataArray</code>.
+      它包含一个JavaScript对象数组，每个JavaScript对象都通过指定“ to”和“ from”节点键来描述链接。这是一个示例，其中节点A链接到节点B，节点B链接到节点C
+    </p>
 
-        <pre class="lang-js">
+    <pre class="lang-js">
 var model = $(go.GraphLinksModel);
 model.nodeDataArray =
 [
@@ -457,20 +431,15 @@ model.linkDataArray =
 myDiagram.model = model;
       </pre>
 
-        <p>
-          A GraphLinksModel allows you to have any number of links between nodes, going in any direction.
-          There could be ten links running from A to B, and three more running the opposite way, from B to A.
-        </p>
+    <p>
+      GraphLinksModel允许您在节点之间建立任意数量的链接，并且链接方向不限。从A到B可能有十个链接，从B到A的相反三个链接.
+    </p>
 
-        <p>
-          A TreeModel works a little differently.
-          Instead of maintaining a separate array of link data,
-          the links in a tree model are created by specifying a "parent" for a node data.
-          Links are then created from this association.
-          Here's the same example done as a TreeModel, with node A linking to node B and node B linking to node C:
-        </p>
+    <p>
+      TreeModel的工作原理略有不同。代替维护链接数据的单独数组，树模型中的链接是通过为节点数据指定“父”来创建的。然后从该关联中创建链接。这是与TreeModel相同的示例，其中节点A链接到节点B，节点B链接到节点C：
+    </p>
 
-        <pre class="lang-js">
+    <pre class="lang-js">
 var model = $(go.TreeModel);
 model.nodeDataArray =
 [
@@ -481,19 +450,15 @@ model.nodeDataArray =
 myDiagram.model = model;
       </pre>
 
-        <p>
-          TreeModel is simpler than GraphLinksModel, but it cannot make arbitrary link relationships,
-          such as multiple links between the same two nodes, or having multiple parents.
-          Our organizational diagram is a simple hierarchical tree-like structure,
-          so we will choose TreeModel for this example.
-        </p>
+    <p>
+      TreeModel比GraphLinksModel简单，但是它不能建立任意链接关系，例如相同两个节点之间的多个链接或具有多个父级。我们的组织图是一个简单的分层树状结构，因此在此示例中我们将选择TreeModel。
+    </p>
 
-        <p>
-          First, we will complete the data by adding a few more nodes, using a TreeModel,
-          and specifying keys and parents in the data.
-        </p>
+    <p>
+      首先，我们将通过使用TreeModel添加更多的节点并在数据中指定键和父代来完成数据。
+    </p>
 
-        <pre class="lang-js">
+    <pre class="lang-js">
 var $ = go.GraphObject.make;
 var myDiagram =
   $(go.Diagram, "myDiagramDiv",
@@ -525,83 +490,73 @@ model.nodeDataArray =
 myDiagram.model = model;
       </pre>
 
-        <!-- LIVE -->
-        <div id="myDiagramDiv4" class="diagramStyling" style="width:700px; height:200px"></div>
-        <script>
-          var $ = go.GraphObject.make;
-          var myDiagram =
-            $(go.Diagram, "myDiagramDiv4",
-              { "undoManager.isEnabled": true });
+    <!-- LIVE -->
+    <div id="myDiagramDiv4" class="diagramStyling" style="width:700px; height:200px"></div>
+    <script>
+      var $ = go.GraphObject.make;
+      var myDiagram =
+        $(go.Diagram, "myDiagramDiv4",
+          { "undoManager.isEnabled": true });
 
-          // the template we defined earlier
-          myDiagram.nodeTemplate =
-            $(go.Node, "Horizontal",
-              { background: "#44CCFF" },
-              $(go.Picture,
-                { margin: 10, width: 50, height: 50, background: "red" },
-                new go.Binding("source")),
-              $(go.TextBlock, "Default Text",
-                { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
-                new go.Binding("text", "name"))
-            );
+      // the template we defined earlier
+      myDiagram.nodeTemplate =
+        $(go.Node, "Horizontal",
+          { background: "#44CCFF" },
+          $(go.Picture,
+            { margin: 10, width: 50, height: 50, background: "red" },
+            new go.Binding("source")),
+          $(go.TextBlock, "Default Text",
+            { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
+            new go.Binding("text", "name"))
+        );
 
-          var model = $(go.TreeModel);
-          model.nodeDataArray =
-            [
-              { key: "1", name: "Don Meow", source: "cat1.png" },
-              { key: "2", parent: "1", name: "Demeter", source: "cat2.png" },
-              { key: "3", parent: "1", name: "Copricat", source: "cat3.png" },
-              { key: "4", parent: "3", name: "Jellylorum", source: "cat4.png" },
-              { key: "5", parent: "3", name: "Alonzo", source: "cat5.png" },
-              { key: "6", parent: "2", name: "Munkustrap", source: "cat6.png" }
-            ];
-          myDiagram.model = model;
-        </script>
+      var model = $(go.TreeModel);
+      model.nodeDataArray =
+        [
+          { key: "1", name: "Don Meow", source: "cat1.png" },
+          { key: "2", parent: "1", name: "Demeter", source: "cat2.png" },
+          { key: "3", parent: "1", name: "Copricat", source: "cat3.png" },
+          { key: "4", parent: "3", name: "Jellylorum", source: "cat4.png" },
+          { key: "5", parent: "3", name: "Alonzo", source: "cat5.png" },
+          { key: "6", parent: "2", name: "Munkustrap", source: "cat6.png" }
+        ];
+      myDiagram.model = model;
+    </script>
 
-        <h2 id="DiagramLayouts">Diagram Layouts</h2>
+    <h2 id="DiagramLayouts">图的布局</h2>
 
-        <p>
-          As you can see the TreeModel automatically creates the necessary Links to associate the Nodes,
-          but it's hard to tell whose parent is who.
-        </p>
+    <p>
+      如您所见，TreeModel自动创建必要的Link来关联Node，但是很难确定谁是谁。
+    </p>
 
-        <p>
-          Diagrams have a default layout which takes all nodes that do not have a location and gives them locations,
-          arranging them in a grid.
-          We could explicitly give each of our nodes a location to sort out this organizational mess,
-          but as an easier solution in our case, we will use a layout that gives us good locations automatically.
-        </p>
+    <p>
+      图具有默认布局，该布局采用所有没有位置的节点并为其指定位置，并将它们排列在网格中。我们可以显式地为每个节点提供一个位置，以整理出这种组织混乱的情况，但是在我们的情况下，作为一种更简单的解决方案，我们将使用一种布局，该布局会自动为我们提供良好的位置。
+    </p>
 
-        <p>
-          We want to show a hierarchy, and are already using a TreeModel, so the most natural layout choice is
-          TreeLayout.
-          TreeLayout defaults to flowing from left to right, so to get it to flow from top to bottom
-          (as is common in organizational diagrams), we will set the <code>angle</code> property to 90.
-        </p>
+    <p>
+      我们想要显示一个层次结构，并且已经在使用TreeModel，因此最自然的布局选择是TreeLayout。TreeLayout默认为从左到右流动，因此要使其从上到下流动（这在组织图中是常见的），我们将<code>angle</code>属性设置为90。
+    </p>
 
-        <p>
-          Using layouts in <b>GoJS</b> is usually simple.
-          Each kind of layout has a number of properties that affect the results.
-          There are samples for each layout (like <a href="../samples/tLayout.html">TreeLayout Demo</a>)
-          that showcase its properties.
-        </p>
+    <p>
+      在<b>GoJS</b>中使用布局通常很简单。每种布局都有许多影响结果的属性。每个布局都有一些示例（例如 <a href="../samples/tLayout.html">TreeLayout示例</a>）来展示其属性。
+    </p>
 
-        <pre class="lang-js">
+    <pre class="lang-js">
 // define a TreeLayout that flows from top to bottom
 myDiagram.layout =
   $(go.TreeLayout,
     { angle: 90, layerSpacing: 35 });
       </pre>
 
-        <p>
-          <b>GoJS</b> has several other layouts, which you can read about <a href="../intro/layouts.html">here</a>.
-        </p>
+    <p>
+      <b>GoJS</b> 还有其他几种布局，您可以在<a href="../intro/layouts.html">此处</a>阅读.
+    </p>
 
-        <p>
-          Adding the layout to the diagram and model so far, we can see our results:
-        </p>
+    <p>
+      到目前为止，将布局添加到图和模型中，我们可以看到结果：
+    </p>
 
-        <pre class="lang-js">
+    <pre class="lang-js">
 var $ = go.GraphObject.make;
 var myDiagram =
   $(go.Diagram, "myDiagramDiv",
@@ -636,62 +591,56 @@ model.nodeDataArray =
 myDiagram.model = model;
       </pre>
 
-        <!-- LIVE -->
-        <div id="myDiagramDiv5" class="diagramStyling" style="width:700px; height:400px"></div>
-        <script>
-          var $ = go.GraphObject.make;
-          var myDiagram =
-            $(go.Diagram, "myDiagramDiv5",
-              {
-                "undoManager.isEnabled": true,
-                layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
-                  { angle: 90, layerSpacing: 35 })
-              });
+    <!-- LIVE -->
+    <div id="myDiagramDiv5" class="diagramStyling" style="width:700px; height:400px"></div>
+    <script>
+      var $ = go.GraphObject.make;
+      var myDiagram =
+        $(go.Diagram, "myDiagramDiv5",
+          {
+            "undoManager.isEnabled": true,
+            layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
+              { angle: 90, layerSpacing: 35 })
+          });
 
-          // the template we defined earlier
-          myDiagram.nodeTemplate =
-            $(go.Node, "Horizontal",
-              { background: "#44CCFF" },
-              $(go.Picture,
-                { margin: 10, width: 50, height: 50, background: "red" },
-                new go.Binding("source")),
-              $(go.TextBlock, "Default Text",
-                { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
-                new go.Binding("text", "name"))
-            );
+      // the template we defined earlier
+      myDiagram.nodeTemplate =
+        $(go.Node, "Horizontal",
+          { background: "#44CCFF" },
+          $(go.Picture,
+            { margin: 10, width: 50, height: 50, background: "red" },
+            new go.Binding("source")),
+          $(go.TextBlock, "Default Text",
+            { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
+            new go.Binding("text", "name"))
+        );
 
-          var model = $(go.TreeModel);
-          model.nodeDataArray =
-            [
-              { key: "1", name: "Don Meow", source: "cat1.png" },
-              { key: "2", parent: "1", name: "Demeter", source: "cat2.png" },
-              { key: "3", parent: "1", name: "Copricat", source: "cat3.png" },
-              { key: "4", parent: "3", name: "Jellylorum", source: "cat4.png" },
-              { key: "5", parent: "3", name: "Alonzo", source: "cat5.png" },
-              { key: "6", parent: "2", name: "Munkustrap", source: "cat6.png" }
-            ];
-          myDiagram.model = model;
-        </script>
+      var model = $(go.TreeModel);
+      model.nodeDataArray =
+        [
+          { key: "1", name: "Don Meow", source: "cat1.png" },
+          { key: "2", parent: "1", name: "Demeter", source: "cat2.png" },
+          { key: "3", parent: "1", name: "Copricat", source: "cat3.png" },
+          { key: "4", parent: "3", name: "Jellylorum", source: "cat4.png" },
+          { key: "5", parent: "3", name: "Alonzo", source: "cat5.png" },
+          { key: "6", parent: "2", name: "Munkustrap", source: "cat6.png" }
+        ];
+      myDiagram.model = model;
+    </script>
 
-        <p>
-          Our diagram is starting to look like a proper organization chart, but we could do better with the links.
-        </p>
+    <p>
+      我们的图表开始看起来像是正确的组织结构图，但是我们可以通过链接做得更好。
+    </p>
 
-        <h2 id="LinkTemplates">Link Templates</h2>
+    <h2 id="LinkTemplates">链接模板</h2>
 
-        <p>
-          We will construct a new Link template that will better suit our wide, boxy nodes.
-          A <a href="../intro/links.html">Link</a> is a different kind of Part, not like a Node.
-          The main element of a Link is the Link's shape,
-          and must be a Shape that will have its geometry computed dynamically by <b>GoJS</b>.
-          Our link is going to consist of just this shape,
-          with its stroke a little thicker than normal and dark gray instead of black.
-          Unlike the default link template we will not have an arrowhead.
-          And we will change the Link <code>routing</code> property from Normal to Orthogonal,
-          and give it a <code>corner</code> value so that right-angle turns are rounded.
-        </p>
+    <p>
+      我们将构建一个新的Link模板，该模板将更适合我们宽阔的Boxy节点.
+      一个<a
+        href="../intro/links.html">Link</a>是一种不同的部分，而不是像一个节点。链接的主要元素是链接的形状，并且必须是一个形状，其形状将由GoJS动态计算。我们的链接将仅由这种形状组成，其笔触比正常的笔触要粗一些，并且深灰色而不是黑色。与默认链接模板不同，我们将没有箭头。然后，将链接<code>routing</code>属性从Normal更改为Orthogonal，并为其赋予一个<code>corner</code>值，以使直角转角变圆。
+    </p>
 
-        <pre class="lang-js">
+    <pre class="lang-js">
 // define a Link template that routes orthogonally, with no arrowhead
 myDiagram.linkTemplate =
   $(go.Link,
@@ -706,13 +655,11 @@ myDiagram.linkTemplate =
     );
       </pre>
 
-        <p>
-          Combining our Link template with our Node template, TreeModel, and TreeLayout,
-          we finally have a full organization diagram.
-          The complete code is repeated below, and the resulting diagram follows:
-        </p>
+    <p>
+      将我们的Link模板与Node模板，TreeModel和TreeLayout结合在一起，我们终于有了完整的组织图。下面重复完整的代码，结果图如下
+    </p>
 
-        <pre class="lang-js">
+    <pre class="lang-js">
 var $ = go.GraphObject.make;
 
 var myDiagram =
@@ -755,68 +702,64 @@ model.nodeDataArray =
 myDiagram.model = model;
       </pre>
 
-        <!-- LIVE -->
-        <div id="myDiagramDiv6" class="diagramStyling" style="width:700px; height:400px"></div>
-        <script>
-          var $ = go.GraphObject.make;
-          var myDiagram =
-            $(go.Diagram, "myDiagramDiv6",
-              {
-                "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
-                layout: $(go.TreeLayout,
-                  { angle: 90, layerSpacing: 35 })
-              });
+    <!-- LIVE -->
+    <div id="myDiagramDiv6" class="diagramStyling" style="width:700px; height:400px"></div>
+    <script>
+      var $ = go.GraphObject.make;
+      var myDiagram =
+        $(go.Diagram, "myDiagramDiv6",
+          {
+            "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
+            layout: $(go.TreeLayout,
+              { angle: 90, layerSpacing: 35 })
+          });
 
-          // the template we defined earlier
-          myDiagram.nodeTemplate =
-            $(go.Node, "Horizontal",
-              { background: "#44CCFF" },
-              $(go.Picture,
-                { margin: 10, width: 50, height: 50, background: "red" },
-                new go.Binding("source")),
-              $(go.TextBlock, "Default Text",
-                { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
-                new go.Binding("text", "name"))
-            );
+      // the template we defined earlier
+      myDiagram.nodeTemplate =
+        $(go.Node, "Horizontal",
+          { background: "#44CCFF" },
+          $(go.Picture,
+            { margin: 10, width: 50, height: 50, background: "red" },
+            new go.Binding("source")),
+          $(go.TextBlock, "Default Text",
+            { margin: 12, stroke: "white", font: "bold 16px sans-serif" },
+            new go.Binding("text", "name"))
+        );
 
-          // define a Link template that routes orthogonally, with no arrowhead
-          myDiagram.linkTemplate =
-            $(go.Link,
-              { routing: go.Link.Orthogonal, corner: 5 },
-              $(go.Shape, { strokeWidth: 3, stroke: "#555" })); // the link shape
+      // define a Link template that routes orthogonally, with no arrowhead
+      myDiagram.linkTemplate =
+        $(go.Link,
+          { routing: go.Link.Orthogonal, corner: 5 },
+          $(go.Shape, { strokeWidth: 3, stroke: "#555" })); // the link shape
 
-          var model = $(go.TreeModel);
-          model.nodeDataArray =
-            [
-              { key: "1", name: "Don Meow", source: "cat1.png" },
-              { key: "2", parent: "1", name: "Demeter", source: "cat2.png" },
-              { key: "3", parent: "1", name: "Copricat", source: "cat3.png" },
-              { key: "4", parent: "3", name: "Jellylorum", source: "cat4.png" },
-              { key: "5", parent: "3", name: "Alonzo", source: "cat5.png" },
-              { key: "6", parent: "2", name: "Munkustrap", source: "cat6.png" }
-            ];
-          myDiagram.model = model;
-        </script>
+      var model = $(go.TreeModel);
+      model.nodeDataArray =
+        [
+          { key: "1", name: "Don Meow", source: "cat1.png" },
+          { key: "2", parent: "1", name: "Demeter", source: "cat2.png" },
+          { key: "3", parent: "1", name: "Copricat", source: "cat3.png" },
+          { key: "4", parent: "3", name: "Jellylorum", source: "cat4.png" },
+          { key: "5", parent: "3", name: "Alonzo", source: "cat5.png" },
+          { key: "6", parent: "2", name: "Munkustrap", source: "cat6.png" }
+        ];
+      myDiagram.model = model;
+    </script>
 
-        <h2 id="LearnMore">Learn More</h2>
-        <p>
-          You may want to read more tutorials, such as the <a href="graphObject.html">GraphObject Manipulation</a>
-          tutorial
-          and the <a href="interactivity.html">Interactivity</a> tutorial.
-          You can also watch tutorials on <a
-            href="https://www.youtube.com/channel/UC9We8EoX596-6XFjJDtZIDg">YouTube</a>.
-        </p>
-        <p>
-          Also consider looking at the <a href="../samples/index.html">samples</a> to see some of the diagrams possible
-          with <b>GoJS</b>,
-          or read the <a href="../intro/index.html">technical introduction</a> to get
-          an in-depth look at the components of <b>GoJS</b>.
-        </p>
+    <h2 id="LearnMore">学到更多</h2>
+    <p>
+      您可能需要阅读更多教程，例如 <a href="graphObject.html">GraphObject Manipulation</a>
+      教程和 <a href="interactivity.html">Interactivity</a> 教程.
+      您也可以在 <a href="https://www.youtube.com/channel/UC9We8EoX596-6XFjJDtZIDg">YouTube</a>上观看教程.
+    </p>
+    <p>
+      还可以考虑查看 <a href="../samples/index.html">示例</a> 以查看 <b>GoJS</b>可能提供的一些图表
+      或者阅读 <a href="../intro/index.html">技术介绍</a> 以深入了解 <b>GoJS</b>的组件。
+    </p>
 
-        <p class="footer">
-          GoJS &reg; by Northwoods Software. Copyright &copy; 1998-2020 <a href="https://www.nwoods.com"
-            target="_blank">Northwoods Software</a> &reg;
-        </p>
+    <p class="footer">
+      GoJS &reg; by Northwoods Software. Copyright &copy; 1998-2020 <a href="https://www.nwoods.com"
+        target="_blank">Northwoods Software</a> &reg;
+    </p>
 
   </div> <!-- end container-fluid -->
   <div class="banner" id="bannerbottom">
