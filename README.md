@@ -5,4 +5,5 @@
 [官网文档](https://gojs.net/latest/index.html)
 
 微信交流群
+
 ![交流群](https://singleshadow-vuepress.oss-cn-beijing.aliyuncs.com/other/1123.png)
