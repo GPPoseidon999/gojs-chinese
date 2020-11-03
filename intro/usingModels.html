@@ -12,19 +12,19 @@
 <div id="container" class="container-fluid">
 <div id="content">
 
-<h1>Using Models and Templates</h1>
+<h1>使用Models和Templates</h1>
 <p>
-You can build a diagram of nodes and links programmatically.
-But <b>GoJS</b> offers a way to build diagrams in a more declarative manner.
-You only provide the node and link data (i.e. the model) necessary for the diagram
-and instances of parts (i.e. the templates) that are automatically copied into the diagram.
-Those templates may be parameterized by properties of the node and link data.
+你可以通过编程的方式构建diagram的nodes和links
+但是<b>GoJS</b>提供了一种以更具声明性的方式构建diagrams的方法
+您只提供diagram所需的node和link数据(即model)
+以及自动复制到diagram中的part(即templates)的实例。
+这些模板可以由node和link数据的属性进行参数化。
 </p>
 
-<h2 id="BuildingDiagramsWithCode">Building diagrams with code</h2>
+<h2 id="BuildingDiagramsWithCode">使用代码构建diagrams</h2>
 <p>
-Let us try to build two nodes and connect them with a link.
-Here is one way of doing that:
+  让我们尝试构建两个节点，并用一个链接将它们连接起来。
+  这里有一种方法:
 </p>
 <pre class="lang-js" id="twoNodesOneLinkCode">
   var node1 =
@@ -57,13 +57,12 @@ Here is one way of doing that:
 </pre>
 <script>goCode("twoNodesOneLinkCode", 250, 150)</script>
 <p>
-This produces a nice, simple diagram.
-If you drag one of the nodes, you will see that the link remains connected to it.
+  这将产生一个漂亮，简单的图表。如果拖动节点之一，如果你拖动其中一个节点，你将看到该链接仍然连接到它。
 </p>
 <p>
-Although this way of building a diagram will work, it will not scale up well when creating large diagrams.
-Normally you will want a varying number of nodes each of which is very similar to the others.
-It would be better to share the construction of the node but parameterize a few things where the values should vary.
+  尽管这样构建的diagram可以工作，但是在创建大型图表时，它不能很好的扩展。
+  通常你需要不同数量的节点，每个节点与其他节点非常相似。
+  最好是共享节点的构造，但参数化一些值该变化的地方
 </p>
 <p>
 One possibility would be put the code to build a Node into a function that returned a fully constructed Node,

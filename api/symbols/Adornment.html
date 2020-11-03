@@ -114,34 +114,26 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>An Adornment is a special kind of <a href="Part.html">Part</a> that is associated with another Part,
-					the <a href="Adornment.html#adornedPart">Adornment.adornedPart</a>.</p>
-					<p>Adornments are normally associated with a particular <a href="GraphObject.html">GraphObject</a> in the adorned Part --
-						that is the value of <a href="Adornment.html#adornedObject">adornedObject</a>.
-					However, the <a href="Adornment.html#adornedObject">adornedObject</a> may be null, in which case the <a href="Adornment.html#adornedPart">adornedPart</a> will also be null.</p>
-					<p>The area occupied by the adorned object is represented in the Adornment&#39;s visual tree by a <a href="Placeholder.html">Placeholder</a>.
-						The placeholder is always the <a href="Part.html#locationObject">Part.locationObject</a>,
-						although you may specify any <a href="Spot.html">Spot</a> as the <a href="Part.html#locationSpot">Part.locationSpot</a>.
-					An adornment need not have a placeholder, but it may have at most one.</p>
-					<p>Adornments can be distinguished by their <a href="Part.html#category">Part.category</a>.
-						This property can be an arbitrary string value determined by the code creating the adornment,
-						typically a tool that wants to be able to tell various adornments apart from each other.
-					Use the <a href="Part.html#findAdornment">Part.findAdornment</a> method to find an adornment for a part of a given category.</p>
-					<p>For example, one of the Adornments created by <a href="Part.html#updateAdornments">Part.updateAdornments</a> when the part
-						<a href="Part.html#isSelected">Part.isSelected</a> has the <a href="Part.html#category">Part.category</a> of &quot;Selection&quot;.
-						Those created by <a href="ResizingTool.html#updateAdornments">ResizingTool.updateAdornments</a> have a category of &quot;Resize&quot;
-					and normally contain eight resize handles.</p>
-					<p>Besides the selection Adornment and tool Adornments, Adornments are also used for
-						context menus and tooltips.
-						The <a href="Adornment.html#adornedObject">adornedObject</a> in such cases refers to the <a href="GraphObject.html">GraphObject</a> to which the
-					the context menu or tooltip applies.</p>
-					<p>There cannot be any links connected to an Adornment,
-					nor can an Adornment have members or be a member of a group.</p>
-					<p>An Adornment cannot have its own Adornments.
-					An Adornment cannot be selected.</p>
-					<p>Adornments are not positioned by a <a href="Layout.html">Layout</a> because they are normally positioned
-					according to the Part that they adorn.</p>
-					<p>For more discussion and examples, see <a href="../../intro/selection.html">Selection</a>,
+					<p>装饰是一个特殊的 <a href="Part.html">Part</a> 它与另一个
+					<a href="Adornment.html#adornedPart">Adornment.adornedPart</a> 相关联.</p>
+					<p>装饰通常与 adorned Part 中特定的 <a href="GraphObject.html">GraphObject</a> 相关联  --
+						这个值就是 <a href="Adornment.html#adornedObject">adornedObject</a>.
+				    然而 <a href="Adornment.html#adornedObject">adornedObject</a> 可能为 null, 在这种情况下 <a href="Adornment.html#adornedPart">adornedPart</a> 也将为null.</p>
+					<p>被 adorned object 所占据的区域由 <a href="Placeholder.html">Placeholder</a> 在装饰的视觉树中展示.
+						placeholder 总是 <a href="Part.html#locationObject">Part.locationObject</a>,
+						尽管你可以指定任何一个 <a href="Spot.html">Spot</a> 作为 <a href="Part.html#locationSpot">Part.locationSpot</a>.
+					  装饰不一定需要一个 placeholder, 但是最多只有一个.</p>
+					<p>装饰可以通过 <a href="Part.html#category">Part.category</a> 区分.
+            此属性可以是任意确定能创建装饰的字符串值,
+            通常是一种希望能够区分各种装饰的工具使用 <a href="Part.html#findAdornment">Part.findAdornment</a> 方法去查找给定category的装饰part.</p>
+          <p>例如, 当part有<a href="Part.html#isSelected">Part.isSelected</a>  <a href="Part.html#category">Part.category</a> 是&quot;Selection&quot;
+            <a href="Part.html#updateAdornments">Part.updateAdornments</a>将创建一个装饰 
+					通常包含8个调整大小的handles.</p>
+					<p>除了选择装饰和工具装饰，装饰也用于上下文菜单和工具提示。在这种情况下， <a href="Adornment.html#adornedObject">adornedObject</a> 指上下文菜单或工具提示应用的 <a href="GraphObject.html">GraphObject</a> 。</p>
+					<p>Adornment不能有任何连接，也不能有成员或是组中的一员。</p>
+					<p>装饰不能拥有自己的装饰.装饰不能被选中.</p>
+					<p>装饰物不被<a href="Layout.html">Layout</a>定位因为它们通常是根据它们所装饰的部分来定位的.</p>
+					<p>有关更多讨论跟示例, 请参见 <a href="../../intro/selection.html">Selection</a>,
 						<a href="../../intro/toolTips.html">ToolTips</a>,
 						<a href="../../intro/contextMenus.html">Context Menus</a>, and
 					<a href="../../intro/tools.html">Tools</a>.</p>
