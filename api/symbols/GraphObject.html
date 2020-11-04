@@ -160,40 +160,37 @@
 					</ul>
 					<p class="boxread">
             有关使用信息和示例，请参见 <a href="../../intro/sizing.html">sizing</a> 的简介页面。
-						<h3>GraphObject Size and Position within Panel</h3>
-						Several GraphObject properties guide the containing <a href="Panel.html">Panel</a> for how to size and position the object within the panel.
+            <h3>GraphObject的大小和在Panel中的位置</h3>
+            几个GraphObject属性可指导所包含的 <a href="Panel.html">Panel</a> 如何确定对象在面板中的大小和位置。
 						<ul>
-							<li>The <a href="GraphObject.html#alignment">alignment</a> specifies where the object should be relative to some area of the panel.
-							For example, an alignment value of <a href="Spot.html#static-BottomRight">Spot.BottomRight</a> means that the GraphObject should be at the bottom-right corner of the panel.</li>
-							<li>The <a href="GraphObject.html#alignmentFocus">alignmentFocus</a> specifies precisely which point of the GraphObject should be aligned at the <a href="GraphObject.html#alignment">alignment</a> spot.</li>
-							<li>The <a href="GraphObject.html#column">column</a> and <a href="GraphObject.html#row">row</a> properties are only used by <a href="Panel.html#static-Table">Panel.Table</a> panels, to indicate where the GraphObject should be.</li>
-							<li>The <a href="GraphObject.html#columnSpan">columnSpan</a> and <a href="GraphObject.html#rowSpan">rowSpan</a> properties tell the <a href="Panel.html#static-Table">Panel.Table</a> panel how large the GraphObject should be.</li>
-							<li>The <a href="GraphObject.html#isPanelMain">isPanelMain</a> property indicates to some kinds of <a href="Panel.html">Panel</a>s that the GraphObject is the &quot;primary&quot; object
-							that other panel children should be measured with or positioned in.</li>
-							<li>The <a href="GraphObject.html#margin">margin</a> property tells the containing <a href="Panel.html">Panel</a> how much extra space to put around this GraphObject.</li>
-							<li>The <a href="GraphObject.html#position">position</a> property is used to determine the relative position of GraphObjects when they are elements of a <a href="Panel.html#static-Position">Panel.Position</a> panel.</li>
+							<li><a href="GraphObject.html#alignment">alignment</a> 指定对象应该相对于Panel的某个区域的位置。
+							例如, alignment值是 <a href="Spot.html#static-BottomRight">Spot.BottomRight</a> 表示GraphObject应该在面板的右下角。</li>
+							<li><a href="GraphObject.html#alignmentFocus">alignmentFocus</a> 精确指定GraphObject的那个点应该在 <a href="GraphObject.html#alignment">对齐点</a> 对齐</li>
+							<li><a href="GraphObject.html#column">column</a> 和 <a href="GraphObject.html#row">row</a> 属性仅在 <a href="Panel.html#static-Table">Panel.Table</a> 面板中使用, 以表示GraphObject的位置.</li>
+							<li><a href="GraphObject.html#columnSpan">columnSpan</a> 和 <a href="GraphObject.html#rowSpan">rowSpan</a> 属性告诉 <a href="Panel.html#static-Table">Panel.Table</a> 面板GraphObject应有多大</li>
+							<li><a href="GraphObject.html#isPanelMain">isPanelMain</a> 属性向某些其他<a href="Panel.html">Panel</a>s表明GraphObject是其他面板子级的测量或者定位的&quot;主要&quot;对象</li>
+							<li><a href="GraphObject.html#margin">margin</a> 属性告诉包含 <a href="Panel.html">Panel</a> 的GraphObject周围需要多大的额外空间.</li>
+							<li><a href="GraphObject.html#position">position</a> 属性用于确定GraphObjects是<a href="Panel.html#static-Position">Panel.Position</a> 面板元素时的相对位置.</li>
 						</ul>
 						<p class="boxread">
-							See <a href="../../intro/panels.html">the Introduction page on Panels</a>
-							and <a href="../../intro/tablePanels.html">Table Panels</a> for an overview of the capabilities.
-							<h3>Top-level GraphObjects are Parts</h3>
-							<p>A <a href="Part.html">Part</a> is a derived class of GraphObject representing a top-level object.
-								All top-level GraphObjects must be Parts, and Node, Link, Group, and Adornment derive from Part.
-								The position of a Part determines the point of the Part&#39;s top-left corner in document coordinates.
-								See also <a href="Part.html#location">Part.location</a>, which supports an way to specify the position based on a different
-							spot of a different element within the Part.</p>
-							<p>There are several read-only properties that help navigate up the visual tree.</p>
+							有关内容请参阅 <a href="../../intro/panels.html">Panels</a>
+							和 <a href="../../intro/tablePanels.html">Table Panels</a> 的简介页面
+							<h3>顶级GraphObjects是Parts</h3>
+							<p><a href="Part.html">Part</a> 是GraphObject的派生类，表示顶级对象。
+                所有顶级GraphObjects必须是Parts,并且Node, Link, Group, 和 Adornment 均从Part派生.
+                Part的position决定了Part&#39;s左上角在文档坐标的位置
+								另请参阅<a href="Part.html#location">Part.location</a>, 它支持基于Part中不同元素的不同位置指定位置的方法。</p>
+							<p>有几个只读属性可以帮助在可视化树中导航</p>
 							<ul>
-								<li><a href="GraphObject.html#panel">panel</a> returns the <a href="Panel.html">Panel</a> that directly contains this GraphObject</li>
-								<li><a href="GraphObject.html#part">part</a> returns the <a href="Part.html">Part</a> that this GraphObject is in, perhaps via intervening Panels;
-								this is frequently used in order to get to the model data, <a href="Panel.html#data">Panel.data</a></li>
-								<li><a href="GraphObject.html#layer">layer</a> returns the <a href="Layer.html">Layer</a> that this GraphObject&#39;s Part is in</li>
-								<li><a href="GraphObject.html#diagram">diagram</a> returns the <a href="Diagram.html">Diagram</a> that this GraphObject&#39;s Part&#39;s Layer is in</li>
+								<li><a href="GraphObject.html#panel">panel</a> 返回直接包含此GraphObject的 <a href="Panel.html">Panel</a></li>
+								<li><a href="GraphObject.html#part">part</a> 返回此GraphObject所在的 <a href="Part.html">Part</a> , 也许是通过中间的Panels;
+                  这通常用于获取模型数据 <a href="Panel.html#data">Panel.data</a></li>
+								<li><a href="GraphObject.html#layer">layer</a> 返回此GraphObject&#39;s的Part所在的 <a href="Layer.html">Layer</a></li>
+								<li><a href="GraphObject.html#diagram">diagram</a> 返回此GraphObject&#39;s的Part层所在的 <a href="Diagram.html">Diagram</a></li>
 							</ul>
 							<p class="boxrun">
-								See <a href="../../samples/visualTree.html">the Visual Tree sample</a>
-								for a diagram displaying the visual tree of a simple diagram.
-								<h3>User Interaction</h3>
+                有关显示简单图的可视树的图，请参见 <a href="../../samples/visualTree.html">Visual Tree sample</a>。
+								<h3>用户交互</h3>
 								<p>GraphObjects have several properties enabling dynamic customizable interaction.
 									There are several definable functions that execute on input events: <a href="GraphObject.html#mouseDragEnter">mouseDragEnter</a>,
 									<a href="GraphObject.html#mouseDragLeave">mouseDragLeave</a>, <a href="GraphObject.html#mouseDrop">mouseDrop</a>, <a href="GraphObject.html#mouseEnter">mouseEnter</a>, <a href="GraphObject.html#mouseHold">mouseHold</a>,
@@ -258,32 +255,28 @@
 										and <a href="../../intro/links.html">link routing</a>
 										and <a href="../../intro/connectionPoints.html">link connection points</a>
 										for port usage information and examples.
-										<h3>GraphObjects as labels on a Link</h3>
-										<p>GraphObjects can also be used as &quot;labels&quot; on a <a href="Link.html">Link</a>.
-											In addition to the <a href="GraphObject.html#alignmentFocus">alignmentFocus</a> property, these properties direct a Link Panel
-										to position a &quot;label&quot; at a particular point along the route of the link, in a particular manner:</p>
+										<h3>GraphObjects作为链接上的标签</h3>
+										<p>GraphObjects也可以用作 <a href="Link.html">Link</a> 上的&quot;标签&quot;
+											除了 <a href="GraphObject.html#alignmentFocus">alignmentFocus</a> 属性, 这些属性还引导链接面板以特定方式将“标签”放置在沿着链接路线的特定点上:</p>
 										<ul>
-											<li><a href="GraphObject.html#segmentIndex">segmentIndex</a>, which segment the label should be on</li>
-											<li><a href="GraphObject.html#segmentFraction">segmentFraction</a>, how far along the segment the label should be</li>
-											<li><a href="GraphObject.html#segmentOffset">segmentOffset</a>, where the label should be positioned relative to the segment</li>
-											<li><a href="GraphObject.html#segmentOrientation">segmentOrientation</a>, how the label should be rotated relative to the angle of the segment</li>
+											<li><a href="GraphObject.html#segmentIndex">segmentIndex</a>, 标签应该放在哪个部分</li>
+											<li><a href="GraphObject.html#segmentFraction">segmentFraction</a>, 标签应该沿着线段多远</li>
+											<li><a href="GraphObject.html#segmentOffset">segmentOffset</a>, 标签应相对于线段定位的位置</li>
+											<li><a href="GraphObject.html#segmentOrientation">segmentOrientation</a>, 标签应如何相对于线段角度旋转</li>
 										</ul>
 										<p class="boxread">
-											See <a href="../../intro/linkLabels.html">the Introduction page on link labels</a>
-											for examples of how to make use of labels on Links.
-											<h3>Interactive Behavior</h3>
-											<p>There are several properties that specify fairly high-level interactive behavior:</p>
+											有关如何在链接上使用标签的示例，请参见 <a href="../../intro/linkLabels.html"> link labels</a> 简介页面。 
+											<h3>互动行为</h3>
+											<p>有几个属性指定了相当高级的交互行为:</p>
 											<ul>
-												<li><a href="GraphObject.html#cursor">cursor</a>, a CSS string specifying a cursor</li>
-												<li><a href="GraphObject.html#contextMenu">contextMenu</a>, an <a href="Adornment.html">Adornment</a></li>
-												<li><a href="GraphObject.html#toolTip">toolTip</a>, an <a href="Adornment.html">Adornment</a></li>
+												<li><a href="GraphObject.html#cursor">cursor</a>, 指定光标的字符串</li>
+												<li><a href="GraphObject.html#contextMenu">contextMenu</a>, 一个 <a href="Adornment.html">Adornment</a></li>
+												<li><a href="GraphObject.html#toolTip">toolTip</a>, 一个 <a href="Adornment.html">Adornment</a></li>
 											</ul>
 											<p class="boxread">
-												For more information, please read <a href="../../intro/contextMenus.html">the Introduction page about Context Menus</a>
-												and <a href="../../intro/toolTips.html">the page about ToolTips</a>.
+                        更多信息，请阅读 <a href="../../intro/contextMenus.html">Context Menus</a> 和 <a href="../../intro/toolTips.html">ToolTips</a> 的介绍页面
 												<p class="boxrun">
-													Also see <a href="../../samples/basic.html">the Basic sample</a>
-													for examples of how to show context menus and tooltips.
+                          另外，请参阅<a href="../../samples/basic.html">基本示例</a>，了解如何显示上下文菜单和工具提示。
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
