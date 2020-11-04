@@ -130,7 +130,7 @@
             <a href="Part.html#updateAdornments">Part.updateAdornments</a>将创建一个装饰 
 					通常包含8个调整大小的handles.</p>
 					<p>除了选择装饰和工具装饰，装饰也用于上下文菜单和工具提示。在这种情况下， <a href="Adornment.html#adornedObject">adornedObject</a> 指上下文菜单或工具提示应用的 <a href="GraphObject.html">GraphObject</a> 。</p>
-					<p>Adornment不能有任何连接，也不能有成员或是组中的一员。</p>
+					<p>装饰不能有任何连接，也不能有成员或是组中的一员。</p>
 					<p>装饰不能拥有自己的装饰.装饰不能被选中.</p>
 					<p>装饰物不被<a href="Layout.html">Layout</a>定位因为它们通常是根据它们所装饰的部分来定位的.</p>
 					<p>有关更多讨论跟示例, 请参见 <a href="../../intro/selection.html">Selection</a>,
@@ -179,7 +179,7 @@
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> type: <a href="PanelLayout.html" class="tsd-signature-type">PanelLayout</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>if not supplied, the default Panel type is <a href="Panel.html#static-Position">Panel.Position</a>.</p>
+										<p>如果没有提供,则默认的Panel类型是 <a href="Panel.html#static-Position">Panel.Position</a>.</p>
 									</div>
 								</li>
 							</ul>
@@ -198,9 +198,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the <a href="GraphObject.html">GraphObject</a> that is adorned.
-									Setting this property updates the adorned object&#39;s Part by calling <a href="Part.html#addAdornment">Part.addAdornment</a>.
-								This may be null if the Adornment does not adorn a particular object.</p>
+                <p>设置或者获取装饰的 <a href="GraphObject.html">GraphObject</a>.
+                  通过调用 <a href="Part.html#addAdornment">Part.addAdornment</a> 可以设置更新adorned object&#39;s
+								</p>
 							</div>
 						</li>
 					</ul>
@@ -214,8 +214,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This read-only property returns the <a href="Part.html">Part</a> that contains the adorned object.
-								This will be null if the <a href="Adornment.html#adornedObject">adornedObject</a> is null.</p>
+								<p>这是一个只读属性返回 <a href="Part.html">Part</a> 包含的 adorned object.
+								如果 <a href="Adornment.html#adornedObject">adornedObject</a> 值为null，此值也为null.</p>
 							</div>
 						</li>
 					</ul>
@@ -229,8 +229,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This read-only property returns a <a href="Placeholder.html">Placeholder</a> that this Adornment may contain in its visual tree.
-								This may be null if there is no such placeholder object.</p>
+								<p>这是一个只读属性返回此装饰可能包含在其可视化树中的 <a href="Placeholder.html">Placeholder</a>.
+								如果没有placeholder object则这个值可能为null.</p>
 							</div>
 						</li>
 					</ul>
