@@ -85,7 +85,7 @@
 					<b>GoJS</b>&reg; Diagramming Components<br/>version 2.1.26<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>
 				</div>
 				<div>
-					<h1>Class Shape</h1>
+					<h1>形状类</h1>
 				</div>
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
+				<h3>层次结构</h3>
 				<ul class="tsd-hierarchy">
 					<li>
 						<a href="GraphObject.html" class="tsd-signature-type">GraphObject</a>
@@ -109,15 +109,13 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>A Shape is a <a href="GraphObject.html">GraphObject</a> that shows a geometric figure.
-						The <a href="Geometry.html">Geometry</a> determines what is drawn;
-						the properties <a href="Shape.html#fill">fill</a> and <a href="Shape.html#stroke">stroke</a>
-					(and other stroke properties) determine how it is drawn.</p>
-					<p>There are generally two types of shapes: Those that use a custom <a href="Geometry.html">Geometry</a> by setting
-						<a href="Shape.html#geometry">Shape.geometry</a>, and those that receive an automatically generated Geometry using the value of
-						<a href="Shape.html#figure">figure</a>, <a href="Shape.html#toArrow">toArrow</a>, or <a href="Shape.html#fromArrow">fromArrow</a>. An explicitly set Geometry always supersedes
-					the figure and arrowhead properties.</p>
-					<p>Some created Shapes:</p>
+					<p>形状是显示几何图形的<a href="GraphObject.html">GraphObject</a> ，
+						<a href="Geometry.html">Geometry</a> 决定了绘制的内容
+						<a href="Shape.html#fill">fill</a> 和 <a href="Shape.html#stroke">stroke</a> (以及其他 stroke 属性)确定了如何绘制.</p>
+					<p>通常有两种类型的形状: 通过设置 <a href="Shape.html#geometry">Shape.geometry</a> 使用自定义 <a href="Geometry.html">Geometry</a> 的形状以及使用 <a href="Shape.html#figure">figure</a>, <a href="Shape.html#toArrow">toArrow</a>, 或者 <a href="Shape.html#fromArrow">fromArrow</a> 的值自动生成的形状。
+            显示设置的Geometry总是取代figure和arrowhead属性
+					</p>
+					<p>创建一些形状 :</p>
 					<pre><code class="hljs js"><span class="hljs-keyword">var</span> $ = go.GraphObject.make;  <span class="hljs-comment">// for conciseness in defining GraphObjects</span>
 
 <span class="hljs-comment">// A shape with the figure set to RoundedRectangle:</span>
@@ -146,25 +144,25 @@ myDiagram.linkTemplate =
       { <span class="hljs-attr">toArrow</span>: <span class="hljs-string">"Standard"</span>, <span class="hljs-attr">fill</span>: <span class="hljs-string">'gray'</span>, <span class="hljs-attr">stroke</span>: <span class="hljs-literal">null</span> })
   );</code></pre>
 					<p class="box">
-						You can see more custom geometry examples and read about geometryString
-						on the <a href="../../intro/geometry.html">Geometry Path Strings Introduction page.</a>
-						<p>When automatically generating a Shape <a href="Geometry.html">Geometry</a>, the value of <a href="Shape.html#toArrow">toArrow</a> takes precedence,
-							then <a href="Shape.html#fromArrow">fromArrow</a>, then <a href="Shape.html#figure">figure</a>. If the value of <a href="Shape.html#toArrow">toArrow</a> or <a href="Shape.html#fromArrow">fromArrow</a> is &quot;None&quot;
-						then it is ignored, and the &quot;None&quot; value of <a href="Shape.html#figure">figure</a> is identical to &quot;Rectangle&quot;.</p>
-						<p>All of the predefined figures are shown in the <a href="../../samples/shapes.html">Shapes sample</a>.
-							You can define your own named figures by calling the static function <a href="Shape.html#static-defineFigureGenerator">Shape.defineFigureGenerator</a>.
-						Get a <a href="Map.html">Map</a> of named figures by calling the static function <a href="Shape.html#static-getFigureGenerators">Shape.getFigureGenerators</a>.</p>
-						<p>All of the predefined arrowheads are shown in the <a href="../../samples/arrowheads.html">Arrowheads sample</a>.
-							You can define your own named arrowheads by calling the static function <a href="Shape.html#static-defineArrowheadGeometry">Shape.defineArrowheadGeometry</a>.
-						Get a <a href="Map.html">Map</a> of named arrowheads by calling the static function <a href="Shape.html#static-getArrowheadGeometries">Shape.getArrowheadGeometries</a>.</p>
-						<p>You can see a copy of all of the built-in arrowhead definitions in this file: <a href="../../extensions/Arrowheads.js">Arrowheads.js</a>.</p>
-						<p>The Shape properties <a href="Shape.html#parameter1">parameter1</a>, and <a href="Shape.html#parameter2">parameter2</a> determine details of the
-							construction of some <a href="Shape.html#figure">figure</a> geometries.
-							Specifically, they often set the <a href="Shape.html#spot1">spot1</a>, <a href="Shape.html#spot2">spot2</a> for the Shape.
-							These spots determine the &quot;inner area&quot; of an Auto panel when a Shape is the main object.
-						See the <a href="../../intro/panels.html">Auto Panels section of the Panels Introduction page</a> for more details.</p>
-						<p>Shapes use their geometric bounds when determining hit testing,
-						but use rectangular bounds when participating in (panel) layouts.</p>
+            您可以在 <a href="../../intro/geometry.html">Geometry Strings</a> 简介页面上查看更多自定义几何示例，并阅读有关geometryString的信息。
+						<p>自动生成形状时<a href="Geometry.html">Geometry</a>, <a href="Shape.html#toArrow">toArrow</a> 的值优先,
+							然后是 <a href="Shape.html#fromArrow">fromArrow</a>, 然后是 <a href="Shape.html#figure">figure</a>.如果 <a href="Shape.html#toArrow">toArrow</a> 或者 <a href="Shape.html#fromArrow">fromArrow</a> 的值为&quot;None&quot;
+						则被忽略, 而 <a href="Shape.html#figure">figure</a> 的&quot;None&quot;值与&quot;Rectangle&quot;值相同.</p>
+						<p><a href="../../samples/shapes.html">形状示例</a> 中显示了所有预定义的图形。
+						你可以通过调用静态函数 <a href="Shape.html#static-defineFigureGenerator">Shape.defineFigureGenerator</a> 来定义已经命名的图形。
+						你可以通过调用静态函数 <a href="Shape.html#static-getFigureGenerators">Shape.getFigureGenerators</a> 获取已经命名形状的 <a href="Map.html">Map</a></p>
+						<p>所有预定义的箭头都显示在 <a href="../../samples/arrowheads.html">Arrowheads 示例</a> 中。
+              你可以通过调用静态函数 <a href="Shape.html#static-defineArrowheadGeometry">Shape.defineArrowheadGeometry</a> 来定义自己命名的箭头
+              通过调用静态函数 <a href="Shape.html#static-getArrowheadGeometries">Shape.getArrowheadGeometries</a>
+              获取命名箭头的 <a href="Map.html">Map</a>
+						</p>
+						<p>你可以在这个文件中看到所有内置箭头定义的副本: <a href="../../extensions/Arrowheads.js">Arrowheads.js</a>.</p>
+						<p>形状属性 <a href="Shape.html#parameter1">parameter1</a>, 和 <a href="Shape.html#parameter2">parameter2</a> 可以确定一些 <a href="Shape.html#figure">figure</a>
+							几何形状的构造细节.
+							具体来说他们经常为形状设置 <a href="Shape.html#spot1">spot1</a>, <a href="Shape.html#spot2">spot2</a>
+							当形状是主要对象时，这些点决定了自动面板的&quot;内部区域&quot;
+						更多有关信息，请参见 <a href="../../intro/panels.html">Panels</a> 的简介页面自动面板部分.</p>
+						<p>形状在确定命中测试时使用它们的几何边界，但在参与(面板)布局时使用矩形边界。</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -232,8 +230,8 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>A newly constructed <a href="Shape.html">Shape</a> has a default <a href="Shape.html#figure">figure</a> of &quot;None&quot;,
-								which constructs a rectangular geometry, and is filled and stroked with a black brush.</p>
+								<p>新构建的 <a href="Shape.html">Shape</a> 有一个默认的 <a href="Shape.html#figure">figure</a> 是 &quot;None&quot;,
+							  它将构建一个矩形, 并且用黑色画笔填充和描边</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="Shape.html" class="tsd-signature-type">Shape</a></h4>
 						</li>
@@ -250,14 +248,13 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the figure name, used to construct a <a href="Geometry.html">Geometry</a>.
-								The value must be a string. The default value is &quot;None&quot;.</p>
-								<p>The name can be any case but will always be canonicalized when set. For instance,
-									setting &quot;roundedrectangle&quot; will set the value of figure to &quot;RoundedRectangle&quot;.
-								All of the predefined figures are shown in the <a href="../../samples/shapes.html">Shapes sample</a>.</p>
-								<p>At most one of the following three properties may be set to a non-&quot;None&quot; value at the same time on the same shape:
+								<p>获取或者设置figure的名称,用于构造一个 <a href="Geometry.html">Geometry</a>
+								值必须是字符串，默认值是 &quot;None&quot;.</p>
+								<p>名称可以是任何值，但设置时始终会被规范化。例如，设置 &quot;roundedrectangle&quot; 将会将figure值设置为 &quot;RoundedRectangle&quot;.
+                所有预定义的图形都展示在 <a href="../../samples/shapes.html">形状示例</a> 中。</p>
+								<p>在同一形状上，最多可以同时将以下三个属性中的一个设置为非&quot;None&quot;:
 								<a href="Shape.html#figure">figure</a>, <a href="Shape.html#toArrow">toArrow</a>, <a href="Shape.html#fromArrow">fromArrow</a>.</p>
-								<p>You can define your own named figures by calling the static function <a href="Shape.html#static-defineFigureGenerator">Shape.defineFigureGenerator</a>.</p>
+								<p>你可以通过静态函数 <a href="Shape.html#static-defineFigureGenerator">Shape.defineFigureGenerator</a> 来定义自己的已命名图形</p>
 							</div>
 						</li>
 					</ul>
@@ -851,10 +848,8 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function returns a read-only Map of named arrowhead geometries.
-									The keys are arrowhead names.
-								The values are <a href="Geometry.html">Geometry</a> objects.</p>
-								<p>The predefined arrowheads can be seen in the <a href="../../samples/arrowheads.html">Arrowheads sample</a>.</p>
+								<p>这个静态函数返回已命名箭头形状的只读Map. key是箭头名称， value是 <a href="Geometry.html">Geometry</a> 对象</p>
+								<p>在 <a href="../../samples/arrowheads.html">箭头示例</a> 中可以看到预定义的箭头。 </p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.5</p>
@@ -877,11 +872,8 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function returns a read-only Map of named geometry generators.
-									The keys are figure names.
-									The values are either string synonyms for other figure names, or functions
-								that take a <a href="Shape.html">Shape</a> and a width and a height and return a <a href="Geometry.html">Geometry</a>.</p>
-								<p>The predefined shape figures can be seen in the <a href="../../samples/shapes.html">Shapes sample</a>.</p>
+								<p>这个静态函数返回一个已命名几何生成器的只读Map，key是形状名字，value要么是其他 <a href="Shape.html">Shape</a> 名称的同义词字符串，要么是具有形状、宽度和高度并返回 <a href="Geometry.html">Geometry</a> 的函数。</p>
+								<p>在 <a href="../../samples/shapes.html">形状示例</a> 中可以看到预定义的形状图形</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.5</p>
