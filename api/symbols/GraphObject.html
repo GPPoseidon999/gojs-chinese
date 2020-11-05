@@ -191,12 +191,11 @@
 							<p class="boxrun">
                 有关显示简单图的可视树的图，请参见 <a href="../../samples/visualTree.html">Visual Tree sample</a>。
 								<h3>用户交互</h3>
-								<p>GraphObjects have several properties enabling dynamic customizable interaction.
-									There are several definable functions that execute on input events: <a href="GraphObject.html#mouseDragEnter">mouseDragEnter</a>,
+								<p>GraphObjects有几个属性支持动态自定义交互
+									有几个可定义的函数在输入事件上执行: <a href="GraphObject.html#mouseDragEnter">mouseDragEnter</a>,
 									<a href="GraphObject.html#mouseDragLeave">mouseDragLeave</a>, <a href="GraphObject.html#mouseDrop">mouseDrop</a>, <a href="GraphObject.html#mouseEnter">mouseEnter</a>, <a href="GraphObject.html#mouseHold">mouseHold</a>,
-									<a href="GraphObject.html#mouseHover">mouseHover</a>, <a href="GraphObject.html#mouseLeave">mouseLeave</a>, and <a href="GraphObject.html#mouseOver">mouseOver</a>.
-									For example, you could define mouse enter-and-leave event handlers to modify the appearance of a link
-								as the mouse passes over it:</p>
+									<a href="GraphObject.html#mouseHover">mouseHover</a>, <a href="GraphObject.html#mouseLeave">mouseLeave</a>, 和 <a href="GraphObject.html#mouseOver">mouseOver</a>.
+								例如，你可以定义鼠标进入和离开事件处理程序来修改一个链接的外观，当鼠标经过它:</p>
 								<pre><code class="hljs js">myDiagram.linkTemplate =
   $(go.Link,
     $(go.Shape,
@@ -205,11 +204,10 @@
         mouseEnter: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e, obj</span>) </span>{ obj.strokeWidth = <span class="hljs-number">4</span>; obj.stroke = <span class="hljs-string">"dodgerblue"</span>; },
         <span class="hljs-attr">mouseLeave</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e, obj</span>) </span>{ obj.strokeWidth = <span class="hljs-number">2</span>; obj.stroke = <span class="hljs-string">"gray"</span>; }
       }));</code></pre>
-								<p>There are <a href="GraphObject.html#click">click</a>, <a href="GraphObject.html#doubleClick">doubleClick</a>, and <a href="GraphObject.html#contextClick">contextClick</a> functions
-									that execute when a user appropriately clicks the GraphObject.
-									These click functions are called with the <a href="InputEvent.html">InputEvent</a> as the first argument
-									and this GraphObject as the second argument.
-								For example, you could define a click event handler on a Node that goes to another page:</p>
+								<p>当用户适当的单击GraphObject时，将执行 <a href="GraphObject.html#click">click</a>, <a href="GraphObject.html#doubleClick">doubleClick</a>, 和 <a href="GraphObject.html#contextClick">contextClick</a> 函数
+									这些单击函数以 <a href="InputEvent.html">InputEvent</a> 作为第一个参数
+									以GraphObject作为第二个参数。
+                  例如，可以在节点上定义一个指向另一个页面的单击事件:</p>
 								<pre><code class="hljs js">myDiagram.nodeTemplate =
   $(go.Node, <span class="hljs-string">"Auto"</span>,
     $(go.Shape, <span class="hljs-string">"RoundedRectangle"</span>,
@@ -222,33 +220,28 @@
         <span class="hljs-built_in">window</span>.open(<span class="hljs-string">"https://en.wikipedia.org/Wiki/"</span> + node.data.key);
       }
     });</code></pre>
-								<p>Note: you may prefer defining <a href="DiagramEvent.html">DiagramEvent</a> listeners on the <a href="Diagram.html">Diagram</a>
-									rather than on individual GraphObjects.  DiagramEvents also include more general events that
-								do not necessarily correspond to input events.</p>
-								<p>The properties <a href="GraphObject.html#actionCancel">actionCancel</a>, <a href="GraphObject.html#actionDown">actionDown</a>, <a href="GraphObject.html#actionMove">actionMove</a>,
-									and <a href="GraphObject.html#actionUp">actionUp</a> define functions to execute when the GraphObject&#39;s <a href="GraphObject.html#isActionable">isActionable</a> property
-								is set to true (default false). See the <a href="ActionTool.html">ActionTool</a> for more detail.</p>
+								<p>注意: 你可能更喜欢在 <a href="Diagram.html">Diagram</a> 上定义<a href="DiagramEvent.html">DiagramEvent</a> 侦听器，而不是在单个GraphObjects上定义
+                DiagramEvents还包括一些不一定与输入事件对应的通用事件。</p>
+								<p>属性 <a href="GraphObject.html#actionCancel">actionCancel</a>, <a href="GraphObject.html#actionDown">actionDown</a>, <a href="GraphObject.html#actionMove">actionMove</a>,
+									和 <a href="GraphObject.html#actionUp">actionUp</a> 定义了当GraphObject&#39;s的 <a href="GraphObject.html#isActionable">isActionable</a> 属性设置为true(默认 false)时执行的函数 更多细节请参见 <a href="ActionTool.html">ActionTool</a></p>
 								<p class="boxread">
-									See <a href="../../intro/events.html">the Introduction page on Events</a> for a more general discussion.
-									<h3>GraphObjects as Ports</h3>
-									<p>In GoJS, <a href="Link.html">Link</a>s can only connect to elements within a <a href="Node.html">Node</a>
-										that are specified as &quot;ports&quot;, and by default the only port is the Node itself.
-										Setting the <a href="GraphObject.html#portId">portId</a> of a GraphObject inside a Node allows that object to act as a port.
-										Note: the only kind of model that can save which port a link is connected with, i.e. portIds that are not an empty string,
-										is a <a href="GraphLinksModel.html">GraphLinksModel</a> whose <a href="GraphLinksModel.html#linkFromPortIdProperty">GraphLinksModel.linkFromPortIdProperty</a> and
-									<a href="GraphLinksModel.html#linkToPortIdProperty">GraphLinksModel.linkToPortIdProperty</a> have been set to name properties on the link data objects.</p>
-									<p>GraphObjects have several properties that are only relevant when they are acting as ports.
-									These port-related properties are:</p>
+									更多的一般性讨论请参见 <a href="../../intro/events.html">Events</a> 的简介页面。
+									<h3>GraphObjects 作为 Ports</h3>
+									<p>在 GoJS, <a href="Link.html">Link</a>只能连接到指定为&quot;ports&quot;的<a href="Node.html">Node</a>中的元素，默认情况下，唯一的端口是node本身.
+                    在node中设置一个GraphObject的 <a href="GraphObject.html#portId">portId</a> 允许该对象充当端口                    
+										注意: 唯一一种可以保存链接所连接端口的模型,即不是空字符串的portIds是一个<a href="GraphLinksModel.html">GraphLinksModel</a> 其 <a href="GraphLinksModel.html#linkFromPortIdProperty">GraphLinksModel.linkFromPortIdProperty</a> 和
+									<a href="GraphLinksModel.html#linkToPortIdProperty">GraphLinksModel.linkToPortIdProperty</a> 已在链接数据对象上设置name属性.</p>
+									<p>GraphObjects 有几个属性，只有当它们充当端口时才相关，这些端口相关的属性是:</p>
 									<ul>
-										<li><a href="GraphObject.html#portId">portId</a>, which must be set to a string that is unique within the <a href="Node.html">Node</a>,
-										in order for this GraphObject to be treated as a &quot;port&quot;, rather than the whole node</li>
-										<li><a href="GraphObject.html#fromSpot">fromSpot</a> and <a href="GraphObject.html#toSpot">toSpot</a>, where a link should connect with this port</li>
-										<li><a href="GraphObject.html#fromEndSegmentLength">fromEndSegmentLength</a> and <a href="GraphObject.html#toEndSegmentLength">toEndSegmentLength</a>, the length of the link segment adjacent to this port</li>
-										<li><a href="GraphObject.html#fromShortLength">fromShortLength</a> and <a href="GraphObject.html#toShortLength">toShortLength</a>, the distance the link should terminate before touching this port</li>
-										<li><a href="GraphObject.html#fromLinkable">fromLinkable</a> and <a href="GraphObject.html#toLinkable">toLinkable</a>, whether the user may draw links connecting with this port</li>
-										<li><a href="GraphObject.html#fromLinkableDuplicates">fromLinkableDuplicates</a> and <a href="GraphObject.html#toLinkableDuplicates">toLinkableDuplicates</a>, whether the user may draw multiple links between the same pair of ports</li>
-										<li><a href="GraphObject.html#fromLinkableSelfNode">fromLinkableSelfNode</a> and <a href="GraphObject.html#toLinkableSelfNode">toLinkableSelfNode</a>, whether the user may draw a link between ports on the same node</li>
-										<li><a href="GraphObject.html#fromMaxLinks">fromMaxLinks</a> and <a href="GraphObject.html#toMaxLinks">toMaxLinks</a>, to limit the number of links connecting with this port in a particular direction</li>
+										<li><a href="GraphObject.html#portId">portId</a>,必须将其设置为 <a href="Node.html">Node</a> 内唯一的字符串,
+										以便将此GraphObject视为&quot;端口&quot;,而不是整个节点</li>
+										<li><a href="GraphObject.html#fromSpot">fromSpot</a> 和 <a href="GraphObject.html#toSpot">toSpot</a>, 链接应该连接到这个端口的哪里</li>
+										<li><a href="GraphObject.html#fromEndSegmentLength">fromEndSegmentLength</a> 和 <a href="GraphObject.html#toEndSegmentLength">toEndSegmentLength</a>, 与此端口相邻的链路段的长度</li>
+										<li><a href="GraphObject.html#fromShortLength">fromShortLength</a> 和 <a href="GraphObject.html#toShortLength">toShortLength</a>, 连接在接触此端口之前应该终止的距离</li>
+										<li><a href="GraphObject.html#fromLinkable">fromLinkable</a> 和 <a href="GraphObject.html#toLinkable">toLinkable</a>, 用户是否可以绘制连接到此端口的链接</li>
+										<li><a href="GraphObject.html#fromLinkableDuplicates">fromLinkableDuplicates</a> 和 <a href="GraphObject.html#toLinkableDuplicates">toLinkableDuplicates</a>,用户是否可以在同一对端口之间绘制多个链接</li>
+										<li><a href="GraphObject.html#fromLinkableSelfNode">fromLinkableSelfNode</a> 和 <a href="GraphObject.html#toLinkableSelfNode">toLinkableSelfNode</a>,用户是否可以在同一节点上的端口之间绘制链接</li>
+										<li><a href="GraphObject.html#fromMaxLinks">fromMaxLinks</a> 和 <a href="GraphObject.html#toMaxLinks">toMaxLinks</a>, 限制在特定方向上与此端口连接的链接数</li>
 									</ul>
 									<p class="boxread">
 										See <a href="../../intro/ports.html">the Introduction page on ports</a>
