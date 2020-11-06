@@ -286,25 +286,21 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the name of the kind of arrowhead that this shape should take
-									when this shape is an element of a <a href="Link.html">Link</a>.
-									Value must be a string.
-								For bi-directional links the arrowhead name often starts with &quot;Backward...&quot;.</p>
-								<p>The default is &quot;None&quot;, which means that this Shape is not an arrowhead, causing it to be the default Shape, a large filled Rectangle.
-									If you want to have an arrowhead Shape but sometimes not show an arrowhead, you can set or bind
-									the <a href="GraphObject.html#visible">GraphObject.visible</a> property, or you can set or bind this &quot;toArrow&quot; property to
-									be the empty string.
-								The arrowhead named &quot;&quot;, an empty string, will display as nothing.</p>
-								<p>The name can be any case but will always be canonicalized when set. For instance,
-									setting &quot;opentriangle&quot; will set the value of the arrowhead to &quot;OpenTriangle&quot;.
-								All of the predefined arrowheads are shown in the <a href="../../samples/arrowheads.html">Arrowheads sample</a>.</p>
-								<p>Setting this property may also set the <a href="GraphObject.html#segmentIndex">GraphObject.segmentIndex</a>,
-									<a href="GraphObject.html#segmentOrientation">GraphObject.segmentOrientation</a>, and <a href="GraphObject.html#alignmentFocus">GraphObject.alignmentFocus</a> properties.
-								This shape should be an element of a <a href="Link.html">Link</a>.</p>
-								<p>At most one of the following three properties may be set to a non-&quot;None&quot; value at the same time on the same shape:
+								<p>获取或者设置当此形状是 <a href="Link.html">Link</a> 的元素时该形状应采用的箭头名称。值必须是字符串。
+							    对于双向箭头，箭头名称通常以&quot;Backward...&quot;开头</p>
+								<p>默认值是 &quot;None&quot;, 这意味着形状不是箭头, 导致它的默认形状是一个大的填充矩形。
+									如果你希望有一个箭头但是有时不显示箭头，你可以设置或者绑定 <a href="GraphObject.html#visible">GraphObject.visible</a> 属性,或者设置或者绑定 &quot;toArrow&quot; 属性为空字符串。
+								  名称是空字符串的箭头将不会显示任何内容.</p>
+								<p>名称可以是任何值，但设置时始终会被规范化。 例如,
+									设置 &quot;opentriangle&quot;将会将箭头值设置为 &quot;OpenTriangle&quot;。
+								所有预定义的箭头都展示在 <a href="../../samples/arrowheads.html">箭头示例</a> 中。</p>
+								<p>设置此属性还可以设置 <a href="GraphObject.html#segmentIndex">GraphObject.segmentIndex</a>,
+									<a href="GraphObject.html#segmentOrientation">GraphObject.segmentOrientation</a>, 和 <a href="GraphObject.html#alignmentFocus">GraphObject.alignmentFocus</a> 属性。
+								此形状应该是 <a href="Link.html">Link</a> 的一个元素</p>
+								<p>在同一形状上，最多可以同时将以下三个属性中的一个设置为非"None":
 								<a href="Shape.html#figure">figure</a>, <a href="Shape.html#toArrow">toArrow</a>, <a href="Shape.html#fromArrow">fromArrow</a>.</p>
-								<p>You can define your own named arrowheads by calling the static function <a href="Shape.html#static-defineArrowheadGeometry">Shape.defineArrowheadGeometry</a>.</p>
-								<p>You can see a copy of all of the built-in arrowhead definitions in this file: <a href="../../extensions/Arrowheads.js">Arrowheads.js</a>.</p>
+								<p>你可以通过调用静态函数 <a href="Shape.html#static-defineArrowheadGeometry">Shape.defineArrowheadGeometry</a> 来定义自己命名的箭头</p>
+								<p>您可以在这个文件中看到所有内置箭头定义的副本: <a href="../../extensions/Arrowheads.js">Arrowheads.js</a>.</p>
 							</div>
 						</li>
 					</ul>
@@ -317,12 +313,10 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the Shape&#39;s <a href="Geometry.html">Geometry</a> that defines the Shape&#39;s figure.
-									Setting a geometry is not necessary if a <a href="Shape.html#figure">figure</a> is specified,
-								as that will construct a geometry instead.</p>
-								<p>Setting this geometry property will freeze the supplied Geometry.</p>
-								<p>Setting this geometry property always overrides any set figure.
-								The default value is null.</p>
+								<p>获取或者设置定义形状的 <a href="Geometry.html">Geometry</a>。
+									如果设置了 <a href="Shape.html#figure">figure</a> 则无需设置geometry，因为这样会构造一个geometry图形</p>
+								<p>设置 geometry 属性将冻结提供的 Geometry.</p>
+								<p>设置 geometry 属性总是覆盖任何设置的 figure 。默认值是 null。</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Shape.html#geometryString">geometryString</a></p>
@@ -340,10 +334,9 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets how the shape&#39;s geometry is proportionally created given its computed size.
-									Possible values are <a href="GraphObject.html#static-None">GraphObject.None</a>, <a href="GraphObject.html#static-Fill">GraphObject.Fill</a>, <a href="GraphObject.html#static-Uniform">GraphObject.Uniform</a>, and <a href="GraphObject.html#static-Default">GraphObject.Default</a>.
-									The default is <a href="GraphObject.html#static-Default">GraphObject.Default</a>, which resolves to <a href="GraphObject.html#static-Fill">GraphObject.Fill</a> for most figures, though
-								some regular figures such as &quot;Circle&quot; and &quot;Square&quot; default to <a href="GraphObject.html#static-Uniform">GraphObject.Uniform</a>.</p>
+								<p>获取或者设置给定其计算大小的geometry图形如何按照比例创建。
+								  值可能是<a href="GraphObject.html#static-None">GraphObject.None</a>, <a href="GraphObject.html#static-Fill">GraphObject.Fill</a>, <a href="GraphObject.html#static-Uniform">GraphObject.Uniform</a>, 和 <a href="GraphObject.html#static-Default">GraphObject.Default</a>。
+									默认值是 <a href="GraphObject.html#static-Default">GraphObject.Default</a>, 对于大多数图形，它解析为 <a href="GraphObject.html#static-Fill">GraphObject.Fill</a> 尽管某些常规图形&quot;Circle&quot; 和 &quot;Square&quot; 默认值为 <a href="GraphObject.html#static-Uniform">GraphObject.Uniform</a>.</p>
 							</div>
 						</li>
 					</ul>
@@ -356,11 +349,9 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>When set, creates a <a href="Geometry.html">Geometry</a> and normalizes it from a given path string,
-									then sets the <a href="Shape.html#geometry">geometry</a> property on this Shape and
-									set the <a href="GraphObject.html#position">GraphObject.position</a> to the amount computed by normalization.
-									The property getter simply returns the toString value of the <a href="Shape.html#geometry">geometry</a>,
-								or the empty string if there is no Geometry value.</p>
+								<p>设置后, 创建一个 <a href="Geometry.html">Geometry</a> 并从给定的路径字符串对其规范化，然后设置该图形的 <a href="Shape.html#geometry">geometry</a> 属性
+									并将 <a href="GraphObject.html#position">GraphObject.position</a> 设置为规范化的计算数量。
+									getter属性只返回 <a href="Shape.html#geometry">geometry</a> 字符串值，如果没有 Geometry 值，则返回空字符串.</p>
 								<p>See the <a href="../../intro/geometry.html">Geometry Path Strings Introduction page</a> for examples.</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
@@ -379,8 +370,8 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the fractional distance along the main shape of a &quot;Graduated&quot; <a href="Panel.html">Panel</a> at which this kind of tick should end.
-								The default is 1. Any new value should range from 0 to 1.</p>
+								<p>获取或设置沿&quot;Graduated&quot; <a href="Panel.html">Panel</a> 的主形状上的小数距离，此类刻度应在该距离处结束
+								  默认值是1，任何新值都应在0到1之间。</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.7</p>
@@ -419,8 +410,7 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the fractional distance along the main shape of a &quot;Graduated&quot; <a href="Panel.html">Panel</a> at which this kind of tick should start.
-								The default is 0. Any new value should range from 0 to 1.</p>
+								<p>获取或设置沿&quot;Graduated&quot; <a href="Panel.html">Panel</a>的主形状上的小数距离，此类刻度应从该距离开始。默认值为0。任何新值都应在0到1之间。</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.7</p>
