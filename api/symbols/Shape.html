@@ -296,7 +296,7 @@ myDiagram.linkTemplate =
 								所有预定义的箭头都展示在 <a href="../../samples/arrowheads.html">箭头示例</a> 中。</p>
 								<p>设置此属性还可以设置 <a href="GraphObject.html#segmentIndex">GraphObject.segmentIndex</a>,
 									<a href="GraphObject.html#segmentOrientation">GraphObject.segmentOrientation</a>, 和 <a href="GraphObject.html#alignmentFocus">GraphObject.alignmentFocus</a> 属性。
-								此形状应该是 <a href="Link.html">Link</a> 的一个元素</p>
+								此形状应该是 <a href="Link.html">Link</a> 的元素</p>
 								<p>在同一形状上，最多可以同时将以下三个属性中的一个设置为非"None":
 								<a href="Shape.html#figure">figure</a>, <a href="Shape.html#toArrow">toArrow</a>, <a href="Shape.html#fromArrow">fromArrow</a>.</p>
 								<p>你可以通过调用静态函数 <a href="Shape.html#static-defineArrowheadGeometry">Shape.defineArrowheadGeometry</a> 来定义自己命名的箭头</p>
@@ -428,9 +428,9 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets how frequently this shape should be drawn within a &quot;Grid&quot; or &quot;Graduated&quot; <a href="Panel.html">Panel</a>,
-									in multiples of the <a href="Panel.html#gridCellSize">Panel.gridCellSize</a> or <a href="Panel.html#graduatedTickUnit">Panel.graduatedTickUnit</a>.
-								The default is 1.  Any new value must be a positive integer.</p>
+								<p>获取或设置在&quot;Grid&quot; 或者 &quot;Graduated&quot; <a href="Panel.html">面板</a> 中绘制此形状的频率,
+								以面板的倍数表示 <a href="Panel.html#gridCellSize">Panel.gridCellSize</a> 或者 <a href="Panel.html#graduatedTickUnit">Panel.graduatedTickUnit</a>
+								默认值是1，任何新值都必须是正整数</p>
 							</div>
 						</li>
 					</ul>
@@ -443,11 +443,10 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the whether the <a href="GraphObject.html#position">GraphObject.position</a> of this shape denotes
-									the top-left corner of this shape in panel coordinates or the origin of this geometry&#39;s coordinate system.
-									Basically, this determines whether the <a href="Shape.html#strokeWidth">strokeWidth</a> affects the rendered location.
-									A true value allows multiple shapes to be positioned precisely in a &quot;Position&quot; Panel independent of the stroke width.
-								The default is false.</p>
+								<p>
+                  获取或设置此形状的 <a href="GraphObject.html#position">GraphObject.position</a> 是否以面板坐标表示此形状的左上角或此几何坐标系的原点。
+                  基本上，这确定了 <a href="Shape.html#strokeWidth">strokeWidth</a>  是否影响渲染的位置。
+								  true值允许多个图形精准地定位在 &quot;Position&quot; 面板中，而与描边宽度无关默认值是 false.</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.1</p>
@@ -467,10 +466,9 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This read-only property returns the natural bounds of this Shape as determined by its <a href="Shape.html#geometry">geometry</a>&#39;s bounds.
-									The bounds will always include the (0,0) point.
-									If there is no geometry available, it returns a <a href="Rect.html">Rect</a> with the <a href="GraphObject.html#desiredSize">desiredSize</a>,
-								which may have NaN values for the width and height.</p>
+								<p>这是一个只读属性返回这个形状的 naturalBounds 该边界由 <a href="Shape.html#geometry">geometry</a> 边界确定。
+									边界总是包含(0,0)点.
+									如果没有可用的几何图形,它将返回具有 <a href="GraphObject.html#desiredSize">desiredSize</a> 的 <a href="Rect.html">Rect</a> ,Ract的宽度和高度可能为NaN</p>
 							</div>
 						</li>
 					</ul>
@@ -511,7 +509,7 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets a <a href="GraphObject.html">GraphObject</a> that is drawn repeatedly along the path of the stroke of this shape.
+								<p>获取或者设置一个 <a href="GraphObject.html">GraphObject</a> that is drawn repeatedly along the path of the stroke of this shape.
 									This property may be set to a shared GraphObject; the GraphObject should not belong to any Panel.
 									Note that data bindings do <em>not</em> work in such shared GraphObjects, because they are not part of the visual tree.
 								The default value is null, causing no object to be drawn repeatedly.</p>
@@ -539,8 +537,8 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the top-left Spot used by some <a href="Panel.html">Panel</a>s for determining where in the shape other objects may be placed.
-								The value is normally <a href="Spot.html#static-Default">Spot.Default</a>, but you may want to set it to override the value that many <a href="Shape.html#figure">figure</a>s use.</p>
+								<p>获取或设置一些 <a href="Panel.html">面板</a> 用于确定其他对象在形状中的位置的左上方位置。
+								这个值通常是 <a href="Spot.html#static-Default">Spot.Default</a>, 但是您可能需要将其设置为覆盖许多 <a href="Shape.html#figure">形状</a> 使用的值。 </p>
 							</div>
 						</li>
 					</ul>
@@ -553,8 +551,8 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the bottom-right Spot used by some <a href="Panel.html">Panel</a>s for determining where in the shape other objects may be placed.
-								The value is normally <a href="Spot.html#static-Default">Spot.Default</a>, but you may want to set it to override the value that many <a href="Shape.html#figure">figure</a>s use.</p>
+								<p>获取或设置一些 <a href="Panel.html">面板</a>  用于确定其他对象在形状中的位置的右下方位置。
+                这个值通常是 <a href="Spot.html#static-Default">Spot.Default</a>, 但是您可能需要将其设置为覆盖许多 <a href="Shape.html#figure">形状</a> 使用的值。</p>
 							</div>
 						</li>
 					</ul>
@@ -567,16 +565,13 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the <a href="Brush.html">Brush</a> or string that describes how the geometry is drawn as if by a pen.</p>
-								<p>The default value is &quot;black&quot;, causing the shape to be outlined in black.
-									Any valid CSS string can specify a solid color, and the <a href="Brush.html">Brush</a>
-									class can be used to specify a gradient or pattern.
-									A null stroke will mean no stroke is drawn.
-									A &quot;transparent&quot; stroke is useful when wanting to allow a shape to be pickable
-									without obscuring any other objects behind it.
-									More information about the syntax of CSS color strings is available at:
-								<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color">CSS colors (mozilla.org)</a>.</p>
-								<p>The stroke is drawn after the geometry is filled with the <a href="Shape.html#fill">fill</a> Brush.</p>
+								<p>获取或设置 <a href="Brush.html">Brush</a> 或字符串，该画笔或字符串描述几何图形如何像笔一样绘制。</p>
+								<p>默认值是 &quot;black&quot;, 使形状轮廓为黑色.
+									任何有效的CSS字符串都可以指定轮廓颜色, 而 <a href="Brush.html">Brush</a> 类可以用于指定渐变或者图案.
+									stroke值为null表示没有轮廓被绘制
+									当希望允许形状可选中而不遮挡其后的任何其他对象时，&quot;transparent&quot;轮廓很有用。
+									有关CSS颜色字符串语法的更多信息，请访问: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color">CSS colors (mozilla.org)</a></p>
+								<p>轮廓是在几何图形被画笔 <a href="Shape.html#fill">填充</a> 后绘制。</p>
 							</div>
 						</li>
 					</ul>
@@ -589,9 +584,8 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the style for how the ends of the stroke&#39;s line are drawn.
-								The value must be one of &quot;butt&quot;, &quot;round&quot;, or &quot;square&quot;. The default is &quot;butt&quot;.</p>
-								<p>For more information, see <a href="https://www.w3.org/TR/2dcontext/#dom-context-2d-linecap">Stroke Line Cap (w3.org)</a>.</p>
+								<p>获取或者设置线帽的绘制方式，值必须是 &quot;butt&quot;, &quot;round&quot;, 或者 &quot;square&quot;. 默认值是 &quot;butt&quot;.</p>
+								<p>更多信息, 请参阅 <a href="https://www.w3.org/TR/2dcontext/#dom-context-2d-linecap">Stroke Line Cap (w3.org)</a>.</p>
 							</div>
 						</li>
 					</ul>
@@ -604,13 +598,10 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the dash array for creating dashed or dotted lines.
-									The value must be an array of positive numbers and zeroes,
-									or else null to indicate a solid line.
-									For example, the array [5, 10] would create dashes of 5 pixels and spaces of 10 pixels.
-								For more information, see <a href="https://www.w3.org/TR/2dcontext/#dom-context-2d-setlinedash">Stroke Line Dash Array (w3.org)</a>.</p>
-								<p>The default value is null, resulting in a line without dashes or dots.
-								Setting an array with all zeroes will set the value to null.</p>
+								<p>获取或者设置一个数组用于创建虚线，值必须是正整数和0的数组,否则为null表示实线
+									例如, 数组 [5, 10] 将创建5个像素实心点和10个像素的间距.
+								  更多信息, 请参阅 <a href="https://www.w3.org/TR/2dcontext/#dom-context-2d-setlinedash">Stroke Line Dash Array (w3.org)</a>.</p>
+								<p>默认值是 null, 是一条实线,设置数组全是0会设置值为null</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.1</p>
@@ -628,9 +619,8 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the offset for dashed lines, used to start the drawing of the dash pattern with some space.
-								The value must be a real non-negative number. The default is zero.</p>
-								<p>For more information, see <a href="https://www.w3.org/TR/2dcontext/#dom-context-2d-linedashoffset">Stroke Line Dash Offset (w3.org)</a>.</p>
+								<p>获取或者设置虚线的偏移量, 用于开始绘制带有一定间隔的虚线图案，值必须是非负数的实数. 默认值是0.</p>
+								<p>更多信息, 请参阅<a href="https://www.w3.org/TR/2dcontext/#dom-context-2d-linedashoffset">Stroke Line Dash Offset (w3.org)</a>.</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.1</p>
@@ -648,9 +638,8 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the type of corner that will be drawn for a stroke at the intersection of two straight segments of the geometry.
-								The value must be one of &quot;miter&quot;, &quot;bevel&quot;, or &quot;round&quot;. The default is &quot;miter&quot;.</p>
-								<p>For more information, see <a href="https://www.w3.org/TR/2dcontext/#dom-context-2d-linejoin">Stroke Line Join (w3.org)</a>.</p>
+								<p>获取或设置在几何的两个直线段的相交处笔划绘制的角的类型。值必须是 &quot;miter&quot;, &quot;bevel&quot;, 或者 &quot;round&quot;其中之一。默认值是 &quot;miter&quot;。</p>
+								<p>更多信息, 请参阅 <a href="https://www.w3.org/TR/2dcontext/#dom-context-2d-linejoin">Stroke Line Join (w3.org)</a>.</p>
 							</div>
 						</li>
 					</ul>
@@ -663,10 +652,8 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the style for the stroke&#39;s mitre limit ratio.
-									The value must be a real number greater than or equal to one.
-								The default is 10.0.</p>
-								<p>For more information, see <a href="https://www.w3.org/TR/2dcontext/#dom-context-2d-miterlimit">Stroke Miter Limit (w3.org)</a>.</p>
+								<p>获取或者设置斜接面限制比例的样式。值必须是大于或者等于1的实数，默认值是10.0</p>
+								<p>更多信息, 请参阅 <a href="https://www.w3.org/TR/2dcontext/#dom-context-2d-miterlimit">Stroke Miter Limit (w3.org)</a>.</p>
 							</div>
 						</li>
 					</ul>
@@ -679,12 +666,10 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the thickness of the stroke&#39;s pen.</p>
-								<p>Value must be a real number greater than or equal to zero.
-									The default value is 1.0.
-								A value of zero will cause the stroke not to be drawn.</p>
-								<p>The stroke width will affect the <a href="GraphObject.html#measuredBounds">GraphObject.measuredBounds</a> and <a href="GraphObject.html#actualBounds">GraphObject.actualBounds</a> of this shape.
-								The stroke is drawn centered on the path of the geometry.</p>
+								<p>获取或者设置描边笔的粗细</p>
+								<p>值必须是大于或者等于0的实数，默认值是1.0，值为0将导致不绘制边框</p>
+								<p>边框宽度将影响此形状的 <a href="GraphObject.html#measuredBounds">GraphObject.measuredBounds</a> 和 <a href="GraphObject.html#actualBounds">GraphObject.actualBounds</a> 。
+								描边以几何路径为中心绘制。</p>
 							</div>
 						</li>
 					</ul>
@@ -697,24 +682,19 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the name of the kind of arrowhead that this shape should take
-									when this shape is an element of a <a href="Link.html">Link</a>.
-								Value must be a string.</p>
-								<p>The default is &quot;None&quot;, which means that this Shape is not an arrowhead, causing it to be the default Shape, a large filled Rectangle.
-									If you want to have an arrowhead Shape but sometimes not show an arrowhead, you can set or bind
-									the <a href="GraphObject.html#visible">GraphObject.visible</a> property, or you can set or bind this &quot;toArrow&quot; property to
-									be the empty string.
-								The arrowhead named &quot;&quot;, an empty string, will display as nothing.</p>
-								<p>The name can be any case but will always be canonicalized when set. For instance,
-									setting &quot;opentriangle&quot; will set the value of the arrowhead to &quot;OpenTriangle&quot;.
-								All of the predefined arrowheads are shown in the <a href="../../samples/arrowheads.html">Arrowheads sample</a>.</p>
-								<p>Setting this property may also set the <a href="GraphObject.html#segmentIndex">GraphObject.segmentIndex</a>,
-									<a href="GraphObject.html#segmentOrientation">GraphObject.segmentOrientation</a>, and <a href="GraphObject.html#alignmentFocus">GraphObject.alignmentFocus</a> properties.
-								This shape should be an element of a <a href="Link.html">Link</a>.</p>
-								<p>At most one of the following three properties may be set to a non-&quot;None&quot; value at the same time on the same shape:
+								<p>获取或设置当此形状是 <a href="Link.html">Link</a> 的元素时该形状应采用的箭头的名称，值必须是字符串.</p>
+								<p>默认值是 &quot;None&quot;, 这意味着形状不是箭头，导致它默认图形是一个大的填充  矩形.
+									如果要具有箭头形状但有时不显示箭头，可以设置或者绑定 <a href="GraphObject.html#visible">GraphObject.visible</a> 属性, 或者设置或绑定 &quot;toArrow&quot; 属性为空字符串。
+								  命名为 &quot;&quot;的箭头，一个空字符串将显示为空.</p>
+								<p>名称可以是任何情况，但设置时始终会规范化。 例如设置&quot;opentriangle&quot; 箭头的值将被设置成 &quot;OpenTriangle&quot;。
+                  所有预定义的箭头都显示在 <a href="../../samples/arrowheads.html">箭头示例</a> 示例中。</p>
+								<p>设置此属性还可以设置 <a href="GraphObject.html#segmentIndex">GraphObject.segmentIndex</a>,
+									<a href="GraphObject.html#segmentOrientation">GraphObject.segmentOrientation</a>, 和 <a href="GraphObject.html#alignmentFocus">GraphObject.alignmentFocus</a> 属性.
+								此形状应该是 <a href="Link.html">Link</a> 的元素</p>
+								<p>在同一形状上，最多可以同时将以下三个属性中的一个设置为非&quot;None&quot;:
 								<a href="Shape.html#figure">figure</a>, <a href="Shape.html#toArrow">toArrow</a>, <a href="Shape.html#fromArrow">fromArrow</a>.</p>
-								<p>You can define your own named arrowheads by calling the static function <a href="Shape.html#static-defineArrowheadGeometry">Shape.defineArrowheadGeometry</a>.</p>
-								<p>You can see a copy of all of the built-in arrowhead definitions in this file: <a href="../../extensions/Arrowheads.js">Arrowheads.js</a>.</p>
+								<p>您可以通过调用静态函数 <a href="Shape.html#static-defineArrowheadGeometry">Shape.defineArrowheadGeometry</a> 来定义自己的命名箭头 </p>
+								<p>你可以在这个文件中看到所有内置箭头定义的副本: <a href="../../extensions/Arrowheads.js">Arrowheads.js</a>.</p>
 							</div>
 						</li>
 					</ul>
@@ -734,12 +714,12 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function defines a named arrowhead geometry.
-								Once this is called one can use the name as a value for <a href="Shape.html#toArrow">Shape.toArrow</a> or <a href="Shape.html#fromArrow">Shape.fromArrow</a>.</p>
-								<p>The first argument is the new arrowhead name and must be a non-empty string that starts with a capital letter and that is not &quot;None&quot;.</p>
-								<p>If the second argument is a string, it is converted into a <a href="Geometry.html">Geometry</a> by calling
-									<code>go.Geometry.parse(pathstr, false)</code>,
-								which may throw an error if there are problems with the syntax of the string.</p>
+								<p>此静态函数定义了命名的箭头几何。
+								一旦调用了它，就可以将名称用作 <a href="Shape.html#toArrow">Shape.toArrow</a> 或者 <a href="Shape.html#fromArrow">Shape.fromArrow</a></p>
+								<p>第一个参数是新的箭头名称，并且必须是一个以大写字母开头且不是 &quot;None&quot; 的非空字符串</p>
+								<p>
+                  如果第二个参数是字符串，则通过调用 <code>go.Geometry.parse(pathstr, false)</code> 将其转换为 <a href="Geometry.html">Geometry</a> ，如果字符串的语法有问题，则可能会引发错误。
+                </p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.5</p>
