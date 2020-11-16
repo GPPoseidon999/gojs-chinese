@@ -516,10 +516,10 @@ myDiagram.linkTemplate =
 								<p>Typically the object is a small <a href="Shape.html">Shape</a> or a <a href="Picture.html">Picture</a>.
 									The larger the object is the worse the results will be, especially if the stroke has short segments or sharp curves.
 								The pathPattern object is not part of the measured bounds of the Shape, it is a cosmetic element only.</p>
-								<p>The stroke is always drawn normally -- having a value for this property will draw the value along the stroke as well,
+								<p>描边总是正常绘制的 -- having a value for this property will draw the value along the stroke as well,
 									so it is commonplace to set the <a href="Shape.html#stroke">stroke</a> to &quot;transparent&quot; and the <a href="Shape.html#strokeWidth">strokeWidth</a> to be as wide as
 								the height of the GraphObject being drawn along the stroke.</p>
-								<p>Examples of path patterns can be seen in the <a href="../../samples/relationships.html">Relationships sample</a>.</p>
+								<p>在 <a href="../../samples/relationships.html">关系示例</a> 中可以看到路径模式的示例</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.6</p>
@@ -757,23 +757,18 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function defines a named figure geometry generator for Shapes.
-								Once this is called one can use the name as a value for <a href="Shape.html#figure">Shape.figure</a>.</p>
-								<p>The first argument is the new figure name and must be a non-empty string that starts with a capital letter and that is not &quot;None&quot;.</p>
-								<p>If the second argument is a string this call defines a synonym for an existing figure generator.
-								Do not define cycles of synonyms -- the behavior will be undefined.</p>
-								<p>If the second argument is a function,
-									the <a href="Geometry.html">Geometry</a> generator function&#39;s first argument is the <a href="Shape.html">Shape</a> for which the function is producing a Geometry.
-									But this Shape argument may be null in some circumstances.
-									The second and third arguments are the desired width and height.
-									These will always be finite non-negative numbers.
-									The function may look at the <a href="Shape.html#parameter1">Shape.parameter1</a> and <a href="Shape.html#parameter2">Shape.parameter2</a> properties, which may be NaN,
-								to decide what geometry to create for the figure given its intended width and height.</p>
-								<p>The function must return a Geometry; you may want to set <a href="Geometry.html#spot1">Geometry.spot1</a> and <a href="Geometry.html#spot2">Geometry.spot2</a> on it
-									to indicate where content should be placed within the figure when using an &quot;Auto&quot; Panel.
-									For some figures you may also want to set <a href="Geometry.html#defaultStretch">Geometry.defaultStretch</a> to <a href="GraphObject.html#static-Uniform">GraphObject.Uniform</a>
-								in order to maintain the geometry&#39;s aspect ratio within the Shape.</p>
-								<p>Generated figures must create a Geometry that is not larger than the supplied with and height. Doing so will signal an error.</p>
+								<p>该静态函数为图形定义了一个命名的几何生成器
+								一旦调用此函数，就可以使用该名称作为 <a href="Shape.html#figure">Shape.figure</a> 的值</p>
+								<p>第一个参数是新的图形名称，必须是一个非空字符串，以大写字母开头，不能是 &quot;None&quot;.</p>
+								<p>如果第二个参数是字符串，则此调用定义现有图形生成器的同义词。不要定义同义词的循环——行为将是未定义的</p>
+								<p>如果第二个参数是一个函数, <a href="Geometry.html">Geometry</a> 生成器函数的第一个参数是函数生成的几何 <a href="Shape.html">Shape</a> 。
+									但是某些情况下 Shape 参数可能为null。第二和第三个参数是所需的宽度和高度，这些都是有限的非负数。
+									该函数可以查看 <a href="Shape.html#parameter1">Shape.parameter1</a> 和 <a href="Shape.html#parameter2">Shape.parameter2</a> 属性, 可能为 NaN,
+                  以根据给定的预期宽度和高度来决定为图形创建哪种几何形状。</p>
+								<p>该函数必须返回一个 Geometry; 你可能需要在其上设置 <a href="Geometry.html#spot1">Geometry.spot1</a> 和 <a href="Geometry.html#spot2">Geometry.spot2</a> 以指示
+									使用 &quot;Auto&quot; 面板时应将内容放置在图形中的位置，对于某些图形你可能还需要设置 <a href="Geometry.html#defaultStretch">Geometry.defaultStretch</a> 为 <a href="GraphObject.html#static-Uniform">GraphObject.Uniform</a>
+								以将几何图形的横纵比保持在Shape中</p>
+								<p>生成的图形必须创建一个不大于提供的高度和宽度的几何，这样做会发出错误信号</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.5</p>
