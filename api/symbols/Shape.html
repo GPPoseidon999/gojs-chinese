@@ -509,16 +509,13 @@ myDiagram.linkTemplate =
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>获取或者设置一个 <a href="GraphObject.html">GraphObject</a> that is drawn repeatedly along the path of the stroke of this shape.
-									This property may be set to a shared GraphObject; the GraphObject should not belong to any Panel.
-									Note that data bindings do <em>not</em> work in such shared GraphObjects, because they are not part of the visual tree.
-								The default value is null, causing no object to be drawn repeatedly.</p>
-								<p>Typically the object is a small <a href="Shape.html">Shape</a> or a <a href="Picture.html">Picture</a>.
-									The larger the object is the worse the results will be, especially if the stroke has short segments or sharp curves.
-								The pathPattern object is not part of the measured bounds of the Shape, it is a cosmetic element only.</p>
-								<p>描边总是正常绘制的 -- having a value for this property will draw the value along the stroke as well,
-									so it is commonplace to set the <a href="Shape.html#stroke">stroke</a> to &quot;transparent&quot; and the <a href="Shape.html#strokeWidth">strokeWidth</a> to be as wide as
-								the height of the GraphObject being drawn along the stroke.</p>
+                <p>获取或者设置一个 <a href="GraphObject.html">GraphObject</a> 该对象沿着该形状的描边路径重复绘制。
+                  可将此属性设置为共享的GraphObject，该GraphObject不属于任何面板。
+									请注意数据绑定在此类共享GraphObject中不起作用，因为它们不是可视树的一部分。默认值是null，不会重复绘制任何对象。</p>
+								<p>通常对象是一个小<a href="Shape.html">Shape</a> 或者是 <a href="Picture.html">Picture</a>.
+									对象越大，效果越差, 尤其是在描边具有短片段或者尖锐曲线的情况下，pathPattern 对象不是形状的测量范围的一部分,它只是一个装饰元素。</p>
+								<p>描边总是正常绘制的 -- 拥有此属性的值会在描边绘制该值,因此通常将 <a href="Shape.html#stroke">stroke</a> 设置为&quot;transparent&quot;
+									并且将 <a href="Shape.html#strokeWidth">strokeWidth</a> 设置为描边GraphObject的高度。</p>
 								<p>在 <a href="../../samples/relationships.html">关系示例</a> 中可以看到路径模式的示例</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
@@ -731,13 +728,13 @@ myDiagram.linkTemplate =
 								<li>
 									<h5>name: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>a capitalized arrowhead name (&quot;OpenTriangle&quot;); must not be &quot;&quot; or &quot;None&quot;</p>
+										<p>大写的箭头名称(&quot;OpenTriangle&quot;); 不得为 &quot;&quot; 或者 &quot;None&quot;</p>
 									</div>
 								</li>
 								<li>
 									<h5>pathstr: <a href="Geometry.html" class="tsd-signature-type">Geometry</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>a <a href="Geometry.html">Geometry</a> or a Geometry path string, e.g. &quot;m 0,0 l 8,4 -8,4&quot;</p>
+										<p>一个 <a href="Geometry.html">Geometry</a> 或者一个 Geometry 路径字符串, e.g. &quot;m 0,0 l 8,4 -8,4&quot;</p>
 									</div>
 								</li>
 							</ul>
@@ -780,14 +777,13 @@ myDiagram.linkTemplate =
 								<li>
 									<h5>name: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>a capitalized figure name (&quot;RoundedRectangle&quot;); must not be &quot;&quot; or &quot;None&quot;</p>
+										<p>大写的图形名称 (&quot;RoundedRectangle&quot;); 不得为&quot;&quot; 或者 &quot;None&quot;</p>
 									</div>
 								</li>
 								<li>
 									<h5>func: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">shape</span><span class="tsd-signature-symbol">: </span><a href="Shape.html" class="tsd-signature-type">Shape</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">width</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">height</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Geometry.html" class="tsd-signature-type">Geometry</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A function that takes (Shape,width,height) and returns a Geometry,
-										or an existing figure generator name for which the new name will be a synonym.</p>
+										<p>该函数接受 (Shape,width,height)并且返回一个 Geometry，或者现有图形生成器名称，新名称将为同义词</p>
 									</div>
 								</li>
 							</ul>
