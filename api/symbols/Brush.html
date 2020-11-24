@@ -99,13 +99,10 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>A Brush holds color information and describes how to draw the inside
-						of a <a href="Shape.html">Shape</a> or the stroke of a shape or a <a href="TextBlock.html">TextBlock</a> or the
-					background of any <a href="GraphObject.html">GraphObject</a>.</p>
-					<p>A Brush must not be modified once it has been assigned to a <a href="GraphObject.html">GraphObject</a>,
-						such as the <a href="Shape.html#fill">Shape.fill</a> or <a href="TextBlock.html#stroke">TextBlock.stroke</a>
-						or <a href="GraphObject.html#background">GraphObject.background</a>.
-					However, a Brush may be shared by multiple GraphObjects.</p>
+					<p>笔刷保留颜色信息，并描述如何绘制形状内部或者形状描边或者 <a href="TextBlock.html">TextBlock</a> 或者任何 <a href="GraphObject.html">GraphObject</a> 的背景</p>
+					<p>将笔刷分配给 <a href="GraphObject.html">GraphObject</a>,
+					例如 <a href="Shape.html#fill">Shape.fill</a> 或者 <a href="TextBlock.html#stroke">TextBlock.stroke</a>
+						或者 <a href="GraphObject.html#background">GraphObject.background</a> 后不得对其进行修改， 然而笔刷可以由多个GraphObjects共享</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -176,16 +173,15 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Construct a Brush class that holds the given color information.</p>
+								<p>构造一个可以保存给定颜色信息的Brush类.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> type: <span class="tsd-signature-type">EnumValue</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Optional, one of the values <a href="Brush.html#static-Solid">Brush.Solid</a>, <a href="Brush.html#static-Linear">Brush.Linear</a>, <a href="Brush.html#static-Radial">Brush.Radial</a>, <a href="Brush.html#static-Pattern">Brush.Pattern</a>,
-											or a well-formed CSS string describing a solid color brush. No parameter
-										defaults to a <a href="Brush.html#static-Solid">Brush.Solid</a> with a color description of &#39;black&#39;.</p>
+										<p>可选其中一个值 <a href="Brush.html#static-Solid">Brush.Solid</a>, <a href="Brush.html#static-Linear">Brush.Linear</a>, <a href="Brush.html#static-Radial">Brush.Radial</a>, <a href="Brush.html#static-Pattern">Brush.Pattern</a>,
+											或描述纯色笔刷的CSS字符串。 没有参数默认为<a href="Brush.html#static-Solid">Brush.Solid</a> 颜色描述为黑色</p>
 									</div>
 								</li>
 							</ul>
@@ -204,9 +200,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the color of a solid Brush.
-									The default value is &#39;black&#39;.
-								The value must be a valid CSS color string.</p>
+								<p>获取或者设置实现笔刷的颜色，默认值是黑色，该值必须是有效的CSS颜色字符串</p>
 							</div>
 						</li>
 					</ul>
@@ -219,11 +213,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets a Map holding all of the color stops used in this gradient,
-									where the key is a number, the fractional distance between 0 and 1 (inclusive),
-								and where the corresponding value is a color string.</p>
-								<p>Call <a href="Brush.html#addColorStop">addColorStop</a> in order to add color stops to this brush.
-								This property value may be null if no gradient stops have been defined.</p>
+								<p>获取或者设置一个Map，该Map包含此渐变中使用的所有色标，其中的键是一个数字，0到1(包括0)之间的小数距离，而对应的值是一个颜色字符串</p>
+								<p>调用 <a href="Brush.html#addColorStop">addColorStop</a> 向此笔刷添加色标，如果未定义渐变停止点，此属性值可以为null</p>
 							</div>
 						</li>
 					</ul>
@@ -236,9 +227,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the ending location for a linear or radial gradient.
-									A <a href="Spot.html">Spot</a> value specifies a relative point in the object&#39;s <a href="GraphObject.html#naturalBounds">GraphObject.naturalBounds</a>.
-								The default value is <a href="Spot.html#static-BottomCenter">Spot.BottomCenter</a> for linear gradients and <a href="Spot.html#static-Center">Spot.Center</a> for radial gradients.</p>
+								<p>获取或者设置线性或者径向渐变的结束位置。<a href="Spot.html">Spot</a> 值指定对象的 <a href="GraphObject.html#naturalBounds">GraphObject.naturalBounds</a> 中的相对点。
+								对于线性渐变，默认值为 <a href="Spot.html#static-BottomCenter">Spot.BottomCenter</a> 对于径向渐变，默认值为 <a href="Spot.html#static-Center">Spot.Center</a> </p>
 							</div>
 						</li>
 					</ul>
@@ -251,8 +241,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the radius of a radial brush at the end location.
-								The default value is NaN.</p>
+								<p>获取或者设置结束位置的径向笔刷半径，默认值为NaN</p>
 							</div>
 						</li>
 					</ul>
@@ -265,7 +254,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the pattern of a brush of type <a href="Brush.html#static-Pattern">Brush.Pattern</a>.</p>
+								<p>获取或者设置 <a href="Brush.html#static-Pattern">Brush.Pattern</a> 类型笔刷的图案</p>
 							</div>
 						</li>
 					</ul>
@@ -278,9 +267,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the starting location for a linear or radial gradient.
-									A <a href="Spot.html">Spot</a> value specifies a relative point in the object&#39;s <a href="GraphObject.html#naturalBounds">GraphObject.naturalBounds</a>.
-								The default value is <a href="Spot.html#static-TopCenter">Spot.TopCenter</a> for linear gradients and <a href="Spot.html#static-Center">Spot.Center</a> for radial gradients.</p>
+								<p>获取或者设置线性渐变或径向渐变的起始位置。<a href="Spot.html">Spot</a> 值指定对象的 <a href="GraphObject.html#naturalBounds">GraphObject.naturalBounds</a> 中的相对点。
+								对于线性渐变，默认值为 <a href="Spot.html#static-TopCenter">Spot.TopCenter</a> 对于径向渐变，默认值为 <a href="Spot.html#static-Center">Spot.Center</a></p>
 							</div>
 						</li>
 					</ul>
@@ -293,8 +281,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the radius of a radial brush at the start location.
-								The default value is 0.</p>
+								<p>获取或者设置起始位置的径向笔刷半径，默认值为0</p>
 							</div>
 						</li>
 					</ul>
@@ -307,12 +294,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the type of brush.
-									The default value is <a href="Brush.html#static-Solid">Brush.Solid</a>.
-									The value must be one of: <a href="Brush.html#static-Solid">Brush.Solid</a>, <a href="Brush.html#static-Linear">Brush.Linear</a>, <a href="Brush.html#static-Radial">Brush.Radial</a>, <a href="Brush.html#static-Pattern">Brush.Pattern</a>.
-									If the new value is a linear or radial brush type,
-									and if the <a href="Brush.html#start">start</a> or <a href="Brush.html#end">end</a> spots are not specific spots,
-								they are changed to be specific spots, depending on the type of brush.</p>
+								<p>获取或者设置笔刷的类型。默认值为 <a href="Brush.html#static-Solid">Brush.Solid</a>.
+									该值必须是以下之一: <a href="Brush.html#static-Solid">Brush.Solid</a>, <a href="Brush.html#static-Linear">Brush.Linear</a>, <a href="Brush.html#static-Radial">Brush.Radial</a>, <a href="Brush.html#static-Pattern">Brush.Pattern</a>.
+									如果新值是线性或者径向笔刷类型,
+									并且 <a href="Brush.html#start">start</a> 或者 <a href="Brush.html#end">end</a> 点不是特殊点,则根据笔刷的类型将其更改为特定点</p>
 							</div>
 						</li>
 					</ul>
@@ -331,23 +316,22 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Specify a particular color at a particular fraction of the distance.
-									If the <a href="Brush.html#type">type</a> is <a href="Brush.html#static-Solid">Brush.Solid</a>, change the type to <a href="Brush.html#static-Linear">Brush.Linear</a>.
-									You should have a color stop at 0 and a color stop at 1.
-								You should not have duplicate color stop values at the same fractional distance.</p>
+								<p>在距离的特定部分指定特定的颜色。
+									如果 <a href="Brush.html#type">type</a> 为 <a href="Brush.html#static-Solid">Brush.Solid</a>, 则将类型更改为 <a href="Brush.html#static-Linear">Brush.Linear</a>.
+									你的色标应为0到1。在相同的小数距离处，色标不应重复</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>loc: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A number between 0 and 1 (inclusive).</p>
+										<p>一个0到1(包含)之间的数字.</p>
 									</div>
 								</li>
 								<li>
 									<h5>color: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A valid CSS color string.</p>
+										<p>一个有效的CSS颜色字符串.</p>
 									</div>
 								</li>
 							</ul>
@@ -367,7 +351,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Create a copy of this Brush with the same values.</p>
+								<p>使用相同的值创建此笔刷的副本。</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="Brush.html" class="tsd-signature-type">Brush</a></h4>
 						</li>
@@ -385,8 +369,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function takes a color and darkens it by 20% in the Lab color space.
-								This is a convenience function which calls <a href="Brush.html#static-darkenBy">Brush.darkenBy</a>.</p>
+								<p>这个静态函数接受一个颜色，并在Lab颜色空间中将其调暗20%。这是一个便捷函数，它调用 <a href="Brush.html#static-darkenBy">Brush.darkenBy</a></p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.7</p>
@@ -398,12 +381,12 @@
 								<li>
 									<h5>color: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A valid CSS color string.</p>
+										<p>一个有效的CSS颜色字符串.</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-							<p>A CSS string for the darkened color in RGBA.</p>
+							<p>一个RGBA中变暗颜色的CSS字符串</p>
 						</li>
 					</ul>
 				</section>
@@ -418,7 +401,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modifies all colors within this Brush, darkening them by some fraction.</p>
+								<p>修改此笔刷中的所有颜色, 使它们变暗一些</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.7</p>
@@ -430,18 +413,18 @@
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fraction: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Fraction to darken the colors by. Defaults to 0.2, must be between 0 and 1 (inclusive).</p>
+										<p>使颜色变暗的分数。默认值是0.2, 必须在0到1之间(包含1)</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> mode: <span class="tsd-signature-type">EnumValue</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Color space to use for adjusting. Must be <a href="Brush.html#static-Lab">Brush.Lab</a> or <a href="Brush.html#static-HSL">Brush.HSL</a>, defaults to <a href="Brush.html#static-Lab">Brush.Lab</a>.</p>
+										<p>用于调整的颜色空间. 必须为 <a href="Brush.html#static-Lab">Brush.Lab</a> 或者 <a href="Brush.html#static-HSL">Brush.HSL</a>, 默认为 <a href="Brush.html#static-Lab">Brush.Lab</a>.</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Brush.html" class="tsd-signature-type">Brush</a></h4>
-							<p>This Brush with modified color values.</p>
+							<p>具有修改后的颜色值的笔刷.</p>
 						</li>
 					</ul>
 				</section>
@@ -457,7 +440,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function takes a color and darkens it.</p>
+								<p>此静态函数接受一个颜色并使其变暗.</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.7</p>
@@ -469,13 +452,13 @@
 								<li>
 									<h5>color: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A valid CSS color string</p>
+										<p>一个有效的CSS颜色字符串</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fraction: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Fraction to darken the color by. Defaults to 0.2, must be between 0 and 1 (inclusive).</p>
+										<p>使颜色变暗的分数。默认值是0.2, 必须在0到1之间(包含1)</p>
 									</div>
 								</li>
 								<li>
@@ -486,7 +469,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-							<p>A CSS string for the darkened color in RGBA or HSLA.</p>
+							<p>RGBA或HSLA中变暗颜色的CSS字符串</p>
 						</li>
 					</ul>
 				</section>
@@ -501,7 +484,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This function determines whether this Brush is &quot;dark.&quot;</p>
+								<p>这个函数决定这个笔刷是否为深色</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>2.0</p>
@@ -524,8 +507,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function takes a color and determines whether it is &quot;dark.&quot; Does not account for transparency.</p>
-								<p>Example usage:</p>
+								<p>这个静态函数采用一种颜色并确定其是否为深色; 不考虑透明度</p>
+								<p>用法示例:</p>
 								<pre><code class="hljs js">myDiagram.nodeTemplate =
   $(go.Node, <span class="hljs-string">"Auto"</span>,
     $(go.Shape, <span class="hljs-string">"RoundedRectangle"</span>, { <span class="hljs-attr">strokeWidth</span>: <span class="hljs-number">0</span> },
@@ -550,7 +533,7 @@
 								<li>
 									<h5>color: <a href="../index.html#BrushLike" class="tsd-signature-type">BrushLike</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A valid CSS color string or a Brush.</p>
+										<p>一个有效的CSS颜色字符串或者笔刷</p>
 									</div>
 								</li>
 							</ul>
@@ -570,7 +553,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function returns true if a given color string is well-formed for drawing.</p>
+								<p>如果给定的颜色字符串格式正确，则此静态函数将返回true.</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.7</p>
@@ -582,7 +565,7 @@
 								<li>
 									<h5>color: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A color string to validate.</p>
+										<p>一个要验证的颜色字符串</p>
 									</div>
 								</li>
 							</ul>
@@ -602,8 +585,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function takes a color and lightens it by 20% in the Lab color space.
-								This is a convenience function which calls <a href="Brush.html#static-lightenBy">Brush.lightenBy</a>.</p>
+								<p>这个静态函数可以获取颜色，并在Lab颜色空间中将其照亮20%。这是一个便捷函数，它将调用 <a href="Brush.html#static-lightenBy">Brush.lightenBy</a></p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.7</p>
@@ -615,12 +597,12 @@
 								<li>
 									<h5>color: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A valid CSS color string.</p>
+										<p>一个有效的CSS颜色字符串</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-							<p>A CSS string for the lightened color in RGBA.</p>
+							<p>RGBA中浅色的CSS字符串</p>
 						</li>
 					</ul>
 				</section>
@@ -635,7 +617,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modifies all colors within this Brush, lightening them by some fraction.</p>
+								<p>修改此笔刷中的所有颜色，使它们变亮一些</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.7</p>
@@ -647,18 +629,18 @@
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fraction: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Fraction to lighten the colors by. Defaults to 0.2, must be between 0 and 1 (inclusive).</p>
+										<p>使颜色变浅的分数。默认值为0.2, 必须在0到1之间（包括1）</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> mode: <span class="tsd-signature-type">EnumValue</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Color space to use for adjusting. Must be <a href="Brush.html#static-Lab">Brush.Lab</a> or <a href="Brush.html#static-HSL">Brush.HSL</a>, defaults to <a href="Brush.html#static-Lab">Brush.Lab</a>.</p>
+										<p>用于调整的色彩空间，必须为 <a href="Brush.html#static-Lab">Brush.Lab</a> 或者 <a href="Brush.html#static-HSL">Brush.HSL</a>, 默认为 <a href="Brush.html#static-Lab">Brush.Lab</a>.</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Brush.html" class="tsd-signature-type">Brush</a></h4>
-							<p>This Brush with modified color values.</p>
+							<p>此笔刷具有修改后的颜色值</p>
 						</li>
 					</ul>
 				</section>
@@ -674,7 +656,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function takes a color and lightens it.</p>
+								<p>这个静态函数使颜色变亮</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.7</p>
@@ -686,24 +668,24 @@
 								<li>
 									<h5>color: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A valid CSS color string.</p>
+										<p>一个有效的CSS颜色字符串</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fraction: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Fraction to lighten the colors by. Defaults to 0.2, must be between 0 and 1 (inclusive).</p>
+										<p>使颜色变浅的分数。默认值为0.2，必须在0到1之间(包括1)。</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> mode: <span class="tsd-signature-type">EnumValue</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Color space to use for adjusting. Must be <a href="Brush.html#static-Lab">Brush.Lab</a> or <a href="Brush.html#static-HSL">Brush.HSL</a>, defaults to <a href="Brush.html#static-Lab">Brush.Lab</a>.</p>
+										<p>用于调整的色彩空间，必须为 <a href="Brush.html#static-Lab">Brush.Lab</a> 或者 <a href="Brush.html#static-HSL">Brush.HSL</a>, 默认为 <a href="Brush.html#static-Lab">Brush.Lab</a></p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-							<p>A CSS string for the lightened color in RGBA or HSLA.</p>
+							<p>RGBA或HSLA中浅色的CSS字符串</p>
 						</li>
 					</ul>
 				</section>
@@ -787,7 +769,7 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constants</h2>
+				<h2>常量</h2>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
 					<a name="static-HSL" class="tsd-anchor"></a>
 					<h3>
@@ -795,7 +777,7 @@
 						HSL
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For lightening and darkening, used as a color-space value.</p>
+						<p>用于变亮和变暗，用作颜色空间值</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -805,7 +787,7 @@
 						Lab
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For lightening and darkening, used as a color-space value.</p>
+						<p>用于变亮和变暗，用作颜色空间值</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -815,7 +797,7 @@
 						Linear
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For linear gradient brushes, used as the value for <a href="Brush.html#type">Brush.type</a>.</p>
+						<p>对于线性渐变笔刷, 用作 <a href="Brush.html#type">Brush.type</a> 的值</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -825,7 +807,7 @@
 						Pattern
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For pattern brushes, used as the value for <a href="Brush.html#type">Brush.type</a>.</p>
+						<p>对于图案笔刷, 用作 <a href="Brush.html#type">Brush.type</a> 的值</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -835,7 +817,7 @@
 						Radial
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For radial gradient brushes, used as the value for <a href="Brush.html#type">Brush.type</a>.</p>
+						<p>对于径向渐变笔刷, 用作 <a href="Brush.html#type">Brush.type</a> 的值</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -845,7 +827,7 @@
 						Solid
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For simple, solid color brushes, used as the value for <a href="Brush.html#type">Brush.type</a>.</p>
+						<p>对于简单的纯色笔刷，用作 <a href="Brush.html#type">Brush.type</a> 的值</p>
 					</div>
 				</section>
 			</section>
