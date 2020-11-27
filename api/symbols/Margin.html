@@ -85,7 +85,7 @@
 					<b>GoJS</b>&reg; Diagramming Components<br/>version 2.1.26<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>
 				</div>
 				<div>
-					<h1>Class Margin</h1>
+					<h1>Margin类</h1>
 				</div>
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
+				<h3>层次结构</h3>
 				<ul class="tsd-hierarchy">
 					<li>
 						<span class="target">Margin</span>
@@ -104,23 +104,18 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>A Margin represents a band of space outside or inside a rectangular area,
-					with possibly different values on each of the four sides.</p>
-					<p>Example uses include <a href="GraphObject.html#margin">GraphObject.margin</a>, <a href="Panel.html#padding">Panel.padding</a>, and <a href="Diagram.html#padding">Diagram.padding</a>.</p>
-					<p>Use the static functions <a href="Margin.html#static-parse">Margin.parse</a> and <a href="Margin.html#static-stringify">Margin.stringify</a> to convert to and from
-					a standard string representation that is independent of the current locale.</p>
-					<p>When an instance of this class is the value of a property of a <a href="GraphObject.html">GraphObject</a> class or <a href="Diagram.html">Diagram</a>
-						or <a href="CommandHandler.html">CommandHandler</a> or a <a href="Tool.html">Tool</a> class, you should treat the object
-						as if it were frozen or read-only -- you cannot modify its properties.
-						This allows the property to return a value without allocating a new instance.
-						If you need to do your own calculations with the value, call <a href="Margin.html#copy">copy</a> to make
-					a new instance with the same values that you can modify.</p>
-					<p>Many methods modify the object&#39;s properties and then return a reference to &quot;this&quot; object.
-						The only instance method to allocate a new object is the <a href="Margin.html#copy">copy</a> method.
-					The static <a href="Margin.html#static-parse">Margin.parse</a> method also allocates a new object.</p>
-					<p>The &quot;Debug&quot; implementation of this class is significantly slower than the &quot;Release&quot; implementation,
-					mostly due to additional error checking.</p>
-					<p>You cannot inherit from this class.</p>
+					<p>边距表示矩形内部或者外部的一段空间，四条边的值可能不同</p>
+					<p>示例用法包括 <a href="GraphObject.html#margin">GraphObject.margin</a>, <a href="Panel.html#padding">Panel.padding</a>, 和 <a href="Diagram.html#padding">Diagram.padding</a>.</p>
+					<p>使用静态函数 <a href="Margin.html#static-parse">Margin.parse</a> 和 <a href="Margin.html#static-stringify">Margin.stringify</a> 与标准字符串表示形式进行转换，该表示形式独立于当前语言环境</p>
+					<p>当此类的实例是 <a href="GraphObject.html">GraphObject</a> 类或者 <a href="Diagram.html">Diagram</a>
+						或者 <a href="CommandHandler.html">CommandHandler</a> 或者 <a href="Tool.html">Tool</a> 类的属性时，你应该将对象视为冻结或者只读的对象，你不能修改其属性。
+            这允许属性返回一个值，而无需分配新实例。
+            如果你需要使用该值进行自己的计算，请调用 <a href="Margin.html#copy">copy</a> 以使用可以修改的相同值创建一个新实例</p>
+					<p>许多方法会修改对象的属性，然后返回 &quot;this&quot; 对象的引用。
+						分配新对象的唯一实例方法是 <a href="Margin.html#copy">copy</a> 方法。
+				    静态方法 <a href="Margin.html#static-parse">Margin.parse</a> 还分配一个新对象</p>
+					<p>此类的 &quot;Debug&quot; 实现比 &quot;Release&quot; 实现明显慢的多，这主要是由于附加的错误检查</p>
+					<p>你不能从此类继承.</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -171,41 +166,32 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>If zero arguments are supplied, zero is used for all four sides.
-									If one argument is supplied, that number is used for all four sides.
-									If two arguments are supplied, the top and bottom sides get the first value,
-									and the left and right sides get the second value.
-								Otherwise there must be four arguments, in the order: top, right, bottom, left.</p>
+								<p>如果提供了0个参数，则所有四个边都使用0，如果提供了一个参数，则该数字将用于所有的四个边，如果提供了两个参数，则顶部和底部获得第一个值，左边和右边获得第二个值。否则，必须按照顺序排列四个参数：上、右、下、左</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> t: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the margin for the top side;
-										if not supplied, all sides are zero.</p>
+										<p>顶边边距，如果未提供，所有边均为0</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> r: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the margin for the right side;
-										if not supplied, all sides have the value of the first argument.</p>
+										<p>右边边距，如果未提供，则所有边都具有第一个参数的值</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> b: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the margin for all bottom side;
-											if not supplied, the top and bottom get the value of the first argument,
-										and the right and left sides get the value of the second argument.</p>
+										<p>所有底边边距，如果未提供，则顶部和底部取第一个参数的值，右边跟左边取第二个参数的值</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> l: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the margin for the left side;
-										must be supplied if the third argument was supplied.</p>
+										<p>左边边距，如果提供了第三个参数，则必须提供</p>
 									</div>
 								</li>
 							</ul>
@@ -224,7 +210,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the bottom value of this margin. Default is 0.</p>
+								<p>获取或者设置此边距的底边的值，默认值为0</p>
 							</div>
 						</li>
 					</ul>
@@ -237,7 +223,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the left value of this margin. Default is 0.</p>
+								<p>获取或者设置边距的左边的值，默认值为0</p>
 							</div>
 						</li>
 					</ul>
@@ -250,7 +236,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the right value of this margin. Default is 0.</p>
+								<p>获取或者设置边距的右边的值，默认值为0</p>
 							</div>
 						</li>
 					</ul>
@@ -263,7 +249,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the top value of this margin. Default is 0.</p>
+								<p>获取或者设置边距的顶边的值，默认值为0</p>
 							</div>
 						</li>
 					</ul>
@@ -283,7 +269,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Create a copy of this Margin, with the same values.</p>
+								<p>使用相同的值创建此边距的副本</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="Margin.html" class="tsd-signature-type">Margin</a></h4>
 						</li>
@@ -300,7 +286,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Indicates whether the given margin is equal to this Margin.</p>
+								<p>指示给定的边距是否等于此边距。</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Margin.html#equals">equals</a></p>
@@ -312,31 +298,30 @@
 								<li>
 									<h5>t: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>top.</p>
+										<p>上.</p>
 									</div>
 								</li>
 								<li>
 									<h5>r: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>right.</p>
+										<p>右.</p>
 									</div>
 								</li>
 								<li>
 									<h5>b: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>bottom.</p>
+										<p>下.</p>
 									</div>
 								</li>
 								<li>
 									<h5>l: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>left.</p>
+										<p>做.</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if the two Margins have identical Top and Right and Bottom and Left values,
-							false otherwise.</p>
+							<p>如果两个边距具有相同的上、右、下、左的值，则为true否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -351,7 +336,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Indicates whether the given Margin is equal to this Margin.</p>
+								<p>指示给定的边距是否等于此边距。</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Margin.html#equalTo">equalTo</a></p>
@@ -363,13 +348,12 @@
 								<li>
 									<h5>m: <a href="Margin.html" class="tsd-signature-type">Margin</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Margin to compare to this Margin.</p>
+										<p>和此边距比较的边距</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if the two Margins have identical Top and Right and Bottom and Left values,
-							false otherwise.</p>
+							<p>如果两个边距具有相同的上、右、下、左的值，则为true否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -384,7 +368,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>True if this Margin has values that are real numbers and not infinity.</p>
+								<p>如果边距的值是实数不是无穷大，则为true</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
@@ -402,8 +386,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function can be used to read in a <a href="Margin.html">Margin</a> from a string that was produced by <a href="Margin.html#static-stringify">Margin.stringify</a>.</p>
-								<p><code>go.Margin.parse(&quot;1 2 3 4&quot;)</code> produces the Margin <code>new go.Margin(1, 2, 3, 4)</code>.</p>
+								<p>这个静态函数可用于将 <a href="Margin.html#static-stringify">Margin.stringify</a> 生成的字符串中读取 <a href="Margin.html">Margin</a> </p>
+								<p><code>go.Margin.parse(&quot;1 2 3 4&quot;)</code> 等同于 <code>new go.Margin(1, 2, 3, 4)</code>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -426,15 +410,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Margin so that its Top, Right, Bottom, and Left values
-								are the same as the given Margin.</p>
+								<p>修改此边距，使其顶边，右边，下边，左边的值与给定的边距相同</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>m: <a href="Margin.html" class="tsd-signature-type">Margin</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the given Margin.</p>
+										<p>给定的边距.</p>
 									</div>
 								</li>
 							</ul>
@@ -454,32 +437,32 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Margin with new Top, Right, Bottom, and Left values.</p>
+								<p>使用新的顶边，右边，下边，左边的值修改此边距</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>t: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>top.</p>
+										<p>上.</p>
 									</div>
 								</li>
 								<li>
 									<h5>r: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>right.</p>
+										<p>右.</p>
 									</div>
 								</li>
 								<li>
 									<h5>b: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>bottom.</p>
+										<p>下.</p>
 									</div>
 								</li>
 								<li>
 									<h5>l: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>left.</p>
+										<p>左.</p>
 									</div>
 								</li>
 							</ul>
@@ -500,8 +483,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function can be used to write out a <a href="Margin.html">Margin</a> as a string that can be read by <a href="Margin.html#static-parse">Margin.parse</a>.</p>
-								<p><code>go.Margin.stringify(new go.Margin(1, 2, 3, 4))</code> produces the string &quot;1 2 3 4&quot;.</p>
+								<p>这个静态函数可用于以字符串形式写出可由 <a href="Margin.html#static-parse">Margin.parse</a> 读取的 <a href="Margin.html">边距</a></p>
+								<p><code>go.Margin.stringify(new go.Margin(1, 2, 3, 4))</code> 将产生字符串 &quot;1 2 3 4&quot;.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
