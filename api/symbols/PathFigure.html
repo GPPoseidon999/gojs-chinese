@@ -85,7 +85,7 @@
 					<b>GoJS</b>&reg; Diagramming Components<br/>version 2.1.26<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>
 				</div>
 				<div>
-					<h1>Class PathFigure</h1>
+					<h1>PathFigure类</h1>
 				</div>
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
+				<h3>层次结构</h3>
 				<ul class="tsd-hierarchy">
 					<li>
 						<span class="target">PathFigure</span>
@@ -104,14 +104,12 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>A PathFigure represents a section of a <a href="Geometry.html">Geometry</a>.
-						It is a single connected series of
-					two-dimensional geometric <a href="PathSegment.html">PathSegment</a>s.</p>
-					<p>The <a href="Geometry.html#figures">Geometry.figures</a> property is a list of PathFigures.</p>
-					<p>PathFigures are drawn with the <a href="Shape.html#stroke">Shape.stroke</a> and other stroke properties.
-					Filled PathFigures are painted with the <a href="Shape.html#fill">Shape.fill</a>.</p>
-					<p>A PathFigure must not be modified once its containing <a href="Geometry.html">Geometry</a>
-					has been assigned to a <a href="Shape.html">Shape</a>.</p>
+					<p>PathFigure表示 <a href="Geometry.html">Geometry</a> 的一部分
+						它是二维几何 <a href="PathSegment.html">PathSegment</a> 的单个连接的顺序</p>
+					<p><a href="Geometry.html#figures">Geometry.figures</a> 属性是PathFigures的列表</p>
+					<p>PathFigures是使用 <a href="Shape.html#stroke">Shape.stroke</a> 和其他描边属性绘制的
+					填充的 PathFigures 用 <a href="Shape.html#fill">Shape.fill</a> 绘制</p>
+					<p>一旦将 PathFigure 包含的 <a href="Geometry.html">Geometry</a> 分配给 <a href="Shape.html">Shape</a>，就不得对其进行修改</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -157,35 +155,32 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Constructs an empty figure.
-									The optional arguments specify the starting point of the figure.
-									You&#39;ll want to add a new instance of a PathFigure to the
-								<a href="Geometry.html#figures">Geometry.figures</a> list of a <a href="Geometry.html">Geometry</a>.</p>
+								<p>构造一个空图形，可选参数指定图形的起点，你需要将PathFigure的新实例添加到 <a href="Geometry.html">Geometry</a> 的 <a href="Geometry.html#figures">Geometry.figures</a> 列表中</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> sx: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>optional: the X coordinate of the start point (default is zero).</p>
+										<p>可选: 起点的X坐标（默认为0）</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> sy: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>optional: the Y coordinate of the start point (default is zero).</p>
+										<p>可选: 起点的Y坐标（默认为0）</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> filled: <span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>optional: whether the figure is filled (default is true).</p>
+										<p>可选: 是否填充图形（默认为true）</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> shadowed: <span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>optional: whether the figure may be drawn with a shadow (default is true).</p>
+										<p>可选: 是否可以用阴影绘制图形（默认为true）</p>
 									</div>
 								</li>
 							</ul>
@@ -204,8 +199,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets whether this PathFigure is drawn filled.
-								The default value is true.</p>
+								<p>获取或者设置此PathFigure是否绘制为填充，默认值是true</p>
 							</div>
 						</li>
 					</ul>
@@ -218,9 +212,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets whether this PathFigure will render a shadow if one is defined.
-									This is used for turning off shadows on specific subpaths.
-								The default value is true.</p>
+								<p>获取或者设置是否在自定义了PathFigure情况下渲染阴影，这用于关闭特定子路径上的阴影，默认值是true</p>
 							</div>
 						</li>
 					</ul>
@@ -233,7 +225,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the <a href="List.html">List</a> of <a href="PathSegment.html">PathSegment</a>s that define this PathFigure.</p>
+								<p>获取或者设置定义此PathFigure的 <a href="PathSegment.html">PathSegment</a> 的 <a href="List.html">列表</a> </p>
 							</div>
 						</li>
 					</ul>
@@ -246,8 +238,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the starting point X coordinate of the PathFigure.
-								The default value is zero.</p>
+								<p>获取或者设置PathFigure的起点X坐标，默认值为0</p>
 							</div>
 						</li>
 					</ul>
@@ -260,8 +251,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the starting point Y coordinate of the PathFigure.
-								The default value is zero.</p>
+								<p>获取或者设置PathFigure的起点Y坐标，默认值为0</p>
 							</div>
 						</li>
 					</ul>
@@ -280,7 +270,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Add a <a href="PathSegment.html">PathSegment</a> to the <a href="PathFigure.html#segments">segments</a> list.</p>
+								<p>添加一个 <a href="PathSegment.html">PathSegment</a> 到 <a href="PathFigure.html#segments">segments</a> 列表</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.5</p>
@@ -292,7 +282,7 @@
 								<li>
 									<h5>segment: <a href="PathSegment.html" class="tsd-signature-type">PathSegment</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>a newly allocated unshared PathSegment that will become owned by this PathFigure</p>
+										<p>一个新分配的未共享PathSegment,它将由此PathFigure拥有</p>
 									</div>
 								</li>
 							</ul>
@@ -312,7 +302,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Create a copy of this PathFigure, with the same values and segments.</p>
+								<p>创建此PathFigure的副本，使用相同的值和segments</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="PathFigure.html" class="tsd-signature-type">PathFigure</a></h4>
 						</li>
