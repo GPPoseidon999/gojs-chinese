@@ -85,7 +85,7 @@
 					<b>GoJS</b>&reg; Diagramming Components<br/>version 2.1.26<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>
 				</div>
 				<div>
-					<h1>Class Size</h1>
+					<h1>Size类</h1>
 				</div>
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
+				<h3>层次结构</h3>
 				<ul class="tsd-hierarchy">
 					<li>
 						<span class="target">Size</span>
@@ -104,22 +104,15 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>A Size describes a width and a height in two-dimensional coordinates.
-					The width and height must both be non-negative.</p>
-					<p>Use the static functions <a href="Size.html#static-parse">Size.parse</a> and <a href="Size.html#static-stringify">Size.stringify</a> to convert to and from
-					a standard string representation that is independent of the current locale.</p>
-					<p>When an instance of this class is the value of a property of a <a href="GraphObject.html">GraphObject</a> class or <a href="Diagram.html">Diagram</a>
-						or <a href="CommandHandler.html">CommandHandler</a> or a <a href="Tool.html">Tool</a> class, you should treat the object
-						as if it were frozen or read-only -- you cannot modify its properties.
-						This allows the property to return a value without allocating a new instance.
-						If you need to do your own calculations with the value, call <a href="Size.html#copy">copy</a> to make
-					a new instance with the same values that you can modify.</p>
-					<p>Many methods modify the object&#39;s properties and then return a reference to &quot;this&quot; object.
-						The only instance method to allocate a new object is the <a href="Size.html#copy">copy</a> method.
-					The static <a href="Size.html#static-parse">Size.parse</a> method also allocates a new object.</p>
-					<p>The &quot;Debug&quot; implementation of this class is significantly slower than the &quot;Release&quot; implementation,
-					mostly due to additional error checking.</p>
-					<p>You cannot inherit from this class.</p>
+					<p>大小以二维坐标描述宽度和高度，宽度和高度都必须为非负数。</p>
+					<p>使用静态函数 <a href="Size.html#static-parse">Size.parse</a> 和 <a href="Size.html#static-stringify">Size.stringify</a> 可以与标准字符串表示形式进行转换，该表示形式独立于当前语言环境</p>
+					<p>此类的实例是一个 <a href="GraphObject.html">GraphObject</a> 类或者 <a href="Diagram.html">Diagram</a>
+						或者 <a href="CommandHandler.html">CommandHandler</a> 或者 <a href="Tool.html">Tool</a> 类, 你应该视为冻结或者只读对象，不能修改其属性。
+						这允许属性返回一个值，而无需分配新实例。
+						如果你需要使用该值进行自己的计算，请调用 <a href="Size.html#copy">copy</a> 以使用可以修改的相同值创建一个新实例</p>
+					<p>许多方法会修改对象的属性，然后返回对 &quot;this&quot; 对象的引用。分配新对象的唯一实例方法是 <a href="Size.html#copy">copy</a> 方法，静态方法  <a href="Size.html#static-parse">Size.parse</a> 还分配一个新对象</p>
+					<p>此类的 &quot;Debug&quot; 实现比 &quot;Release&quot; 实现明显慢得多，这主要是由于附加的错误检查</p>
+					<p>你不能从此类继承</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -168,21 +161,21 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>The default constructor produces the Size(0,0).
-								This constructor may take either zero arguments or two arguments.</p>
+								<p>默认构造产生 Size(0,0).
+								该构造函数可以采用零个参数或者两个参数</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> w: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The initial width (must be non-negative).</p>
+										<p>初始宽度（必须为非负数）</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> h: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The initial height (must be non-negative).</p>
+										<p>初始高度（必须为非负数）</p>
 									</div>
 								</li>
 							</ul>
@@ -201,8 +194,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the height value of the Size.
-								The value must not be negative.</p>
+								<p>获取或者设置Size的高度值，该值不能为负数</p>
 							</div>
 						</li>
 					</ul>
@@ -215,8 +207,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the width value of the Size.
-								The value must not be negative.</p>
+								<p>获取或者设置Size的宽度值，该值不能为负数</p>
 							</div>
 						</li>
 					</ul>
@@ -236,7 +227,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Create a copy of this Size, with the same values.</p>
+								<p>使用相同的值创建此Size的副本。</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="Size.html" class="tsd-signature-type">Size</a></h4>
 						</li>
@@ -253,7 +244,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Indicates whether the given size is equal to this Size.</p>
+								<p>指示给定的大小是否等于此大小。</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Size.html#equals">equals</a></p>
@@ -265,19 +256,18 @@
 								<li>
 									<h5>w: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the width.</p>
+										<p>宽度</p>
 									</div>
 								</li>
 								<li>
 									<h5>h: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the height.</p>
+										<p>高度</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if the Sizes have the same width and height,
-							false otherwise.</p>
+							<p>如果大小具有相同的宽度和高度，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -292,7 +282,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Indicates whether the given Size is equal to the current Size.</p>
+								<p>指示给定的大小是否等于当前大小.</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Size.html#equalTo">equalTo</a></p>
@@ -304,13 +294,12 @@
 								<li>
 									<h5>s: <a href="Size.html" class="tsd-signature-type">Size</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Size to compare to the current Size.</p>
+										<p>与当前大小比较的大小</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if the Sizes have the same width and height,
-							false otherwise.</p>
+							<p>如果大小具有相同的宽度和高度，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -325,7 +314,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>True if this Size has Width and Height values that are real numbers and not infinity.</p>
+								<p>如果大小的宽度和高度值是实数不是无穷大，则为true，否则为false</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
@@ -343,8 +332,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function can be used to read in a <a href="Size.html">Size</a> from a string that was produced by <a href="Size.html#static-stringify">Size.stringify</a>.</p>
-								<p><code>go.Size.parse(&quot;1 2&quot;)</code> produces the Size <code>new go.Size(1, 2)</code>.</p>
+								<p>此静态函数用于从 <a href="Size.html#static-stringify">Size.stringify</a> 生成的字符串中读取 <a href="Size.html">Size</a></p>
+								<p><code>go.Size.parse(&quot;1 2&quot;)</code> 生成 <code>new go.Size(1, 2)</code>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -367,14 +356,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Size so that its Width and Height values are the same as the given Size.</p>
+								<p>修改此大小，使其宽度和高度值与给定的大小相同</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>s: <a href="Size.html" class="tsd-signature-type">Size</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the given Size.</p>
+										<p>给定的大小</p>
 									</div>
 								</li>
 							</ul>
@@ -394,20 +383,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Size with new Width and Height values.</p>
+								<p>使用新的宽度和高度值修改此大小</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>w: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the width.</p>
+										<p>宽度</p>
 									</div>
 								</li>
 								<li>
 									<h5>h: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the height.</p>
+										<p>高度</p>
 									</div>
 								</li>
 							</ul>
@@ -428,8 +417,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function can be used to write out a <a href="Size.html">Size</a> as a string that can be read by <a href="Size.html#static-parse">Size.parse</a>.</p>
-								<p><code>go.Size.stringify(new go.Size(1, 2))</code> produces the string &quot;1 2&quot;.</p>
+								<p>此静态函数可以将 <a href="Size.html">Size</a> 生成为可由 <a href="Size.html#static-parse">Size.parse</a> 读取的字符串</p>
+								<p><code>go.Size.stringify(new go.Size(1, 2))</code> 生成字符串 &quot;1 2&quot;.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
