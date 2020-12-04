@@ -85,7 +85,7 @@
 					<b>GoJS</b>&reg; Diagramming Components<br/>version 2.1.26<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>
 				</div>
 				<div>
-					<h1>Class Rect</h1>
+					<h1>Rect类</h1>
 				</div>
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
+				<h3>层次结构</h3>
 				<ul class="tsd-hierarchy">
 					<li>
 						<span class="target">Rect</span>
@@ -104,23 +104,16 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>A Rect describes a rectangular two-dimensional area as a top-left point (x and y values)
-					and a size (width and height values).</p>
-					<p>Use the static functions <a href="Rect.html#static-parse">Rect.parse</a> and <a href="Rect.html#static-stringify">Rect.stringify</a> to convert to and from
-					a standard string representation that is independent of the current locale.</p>
-					<p>When an instance of this class is the value of a property of a <a href="GraphObject.html">GraphObject</a> class or <a href="Diagram.html">Diagram</a>
-						or <a href="CommandHandler.html">CommandHandler</a> or a <a href="Tool.html">Tool</a> class, you should treat the object
-						as if it were frozen or read-only -- you cannot modify its properties.
-						This allows the property to return a value without allocating a new instance.
-						If you need to do your own calculations with the value, call <a href="Rect.html#copy">copy</a> to make
-					a new instance with the same values that you can modify.</p>
-					<p>Many methods modify the object&#39;s properties and then return a reference to &quot;this&quot; object.
-						The only instance method to allocate a new object is the <a href="Rect.html#copy">copy</a> method.
-						The static <a href="Rect.html#static-parse">Rect.parse</a> method also allocates a new object.
-					The <a href="Rect.html#center">center</a>, <a href="Rect.html#position">position</a>, and <a href="Rect.html#size">size</a> properties all allocate and return a new object.</p>
-					<p>The &quot;Debug&quot; implementation of this class is significantly slower than the &quot;Release&quot; implementation,
-					mostly due to additional error checking.</p>
-					<p>You cannot inherit from this class.</p>
+					<p>Rect将一个二维矩形区域描述为左上角的点（x和y的值）和大小（宽度和高度的值）.</p>
+					<p>使用静态函数 <a href="Rect.html#static-parse">Rect.parse</a> 和 <a href="Rect.html#static-stringify">Rect.stringify</a> 与标准字符串表示形式进行转换，该表示形式与当前语言环境无关</p>
+					<p>当此类实例是 <a href="GraphObject.html">GraphObject</a> 类或者 <a href="Diagram.html">Diagram</a>
+            或者 <a href="CommandHandler.html">CommandHandler</a> 或者 <a href="Tool.html">Tool</a> 类的属性的值时,你应该将对象视为冻结或只读对象，不能修改其属性。
+            这允许属性返回值，而无需分配新实例。如果你需要使用该值进行自己的计算，请调用 <a href="Rect.html#copy">copy</a> 以使用可以修改的相同值创建一个新实例</p>
+					<p>许多方法会修改对象的属性，然后返回 &quot;this&quot; 对象的引用。分配新对象的唯一实例方法是 <a href="Rect.html#copy">copy</a> 方法。
+						静态方法 <a href="Rect.html#static-parse">Rect.parse</a> 还分配一个新对象。
+					<a href="Rect.html#center">center</a>, <a href="Rect.html#position">position</a>, 和 <a href="Rect.html#size">size</a> 属性都分配并返回一个新对象</p>
+					<p>此类的 &quot;Debug&quot; 实现比 &quot;Release&quot; 实现明显慢，这主要是由于附加的错误检查</p>
+					<p>你不能从此类继承</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -201,36 +194,34 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>There are four constructors: (), (Point, Point), (Point, Size),
-									and four numbers for (x, y, width, height).
-								The default constructor (no argument) results in a Rect(0,0,0,0).</p>
+								<p>有4种构造方式: (), (Point, Point), (Point, Size),
+									和四个数字 (x, y, width, height)。
+								默认构造方式 (没有参数) 将生成 Rect(0,0,0,0)。</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> x: <a href="Point.html" class="tsd-signature-type">Point</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Top-left Point, or x value.</p>
+										<p>左上角的点或者x的值</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> y: <a href="Point.html" class="tsd-signature-type">Point</a><span class="tsd-signature-symbol"> | </span><a href="Size.html" class="tsd-signature-type">Size</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Bottom-right Point or Size or y value.</p>
+										<p>右下角的点或者y的值</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> w: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Width to be used if x,y are specified;
-										must be non-negative.</p>
+										<p>如果指定了x,y,则使用的宽度，必须为非负数</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> h: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Height to be used if x,y are specified;
-										must be non-negative.</p>
+										<p>如果指定了x,y,则使用的高度，必须为非负数</p>
 									</div>
 								</li>
 							</ul>
@@ -249,8 +240,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the y-axis value of the bottom of the Rect.
-								This is equal to the sum of the y value and the height.</p>
+								<p>获取或设置矩形底部的y轴值。它等于y值和高度的和</p>
 							</div>
 						</li>
 					</ul>
@@ -263,8 +253,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the Point at the center of this Rect.
-								Setting this property just shifts the X and Y values.</p>
+								<p>获取或设置此Rect中心的点，设置此属性只会改变X和Y值</p>
 							</div>
 						</li>
 					</ul>
@@ -277,7 +266,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the horizontal center X coordinate of the Rect.</p>
+								<p>获取或设置Rect的水平中心X坐标</p>
 							</div>
 						</li>
 					</ul>
@@ -290,7 +279,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the vertical center Y coordinate of the Rect.</p>
+								<p>获取或设置Rect的垂直中心Y坐标</p>
 							</div>
 						</li>
 					</ul>
@@ -303,8 +292,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the height of the Rect.
-								The value must not be negative.</p>
+								<p>获取或设置Rect的高度，该值不能为负数</p>
 							</div>
 						</li>
 					</ul>
@@ -317,8 +305,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the leftmost value of the Rect.
-								This is the same as the X value.</p>
+								<p>获取或设置Rect最左边的值，这与X值相同</p>
 							</div>
 						</li>
 					</ul>
@@ -331,7 +318,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the x- and y-axis position of the Rect as a Point.</p>
+								<p>获取或设置Rect的X和Y轴位置作为点</p>
 							</div>
 						</li>
 					</ul>
@@ -344,8 +331,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the x-axis value of the right of the Rect.
-								This is equal to the sum of the x value and the width.</p>
+								<p>获取或设置Rect右侧的X轴值。这等于X值与宽度之和</p>
 							</div>
 						</li>
 					</ul>
@@ -358,7 +344,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the width and height of the Rect as a Size.</p>
+								<p>获取或设置Rect的宽度和高度作为大小</p>
 							</div>
 						</li>
 					</ul>
@@ -371,8 +357,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the topmost value of the Rect.
-								This is the same as the Y value.</p>
+								<p>获取或设置Rect的最上边的值，这与Y值相同</p>
 							</div>
 						</li>
 					</ul>
@@ -385,8 +370,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the width of the Rect.
-								The value must not be negative.</p>
+								<p>获取或设置Rect的宽度，该值不能为负数</p>
 							</div>
 						</li>
 					</ul>
@@ -399,7 +383,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the top-left x coordinate of the Rect.</p>
+								<p>获取或设置Rect的左上角X坐标</p>
 							</div>
 						</li>
 					</ul>
@@ -412,7 +396,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the top-left y coordinate of the Rect.</p>
+								<p>获取或设置Rect的左上角Y坐标</p>
 							</div>
 						</li>
 					</ul>
@@ -431,7 +415,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Rect by adding the given Margin to each side of the Rect.</p>
+								<p>通过将给定的边距添加到Rect的每一侧来修改此Rect。</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#subtractMargin">subtractMargin</a>, <a href="Rect.html#grow">grow</a>, <a href="Rect.html#inflate">inflate</a></p>
@@ -443,12 +427,12 @@
 								<li>
 									<h5>m: <a href="Margin.html" class="tsd-signature-type">Margin</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Margin to add to the Rect.</p>
+										<p>添加到Rect的边距</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Rect.html" class="tsd-signature-type">Rect</a></h4>
-							<p>this bigger Rect.</p>
+							<p>更大的Rect.</p>
 						</li>
 					</ul>
 				</section>
@@ -463,7 +447,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Indicates whether this Rect contains the given Point/Rect.</p>
+								<p>指示此Rect是否包含给定的Point/ Rect</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#containsRect">containsRect</a>, <a href="Rect.html#containsPoint">containsPoint</a></p>
@@ -475,31 +459,30 @@
 								<li>
 									<h5>x: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The X coordinate of the Point or Rect to include in the new bounds.</p>
+										<p>要包含在新边界中的Point或Rect的X坐标</p>
 									</div>
 								</li>
 								<li>
 									<h5>y: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Y coordinate of the Point or Rect to include in the new bounds.</p>
+										<p>要包含在新边界中的Point或Rect的Y坐标</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> w: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Width of the Rect to include in the new bounds, defaults to zero.</p>
+										<p>要包含在新边界中的Rect的宽度，默认为零</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> h: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Height of the Rect to include in the new bounds, defaults to zero.</p>
+										<p>要包含在新边界中的Rect的高度，默认为零</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if the Point/Rect is contained within this Rect,
-							false otherwise.</p>
+							<p>如果Point/Rect包含在此Rect中，则为true，否则为false。</p>
 						</li>
 					</ul>
 				</section>
@@ -515,62 +498,61 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function indicates whether a Rect contains the given Point/Rect.</p>
+								<p>该静态函数指示Rect是否包含给定的Point/Rect</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>rx: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The X coordinate of a Rect.</p>
+										<p>Rect的X坐标</p>
 									</div>
 								</li>
 								<li>
 									<h5>ry: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Y coordinate of a Rect.</p>
+										<p>Rect的Y坐标</p>
 									</div>
 								</li>
 								<li>
 									<h5>rw: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Width of a Rect.</p>
+										<p>Rect的宽度</p>
 									</div>
 								</li>
 								<li>
 									<h5>rh: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Height of a Rect.</p>
+										<p>Rect的高度</p>
 									</div>
 								</li>
 								<li>
 									<h5>x: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The X coordinate of the Point or Rect that might be in the bounds (RX, RY, RW, RH).</p>
+										<p>Point或Rect的X坐标可能在范围内(RX, RY, RW, RH).</p>
 									</div>
 								</li>
 								<li>
 									<h5>y: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Y coordinate of the Point or Rect that might be in the bounds (RX, RY, RW, RH).</p>
+										<p>Point或Rect的Y坐标可能在范围内(RX, RY, RW, RH).</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> w: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Width of the Rect to include in the new bounds, defaults to zero.</p>
+										<p>要包含在新边界中的Rect的宽度，默认为0</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> h: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Height of the Rect to include in the new bounds, defaults to zero.</p>
+										<p>要包含在新边界中的Rect的高度，默认为0</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if the Point/Rect is contained within this Rect,
-							false otherwise.</p>
+							<p>如果Point/Rect包含在此Rect中，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -585,7 +567,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Indicates whether this Rect contains the given Point.</p>
+								<p>表示此Rect是否包含给定的Point</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#containsRect">containsRect</a>, <a href="Rect.html#contains">contains</a></p>
@@ -597,13 +579,12 @@
 								<li>
 									<h5>p: <a href="Point.html" class="tsd-signature-type">Point</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Point to check.</p>
+										<p>要检查的Point</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if the Point is contained within this Rect,
-							false otherwise.</p>
+							<p>如果Point包含在此Rect中，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -618,7 +599,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Indicates whether this Rect contains the given Rect.</p>
+								<p>表示此Rect是否包含给定的Rect</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#containsPoint">containsPoint</a>, <a href="Rect.html#contains">contains</a></p>
@@ -630,13 +611,12 @@
 								<li>
 									<h5>r: <a href="Rect.html" class="tsd-signature-type">Rect</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Rect to check.</p>
+										<p>要检查的Rect</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if the Rect is contained within this Rect,
-							false otherwise.</p>
+							<p>如果Rect包含在此Rect中，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -652,7 +632,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Create a copy of this Rect, with the same values.</p>
+								<p>使用相同的值创建此Rect的副本</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="Rect.html" class="tsd-signature-type">Rect</a></h4>
 						</li>
@@ -669,7 +649,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Indicates whether the given Rect is equal to the current Rect.</p>
+								<p>表示给定的Rect是否等于当前的Rect</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#equals">equals</a></p>
@@ -687,18 +667,18 @@
 								<li>
 									<h5>w: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the width.</p>
+										<p>宽度</p>
 									</div>
 								</li>
 								<li>
 									<h5>h: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the height.</p>
+										<p>高度</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if the Rects are equivalent in x, y, width, and height.</p>
+							<p>如果Rect的x, y, 宽度, 和高度都相等，则为true</p>
 						</li>
 					</ul>
 				</section>
@@ -713,7 +693,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Indicates whether the given Rect is equal to the current Rect.</p>
+								<p>表示给定的Rect是否等于当前的Rect</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#equalTo">equalTo</a></p>
@@ -725,13 +705,12 @@
 								<li>
 									<h5>r: <a href="Rect.html" class="tsd-signature-type">Rect</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The rectangle to compare to the current rectangle.</p>
+										<p>与当前Rect进行比较的Rect</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if the Rects are equivalent in x, y, width,
-							and height.</p>
+							<p>如果Rect的x, y, 宽度, 和高度都相等，则为true</p>
 						</li>
 					</ul>
 				</section>
@@ -746,7 +725,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modifies this Rect by adding some distance to each side of the Rect.</p>
+								<p>通过向Rect的每一侧增加一些距离来修改此Rect</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#inflate">inflate</a>, <a href="Rect.html#addMargin">addMargin</a>, <a href="Rect.html#subtractMargin">subtractMargin</a></p>
@@ -758,30 +737,30 @@
 								<li>
 									<h5>t: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the amount to move the top side upwards; may be negative.</p>
+										<p>将顶部向上移动的量，可能是负数</p>
 									</div>
 								</li>
 								<li>
 									<h5>r: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the amount to move the right side rightwards; may be negative.</p>
+										<p>将右边向右移动的量，可能是负数</p>
 									</div>
 								</li>
 								<li>
 									<h5>b: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the amount to move the bottom side downwards; may be negative.</p>
+										<p>将下边向下移动的量，可能是负数</p>
 									</div>
 								</li>
 								<li>
 									<h5>l: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the amount to move the left side leftwards; may be negative.</p>
+										<p>将左边向左移动的量，可能是负数</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Rect.html" class="tsd-signature-type">Rect</a></h4>
-							<p>this modified Rect.</p>
+							<p>修改后的Rect.</p>
 						</li>
 					</ul>
 				</section>
@@ -796,9 +775,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Rect so that its width and height are changed on all four sides,
-									equally on the left and right sides, and equally on the top and bottom sides.
-								When the arguments are negative, this operation deflates this Rect, but not beyond zero.</p>
+								<p>修改这个Rect，使它的宽度和高度在所有四个边都改变，在左边和右边相等，在顶部和底部相等。当参数为负数时，该操作收缩该Rect，但不超过0</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#grow">grow</a>, <a href="Rect.html#addMargin">addMargin</a>, <a href="Rect.html#subtractMargin">subtractMargin</a></p>
@@ -810,13 +787,13 @@
 								<li>
 									<h5>w: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The additional width on each side, left and right; may be negative.</p>
+										<p>左右各边的额外宽度，可能是负数 </p>
 									</div>
 								</li>
 								<li>
 									<h5>h: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The additional height on each side, top and bottom; may be negative.</p>
+										<p>顶部底部的额外高度，可能是负数</p>
 									</div>
 								</li>
 							</ul>
@@ -836,8 +813,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Rect so that it is the intersection of this Rect and the rectangle
-								defined by x, y, w, h.</p>
+								<p>修改此Rect，使其成为此Rect与x,y,w,h定义的Rect的交集</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#intersectRect">intersectRect</a>, <a href="Rect.html#intersects">intersects</a></p>
@@ -875,7 +851,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Rect so that it is the intersection of this Rect and the given Rect.</p>
+								<p>修改此Rect，使其成为此Rect与给定Rect的交集</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#intersect">intersect</a>, <a href="Rect.html#intersects">intersects</a></p>
@@ -887,7 +863,7 @@
 								<li>
 									<h5>r: <a href="Rect.html" class="tsd-signature-type">Rect</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Rect to intersect with.</p>
+										<p>Rect相交</p>
 									</div>
 								</li>
 							</ul>
@@ -907,8 +883,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Determine if this Rect partly or wholly overlaps the rectangle
-								defined by x, y, w, h.</p>
+								<p>确定此Rect是否部分或全部与x,y,w,h定义的Rect重叠</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#intersectsRect">intersectsRect</a>, <a href="Rect.html#intersect">intersect</a></p>
@@ -931,7 +906,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>true if there is any overlap.</p>
+							<p>如果有重叠，则为true</p>
 						</li>
 					</ul>
 				</section>
@@ -947,44 +922,44 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function indicates whether a Rect partly or wholly overlaps the given Rect.</p>
+								<p>此静态函数表示Rect是否与给定Rect部分或者完全重叠</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>rx: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The X coordinate of a Rect.</p>
+										<p>Rect的X坐标</p>
 									</div>
 								</li>
 								<li>
 									<h5>ry: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Y coordinate of a Rect.</p>
+										<p>Rect的Y坐标</p>
 									</div>
 								</li>
 								<li>
 									<h5>rw: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Width of a Rect.</p>
+										<p>Rect的宽度</p>
 									</div>
 								</li>
 								<li>
 									<h5>rh: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Height of a Rect.</p>
+										<p>Rect的高度</p>
 									</div>
 								</li>
 								<li>
 									<h5>x: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The X coordinate of the Point or Rect that might overlap the bounds (RX, RY, RW, RH).</p>
+										<p>Point或Rect的X坐标可能与边界(RX, RY, RW, RH)重叠</p>
 									</div>
 								</li>
 								<li>
 									<h5>y: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Y coordinate of the Point or Rect that might overlap the bounds (RX, RY, RW, RH).</p>
+										<p>Point或Rect的Y坐标可能与边界(RX, RY, RW, RH)重叠</p>
 									</div>
 								</li>
 								<li>
@@ -995,7 +970,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>true if there is any overlap.</p>
+							<p>如果有重叠，则为true</p>
 						</li>
 					</ul>
 				</section>
@@ -1010,7 +985,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Determine if a given Rect is partly or wholly inside of this Rect.</p>
+								<p>确定给定的Rect是否部分或全部在此Rect内部</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#intersects">intersects</a>, <a href="Rect.html#intersectRect">intersectRect</a></p>
@@ -1022,12 +997,12 @@
 								<li>
 									<h5>r: <a href="Rect.html" class="tsd-signature-type">Rect</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Rect to test intersection with.</p>
+										<p>测试交集的Rect</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>true if there is an intersection.</p>
+							<p>如果有交集，则为true</p>
 						</li>
 					</ul>
 				</section>
@@ -1042,7 +1017,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>True if this Rect has a Width and Height of zero.</p>
+								<p>如果此Rect的宽度和高度为0，则为true</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
@@ -1059,7 +1034,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>True if this Rect has X, Y, Width, and Height values that are real numbers and not infinity.</p>
+								<p>如果此Rect具有X, Y, 宽度, 和高度值是实数而不是无穷大，则为true</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
@@ -1076,7 +1051,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Rect by shifting its values with the given DX and DY offsets.</p>
+								<p>通过给定的DX和DY偏移量移动其Rect值来修改此Rect</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1104,8 +1079,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function can be used to read in a <a href="Rect.html">Rect</a> from a string that was produced by <a href="Rect.html#static-stringify">Rect.stringify</a>.</p>
-								<p><code>go.Rect.parse(&quot;1 2 3 4&quot;)</code> produces the Rect <code>new go.Rect(1, 2, 3, 4)</code>.</p>
+								<p>此静态函数可用于从  <a href="Rect.html#static-stringify">Rect.stringify</a> 生成的字符串中读取 <a href="Rect.html">Rect</a> </p>
+								<p><code>go.Rect.parse(&quot;1 2 3 4&quot;)</code> 生成Rect <code>new go.Rect(1, 2, 3, 4)</code>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1128,14 +1103,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Rect so that its X, Y, Width, and Height values are the same as the given Rect.</p>
+								<p>修改此Rect，使其X, Y, 宽度, 和高度值与给定的Rect相同</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>r: <a href="Rect.html" class="tsd-signature-type">Rect</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the given Rect.</p>
+										<p>给定的Rect.</p>
 									</div>
 								</li>
 							</ul>
@@ -1155,14 +1130,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Rect so that its X and Y values are the same as the given Point.</p>
+								<p>修改此Rect，使其X和Y值与给定的Point相同</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>p: <a href="Point.html" class="tsd-signature-type">Point</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the given Point.</p>
+										<p>给定的Point.</p>
 									</div>
 								</li>
 							</ul>
@@ -1182,14 +1157,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Rect so that its Width and Height values are the same as the given Size.</p>
+								<p>修改此Rect，使其宽度和高度值与给定的Size相同</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>s: <a href="Size.html" class="tsd-signature-type">Size</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the given Size.</p>
+										<p>给定的Size.</p>
 									</div>
 								</li>
 							</ul>
@@ -1209,28 +1184,27 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Rect so that a given Spot is at a given (x,y) point using this Rect&#39;s size.
-								Return this rectangle for which the spot is at that point, without modifying the size.</p>
-								<p>The result is meaningless if <a href="Spot.html#isNoSpot">Spot.isNoSpot</a> is true.</p>
+								<p>修改此Rect，以使给定的Spot使用此Rect的大小位于给定的（x,y）Point，返回该点处的矩形，而无需修改大小</p>
+								<p>如果 <a href="Spot.html#isNoSpot">Spot.isNoSpot</a> 为true，则结果将毫无意义</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>x: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the point where the spot should be.</p>
+										<p>point应该在spot哪里</p>
 									</div>
 								</li>
 								<li>
 									<h5>y: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the point where the spot should be.</p>
+										<p>point应该在spot哪里</p>
 									</div>
 								</li>
 								<li>
 									<h5>spot: <a href="Spot.html" class="tsd-signature-type">Spot</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>a Spot; <a href="Spot.html#isSpot">Spot.isSpot</a> must be true.</p>
+										<p>一个Spot; <a href="Spot.html#isSpot">Spot.isSpot</a> 必须为true.</p>
 									</div>
 								</li>
 							</ul>
@@ -1250,7 +1224,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Rect with new X, Y, Width, and Height values.</p>
+								<p>使用新的X, Y, 宽度和高度值修改此Rect</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1263,13 +1237,13 @@
 								<li>
 									<h5>w: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the width.</p>
+										<p>宽度.</p>
 									</div>
 								</li>
 								<li>
 									<h5>h: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the height.</p>
+										<p>高度.</p>
 									</div>
 								</li>
 							</ul>
@@ -1290,8 +1264,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function can be used to write out a <a href="Rect.html">Rect</a> as a string that can be read by <a href="Rect.html#static-parse">Rect.parse</a>.</p>
-								<p><code>go.Rect.stringify(new go.Rect(1, 2, 3, 4))</code> produces the string &quot;1 2 3 4&quot;.</p>
+								<p>此静态函数可用于将 <a href="Rect.html">Rect</a> 写为可被 <a href="Rect.html#static-parse">Rect.parse</a> 读取的字符串</p>
+								<p><code>go.Rect.stringify(new go.Rect(1, 2, 3, 4))</code> 生成字符串 &quot;1 2 3 4&quot;.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1314,7 +1288,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Rect by subtracting the given Margin from each side of the Rect.</p>
+								<p>通过从Rect的每一侧减去给定的边距来修改此Rect</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#addMargin">addMargin</a>, <a href="Rect.html#grow">grow</a>, <a href="Rect.html#inflate">inflate</a></p>
@@ -1326,12 +1300,12 @@
 								<li>
 									<h5>m: <a href="Margin.html" class="tsd-signature-type">Margin</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Margin to subtract from the Rect.</p>
+										<p>Rect减去的边距</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Rect.html" class="tsd-signature-type">Rect</a></h4>
-							<p>this smaller Rect.</p>
+							<p>较小的Rect.</p>
 						</li>
 					</ul>
 				</section>
@@ -1346,7 +1320,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Rect to be exactly big enough to contain both the original Rect and the given rectangular area.</p>
+								<p>将此Rect修改为足够大，使其既包含原始Rect也包含给定的矩形区域</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#unionRect">unionRect</a>, <a href="Rect.html#unionPoint">unionPoint</a></p>
@@ -1358,25 +1332,25 @@
 								<li>
 									<h5>x: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The X coordinate of the Point or Rect to include in the new bounds.</p>
+										<p>要包含在新边界中的Point或Rect的X坐标</p>
 									</div>
 								</li>
 								<li>
 									<h5>y: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Y coordinate of the Point or Rect to include in the new bounds.</p>
+										<p>要包含在新边界中的Point或Rect的Y坐标</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> w: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Width of the Rect to include in the new bounds, defaults to zero.</p>
+										<p>要包含在新边界中的Rect的宽度，默认为0</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> h: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Height of the Rect to include in the new bounds, defaults to zero.</p>
+										<p>要包含在新边界中的Rect的高度，默认为0</p>
 									</div>
 								</li>
 							</ul>
@@ -1396,7 +1370,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Rect to be exactly big enough to contain both the original Rect and the given Point.</p>
+								<p>将此Rect修改为足够大，使其既包含原始Rect也包含给定的Point</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#unionRect">unionRect</a>, <a href="Rect.html#union">union</a></p>
@@ -1408,7 +1382,7 @@
 								<li>
 									<h5>p: <a href="Point.html" class="tsd-signature-type">Point</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Point to include in the new bounds.</p>
+										<p>要包含在新边界中的点</p>
 									</div>
 								</li>
 							</ul>
@@ -1428,7 +1402,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Modify this Rect to be exactly big enough to contain this Rect and the given Rect.</p>
+								<p>将此Rect修改为足够大，使其既包含原始Rect也包含给定的Rect</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Rect.html#unionPoint">unionPoint</a>, <a href="Rect.html#union">union</a></p>
@@ -1440,7 +1414,7 @@
 								<li>
 									<h5>r: <a href="Rect.html" class="tsd-signature-type">Rect</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The Rect to include in the new bounds.</p>
+										<p>要包含在新边界中的Rect</p>
 									</div>
 								</li>
 							</ul>
