@@ -85,7 +85,7 @@
 					<b>GoJS</b>&reg; Diagramming Components<br/>version 2.1.26<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>
 				</div>
 				<div>
-					<h1>Class PathSegment</h1>
+					<h1>PathSegment类</h1>
 				</div>
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
+				<h3>层次结构</h3>
 				<ul class="tsd-hierarchy">
 					<li>
 						<span class="target">PathSegment</span>
@@ -104,13 +104,12 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>A PathSegment represents a straight line or curved segment of a path between
-						two or more points that are part of a <a href="PathFigure.html">PathFigure</a>.
-						The very first point is given by the <a href="PathFigure.html#startX">PathFigure.startX</a> and <a href="PathFigure.html#startY">PathFigure.startY</a> properties.
-						After the first segment the beginning point of the next segment is the same as the end point of the previous segment.
-					For most types of PathSegments the end point of the segment is given by <a href="PathSegment.html#endX">endX</a> and <a href="PathSegment.html#endY">endY</a>.</p>
-					<p>A PathSegment must not be modified once its containing <a href="PathFigure.html">PathFigure</a>&#39;s
-					<a href="Geometry.html">Geometry</a> has been assigned to a <a href="Shape.html">Shape</a>.</p>
+					<p>PathSegment表示作为 <a href="PathFigure.html">PathFigure</a> 一部分的两个或多个点之间的路径的直选或曲线段。
+          第一个点由 <a href="PathFigure.html#startX">PathFigure.startX</a> 和 <a href="PathFigure.html#startY">PathFigure.startY</a> 属性给出。
+          在第一个片段之后，下一个片段的起点与上一个片段的终点相同。
+          对于大多数类型的PathSegment，该段的终点由 <a href="PathSegment.html#endX">endX</a> 和 <a href="PathSegment.html#endY">endY</a> 给出
+					</p>
+					<p>一旦将包含 <a href="PathFigure.html">PathFigure</a> 的 <a href="Geometry.html">Geometry</a> 的PathSegment分配给  <a href="Shape.html">Shape</a>，就不得对其进行修改</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -299,7 +298,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the center X value of the Arc for a PathSegment of type <a href="PathSegment.html#static-Arc">Arc</a>.</p>
+								<p>获取或设置PathSegment类型为 <a href="PathSegment.html#static-Arc">Arc</a> 的圆弧中心的X值</p>
 							</div>
 						</li>
 					</ul>
@@ -312,7 +311,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the center Y value of the Arc for a PathSegment of type <a href="PathSegment.html#static-Arc">Arc</a>.</p>
+								<p>获取或设置PathSegment类型为 <a href="PathSegment.html#static-Arc">Arc</a> 的圆弧中心的Y值</p>
 							</div>
 						</li>
 					</ul>
@@ -325,8 +324,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the X coordinate of the end point for all types of PathSegment except <a href="PathSegment.html#static-Arc">Arc</a>.
-								The default value is zero.</p>
+								<p>获取或设置除 <a href="PathSegment.html#static-Arc">Arc</a> 之外的所有PathSegment类型的终点的X坐标，默认值为0</p>
 							</div>
 						</li>
 					</ul>
@@ -339,8 +337,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the Y coordinate of the end point for all types of PathSegment except <a href="PathSegment.html#static-Arc">Arc</a>.
-								The default value is zero.</p>
+								<p>获取或设置除 <a href="PathSegment.html#static-Arc">Arc</a> 之外的所有PathSegment类型的终点的Y坐标，默认值为0</p>
 							</div>
 						</li>
 					</ul>
@@ -353,14 +350,12 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the clockwise-flag for a PathSegment of type <a href="PathSegment.html#static-SvgArc">SvgArc</a>.
-									SVG Arcs specify a radius and an endpoint, and are always a portion of an ellipse.
-									The parameters allow for two potential ellipses and four potential arcs.
-									A clockwise-flag set to true will use one of the two possible positive-angle arcs,
-									and false will use one of the two negative-angle arcs. Which arc is chosen (small or large)
-									depends on the value of <a href="PathSegment.html#isLargeArc">isLargeArc</a>.
-									For more information see the visual examples in the
-								<a href="https://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands">SVG Arc specification (w3.org)</a></p>
+                <p>获取或设置 <a href="PathSegment.html#static-SvgArc">SvgArc</a> 类型的PathSegment 顺时针标志。
+                  SVG弧指定半径和终点，并且始终是椭圆的一部分。
+                  参数允许两个潜在的椭圆和四个潜在的弧。
+                  设置为true的顺时针标志将使用两个可能的正角度弧之一，而false将使用两个负角度的弧之一。 选择哪个弧（小还是大）取决于 <a href="PathSegment.html#isLargeArc">isLargeArc</a> 的值。
+									有关更多信息，请参见
+								 <a href="https://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands">SVG Arc 规范 (w3.org)</a></p>
 							</div>
 						</li>
 					</ul>
@@ -373,8 +368,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets whether the path is closed after this PathSegment.
-								Default value is false.</p>
+								<p>获取或设置在此PathSegment之后是否闭合路径，默认值为false</p>
 							</div>
 						</li>
 					</ul>
@@ -392,8 +386,7 @@
 									The parameters allow for two potential ellipses and four potential arcs.
 									A large-arc-flag set to true will choose the larger of the two arc sweeps.
 									Which way the arc sweeps (positive angle or negative angle) depends on the value of <a href="PathSegment.html#isClockwiseArc">isClockwiseArc</a>
-									For more information see the visual examples in the
-								<a href="https://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands">SVG Arc specification (w3.org)</a></p>
+									有关更多信息，请参阅<a href="https://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands">SVG Arc 规范 (w3.org)</a></p>
 							</div>
 						</li>
 					</ul>
@@ -406,8 +399,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the X value of the first control point for a PathSegment
-								of type <a href="PathSegment.html#static-Bezier">Bezier</a> or <a href="PathSegment.html#static-QuadraticBezier">QuadraticBezier</a>.</p>
+								<p>获取或设置 <a href="PathSegment.html#static-Bezier">Bezier</a> 或 <a href="PathSegment.html#static-QuadraticBezier">QuadraticBezier</a> 类型的PathSegment的第一个控制点的X值</p>
 							</div>
 						</li>
 					</ul>
@@ -420,8 +412,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the Y value of the first control point for a PathSegment
-								of type <a href="PathSegment.html#static-Bezier">Bezier</a> or <a href="PathSegment.html#static-QuadraticBezier">QuadraticBezier</a>.</p>
+								<p>获取或设置 <a href="PathSegment.html#static-Bezier">Bezier</a> 或 <a href="PathSegment.html#static-QuadraticBezier">QuadraticBezier</a> 类型的PathSegment的第一个控制点的Y值</p></p>
 							</div>
 						</li>
 					</ul>
@@ -434,8 +425,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the X value of the second control point for a PathSegment
-								of type cubic <a href="PathSegment.html#static-Bezier">Bezier</a>.</p>
+								<p>获取或设置三次贝塞尔曲线类型的PathSegment的第二个控制点的X值</p>
 							</div>
 						</li>
 					</ul>
@@ -448,8 +438,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the Y value of the second control point for a PathSegment
-								of type cubic <a href="PathSegment.html#static-Bezier">Bezier</a>.</p>
+								<p>获取或设置三次贝塞尔曲线类型的PathSegment的第二个控制点的Y值</p>
 							</div>
 						</li>
 					</ul>
@@ -462,8 +451,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the X value of the radius for a PathSegment of type <a href="PathSegment.html#static-Arc">Arc</a> or <a href="PathSegment.html#static-SvgArc">SvgArc</a>.
-								Value must be a positive number.</p>
+								<p>获取或设置 <a href="PathSegment.html#static-Arc">Arc</a> 或 <a href="PathSegment.html#static-SvgArc">SvgArc</a> 类型的PathSegment的半径的x值，值必须为正数</p>
 							</div>
 						</li>
 					</ul>
@@ -476,8 +464,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the Y value of the radius for a PathSegment of type <a href="PathSegment.html#static-Arc">Arc</a> or <a href="PathSegment.html#static-SvgArc">SvgArc</a>.
-								Value must be a positive number.</p>
+								<p>获取或设置 <a href="PathSegment.html#static-Arc">Arc</a> 或 <a href="PathSegment.html#static-SvgArc">SvgArc</a> 类型的PathSegment的半径的Y值，值必须为正数</p>
 							</div>
 						</li>
 					</ul>
@@ -490,8 +477,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the starting angle for a PathSegment of type <a href="PathSegment.html#static-Arc">Arc</a>.
-								Value must within the range: (0 &lt;= value &lt; 360).</p>
+								<p>获取或设置 <a href="PathSegment.html#static-Arc">Arc</a> 类型的PathSegment的起始角度。该值必须在以下范围内: (0 &lt;= value &lt; 360).</p>
 							</div>
 						</li>
 					</ul>
@@ -504,8 +490,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the length of angle in degrees, or amount of arc to &quot;sweep&quot; for a PathSegment of type <a href="PathSegment.html#static-Arc">Arc</a>.
-								Must be between -360 and 360, inclusive.</p>
+								<p>获取或设置 <a href="PathSegment.html#static-Arc">Arc</a> 类型的PathSegment的角度长度或&quot;sweep&quot;的弧度。
+                必须在-360到360之间（含-360）。</p>
 							</div>
 						</li>
 					</ul>
@@ -518,11 +504,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the type of the PathSegment.
-									The value must be one of the following:
+								<p>获取或设置PathSegment的类型，该值必须是以下之一:
 									<a href="PathSegment.html#static-Line">PathSegment.Line</a>, <a href="PathSegment.html#static-Bezier">PathSegment.Bezier</a>,
 									<a href="PathSegment.html#static-QuadraticBezier">PathSegment.QuadraticBezier</a>, <a href="PathSegment.html#static-Arc">PathSegment.Arc</a>,
-								<a href="PathSegment.html#static-Move">PathSegment.Move</a>, <a href="PathSegment.html#static-Arc">PathSegment.Arc</a>, and <a href="PathSegment.html#static-SvgArc">PathSegment.SvgArc</a>.</p>
+								<a href="PathSegment.html#static-Move">PathSegment.Move</a>, <a href="PathSegment.html#static-Arc">PathSegment.Arc</a>, 和 <a href="PathSegment.html#static-SvgArc">PathSegment.SvgArc</a></p>
 							</div>
 						</li>
 					</ul>
@@ -535,10 +520,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the X-axis rotation for a PathSegment of type <a href="PathSegment.html#static-SvgArc">SvgArc</a>.
-									X-axis rotation is used to rotate the ellipse that the arc is created from,
-									and must be between 0 and 360 degrees.
-								Default is 0.</p>
+								<p>获取或设置 <a href="PathSegment.html#static-SvgArc">SvgArc</a> 类型的PathSegment的X轴Rotation，
+									X轴Rotation用于旋转从其创建圆弧的椭圆，并且必须在0到360度之间，默认值为0</p>
 							</div>
 						</li>
 					</ul>
@@ -557,10 +540,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Closes the path after this PathSegment</p>
+								<p>在此PathSegment之后闭合路径</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="PathSegment.html" class="tsd-signature-type">PathSegment</a></h4>
-							<p>returns this PathSegment.</p>
+							<p>返回当前PathSegment</p>
 						</li>
 					</ul>
 				</section>
@@ -576,7 +559,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Create a copy of this PathSegment, of the same type and with the same point values.</p>
+								<p>创建此PathSegment的副本，该副本具有相同的类型和相同的点值</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="PathSegment.html" class="tsd-signature-type">PathSegment</a></h4>
 						</li>
@@ -592,7 +575,7 @@
 						Arc
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For drawing an arc segment, a value for <a href="PathSegment.html#type">PathSegment.type</a>.</p>
+						<p>用于绘制圆弧线段，<a href="PathSegment.html#type">PathSegment.type</a> 的值</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -602,7 +585,7 @@
 						Bezier
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For drawing a cubic bezier segment, a value for <a href="PathSegment.html#type">PathSegment.type</a>.</p>
+						<p>用于绘制三次贝塞尔曲线线段，<a href="PathSegment.html#type">PathSegment.type</a> 的值</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -612,7 +595,7 @@
 						Line
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For drawing a straight line segment, a value for <a href="PathSegment.html#type">PathSegment.type</a>.</p>
+						<p>用于绘制直线线段，<a href="PathSegment.html#type">PathSegment.type</a> 的值</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -622,7 +605,7 @@
 						Move
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For beginning a new subpath, a value for <a href="PathSegment.html#type">PathSegment.type</a>.</p>
+						<p>要开始新的子路径，<a href="PathSegment.html#type">PathSegment.type</a> 的值</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -632,7 +615,7 @@
 						Quadratic<wbr>Bezier
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For drawing a quadratic bezier segment, a value for <a href="PathSegment.html#type">PathSegment.type</a>.</p>
+						<p>用于绘制二次贝塞尔曲线线段，<a href="PathSegment.html#type">PathSegment.type</a> 的值</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -642,8 +625,8 @@
 						Svg<wbr>Arc
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For drawing an SVG arc segment, a value for <a href="PathSegment.html#type">PathSegment.type</a>.</p>
-						<p>See: <a href="https://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands">SVG Arc specification (w3.org)</a></p>
+						<p>用于绘制SVG弧度线段, <a href="PathSegment.html#type">PathSegment.type</a> 的值</p>
+						<p>参阅: <a href="https://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands">SVG Arc specification (w3.org)</a></p>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
 							<dd><p>1.1</p>
