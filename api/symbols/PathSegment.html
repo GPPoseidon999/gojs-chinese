@@ -178,108 +178,105 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Constructs a segment that goes nowhere unless you specify some Points.</p>
-								<p>The very first point of a path is specified in the containing <a href="PathFigure.html">PathFigure</a> by
-								its <a href="PathFigure.html#startX">PathFigure.startX</a> and <a href="PathFigure.html#startY">PathFigure.startY</a> properties.</p>
-								<p>The segment type must be one of the following values:
+								<p>构造一个不去任何地方的线段，除非你指定一些点</p>
+								<p>路径的第一个点是包含的 <a href="PathFigure.html">PathFigure</a> 中通过其 <a href="PathFigure.html#startX">PathFigure.startX</a> 和 <a href="PathFigure.html#startY">PathFigure.startY</a> 属性指定的</p>
+								<p>线段类型必须是以下值之一:
 									<a href="PathSegment.html#static-Line">PathSegment.Line</a>, <a href="PathSegment.html#static-Bezier">PathSegment.Bezier</a>,
-									<a href="PathSegment.html#static-QuadraticBezier">PathSegment.QuadraticBezier</a>, <a href="PathSegment.html#static-Arc">PathSegment.Arc</a>, <a href="PathSegment.html#static-SvgArc">PathSegment.SvgArc</a>.
-									You will want to add a new instance of a PathSegment to the
-								<a href="PathFigure.html#segments">PathFigure.segments</a> list of a <a href="PathFigure.html">PathFigure</a>.</p>
+									<a href="PathSegment.html#static-QuadraticBezier">PathSegment.QuadraticBezier</a>, <a href="PathSegment.html#static-Arc">PathSegment.Arc</a>, <a href="PathSegment.html#static-SvgArc">PathSegment.SvgArc</a>。
+								你将要向 <a href="PathFigure.html">PathFigure</a> 的 <a href="PathFigure.html#segments">PathFigure.segments</a> 列表中添加PathSegment的新实例</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> type: <span class="tsd-signature-type">EnumValue</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>if not supplied, the default PathSegment type is <a href="PathSegment.html#static-Line">PathSegment.Line</a>.
-											But if the type is supplied, one must also provide the endpoint X and Y values,
-											either as arguments in this constructor or by setting the <a href="PathSegment.html#endX">endX</a> and <a href="PathSegment.html#endY">endY</a> properties.
-											If the type is QuadraticBezier, the X1 and Y1 control point values must both be supplied.
-										If the type is Bezier, X1, Y1, X2, and Y2 control point values must all be supplied.</p>
-										<p>If the type is <a href="PathSegment.html#static-Line">Line</a> it needs the following arguments:</p>
+										<p>如果未提供，则默认的PathSegment类型为 <a href="PathSegment.html#static-Line">PathSegment.Line</a>。
+											但是如果提供了类型，则还必须提供终点X和Y值，作为此构造函数中的参数或通过设置 <a href="PathSegment.html#endX">endX</a> 和 <a href="PathSegment.html#endY">endY</a> 属性。
+											如果类型是QuadraticBezier，则必须同时提供X1和Y1控制点的值。
+										如果类型为Bezier，则必须全部提供 X1, Y1, X2, 和 Y2 控制点值</p>
+										<p>如果类型为 <a href="PathSegment.html#static-Line">Line</a> 则需要以下参数:</p>
 										<p><code>(go.PathSegment.Line, ex, ey)</code></p>
 										<ul>
-											<li><strong>ex, ey</strong> describe the end point</li>
+											<li><strong>ex, ey</strong> 表示终点</li>
 										</ul>
-										<p>If the type is <a href="PathSegment.html#static-QuadraticBezier">QuadraticBezier</a> it needs the following arguments:</p>
+										<p>如果类型为 <a href="PathSegment.html#static-QuadraticBezier">QuadraticBezier</a> 则需要以下参数:</p>
 										<p><code>(go.PathSegment.QuadraticBezier, ex, ey, x1, y1)</code></p>
 										<ul>
-											<li><strong>ex, ey</strong> describe the end point</li>
-											<li><strong>x1, y1</strong> describe the only control point</li>
+											<li><strong>ex, ey</strong> 表示终点</li>
+											<li><strong>x1, y1</strong> 表示唯一的控制点</li>
 										</ul>
-										<p>If the type is <a href="PathSegment.html#static-Bezier">Bezier</a> it needs the following arguments:</p>
+										<p>如果类型为 <a href="PathSegment.html#static-Bezier">Bezier</a> 则需要以下参数:</p>
 										<p><code>(go.PathSegment.Bezier, ex, ey, x1, y1, x2, y2)</code></p>
 										<ul>
-											<li><strong>ex, ey</strong> describe the end point</li>
-											<li><strong>x1, y1</strong> describe the first control point</li>
-											<li><strong>x2, y2</strong> describe the second control point</li>
+											<li><strong>ex, ey</strong> 表示终点</li>
+											<li><strong>x1, y1</strong> 表示第一个控制点</li>
+											<li><strong>x2, y2</strong> 表示第二个控制点</li>
 										</ul>
-										<p>If the type is <a href="PathSegment.html#static-Arc">Arc</a> it needs the following arguments:</p>
+										<p>如果类型为 <a href="PathSegment.html#static-Arc">Arc</a> 则需要以下参数:</p>
 										<p><code>(go.PathSegment.Arc, startAngle, sweepAngle, centerX, centerY, radiusX, radiusY)</code></p>
 										<ul>
-											<li><strong>startAngle</strong> describes the start angle, in degrees</li>
-											<li><strong>sweepAngle</strong> describes the sweep angle, in degrees</li>
-											<li><strong>centerX, centerY</strong> describe the center point</li>
-											<li><strong>radiusX, radiusY</strong> describe the radiusX and radiusY</li>
+											<li><strong>startAngle</strong> 表示起始角度, 以度为单位</li>
+											<li><strong>sweepAngle</strong> 表示扫角, 以度为单位</li>
+											<li><strong>centerX, centerY</strong> 表示中心点</li>
+											<li><strong>radiusX, radiusY</strong> 表示radiusX 和 radiusY</li>
 										</ul>
-										<p>If the type is <a href="PathSegment.html#static-SvgArc">SvgArc</a> it needs the following arguments:</p>
+										<p>如果类型为 <a href="PathSegment.html#static-SvgArc">SvgArc</a> 则需要以下参数:</p>
 										<p><code>(go.PathSegment.SvgArc, ex, ey, radiusX, radiusY, xAxisRotation, largeArcFlag, clockwiseFlag)</code></p>
-										<p>They are in the same order as arcs in SVG path strings, except the endpoint x and y values come first, not last.</p>
+										<p>它们与SVG路径字符串中的弧线顺序相同，只是终点X和Y值排在前面，而不是最后</p>
 										<ul>
-											<li><strong>ex, ey</strong> describe the endpoint</li>
-											<li><strong>radiusX, radiusY</strong> describe the radius</li>
-											<li><strong>xAxisRotation</strong> describes the <a href="PathSegment.html#xAxisRotation">xAxisRotation</a> (number in degrees)</li>
-											<li><strong>largeArcFlag</strong> describes the <a href="PathSegment.html#isLargeArc">isLargeArc</a> (true or false)</li>
-											<li><strong>clockwiseFlag</strong> describes the <a href="PathSegment.html#isClockwiseArc">isClockwiseArc</a> (true or false).</li>
+											<li><strong>ex, ey</strong> 表示终点</li>
+											<li><strong>radiusX, radiusY</strong> 表示半径</li>
+											<li><strong>xAxisRotation</strong> 表示 <a href="PathSegment.html#xAxisRotation">xAxisRotation</a> (以度为单位的数字)</li>
+											<li><strong>largeArcFlag</strong> 表示 <a href="PathSegment.html#isLargeArc">isLargeArc</a> (true 或 false)</li>
+											<li><strong>clockwiseFlag</strong> 表示 <a href="PathSegment.html#isClockwiseArc">isClockwiseArc</a> (true 或 false).</li>
 										</ul>
-										<p>If the type is <a href="PathSegment.html#static-Move">Move</a> it needs the following arguments:</p>
+										<p>如果类型为 <a href="PathSegment.html#static-Move">Move</a> 则需要以下参数:</p>
 										<p><code>(go.PathSegment.Move, ex, ey)</code></p>
 										<ul>
-											<li><strong>ex, ey</strong> describe the next starting point</li>
+											<li><strong>ex, ey</strong> 表示下一个起点</li>
 										</ul>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> ex: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>optional: the X coordinate of the end point, or the startAngle of an Arc.</p>
+										<p>可选: 终点的X坐标或弧的startAngle</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> ey: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>optional: the Y coordinate of the end point, or the sweepAngle of an Arc.</p>
+										<p>可选: 终点的Y坐标或弧的sweepAngle</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> x1: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>optional: the X coordinate of the first bezier control point, or the centerX of an Arc, or the radiusX of an SvgArc.</p>
+										<p>可选: 第一个贝塞尔曲线控制点的X坐标，或弧的centerX，或SvgArc的radiusX</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> y1: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>optional: the Y coordinate of the first bezier control point, or the centerY of an Arc, or the radiusY of an SvgArc.</p>
+										<p>可选: 第一个贝塞尔曲线控制点的Y坐标，或弧的centerY，或SvgArc的radiusY</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> x2: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>optional: the X coordinate of the second cubic bezier control point, or the radiusX of an Arc, or the xAxisRotation of an SvgArc.</p>
+										<p>可选: 第二个贝塞尔控制点的X坐标，或弧的radiusX，或SvgArc的xAxisRotation</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> y2: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>optional: the Y coordinate of the second cubic bezier control point, or the radiusY of an Arc, or whether this is the larger arc of an SvgArc.</p>
+										<p>可选: 第二个贝塞尔控制点的Y左边，或弧的radiusY，或SvgArc是否是较大的弧</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> clockwise: <span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>optional: whether an SvgArc goes clockwise or counterclockwise.</p>
+										<p>可选: SvgArc是顺时针还是逆时针旋转</p>
 									</div>
 								</li>
 							</ul>
@@ -381,12 +378,12 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the large-arc-flag for a PathSegment of type <a href="PathSegment.html#static-SvgArc">SvgArc</a>.
-									SVG Arcs specify a radius and an endpoint, and are always a portion of an ellipse.
-									The parameters allow for two potential ellipses and four potential arcs.
-									A large-arc-flag set to true will choose the larger of the two arc sweeps.
-									Which way the arc sweeps (positive angle or negative angle) depends on the value of <a href="PathSegment.html#isClockwiseArc">isClockwiseArc</a>
-									有关更多信息，请参阅<a href="https://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands">SVG Arc 规范 (w3.org)</a></p>
+								<p>获取或设置 <a href="PathSegment.html#static-SvgArc">SvgArc</a> 类型的PathSegment的large-arc-flag。 
+									SVG Arcs 指定半径和终点，并且始终是椭圆的一部分。
+									参数允许两个潜在的椭圆和四个潜在的弧。
+									设置为true的large-arc-flag将选择两个扫过弧中较大的一个。
+									弧扫掠的方式(正角或负角)取决于 <a href="PathSegment.html#isClockwiseArc">isClockwiseArc</a> 的值
+									有关更多信息，请参阅 <a href="https://www.w3.org/TR/SVG/paths.html#PathDataEllipticalArcCommands">SVG Arc 规范 (w3.org)</a></p>
 							</div>
 						</li>
 					</ul>
