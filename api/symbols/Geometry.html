@@ -85,7 +85,7 @@
 					<b>GoJS</b>&reg; Diagramming Components<br/>version 2.1.26<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>
 				</div>
 				<div>
-					<h1>Class Geometry</h1>
+					<h1>Geometry类</h1>
 				</div>
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
+				<h3>层次结构</h3>
 				<ul class="tsd-hierarchy">
 					<li>
 						<span class="target">Geometry</span>
@@ -104,21 +104,20 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>The Geometry class is used to define the &quot;shape&quot; of a <a href="Shape.html">Shape</a>.
-						A Geometry can be simple straight lines, rectangles, or ellipses.
-					A Geometry can also be an arbitrarily complex path, consisting of a list of <a href="PathFigure.html">PathFigure</a>s.</p>
-					<p>A Geometry must not be modified once it has been used by a <a href="Shape.html">Shape</a>.
-					However, a Geometry may be shared by multiple Shapes.</p>
-					<p>It is commonplace to create Geometries using geometry path string syntax:
-						<a href="../../intro/geometry.html">Geometry Path Strings</a>.
-						However it is much more efficient to create Geometries programmatically.
-					One way to do that is illustrated by several of the samples that evaluate JavaScript such as:</p>
+					<p>Geometry类用于定义<a href="Shape.html">Shape</a> 的&quot;形状&quot;
+					Geometry 可以是简单的直线，矩形或者椭圆形。
+					Geometry 也可以是任意复杂的路径，由 <a href="PathFigure.html">PathFigure</a> 列表组成。</p>
+					<p><a href="Shape.html">Shape</a> 使用过Geometry后，不得对其进行修改。
+					但是, 一个Geometry可以被多个Shape共享。</p>
+					<p>使用几何路径字符串语法创建Geometry是很平常的:<a href="../../intro/geometry.html">Geometry Path Strings</a>
+						但是以编程方式创建几何图形的效率要高得多。
+					评估JavaScript的几个示例说明了一种实现方法，例如:</p>
 					<pre><code class="hljs js"><span class="hljs-keyword">new</span> go.Geometry()
     .add(<span class="hljs-keyword">new</span> go.PathFigure(p.x, p.y)
          .add(<span class="hljs-keyword">new</span> go.PathSegment(go.PathSegment.Arc, -sweep/<span class="hljs-number">2</span>, sweep, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, radius+layerThickness, radius+layerThickness))
          .add(<span class="hljs-keyword">new</span> go.PathSegment(go.PathSegment.Line, q.x, q.y))
          .add(<span class="hljs-keyword">new</span> go.PathSegment(go.PathSegment.Arc, sweep/<span class="hljs-number">2</span>, -sweep, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, radius, radius).close()));</code></pre>
-					<p>See samples that make use of Geometries in the <a href="../../samples/index.html#geometries">samples index</a>.</p>
+					<p>请参阅示例索引中使用 <a href="../../samples/index.html#geometries">Geometries</a> 的示例</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -195,8 +194,8 @@
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> type: <span class="tsd-signature-type">EnumValue</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Construct an empty Geometry.
-											The geometry type must be one of the following values:
+										<p>构造一个空的Geometry。
+											geometry 类型必须是以下值之一:
 										<a href="Geometry.html#static-Line">Geometry.Line</a>, <a href="Geometry.html#static-Ellipse">Geometry.Ellipse</a>, <a href="Geometry.html#static-Rectangle">Geometry.Rectangle</a>, <a href="Geometry.html#static-Path">Geometry.Path</a>.</p>
 									</div>
 								</li>
@@ -217,8 +216,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This read-only property returns a rectangle that contains all points within the Geometry.
-								The result will always contain the origin (0, 0).</p>
+								<p>此只读属性返回一个矩形，其中包含Geometry中的所有点。结果将始终包含原点(0, 0)</p>
 							</div>
 						</li>
 					</ul>
@@ -231,11 +229,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the <a href="Shape.html#geometryStretch">Shape.geometryStretch</a> value the <a href="Shape.html">Shape</a> should use by default
-									when the <a href="Shape.html#geometryStretch">Shape.geometryStretch</a> value is <a href="GraphObject.html#static-None">GraphObject.None</a>.
-									The default value is <a href="GraphObject.html#static-Fill">GraphObject.Fill</a>.
-									Some figure generators return a Geometry with this property set to <a href="GraphObject.html#static-Uniform">GraphObject.Uniform</a>,
-								in order to preserve its aspect ratio when used by a Shape that may have different sizes.</p>
+								<p>获取或设置 <a href="Shape.html#geometryStretch">Shape.geometryStretch</a> 值为 <a href="GraphObject.html#static-None">GraphObject.None</a> 时 <a href="Shape.html">Shape</a> 默认使用的 <a href="Shape.html#geometryStretch">Shape.geometryStretch</a> 值。
+									默认值为 <a href="GraphObject.html#static-Fill">GraphObject.Fill</a>
+									一些图形生成器会返回此属性设置为<a href="GraphObject.html#static-Uniform">GraphObject.Uniform</a> 的Geometry，以便在可能具有不同大小的Shape使用时保持其长宽比。</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.5</p>
@@ -253,9 +249,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the ending X coordinate of the Geometry if it is of type
-									<a href="Geometry.html#static-Line">Line</a>, <a href="Geometry.html#static-Rectangle">Rectangle</a>, or <a href="Geometry.html#static-Ellipse">Ellipse</a>.
-								The initial value is zero.</p>
+								<p>获取或设置Geometry的 <a href="Geometry.html#static-Line">Line</a>, <a href="Geometry.html#static-Rectangle">Rectangle</a>, 或 <a href="Geometry.html#static-Ellipse">Ellipse</a> 类型的结束X坐标，初始值为0</p>
 							</div>
 						</li>
 					</ul>
@@ -268,9 +262,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the ending Y coordinate of the Geometry if it is of type
-									<a href="Geometry.html#static-Line">Line</a>, <a href="Geometry.html#static-Rectangle">Rectangle</a>, or <a href="Geometry.html#static-Ellipse">Ellipse</a>.
-								The initial value is zero.</p>
+								<p>获取或设置Geometry的 <a href="Geometry.html#static-Line">Line</a>, <a href="Geometry.html#static-Rectangle">Rectangle</a>, 或 <a href="Geometry.html#static-Ellipse">Ellipse</a> 类型的结束Y坐标，初始值为0</p>
 							</div>
 						</li>
 					</ul>
@@ -283,9 +275,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the <a href="List.html">List</a> of <a href="PathFigure.html">PathFigure</a>s
-									that describes the content of the
-								path for Geometries of type <a href="Geometry.html#static-Path">Path</a>.</p>
+								<p>获取或设置 <a href="PathFigure.html">PathFigure</a> <a href="List.html">List</a> 
+								该list表示 <a href="Geometry.html#static-Path">Path</a> 类型的Geometrie的路径内容</p>
 							</div>
 						</li>
 					</ul>
@@ -298,9 +289,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the spot an &quot;Auto&quot; <a href="Panel.html">Panel</a> will use for the top-left corner of any panel content
-									when the <a href="Shape.html#spot1">Shape.spot1</a> value is <a href="Spot.html#static-Default">Spot.Default</a>.
-								The default value is <a href="Spot.html#static-TopLeft">Spot.TopLeft</a>, at the top-left point of the bounds of the Shape.</p>
+								<p>获取或设置当 <a href="Shape.html#spot1">Shape.spot1</a> 值为 <a href="Spot.html#static-Default">Spot.Default</a> 时， &quot;Auto&quot; <a href="Panel.html">Panel</a> 将用于任何面板内容的左上角的位置。
+								默认值为 <a href="Spot.html#static-TopLeft">Spot.TopLeft</a>, 位于Shape边界的左上角</p>
 							</div>
 						</li>
 					</ul>
@@ -313,9 +303,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the spot an &quot;Auto&quot; <a href="Panel.html">Panel</a> will use for the bottom-right corner of any panel content
-									when the <a href="Shape.html#spot2">Shape.spot2</a> value is <a href="Spot.html#static-Default">Spot.Default</a>.
-								The default value is <a href="Spot.html#static-BottomRight">Spot.BottomRight</a>, at the bottom-right point of the bounds of the Shape.</p>
+								<p>获取或设置当 <a href="Shape.html#spot2">Shape.spot2</a> 值为 <a href="Spot.html#static-Default">Spot.Default</a> 时， &quot;Auto&quot; <a href="Panel.html">Panel</a> 将用于任何面板内容的右下角的位置。
+								默认值为 <a href="Spot.html#static-BottomRight">Spot.BottomRight</a>, 位于Shape边界的右下角</p>
 							</div>
 						</li>
 					</ul>
@@ -328,9 +317,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the starting X coordinate of the Geometry if it is of type
-									<a href="Geometry.html#static-Line">Line</a>, <a href="Geometry.html#static-Rectangle">Rectangle</a>, or <a href="Geometry.html#static-Ellipse">Ellipse</a>.
-								The initial value is zero.</p>
+								<p>获取或设置Geometry的 <a href="Geometry.html#static-Line">Line</a>, <a href="Geometry.html#static-Rectangle">Rectangle</a>, 或 <a href="Geometry.html#static-Ellipse">Ellipse</a> 类型的起始X坐标，初始值为0</p>
 							</div>
 						</li>
 					</ul>
@@ -343,9 +330,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the starting Y coordinate of the Geometry if it is of type
-									<a href="Geometry.html#static-Line">Line</a>, <a href="Geometry.html#static-Rectangle">Rectangle</a>, or <a href="Geometry.html#static-Ellipse">Ellipse</a>.
-								The initial value is zero.</p>
+								<p>获取或设置Geometry的 <a href="Geometry.html#static-Line">Line</a>, <a href="Geometry.html#static-Rectangle">Rectangle</a>, 或 <a href="Geometry.html#static-Ellipse">Ellipse</a> 类型的起始Y坐标，初始值为0</p>
 							</div>
 						</li>
 					</ul>
@@ -358,10 +343,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the type of the Geometry.
-									The default type is <a href="Geometry.html#static-Path">Geometry.Path</a>.
-									Other permissible values are <a href="Geometry.html#static-Line">Geometry.Line</a>, <a href="Geometry.html#static-Ellipse">Geometry.Ellipse</a>,
-								or <a href="Geometry.html#static-Rectangle">Geometry.Rectangle</a>.</p>
+								<p>获取或设置Geometry的类型，
+									默认类型为 <a href="Geometry.html#static-Path">Geometry.Path</a>。
+								其他允许的值为 <a href="Geometry.html#static-Line">Geometry.Line</a>, <a href="Geometry.html#static-Ellipse">Geometry.Ellipse</a>,
+								或 <a href="Geometry.html#static-Rectangle">Geometry.Rectangle</a>.</p>
 							</div>
 						</li>
 					</ul>
@@ -380,7 +365,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Add a <a href="PathFigure.html">PathFigure</a> to the <a href="Geometry.html#figures">figures</a> list.</p>
+								<p>将 <a href="PathFigure.html">PathFigure</a> 添加到 <a href="Geometry.html#figures">figures</a> 列表</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.5</p>
@@ -392,7 +377,7 @@
 								<li>
 									<h5>figure: <a href="PathFigure.html" class="tsd-signature-type">PathFigure</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>a newly allocated unshared PathFigure that will become owned by this Geometry</p>
+										<p>一个新分配的未共享PathFigure，它将由此Geometry拥有</p>
 									</div>
 								</li>
 							</ul>
@@ -412,8 +397,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Computes the Geometry&#39;s bounds without adding an origin point, and returns those bounds as a rect.
-								This method does not modify the Geometry or its bounds.</p>
+								<p>在不添加原点的情况下计算几何的边界，并将这些边界作为rect返回。此方法不会修改几何图或其边界</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.1</p>
@@ -436,7 +420,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Create a copy of this Geometry, with the same values and figures.</p>
+								<p>使用相同的值和figures创建此Geometry副本</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="Geometry.html" class="tsd-signature-type">Geometry</a></h4>
 						</li>
@@ -454,8 +438,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Given a SVG or GoJS path string, returns a congruent path string with each pathfigure filled.
-								For instance, &quot;M0 0 L22 22 L33 0&quot; would become &quot;F M0 0 L22 22 L33 0&quot;.</p>
+								<p>给定SVG或GoJS路径字符串，则返回一个完整的路径字符串，并填充每个路径图。例如 &quot;M0 0 L22 22 L33 0&quot; 将变成 &quot;F M0 0 L22 22 L33 0&quot;.</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.1</p>
@@ -483,14 +466,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns the slope expressed as an angle at the fractional distance (0-1) along this Geometry&#39;s path, in local coordinates.</p>
+								<p>以局部坐标返回沿此几何路径的分数距离（0-1）的角度表示的斜率</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>fraction: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A fractional amount between 0 and 1, inclusive.</p>
+										<p>介于0到1之间，包含0和1的分数</p>
 									</div>
 								</li>
 							</ul>
@@ -509,19 +492,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns the fractional distance (0-1) along this Geometry&#39;s path for a nearby point.</p>
+								<p>返回沿着此几何图形的路径的近距离的分数距离（0-1）</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>pt: <a href="Point.html" class="tsd-signature-type">Point</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A Point, in local coordinates, near this Geometry.</p>
+										<p>在此几何图形附近的局部坐标点</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>A fractional amount between 0 and 1, inclusive.</p>
+							<p>介于0到1之间，包含0和1的分数</p>
 						</li>
 					</ul>
 				</section>
@@ -536,25 +519,25 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns the point at the fractional distance (0-1) along this Geometry&#39;s path.</p>
+								<p>返回沿此几何路径的分数距离（0-1）处的点./p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>fraction: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>A fractional amount between 0 and 1, inclusive.</p>
+										<p>介于0到1之间，包含0和1的分数</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> result: <a href="Point.html" class="tsd-signature-type">Point</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>an optional Point that is modified and returned; otherwise it allocates and returns a new Point.</p>
+										<p>一个可选的Point，它被修改并返回；否则，它将分配并返回一个新的Point</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Point.html" class="tsd-signature-type">Point</a></h4>
-							<p>the Point, in local coordinates, of the fractional distance along the path.</p>
+							<p>以局部坐标表示的Point，沿路径的距离</p>
 						</li>
 					</ul>
 				</section>
@@ -569,10 +552,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Normalizes the Geometry points in place by ensuring the top-left bounds of the geometry lines up with (0, 0),
-									returning the <a href="Point.html">Point</a> (x, y) amount it was shifted.
-									After this method is called there will be no negative X or Y value for the Geometry&#39;s bounds,
-								and no empty space at the top-left of the Geometry.</p>
+								<p>通过确保几何线的左上边界与（0，0）一致来规范化几何点，返回 <a href="Point.html">Point</a> (x, y) 的移动量。
+									调用此方法后，几何的边界将没有负的X和Y值，并且几何的左上角也没有空白</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.1</p>
@@ -594,7 +575,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Offsets the Geometry in place by a given (x, y) amount</p>
+								<p>按给定的（x,y）偏移Geometry</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.1</p>
@@ -606,13 +587,13 @@
 								<li>
 									<h5>x: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The x-axis offset factor.</p>
+										<p>X轴偏移条件</p>
 									</div>
 								</li>
 								<li>
 									<h5>y: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The y-axis offset factor.</p>
+										<p>Y轴偏移条件</p>
 									</div>
 								</li>
 							</ul>
@@ -633,26 +614,25 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Produce a <a href="Geometry.html">Geometry</a> from a string that uses an SVG-like compact path geometry syntax.
-									The syntax accepts all SVG Path Syntax (<a href="https://www.w3.org/TR/SVG/paths.html" target="_blank">SVG Path Syntax (w3.org)</a>),
-									as well as three GoJS-specific tokens.
-								Specifically, the following tokens are allowed:</p>
+								<p>使用类似于SVG的路径几何语法的字符串生成 <a href="Geometry.html">Geometry</a>。
+									该语法接受所有SVG路径语法 (<a href="https://www.w3.org/TR/SVG/paths.html" target="_blank">SVG路径语法(w3.org)</a>),
+									以及三个特定与GOJS的令牌。具体来说，允许以下令牌:</p>
 								<ul>
-									<li><code>M (x,y)+</code> - Move commands</li>
-									<li><code>L (x,y)+, H (x)+, V (y)+</code> Lines commands, including horizontal and vertical lines</li>
-									<li><code>C (x1 y1 x2 y2 x y)+, S (x2 y2 x y)+</code> Cubic bezier curves</li>
-									<li><code>Q (x1 y1 x y)+, T (x y)+</code> Quadratic bezier curves</li>
-									<li><code>A (rx ry x-axis-rotation large-arc-flag clockwise-flag x y)+</code> Arcs (following SVG arc conventions)</li>
-									<li><code>Z</code> Denotes that the previous subpath is closed</li>
+									<li><code>M (x,y)+</code> - 移动命令</li>
+									<li><code>L (x,y)+, H (x)+, V (y)+</code> 线命令，包括水平和垂直线</li>
+									<li><code>C (x1 y1 x2 y2 x y)+, S (x2 y2 x y)+</code> 三次贝塞尔曲线</li>
+									<li><code>Q (x1 y1 x y)+, T (x y)+</code> 二次贝塞尔曲线</li>
+									<li><code>A (rx ry x-axis-rotation large-arc-flag clockwise-flag x y)+</code> 圆弧 (遵循SVG圆弧约定)</li>
+									<li><code>Z</code> 表示前一个子路径已经关闭</li>
 								</ul>
-								<p>Additionally there are some tokens specific to GoJS:</p>
+								<p>此外，还有一些特定于GOJS的令牌:</p>
 								<ul>
-									<li><code>B (startAngle, sweepAngle, centerX, centerY, radius)+</code> Arcs following GoJS canvas arc conventions</li>
-									<li><code>X</code> Used before M-commands to denote separate PathFigures instead of a subpath</li>
-									<li><code>F</code> Denotes whether the current PathFigure is filled (true if F is present)</li>
-									<li><code>U</code> Denotes that the PathFigure is not shadowed</li>
+									<li><code>B (startAngle, sweepAngle, centerX, centerY, radius)+</code> 遵循GOJS canvas弧约定的弧</li>
+									<li><code>X</code> 在M命令之前用于表示单独的PathFigures而不是子路径</li>
+									<li><code>F</code> 表示当前PathFigur是否已填充 (如果存在F则为true)</li>
+									<li><code>U</code> 表示PathFigure没有阴影</li>
 								</ul>
-								<p>See the <a href="../../intro/geometry.html">Introduction page on Geometry Parsing</a> for more details.</p>
+								<p>有关更多详细信息，请参见简介中的 <a href="../../intro/geometry.html">几何解析</a> 页面</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -662,11 +642,8 @@
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> filled: <span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>whether figures should be filled.
-											If true, all PathFigures in the string will be filled regardless of the presence
-											of an &quot;F&quot; command or not.
-											If false, all PathFigures will determine their own filled state by the presence of an &quot;F&quot; command or not.
-										Default is false.</p>
+										<p>是否应填充，如果为true，则无论是否存在&quot;F&quot;命令，都将填充字符串中的所有PathFigures。
+                      如果为false，则所有PathFigures都将通过是否存在&quot;F&quot;命令来确定其自身的填充状态。默认为false</p>
 									</div>
 								</li>
 							</ul>
@@ -685,8 +662,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Rotates the Geometry in place by a given angle, with optional x and y values to rotate the geometry about.
-								If no x and y value are given, (0, 0) is used as the rotation point.</p>
+								<p>将几何图形旋转到指定角度，并带有可选的X和Y值来旋转几何图形。如果未给定X和Y值，则将（0，0）用作旋转点</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.1</p>
@@ -698,19 +674,19 @@
 								<li>
 									<h5>angle: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The angle to rotate by.</p>
+										<p>旋转角度</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> x: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The optional X point to rotate the geometry about. If no point is given, this value is 0.</p>
+										<p>旋转几何的可选X点，如果没有给定点，则该值为0</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> y: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The optional Y point to rotate the geometry about. If no point is given, this value is 0.</p>
+										<p>旋转几何的可选Y点，如果没有给定点，则该值为0</p>
 									</div>
 								</li>
 							</ul>
@@ -730,9 +706,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Scales the Geometry in place by a given (x, y) scale factor.</p>
-								<p>If you want to flip a Geometry horizontally, call <code>geo.scale(-1, 1)</code>.
-								If you want to flip a Geometry vertically, call <code>geo.scale(1, -1)</code>.</p>
+								<p>按照给定的（x,y）比例条件缩放几何</p>
+								<p>如果要水平翻转几何, 请调用 <code>geo.scale(-1, 1)</code>。
+							如果要垂直翻转几何，请调用 <code>geo.scale(1, -1)</code>。</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.1</p>
@@ -744,13 +720,13 @@
 								<li>
 									<h5>x: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The x-axis scale factor.</p>
+										<p>X轴比例条件</p>
 									</div>
 								</li>
 								<li>
 									<h5>y: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The y-axis scale factor.</p>
+										<p>Y轴比例条件</p>
 									</div>
 								</li>
 							</ul>
@@ -771,11 +747,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This static function can be used to write out a <a href="Geometry.html">Geometry</a> as a string
-								that can be read by <a href="Geometry.html#static-parse">Geometry.parse</a>.</p>
-								<p>The string produced by this method is a superset of the SVG path
-									string rules that contains some additional GoJS-specific tokens.
-								See the <a href="../../intro/pictures.html">Introduction page on Geometry Parsing</a> for more details.</p>
+								<p>此静态函数可用于写出 <a href="Geometry.html">Geometry</a> 作为可以被 <a href="Geometry.html#static-parse">Geometry.parse</a> 读取的字符串。</p>
+								<p>此方法产生的字符串是SVG路径字符串规则的超集，其中包含一些其他特定GOJS的令牌。
+                  有关更多详细信息，请参见简介中的 <a href="../../intro/pictures.html">几何解析</a> 页面</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.1</p>
@@ -802,10 +776,9 @@
 						Ellipse
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For drawing an ellipse fitting within a rectangle;
-							a value for <a href="Geometry.html#type">Geometry.type</a>.
-							The ellipse fits within the rectangle that goes from the point
-						(<a href="Geometry.html#startX">startX</a>, <a href="Geometry.html#startY">startY</a>) to the point (<a href="Geometry.html#endX">endX</a>, <a href="Geometry.html#endY">endY</a>).</p>
+						<p>用于在矩形内绘制椭圆拟合；<a href="Geometry.html#type">Geometry.type</a> 的值。
+							椭圆适合从点
+						(<a href="Geometry.html#startX">startX</a>, <a href="Geometry.html#startY">startY</a>) 到点 (<a href="Geometry.html#endX">endX</a>, <a href="Geometry.html#endY">endY</a>) 的矩形内</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -815,10 +788,9 @@
 						Line
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For drawing a simple straight line;
-							a value for <a href="Geometry.html#type">Geometry.type</a>.
-							The line goes from the point
-						(<a href="Geometry.html#startX">startX</a>, <a href="Geometry.html#startY">startY</a>) to the point (<a href="Geometry.html#endX">endX</a>, <a href="Geometry.html#endY">endY</a>).</p>
+            <p>用于绘制一条简单的直线；<a href="Geometry.html#type">Geometry.type</a> 的值。
+              该线从点
+						(<a href="Geometry.html#startX">startX</a>, <a href="Geometry.html#startY">startY</a>) 到点 (<a href="Geometry.html#endX">endX</a>, <a href="Geometry.html#endY">endY</a>)</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -828,8 +800,8 @@
 						Path
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For drawing a complex path made of a list of <a href="PathFigure.html">PathFigure</a>s;
-						a value for <a href="Geometry.html#type">Geometry.type</a>.</p>
+						<p>用于绘制由 <a href="PathFigure.html">PathFigure</a> 列表组成的复杂路径；
+						<a href="Geometry.html#type">Geometry.type</a> 的值</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -839,10 +811,9 @@
 						Rectangle
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For drawing a rectangle;
-							a value for <a href="Geometry.html#type">Geometry.type</a>.
-							The rectangle goes from the point
-						(<a href="Geometry.html#startX">startX</a>, <a href="Geometry.html#startY">startY</a>) to the point (<a href="Geometry.html#endX">endX</a>, <a href="Geometry.html#endY">endY</a>).</p>
+						<p>用于绘制矩形；<a href="Geometry.html#type">Geometry.type</a> 的值
+							矩形从点
+						(<a href="Geometry.html#startX">startX</a>, <a href="Geometry.html#startY">startY</a>) 到点 (<a href="Geometry.html#endX">endX</a>, <a href="Geometry.html#endY">endY</a>)</p>
 					</div>
 				</section>
 			</section>
