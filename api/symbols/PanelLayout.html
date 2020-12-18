@@ -85,7 +85,7 @@
 					<b>GoJS</b>&reg; Diagramming Components<br/>version 2.1.26<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>
 				</div>
 				<div>
-					<h1>Class PanelLayout</h1>
+					<h1>PanelLayout类</h1>
 				</div>
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
+				<h3>层次结构</h3>
 				<ul class="tsd-hierarchy">
 					<li>
 						<span class="target">PanelLayout</span>
@@ -104,10 +104,8 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>This is the abstract base class for all Panel Layouts, which inform the possible Panel types.
-						It is possible to create your own Panel type by creating a subclass of PanelLayout,
-					though this is not common and not recommended for beginners.</p>
-					<p>By default, GoJS has 12 panel types, each corresponding to a PanelLayout subclass:</p>
+					<p>这是所有面板布局的抽象基类，它告知可能的面板类型。可以通过创建PanelLayout的子类来创建自己的Panel类型，尽管这并不常见，不建议初学者使用</p>
+					<p>默认情况下, GoJS具有12种面板类型，每种类型对应于PanelLayout子类:</p>
 					<ul>
 						<li><code>&#39;Position&#39;, PanelLayoutPosition</code></li>
 						<li><code>&#39;Horizontal&#39;, PanelLayoutHorizontal</code></li>
@@ -122,16 +120,16 @@
 						<li><code>&#39;Grid&#39;, PanelLayoutGrid</code></li>
 						<li><code>&#39;Graduated&#39;, PanelLayoutGraduated</code></li>
 					</ul>
-					<p>These are included by default in builds of <code>go.js</code> and <code>go-debug.js</code>.
-						When building from source, you can optionally exclude all of them except <code>Position</code>,
-						<code>Vertical</code>, <code>Auto</code>, <code>Link</code>, and <code>Grid</code>.
-					This is demonstrated in <code>minimalSource</code> and <code>maximalSource</code>, in the <code>/projects</code> folder.</p>
-					<p>Adding a new Layout is done by calling the static function, <a href="Panel.html#static-definePanelLayout">Panel.definePanelLayout</a>:</p>
+					<p>这些默认包含在 <code>go.js</code> 和 <code>go-debug.js</code> 的构建中。
+						从源构建时，可以选择排除所有其他对象，但 <code>Position</code>,
+						<code>Vertical</code>, <code>Auto</code>, <code>Link</code>, 和 <code>Grid</code> 除外。
+					在<code>/projects</code> 文件夹中的 <code>minimalSource</code> 和 <code>maximalSource</code> 对此进行了演示。 </p>
+					<p>通过调用静态函数 <a href="Panel.html#static-definePanelLayout">Panel.definePanelLayout</a> 来添加新的Layout:</p>
 					<pre><code class="hljs js">Panel.definePanelLayout(<span class="hljs-string">'Table'</span>, <span class="hljs-keyword">new</span> PanelLayoutTable());</code></pre>
-					<p>Each PanelLayout defines a <a href="PanelLayout.html#measure">measure</a> and <a href="PanelLayout.html#arrange">arrange</a> routine.
-						The measure routine must call <a href="PanelLayout.html#measureElement">measureElement</a> with each element of the Panel,
-					and the arrange routine must similarly call <a href="PanelLayout.html#arrangeElement">arrangeElement</a> with each element of the Panel.</p>
-					<p>There is an example PanelLayout in the <a href="../../samples/panelLayout.html">PanelLayout sample</a>.</p>
+					<p>每个PanelLayout定义一个 <a href="PanelLayout.html#measure">measure</a> 和 <a href="PanelLayout.html#arrange">arrange</a> 例程。
+          measure例程必须使用Panel的每个元素调用 <a href="PanelLayout.html#measureElement">measureElement</a> ，
+					而 arrange 例程必须类似的使用Panel的每个元素调用 <a href="PanelLayout.html#arrangeElement">arrangeElement</a></p>
+					<p>PanelLayout示例中有一个 <a href="../../samples/panelLayout.html">PanelLayout 示例</a></p>
 					<dl class="tsd-comment-tags">
 						<dt>since</dt>
 						<dd><p>2.0</p>
@@ -192,29 +190,28 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Given the panel and its list of elements, arrange each element.</p>
-								<p>This must call <a href="PanelLayout.html#arrangeElement">arrangeElement</a> with each Panel element, which will set that element&#39;s <a href="GraphObject.html#actualBounds">GraphObject.actualBounds</a>.</p>
-								<p>For arranging some elements, it is useful to know the total unioned area of every element.
-								This Rect can be used to right-align or center-align, etc, elements within an area.</p>
+								<p>根据面板及其元素列表，排列每个元素</p>
+								<p>这必须为每个Panel元素调用 <a href="PanelLayout.html#arrangeElement">arrangeElement</a> ，这将设置该元素的 <a href="GraphObject.html#actualBounds">GraphObject.actualBounds</a></p>
+								<p>对于某些元素的排列，知道每个元素的统一面积是很有用的，此Rect可用于在区域内将元素右对齐或居中对齐</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>panel: <a href="Panel.html" class="tsd-signature-type">Panel</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Panel which called this layout</p>
+										<p>Panel叫做布局</p>
 									</div>
 								</li>
 								<li>
 									<h5>elements: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="GraphObject.html" class="tsd-signature-type">GraphObject</a><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Array of Panel elements</p>
+										<p>Panel元素数组</p>
 									</div>
 								</li>
 								<li>
 									<h5>union: <a href="Rect.html" class="tsd-signature-type">Rect</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>rectangle, if properly constructed in <a href="PanelLayout.html#measure">measure</a>, that contains the expected union bounds of every element in the Panel.</p>
+										<p>矩形, 如果 <a href="PanelLayout.html#measure">measure</a> 正确的构造, 其中包含面板中每个元素的预期联合边界。</p>
 									</div>
 								</li>
 							</ul>
