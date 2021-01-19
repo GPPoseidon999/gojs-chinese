@@ -122,17 +122,17 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<p>这是所有图形对象的抽象基类。继承自GraphObject的类包括:
-						<a href="Shape.html">Shape</a>, <a href="TextBlock.html">TextBlock</a>, <a href="Picture.html">Picture</a>, 和 <a href="Panel.html">Panel</a>.
+						<a href="Shape.html">Shape</a>, <a href="TextBlock.html">TextBlock</a>, <a href="Picture.html">Picture</a>, 和 <a href="Panel.html">Panel</a>。
 						从Panel类派生出  <a href="Part.html">Part</a> 类,
-					<a href="Node.html">Node</a>类和 <a href="Link.html">Link</a>类从该类派生.</p>
+					<a href="Node.html">Node</a>类和 <a href="Link.html">Link</a>类从该类派生</p>
           <p>为了构建GraphObjects可视化树，使用静态函数 <a href="GraphObject.html#static-make">GraphObject.make</a> 是非常常见的。你可以在介绍中看到许多这样的例子,
-            从 <a href="../../intro/buildingObjects.html">创建对象</a> 和示例中, 从 <a href="../../samples/minimal.html">最小示例</a> 中.</p>
+            从 <a href="../../intro/buildingObjects.html">创建对象</a> 和示例中, 从 <a href="../../samples/minimal.html">最小示例</a> 中</p>
 					<p>由于GraphObject是一个抽象类，所以通常不会创建自己的GraphObject，但是这个类定义了许多属性，所有类型的GraphObject都可以使用这些属性。</p>
 					<p>GraphObject上的唯一的视觉属性是 <a href="GraphObject.html#background">background</a> 和 <a href="GraphObject.html#areaBackground">areaBackground</a>.
 						但是可以通过设置 <a href="GraphObject.html#visible">visible</a> 来控制 GraphObject 是否被绘制 ,
-						或者如果你想让GraphObject仍然占据空间可以设置<a href="GraphObject.html#opacity">opacity</a> 为0.
+						或者如果你想让GraphObject仍然占据空间可以设置<a href="GraphObject.html#opacity">opacity</a> 为0。
 						此外, 如果你想控制是否有鼠标或者触摸事件 &quot;看到&quot; GraphObject,
-					  你可以设置 <a href="GraphObject.html#pickable">pickable</a> 为false.</p>
+					  你可以设置 <a href="GraphObject.html#pickable">pickable</a> 为false</p>
 					<p>有关如何指定绘制内容的更多信息，请参见
 					<a href="Shape.html">Shape</a>, <a href="TextBlock.html">TextBlock</a>, 和 <a href="Picture.html">Picture</a> 类的属性。</p>
 					<h3>GraphObject 大小</h3>
@@ -151,9 +151,9 @@
 					在测量和排列之后, 一个 GraphObject 将拥有只读属性<a href="GraphObject.html#naturalBounds">naturalBounds</a>, <a href="GraphObject.html#measuredBounds">measuredBounds</a>, 和 <a href="GraphObject.html#actualBounds">actualBounds</a>.</p>
 					<ul>
 						<li>GraphObject的 <a href="GraphObject.html#naturalBounds">naturalBounds</a> 描述了它的局部大小,
-              它不受任何变换的影响 (<a href="GraphObject.html#scale">scale</a>, <a href="GraphObject.html#angle">angle</a>).</li>
-						<li>GraphObject的 <a href="GraphObject.html#measuredBounds">measuredBounds</a> 描述了它在其包含Panel内的大小.</li>
-						<li>GraphObject的 <a href="GraphObject.html#actualBounds">actualBounds</a> 描述了它的位置和在其Panel内的给定大小.
+              它不受任何变换的影响 (<a href="GraphObject.html#scale">scale</a>, <a href="GraphObject.html#angle">angle</a>)</li>
+						<li>GraphObject的 <a href="GraphObject.html#measuredBounds">measuredBounds</a> 描述了它在其包含Panel内的大小</li>
+						<li>GraphObject的 <a href="GraphObject.html#actualBounds">actualBounds</a> 描述了它的位置和在其Panel内的给定大小
 							这个大小可能比 <a href="GraphObject.html#measuredBounds">measuredBounds</a>小,例如如果一个 <a href="GraphObject.html#desiredSize">desiredSize</a >较大的GraphObject 
 							放置在 <a href="GraphObject.html#desiredSize">desiredSize</a> 较小的<a href="Panel.html">Panel</a> 中。<a href="GraphObject.html#actualBounds">actualBounds</a> 比 <a href="GraphObject.html#measuredBounds">measuredBounds</a>
 						  小通常意味着一个对象被裁剪.</li>
@@ -227,10 +227,10 @@
 								<p class="boxread">
 									更多的一般性讨论请参见 <a href="../../intro/events.html">Events</a> 的简介页面。
 									<h3>GraphObjects 作为 Ports</h3>
-									<p>在 GoJS, <a href="Link.html">Link</a>只能连接到指定为&quot;ports&quot;的<a href="Node.html">Node</a>中的元素，默认情况下，唯一的端口是node本身.
+									<p>在GoJS, <a href="Link.html">Link</a> 只能连接到指定为&quot;ports&quot;的 <a href="Node.html">Node</a> 中的元素，默认情况下，唯一的端口是node本身。
                     在node中设置一个GraphObject的 <a href="GraphObject.html#portId">portId</a> 允许该对象充当端口                    
-										注意: 唯一一种可以保存链接所连接端口的模型,即不是空字符串的portIds是一个<a href="GraphLinksModel.html">GraphLinksModel</a> 其 <a href="GraphLinksModel.html#linkFromPortIdProperty">GraphLinksModel.linkFromPortIdProperty</a> 和
-									<a href="GraphLinksModel.html#linkToPortIdProperty">GraphLinksModel.linkToPortIdProperty</a> 已在链接数据对象上设置name属性.</p>
+										注意: 唯一一种可以保存链接所连接端口的模型，不是空字符串的portId，是一个 <a href="GraphLinksModel.html">GraphLinksModel</a> 其 <a href="GraphLinksModel.html#linkFromPortIdProperty">GraphLinksModel.linkFromPortIdProperty</a> 和
+									<a href="GraphLinksModel.html#linkToPortIdProperty">GraphLinksModel.linkToPortIdProperty</a> 已设置为链接数据对象的name属性</p>
 									<p>GraphObjects 有几个属性，只有当它们充当端口时才相关，这些端口相关的属性是:</p>
 									<ul>
 										<li><a href="GraphObject.html#portId">portId</a>,必须将其设置为 <a href="Node.html">Node</a> 内唯一的字符串,
@@ -244,10 +244,10 @@
 										<li><a href="GraphObject.html#fromMaxLinks">fromMaxLinks</a> 和 <a href="GraphObject.html#toMaxLinks">toMaxLinks</a>, 限制在特定方向上与此端口连接的链接数</li>
 									</ul>
 									<p class="boxread">
-										See <a href="../../intro/ports.html">the Introduction page on ports</a>
-										and <a href="../../intro/links.html">link routing</a>
-										and <a href="../../intro/connectionPoints.html">link connection points</a>
-										for port usage information and examples.
+										有关 <a href="../../intro/ports.html">ports</a>
+										和 <a href="../../intro/links.html">link routing</a>
+										和 <a href="../../intro/connectionPoints.html">link connection points</a>
+										的使用信息和示例，请参见简介页面。
 										<h3>GraphObjects作为链接上的标签</h3>
 										<p>GraphObjects也可以用作 <a href="Link.html">Link</a> 上的&quot;标签&quot;
 											除了 <a href="GraphObject.html#alignmentFocus">alignmentFocus</a> 属性, 这些属性还引导链接面板以特定方式将“标签”放置在沿着链接路线的特定点上:</p>
@@ -269,7 +269,7 @@
 											<p class="boxread">
                         更多信息，请阅读 <a href="../../intro/contextMenus.html">Context Menus</a> 和 <a href="../../intro/toolTips.html">ToolTips</a> 的介绍页面
 												<p class="boxrun">
-                          另外，请参阅<a href="../../samples/basic.html">基本示例</a>，了解如何显示上下文菜单和工具提示。
+                          另外，请参阅 <a href="../../samples/basic.html">基本示例</a>，了解如何显示上下文菜单和工具提示。
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -425,14 +425,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the function to execute when the <a href="ActionTool.html">ActionTool</a> is cancelled and this GraphObject&#39;s <a href="GraphObject.html#isActionable">isActionable</a>
-									is set to true.
-									This property is infrequently set.
-								By default this property is null.</p>
-								<p>This functional property is only set on objects such as buttons, knobs, or sliders that want to handle all events,
-								in conjunction with <a href="ActionTool.html">ActionTool</a>, pre-empting the normal tool mechanisms.</p>
-								<p>The <a href="ActionTool.html">ActionTool</a> does not conduct any transaction, so if this property has a value,
-								the function will not be called within a transaction.</p>
+								<p>获取或设置取消 <a href="ActionTool.html">ActionTool</a> 并将此GraphObject的 <a href="GraphObject.html#isActionable">isActionable</a> 设置为true时要执行的函数，很少设置此属性。默认情况下，此属性为null</p>
+								<p>仅在要处理所有事件的对象（例如按钮，旋转钮，滑块）上与 <a href="ActionTool.html">ActionTool</a> 结合使用时才设置此功能属性，从而取代了常规工具机制</p>
+								<p><a href="ActionTool.html">ActionTool</a> 不执行任何事物，因此如果此属性有值，则不会在事物内调用该函数</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="GraphObject.html#actionDown">actionDown</a>, <a href="GraphObject.html#actionMove">actionMove</a>, <a href="GraphObject.html#actionUp">actionUp</a></p>
@@ -450,14 +445,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the function to execute on a mouse-down event when this GraphObject&#39;s <a href="GraphObject.html#isActionable">isActionable</a>
-									is set to true.
-									This property is infrequently set.
-								By default this property is null.</p>
-								<p>This functional property is only set on objects such as buttons, knobs, or sliders that want to handle all events,
-								in conjunction with <a href="ActionTool.html">ActionTool</a>, pre-empting the normal tool mechanisms.</p>
-								<p>The <a href="ActionTool.html">ActionTool</a> does not conduct any transaction, so if this property has a value,
-								the function will not be called within a transaction.</p>
+								<p>获取或设置当此GraphObject的 <a href="GraphObject.html#isActionable">isActionable</a> 设置为true时在鼠标按下事件上执行的函数，很少设置此属性，默认情况下，此属性为null</p>
+								<p>仅在要处理所有事件的对象（例如按钮，旋转钮，滑块）上与 <a href="ActionTool.html">ActionTool</a> 结合使用时才设置此功能属性，从而取代了常规工具机制</p>
+								<p><a href="ActionTool.html">ActionTool</a> 不执行任何事物，因此如果此属性有值，则不会在事物内调用该函数</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="GraphObject.html#actionMove">actionMove</a>, <a href="GraphObject.html#actionUp">actionUp</a>, <a href="GraphObject.html#actionCancel">actionCancel</a></p>
@@ -475,14 +465,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the function to execute on a mouse-move event when this GraphObject&#39;s <a href="GraphObject.html#isActionable">isActionable</a>
-									is set to true.
-									This property is infrequently set.
-								By default this property is null.</p>
-								<p>This functional property is only set on objects such as buttons, knobs, or sliders that want to handle all events,
-								in conjunction with <a href="ActionTool.html">ActionTool</a>, pre-empting the normal tool mechanisms.</p>
-								<p>The <a href="ActionTool.html">ActionTool</a> does not conduct any transaction, so if this property has a value,
-								the function will not be called within a transaction.</p>
+								<p>获取或设置当此GraphObject的 <a href="GraphObject.html#isActionable">isActionable</a> 设置为true时在鼠标移动事件上执行的函数，很少设置此属性，默认情况下，此属性为null</p>
+								<p>仅在要处理所有事件的对象（例如按钮，旋转钮，滑块）上与 <a href="ActionTool.html">ActionTool</a> 结合使用时才设置此功能属性，从而取代了常规工具机制</p>
+								<p><a href="ActionTool.html">ActionTool</a> 不执行任何事物，因此如果此属性有值，则不会在事物内调用该函数</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="GraphObject.html#actionDown">actionDown</a>, <a href="GraphObject.html#actionUp">actionUp</a>, <a href="GraphObject.html#actionCancel">actionCancel</a></p>
@@ -500,17 +485,11 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the function to execute on a mouse-up event when this GraphObject&#39;s <a href="GraphObject.html#isActionable">isActionable</a>
-									is set to true.
-									This property is infrequently set.
-								By default this property is null.</p>
-								<p>This functional property is only set on objects such as buttons, knobs, or sliders that want to handle all events,
-								in conjunction with <a href="ActionTool.html">ActionTool</a>, pre-empting the normal tool mechanisms.</p>
-								<p>The <a href="ActionTool.html">ActionTool</a> does not conduct any transaction, so if this property has a value,
-									the function will not be called within a transaction.
-									If you do provide a function that makes changes to the diagram or to its model,
-									you should do so within a transaction -- call <a href="Diagram.html#startTransaction">Diagram.startTransaction</a> and
-								<a href="Diagram.html#commitTransaction">Diagram.commitTransaction</a>.</p>
+								<p>获取或设置当此GraphObject的 <a href="GraphObject.html#isActionable">isActionable</a> 设置为true时在鼠标松开事件上执行的函数，很少设置此属性，默认情况下，此属性为null</p>
+								<p>仅在要处理所有事件的对象（例如按钮，旋转钮，滑块）上与 <a href="ActionTool.html">ActionTool</a> 结合使用时才设置此功能属性，从而取代了常规工具机制</p>
+								<p><a href="ActionTool.html">ActionTool</a> 不执行任何事物，因此如果此属性有值，则不会在事物内调用该函数。
+                  如果确实提供了可以更改diagram或model的函数，则应在事务内完成，请调用 <a href="Diagram.html#startTransaction">Diagram.startTransaction</a> 和
+								<a href="Diagram.html#commitTransaction">Diagram.commitTransaction</a></p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="GraphObject.html#actionDown">actionDown</a>, <a href="GraphObject.html#actionMove">actionMove</a>, <a href="GraphObject.html#actionCancel">actionCancel</a></p>
@@ -529,12 +508,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This read-only property returns the bounds of this GraphObject in container coordinates. This means that
-									the actualBounds are in the coordinate space of the GraphObject&#39;s <a href="Panel.html">Panel</a>,
-									unless this is a <a href="Part.html">Part</a>, in which case they are in
-								the <a href="Diagram.html">Diagram</a>&#39;s coordinate system.</p>
-								<p>You must not modify any of the properties of the <a href="Rect.html">Rect</a> that is the value of this property.</p>
-								<p>If this GraphObject is a Part,
+								<p>此只读属性返回此GraphObject在容器坐标中的范围。
+                  这意味着actualBounds都在GraphObject的 <a href="Panel.html">Panel</a> 的坐标空间，除非这是一个 <a href="Part.html">Part</a> 在这种情况下他们是diagram的坐标系统</p>
+								<p>你不得修改 <a href="Rect.html">Rect</a> 的任何属性，即此属性的值</p>
+								<p>如果此GraphObject是一个Part，
 									then the x and y values of the actualBounds are identical to that Part&#39;s <a href="GraphObject.html#position">position</a>,
 									and the width and height values of the actualBounds represent the rectangular space occupied
 								by the Part in <a href="Diagram.html#documentBounds">Diagram.documentBounds</a> coordinates.</p>
@@ -547,7 +524,7 @@
 									to have no containing Part, in which case these GraphObjects cannot possibly be in a Diagram.
 									These GraphObjects are unlikely to have real-number values for their actualBounds, as they may
 								never have had the chance to be measured and arranged.</p>
-								<p>As with all read-only properties, using this property as a binding source is unlikely to be useful.</p>
+								<p>与所有只读属性一样，使用此属性作为绑定源不太可能有用</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="GraphObject.html#measuredBounds">measuredBounds</a>, <a href="GraphObject.html#desiredSize">desiredSize</a></p>

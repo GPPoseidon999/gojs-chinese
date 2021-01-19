@@ -114,16 +114,15 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>A Panel is a <a href="GraphObject.html">GraphObject</a> that holds other GraphObjects as its elements.
-						A Panel is responsible for sizing and positioning its elements.
-					The elements of a panel are drawn in the order in which they appear in the <a href="Panel.html#elements">elements</a> collection.</p>
-					<p>The <a href="Part.html">Part</a> class inherits from Panel; Part in turn is the base class of <a href="Node.html">Node</a> and <a href="Link.html">Link</a>.</p>
-					<p>Every Panel has a <a href="Panel.html#type">type</a> and establishes its own coordinate system. The type of a Panel
-					determines how it will size and arrange its elements:</p>
+					<p>Panel是一个 <a href="GraphObject.html">GraphObject</a> 它包含其他GraphObjects作为其元素。
+					Panel负责调整其元素的大小和位置。
+					panel中的元素按它们在 <a href="Panel.html#elements">elements</a> 集合中出现的顺序绘制</p>
+					<p><a href="Part.html">Part</a> 类继承自Panel; 反过来，Part是 <a href="Node.html">Node</a> 和 <a href="Link.html">Link</a> 的基类</p>
+					<p>每个Panel都有一个 <a href="Panel.html#type">type</a> 并建立自己的坐标系。 Panel的type决定了Panel的大小和排列方式:</p>
 					<ul>
-						<li><a href="Panel.html#static-Position">Panel.Position</a> is used to arrange elements based on their absolute positions within the Panel&#39;s local coordinate system.</li>
-						<li><a href="Panel.html#static-Vertical">Panel.Vertical</a> and <a href="Panel.html#static-Horizontal">Panel.Horizontal</a> are used to create linear &quot;stacks&quot; of elements.</li>
-						<li><a href="Panel.html#static-Auto">Panel.Auto</a> is used to size the main element to fit around other elements in the Panel.</li>
+						<li><a href="Panel.html#static-Position">Panel.Position</a> 用于根据元素在Panel的局部坐标系中的绝对位置来排列元素</li>
+						<li><a href="Panel.html#static-Vertical">Panel.Vertical</a> 和 <a href="Panel.html#static-Horizontal">Panel.Horizontal</a> 用于创建元素的线性&quot;stacks&quot;</li>
+						<li><a href="Panel.html#static-Auto">Panel.Auto</a> 用于调整主元素的大小，以适应Panel中的其他元素</li>
 						<li><a href="Panel.html#static-Spot">Panel.Spot</a> is used to arrange elements based on the <a href="Spot.html">Spot</a> properties <a href="GraphObject.html#alignment">GraphObject.alignment</a>
 							and <a href="GraphObject.html#alignmentFocus">GraphObject.alignmentFocus</a>, relative to a main element of the panel.
 						Spot panels can align relative to other elements by using <a href="Panel.html#alignmentFocusName">Panel.alignmentFocusName</a>.</li>
