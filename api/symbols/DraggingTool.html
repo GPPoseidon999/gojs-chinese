@@ -117,50 +117,40 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>The DraggingTool is used to move or copy selected parts with the mouse.
-						This sets the <a href="Part.html#location">Part.location</a> property; you may want to save the location to the model
-					by using a TwoWay <a href="Binding.html">Binding</a> on the &quot;location&quot; property in your Parts/Nodes/Groups templates.</p>
-					<p>Dragging the selection moves parts for which <a href="Part.html#canMove">Part.canMove</a> is true.
-						If the user holds down the Control key (Option key on Mac), this tool will make a copy of the parts being dragged,
-					for those parts for which <a href="Part.html#canCopy">Part.canCopy</a> is true.</p>
-					<p>When the drag starts it calls <a href="DraggingTool.html#computeEffectiveCollection">computeEffectiveCollection</a> to find the actual collection
-						of <a href="Part.html">Part</a>s to be dragged.
-						Normally this collection includes not only the <a href="Diagram.html#selection">Diagram.selection</a>, but also parts that belong
-						to those selected parts, such as members of groups.
-						If <a href="DraggingTool.html#dragsTree">dragsTree</a> is true, the effective collection also includes all of the nodes and links that
-						constitute the subtree starting from selected nodes.
-						The result of <a href="DraggingTool.html#computeEffectiveCollection">computeEffectiveCollection</a> is not a <a href="Set.html">Set</a> but a <a href="Map.html">Map</a>
-						which remembers the original <a href="Part.html#location">Part.location</a> for all of the dragged parts.
-					This map is saved as the value of <a href="DraggingTool.html#draggedParts">draggedParts</a>.</p>
-					<p>During the drag if the user holds down the Control/Option key this tool makes a copy of the <a href="DraggingTool.html#draggedParts">draggedParts</a>
-						and proceeds to drag it around.
-						(It only copies the <a href="Diagram.html#selection">Diagram.selection</a>, not the whole effective collection,
-						if <a href="DraggingTool.html#copiesEffectiveCollection">copiesEffectiveCollection</a> is false.)
-						The collection of copied parts is held by <a href="DraggingTool.html#copiedParts">copiedParts</a>.
-						It too is a <a href="Map.html">Map</a> remembering the original locations of the parts.
-					<a href="DraggingTool.html#copiedParts">copiedParts</a> will be null when this tool is moving (not copying) at the moment.</p>
-					<p>Each Part&#39;s movement is limited by the <a href="Diagram.html#computeMove">Diagram.computeMove</a> method.
-						By default it limits the <a href="Part.html#location">Part.location</a> to be within the bounds given by <a href="Part.html#minLocation">Part.minLocation</a> and <a href="Part.html#maxLocation">Part.maxLocation</a>.
-						(Those default to minus Infinity to plus Infinity.)
-						As a further convenience, the value of NaN in minLocation and maxLocation cause <a href="Diagram.html#computeMove">Diagram.computeMove</a> to use the
-						part&#39;s current location.
-					So, for example, an easy way to declare that the user may only drag a node horizontally is to just set:</p>
+					<p>DraggingTool是通过用鼠标来移动或者复制选中的parts的.
+						它设置了 <a href="Part.html#location">Part.location</a> 属性;你可以在Parts/Nodes/Groups的模板中通过使用TwoWay绑定<a href="Binding.html">Binding</a>来将&quot;location&quot;保存到model中。</p>
+					<p>拖拽会移动选中元素中那些<a href="Part.html#canMove">Part.canMove</a>是ture的part.
+						如果用户按下了Control键（Mac中是Option键），这个工具会为那些被拖拽的元素中<a href="Part.html#canCopy">Part.canCopy</a>是true的元素创建一个副本。</p>
+					<p>拖拽开始时，它会调用<a href="DraggingTool.html#computeEffectiveCollection">computeEffectiveCollection</a> 方法去查找可以被移动的<a href="Part.html">Part</a>s的集合.一般来说这个集合不仅仅是<a href="Diagram.html#selection">Diagram.selection</a>, 还包含那些被选中元素包含的parts，例如组合中包含的成员.
+						如果 <a href="DraggingTool.html#dragsTree">dragsTree</a> 为真, 有效的集合包含从选择的节点开始组成子树的所有节点和链接。
+						<a href="DraggingTool.html#computeEffectiveCollection">computeEffectiveCollection</a> 函数返回的不是一个 <a href="Set.html">Set</a> 而是一个 <a href="Map.html">Map</a>
+						它记录了所有被拖拽的part的原始位置<a href="Part.html#location">Part.location</a>.
+					Map作为DraggingTool的属性<a href="DraggingTool.html#draggedParts">draggedParts</a>的值.</p>
+					<p>拖拽过程中如果用户按下了Control或者Option键，tool会创建<a href="DraggingTool.html#draggedParts">draggedParts</a>的一个副本，接着会拖着创建的副本继续拖动。
+						（如果<a href="DraggingTool.html#copiesEffectiveCollection">copiesEffectiveCollection</a> 是假的话，tool只会复制<a href="Diagram.html#selection">Diagram.selection</a>的内容，而不是整个effective collection.)复制出来的parts被保存为 <a href="DraggingTool.html#copiedParts">copiedParts</a>.
+						它也是一个 <a href="Map.html">Map</a> 记录了parts的原始位置.
+					如果那时tool是moving而不是copying，<a href="DraggingTool.html#copiedParts">copiedParts</a> 会是空</p>
+					<p>每一个Part的movement取决于<a href="Diagram.html#computeMove">Diagram.computeMove</a> 方法的返回结果.
+						默认情况下<a href="Part.html#location">Part.location</a> 的值在给出的边界条件<a href="Part.html#minLocation">Part.minLocation</a>和<a href="Part.html#maxLocation">Part.maxLocation</a>之间.
+						(默认是负无穷到正无穷之间.)
+						为了更方便，minLocation和maxLocation的值NaN，使得<a href="Diagram.html#computeMove">Diagram.computeMove</a> 方法使用
+						part的当前location的值.
+					因此，例如，一个简单办法去生命用户只能水平拖动一个节点，你可以这样设置:</p>
 					<pre><code class="hljs js">$(go.Node,
   . . .
   { <span class="hljs-attr">minLocation</span>: <span class="hljs-keyword">new</span> go.Point(-<span class="hljs-literal">Infinity</span>, <span class="hljs-literal">NaN</span>), <span class="hljs-attr">maxLocation</span>: <span class="hljs-keyword">new</span> go.Point(<span class="hljs-literal">Infinity</span>, <span class="hljs-literal">NaN</span>) },
   . . .
 )</code></pre>
-					<p>If you set <a href="DraggingTool.html#isGridSnapEnabled">isGridSnapEnabled</a> to true, dragged or copied parts will be snapped to points on a grid.
-						The snapping occurs continuously during a drag unless you set <a href="DraggingTool.html#isGridSnapRealtime">isGridSnapRealtime</a> to false.
-						Normally the grid points come from the <a href="Diagram.html#grid">Diagram.grid</a>, even if that grid is not <a href="GraphObject.html#visible">GraphObject.visible</a>.
-						However you can override those grid&#39;s properties for the snapping grid cell size and offset
-						by setting the properties here: <a href="DraggingTool.html#gridSnapCellSize">gridSnapCellSize</a> and <a href="DraggingTool.html#gridSnapOrigin">gridSnapOrigin</a>.
-						This computes the point to snap to for each dragged part.
-					The resulting point is used as the new <a href="Part.html#location">Part.location</a>.</p>
-					<p>For the most general control over where a part may be dragged, either set the <a href="Part.html#dragComputation">Part.dragComputation</a> property
-						or override <a href="Diagram.html#computeMove">Diagram.computeMove</a>.
-						For the common case of wanting to keep member nodes within the <a href="Group.html">Group</a> that they are members of,
-					you can do something like:</p>
+					<p>如果你设置<a href="DraggingTool.html#isGridSnapEnabled">isGridSnapEnabled</a>为真, 拖拽或者复制出来的parts将会吸附到grid上点.
+						除非你设置了<a href="DraggingTool.html#isGridSnapRealtime">isGridSnapRealtime</a> 为假，否则当你拖拽的时候吸附行为将持续发生.
+						一般情况下珊格点来自与<a href="Diagram.html#grid">Diagram.grid</a>, 即使画布的珊格是不可见的<a href="GraphObject.html#visible">GraphObject.visible</a>.
+						然而你可以覆盖grid的属性，比如你可以这样设置吸附珊格的cell size和offset: <a href="DraggingTool.html#gridSnapCellSize">gridSnapCellSize</a>和<a href="DraggingTool.html#gridSnapOrigin">gridSnapOrigin</a>.
+						这会为每一个拖拽的part计算出吸附到grid上的点.
+					计算出的点将会作为<a href="Part.html#location">Part.location</a>的新值.</p>
+					<p>对于绝大多数拖拽的part而言，可以设置<a href="Part.html#dragComputation">Part.dragComputation</a> 属性
+						或者覆盖 <a href="Diagram.html#computeMove">Diagram.computeMove</a>方法.
+						对于想拖拽的Group中的节点，并保持在<a href="Group.html">Group</a>内这种常见的例子来说,
+					你可以这样设置:</p>
 					<pre><code class="hljs js"> <span class="hljs-comment">// this is a Part.dragComputation function for limiting where a Node may be dragged</span>
   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stayInGroup</span>(<span class="hljs-params">part, pt, gridpt</span>) </span>{
     <span class="hljs-comment">// don't constrain top-level nodes</span>
@@ -182,20 +172,19 @@
     <span class="hljs-keyword">var</span> y = <span class="hljs-built_in">Math</span>.max(p1.y + m.top, <span class="hljs-built_in">Math</span>.min(pt.y, p2.y - m.bottom - b.height - <span class="hljs-number">1</span>)) + (loc.y-b.y);
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> go.Point(x, y);
   }</code></pre>
-					<p>Note that this expects there to be a &quot;SHAPE&quot; object within the Group&#39;s visual tree that delimits
-						where the part may be dragged within the group.
-						This also expects that <a href="Group.html#computesBoundsIncludingLinks">Group.computesBoundsIncludingLinks</a> is false.
-					Then in your node template(s), just set:</p>
+					<p>注意如果Group可视化树中有SHAPE这样的object，part被拖拽时要保持在group中，.
+						这个时候要设置<a href="Group.html#computesBoundsIncludingLinks">Group.computesBoundsIncludingLinks</a>为假.
+					那么在你的nodeTemplate中这样设置:</p>
 					<pre><code class="hljs js">$(go.Node,
   . . .,
   { <span class="hljs-attr">dragComputation</span>: stayInGroup },
   . . .
 )</code></pre>
-					<p>This tool does not utilize any <a href="Adornment.html">Adornment</a>s or tool handles.
-						If the drag is successful, it raises the &quot;SelectionMoved&quot; or &quot;SelectionCopied&quot; <a href="DiagramEvent.html">DiagramEvent</a>
-					and produces a &quot;Move&quot; or a &quot;Copy&quot; transaction.</p>
-					<p>If you want to programmatically start a new user&#39;s dragging of a particular existing node,
-					you can make sure that node is selected, set the <a href="DraggingTool.html#currentPart">currentPart</a> property, and then start and activate the tool.</p>
+					<p>该工具不会使用任何的<a href="Adornment.html">装饰类</a>和工具具柄.
+						如果拖拽陈工了，它将触发&quot;SelectionMoved&quot; 或者 &quot;SelectionCopied&quot; <a href="DiagramEvent.html">画布事件</a>
+					并且会产生一个 &quot;Move&quot; 或者 &quot;Copy&quot; 事务.</p>
+					<p>如果你想通过代码实现一个新的用户拖拽某个已经存在的节点的话,
+					你应该先确保那个节点已经被选中了, 然后设置DraggingTool的<a href="DraggingTool.html#currentPart">currentPart</a> 属性, 然后开始激活DraggingTool工具.</p>
 					<pre><code class="hljs js">  <span class="hljs-keyword">var</span> node = ...;
   myDiagram.select(node);        <span class="hljs-comment">// in this case the only selected node</span>
   <span class="hljs-keyword">var</span> tool = myDiagram.toolManager.draggingTool;
