@@ -85,7 +85,7 @@
 					<b>GoJS</b>&reg; Diagramming Components<br/>version 2.1.26<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>
 				</div>
 				<div>
-					<h1>Class List&lt;T&gt;</h1>
+					<h1>List&lt;T&gt; 类</h1>
 				</div>
 			</div>
 		</div>
@@ -104,28 +104,28 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p><span style="color: red; font-weight: bold;">NOTE: For 2.0 the <a href="List.html#constructor">constructor</a> argument has changed.
-					List now optionally accepts a collection, and only checks types in TypeScript.</span></p>
-					<p>An ordered iterable collection.
-					In TypeScript it is a generic class that enforces at compile-time the type of elements that may be added to the List.</p>
-					<p>An example usage:</p>
+					<p><span style="color: red; font-weight: bold;">注意: 在2.0版本中 <a href="List.html#constructor">constructor</a> 参数发生了变化。
+					List现在可以选择接受一个集合，并且只检查TypeScript中的类型。</span></p>
+					<p>有序的可迭代集合。
+					在TypeScript中，它是一个通用类，在编译时强制执行可能添加到List中的元素类型</p>
+					<p>用法示例:</p>
 					<pre><code class="hljs js">  <span class="hljs-keyword">var</span> list = <span class="hljs-keyword">new</span> go.List();  <span class="hljs-comment">// or in TypeScript: new go.List&lt;go.Point&gt;();</span>
   list.add(<span class="hljs-keyword">new</span> go.Point(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>));
   list.add(<span class="hljs-keyword">new</span> go.Point(<span class="hljs-number">20</span>, <span class="hljs-number">10</span>));
   list.add(<span class="hljs-keyword">new</span> go.Point(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>));
   <span class="hljs-comment">// now list.length === 3</span>
   <span class="hljs-comment">// and list.elt(1) instanceof go.Point</span></code></pre>
-					<p>You can iterate over the items in a List:</p>
+					<p>你可以遍历List中的项目:</p>
 					<pre><code class="hljs js">  <span class="hljs-keyword">var</span> it = aList.iterator;
   <span class="hljs-keyword">while</span> (it.next()) {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"#"</span> + it.key + <span class="hljs-string">" is "</span> + it.value);
   }</code></pre>
-					<p>Or:</p>
+					<p>或者:</p>
 					<pre><code class="hljs js">  aList.each(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">val</span>) </span>{
     <span class="hljs-built_in">console</span>.log(val);
   });</code></pre>
-					<p>The key will range from zero to <a href="List.html#count">count</a>-1.</p>
-					<p>For convenience this <strong>GoJS</strong> List class has synonyms for the following methods and property:</p>
+					<p>key的范围从0到 <a href="List.html#count">count</a>-1.</p>
+					<p>为了方便起见，此<strong>GoJS</strong> List 类具有以下方法和属性:</p>
 					<ul>
 						<li><strong>get(idx)</strong>: <a href="List.html#elt">elt</a></li>
 						<li><strong>set(idx,val)</strong>: <a href="List.html#setElt">setElt</a></li>
@@ -134,9 +134,8 @@
 						<li><strong>clear()</strong>: <a href="List.html#clear">clear</a></li>
 						<li><strong>size</strong>: <a href="List.html#count">count</a></li>
 					</ul>
-					<p>The constructor now takes an optional Iterable or Array argument that provides the initial elements for the new List.</p>
-					<p>Note that GoJS iteration is quite different than ES6 iteration, so that functionality has not been made somewhat compatible.
-					These collection classes were defined in GoJS before the ES6 collection classes were proposed.</p>
+					<p>现在，构造函数采用一个可选的Iterable或者Array参数，该参数为新List提供了初始元素。</p>
+					<p>请注意，GoJS迭代与ES6迭代完全不同，因此尚未使功能具有某种程度的兼容性。这些集合类是在ES6集合类被提出之前在GoJS中定义的。</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-type-parameters">
@@ -221,10 +220,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>There are two possible constructors:</p>
-								<p><code>new go.List()</code>, for JavaScript</p>
-								<p><code>new go.List&lt;type&gt;()</code> for TypeScript, to enforce type checking.</p>
-								<p>Typical usage would be something like:</p>
+								<p>有两种可能的构造函数:</p>
+								<p><code>new go.List()</code>, 用于 JavaScript</p>
+								<p><code>new go.List&lt;type&gt;()</code> 用于 TypeScript, 以强制进行类型检查</p>
+								<p>典型用法是:</p>
 								<pre><code class="hljs js">  <span class="hljs-keyword">var</span> list = <span class="hljs-keyword">new</span> go.List();  <span class="hljs-comment">// keep a list of GraphObjects</span></code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -232,7 +231,7 @@
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> coll: <a href="Iterable.html" class="tsd-signature-type">Iterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>an optional collection of items to add.</p>
+										<p>要添加的项的可选集合</p>
 									</div>
 								</li>
 							</ul>
@@ -252,7 +251,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This read-only property is the length of the List.</p>
+								<p>此只读属性是List的长度</p>
 							</div>
 						</li>
 					</ul>
@@ -266,10 +265,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets an object that you can use for iterating over the List.
-									The key will be an integer from zero to the count-1.
-									The value will be the item at that index in the list.
-								Typical usage:</p>
+								<p>获取可用于遍历List的对象。key的范围是从0到count-1的整数。该值将是列表中该索引处的项目。典型用法:</p>
 								<pre><code class="hljs js">  <span class="hljs-keyword">var</span> it = aList.iterator;
   <span class="hljs-keyword">while</span> (it.next()) {
     . . . <span class="hljs-string">"index: "</span> + it.key + <span class="hljs-string">" value: "</span> + it.value . . .
@@ -287,11 +283,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets an object that you can use for iterating over the List in backwards order.
-									The key will be an integer from count-1 to zero.
-									The value will be the item at that index in the list.
-									The list is not modified by traversing in reverse order.
-								Typical usage:</p>
+								<p>获取一个对象，可以使用该对象以向后的顺序遍历List。key的范围是从0到count-1的整数。该值将是列表中该索引处的项目。不能通过反向遍历来修改List。典型用法:</p>
 								<pre><code class="hljs js">  <span class="hljs-keyword">var</span> it = aList.iteratorBackwards;
   <span class="hljs-keyword">while</span> (it.next()) {
     . . . <span class="hljs-string">'key: '</span> + it.key + <span class="hljs-string">' value: '</span> + it.value . . .
@@ -309,7 +301,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This read-only property is the length of the List, a synonym for the <a href="List.html#count">count</a> property.</p>
+								<p>此只读属性是List的长度，它是 <a href="List.html#count">count</a> 属性的同义词</p>
 							</div>
 						</li>
 					</ul>
@@ -323,7 +315,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This read-only property is the length of the List.</p>
+								<p>此只读属性是List的长度</p>
 							</div>
 						</li>
 					</ul>
@@ -342,8 +334,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Adds a given value to the end of the List.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>将给定的值添加到List的末尾</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -352,7 +344,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="List.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>This modified List.</p>
+							<p>修改后的List</p>
 						</li>
 					</ul>
 				</section>
@@ -367,20 +359,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Adds all of the values of a collection to the end of this List.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>将集合的所有值添加到此List的末尾</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>coll: <a href="Iterable.html" class="tsd-signature-type">Iterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the collection of items to add.</p>
+										<p>要添加的项目集合</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="List.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>This modified List.</p>
+							<p>修改后的List</p>
 						</li>
 					</ul>
 				</section>
@@ -396,11 +388,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This is true if all invocations of the given predicate on items in the collection are true.</p>
-								<p>Call the given predicate on each item in the collection.
-									As soon as a call returns false, this returns false.
-									Otherwise this returns true.
-								For an empty collection this returns true.</p>
+								<p>如果对集合中所有的项调用给定function都为true，则为true</p>
+								<p>在集合中的每个项目上调用给定function，一旦返回false时，将立即返回false，否则返回true。对于空集合它返回true</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.4</p>
@@ -412,14 +401,14 @@
 								<li>
 									<h5>pred: <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">a</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>This function must not have any side-effects.</p>
+										<p>此function必须没有任何副作用</p>
 									</div>
 									<ul class="tsd-parameters">
 									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if all predicate calls are true; false otherwise.</p>
+							<p>如果所有给定function调用都为true则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -435,11 +424,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This is true if any invocation of the given predicate on items in the collection is true.</p>
-								<p>Call the given predicate on each item in the collection.
-									As soon as a call returns true, this returns true.
-									Otherwise this returns false.
-								For an empty collection this returns false.</p>
+								<p>如果对任意集合的项目调用给定function为true，则为true</p>
+								<p>在集合中的每个项目上调用给定function，一旦返回true时，将立即返回true，否则返回false。对于空集合它返回false</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.4</p>
@@ -451,14 +437,14 @@
 								<li>
 									<h5>pred: <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">a</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>This function must not have any side-effects.</p>
+										<p>此function必须没有任何副作用</p>
 									</div>
 									<ul class="tsd-parameters">
 									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if any predicate call is true; false otherwise.</p>
+							<p>如果任意给定function调用为true则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -473,9 +459,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Clears the List.
-								This sets the <a href="List.html#count">count</a> to zero.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>清除List。
+								这会将 <a href="List.html#count">count</a> 设置为0</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -492,19 +478,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns whether the given value is in this List.</p>
+								<p>返回给定值是否在此List中</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The value to check.</p>
+										<p>要检查的值</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>Whether or not the value is contained within the List.</p>
+							<p>该值是否包含在List中</p>
 						</li>
 					</ul>
 				</section>
@@ -520,12 +506,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Makes a shallow copy of this List.
-									The values are not copied,
-								so if they are objects they may continue to be shared with the original List.</p>
+								<p>对此List进行浅拷贝。这些值不会被复制，因此，如果它们是对象，则可以继续与原始List共享</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="List.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>The new List with the same elements.</p>
+							<p>具有相同元素的新List</p>
 						</li>
 					</ul>
 				</section>
@@ -540,20 +524,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Removes a given value (if found) from the List.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>从List中删除给定值（如果找到） </p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The value to remove.</p>
+										<p>要删除的值</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>true if the value was found and removed, false otherwise.</p>
+							<p>如果找到并删除了该值，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -569,7 +553,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Call the given function on each item in the collection.</p>
+								<p>在集合中的每个项目上调用给定函数</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.4</p>
@@ -581,14 +565,14 @@
 								<li>
 									<h5>func: <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">a</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>This function must not modify the collection.</p>
+										<p>此函数不可以修改集合</p>
 									</div>
 									<ul class="tsd-parameters">
 									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="List.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>This List itself</p>
+							<p>此List本身</p>
 						</li>
 					</ul>
 				</section>
@@ -603,19 +587,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns the element at the given index.</p>
+								<p>返回给定索引处的元素</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>i: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>int The index of the element to return.</p>
+										<p>要返回的元素的索引</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
-							<p>the value at the given index.</p>
+							<p>给定索引处的值</p>
 						</li>
 					</ul>
 				</section>
@@ -630,14 +614,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns the first item in the list, or null if there is none.</p>
+								<p>返回List中的第一项，如果没有则返回null</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns
 								<span class="tsd-signature-type">T</span>
 								<span class="tsd-signature-symbol"> | </span>
 								<span class="tsd-signature-type">null</span>
 							</h4>
-							<p>This returns null if there are no items in the list.</p>
+							<p>如果List中没有项目，则返回null</p>
 						</li>
 					</ul>
 				</section>
@@ -652,19 +636,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns the element at the given index.</p>
+								<p>返回给定索引处的元素</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>i: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>int The index of the element to return.</p>
+										<p>要返回的元素的索引</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
-							<p>the value at the given index.</p>
+							<p>给定索引处的值</p>
 						</li>
 					</ul>
 				</section>
@@ -679,19 +663,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns whether the given value is in this List.</p>
+								<p>返回给定值是否在此List中</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The value to check.</p>
+										<p>要检查的值</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>Whether or not the value is contained within the List.</p>
+							<p>该值是否包含在List中</p>
 						</li>
 					</ul>
 				</section>
@@ -706,19 +690,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns the index of the given value if it is in this List.</p>
+								<p>返回给定值的索引（如果它在此List中）</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The value to check.</p>
+										<p>要检查的值</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>int returns -1 if the value is not in this list.</p>
+							<p>如果值不在此List中，则返回-1</p>
 						</li>
 					</ul>
 				</section>
@@ -733,21 +717,21 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Insert a value before the index i.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>在索引i之前插入一个值</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>i: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>int The index to insert before.</p>
+										<p>之前要插入的索引</p>
 									</div>
 								</li>
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The value to insert.</p>
+										<p>插入的值</p>
 									</div>
 								</li>
 							</ul>
@@ -766,7 +750,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns the last item in the list, or null if these is none.</p>
+								<p>返回List中的最后一项，如果没有则返回null</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.5</p>
@@ -778,7 +762,7 @@
 								<span class="tsd-signature-symbol"> | </span>
 								<span class="tsd-signature-type">null</span>
 							</h4>
-							<p>This returns null if there are no items in the list.</p>
+							<p>如果List中没有项目，则返回null</p>
 						</li>
 					</ul>
 				</section>
