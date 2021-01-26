@@ -123,21 +123,18 @@
 						<li><a href="Panel.html#static-Position">Panel.Position</a> 用于根据元素在Panel的局部坐标系中的绝对位置来排列元素</li>
 						<li><a href="Panel.html#static-Vertical">Panel.Vertical</a> 和 <a href="Panel.html#static-Horizontal">Panel.Horizontal</a> 用于创建元素的线性&quot;stacks&quot;</li>
 						<li><a href="Panel.html#static-Auto">Panel.Auto</a> 用于调整主元素的大小，以适应Panel中的其他元素</li>
-						<li><a href="Panel.html#static-Spot">Panel.Spot</a> is used to arrange elements based on the <a href="Spot.html">Spot</a> properties <a href="GraphObject.html#alignment">GraphObject.alignment</a>
-							and <a href="GraphObject.html#alignmentFocus">GraphObject.alignmentFocus</a>, relative to a main element of the panel.
-						Spot panels can align relative to other elements by using <a href="Panel.html#alignmentFocusName">Panel.alignmentFocusName</a>.</li>
-						<li><a href="Panel.html#static-Table">Panel.Table</a> is used to arrange elements into rows and columns, typically employing the different
-							elements&#39; <a href="GraphObject.html#row">GraphObject.row</a>, <a href="GraphObject.html#rowSpan">GraphObject.rowSpan</a>, <a href="GraphObject.html#column">GraphObject.column</a>,
-						and <a href="GraphObject.html#columnSpan">GraphObject.columnSpan</a> properties. This Panel type also makes use of <a href="RowColumnDefinition.html">RowColumnDefinition</a>.</li>
-						<li><a href="Panel.html#static-TableRow">Panel.TableRow</a> and <a href="Panel.html#static-TableColumn">Panel.TableColumn</a> can only be used immediately within a <a href="Panel.html#static-Table">Panel.Table</a> Panel
-						to organize a collection of elements as a row or as a column in a table.</li>
-						<li><a href="Panel.html#static-Viewbox">Panel.Viewbox</a> is used to automatically resize a single element to fit inside the panel&#39;s available area.</li>
-						<li><a href="Panel.html#static-Grid">Panel.Grid</a> is not used to house typical elements, but is used only to draw regular patterns of lines.
-						The elements must be <a href="Shape.html">Shape</a>s used to describe the repeating lines.</li>
-						<li><a href="Panel.html#static-Link">Panel.Link</a> is only used by <a href="Link.html">Link</a> parts and Link Adornments.</li>
-						<li><a href="Panel.html#static-Graduated">Panel.Graduated</a> is used to draw regular tick marks and text along the main <a href="Shape.html">Shape</a> element.</li>
+						<li><a href="Panel.html#static-Spot">Panel.Spot</a> 用于根据 <a href="Spot.html">Spot</a> 属性 <a href="GraphObject.html#alignment">GraphObject.alignment</a>
+							和 <a href="GraphObject.html#alignmentFocus">GraphObject.alignmentFocus</a> 排列元素，相对于Panel的一个主要元素，SpotPanel可以使用 <a href="Panel.html#alignmentFocusName">Panel.alignmentFocusName</a> 相对于其他元素对齐</li>
+						<li><a href="Panel.html#static-Table">Panel.Table</a> 用于将元素排列为行和列，通常使用不同元素的 <a href="GraphObject.html#row">GraphObject.row</a>, <a href="GraphObject.html#rowSpan">GraphObject.rowSpan</a>, <a href="GraphObject.html#column">GraphObject.column</a>,
+						和 <a href="GraphObject.html#columnSpan">GraphObject.columnSpan</a> 属性。此Panel类型也使用 <a href="RowColumnDefinition.html">RowColumnDefinition</a></li>
+						<li><a href="Panel.html#static-TableRow">Panel.TableRow</a> 和 <a href="Panel.html#static-TableColumn">Panel.TableColumn</a> 只能在 <a href="Panel.html#static-Table">Panel.Table</a> Panel
+						中立即使用，将元素集合组织为表中的行或列</li>
+						<li><a href="Panel.html#static-Viewbox">Panel.Viewbox</a> 用于自动调整单个元素的大小以适应Panel的可用区域</li>
+						<li><a href="Panel.html#static-Grid">Panel.Grid</a> 不用于容纳典型元素，而仅用于绘制规则的线条图案。元素必须是用于描述重复线条的 <a href="Shape.html">Shape</a></li>
+						<li><a href="Panel.html#static-Link">Panel.Link</a> 仅由 <a href="Link.html">Link</a> parts 和 Link Adornments 使用</li>
+						<li><a href="Panel.html#static-Graduated">Panel.Graduated</a> 用于沿主 <a href="Shape.html">Shape</a> 元素绘制常规刻度线和文本</li>
 					</ul>
-					<p>Using <a href="../../intro/buildingObjects.html">GraphObject.make</a>, the second argument can be used to declare the Panel type:</p>
+					<p>使用 <a href="../../intro/buildingObjects.html">GraphObject.make</a>, 第二个参数可用于声明Panel类型:</p>
 					<pre><code class="hljs js"><span class="hljs-comment">// Either:</span>
 $(go.Panel, go.Panel.Horizontal, ...
 <span class="hljs-comment">// Or:</span>
@@ -151,16 +148,14 @@ $(go.Panel, <span class="hljs-string">"Horizontal"</span>,
   $(go.TextBlock, <span class="hljs-string">"Some Text"</span>)
 ) <span class="hljs-comment">// end of panel definition</span></code></pre>
 					<p class="boxread">
-						For an overview of most Panel types, please read the <a href="../../intro/panels.html">Introduction page on Panels</a>.
-						<p><a href="Panel.html#static-Vertical">Panel.Vertical</a> and <a href="Panel.html#static-Horizontal">Panel.Horizontal</a> panels are frequently used to position two or more GraphObjects
-							vertically above each other or horizontally next to each other.  Use the <a href="GraphObject.html#alignment">GraphObject.alignment</a> or
-							<a href="GraphObject.html#stretch">GraphObject.stretch</a> properties on the individual elements to control their position and size.
-							Set <a href="Panel.html#isOpposite">isOpposite</a> to true if you want the elements arranged from right-to-left in Horizontal Panels
-						or from bottom-to-top in Vertical Panels.</p>
-						<p><a href="Panel.html#static-Spot">Panel.Spot</a> and <a href="Panel.html#static-Auto">Panel.Auto</a> panels have a &quot;main&quot; element, signified by the Panel&#39;s first element
-							with <a href="GraphObject.html#isPanelMain">GraphObject.isPanelMain</a> set to true.  If there is no such element, it uses the first element as the &quot;main&quot; one.
-							Use the <a href="GraphObject.html#alignment">GraphObject.alignment</a> property to position elements with respect to the main element.
-							Use the <a href="GraphObject.html#alignmentFocus">GraphObject.alignmentFocus</a> property to further specify the position within Spot Panels.
+						有关更多Panel类型的概述，请阅读 <a href="../../intro/panels.html">Panel</a> 简介页面
+						<p><a href="Panel.html#static-Vertical">Panel.Vertical</a> 和 <a href="Panel.html#static-Horizontal">Panel.Horizontal</a> panels通常用于将两个或多个GraphObjects
+							垂直放置在彼此上方或水平放置在彼此之间。  在各个元素上使用 <a href="GraphObject.html#alignment">GraphObject.alignment</a> 或者
+							<a href="GraphObject.html#stretch">GraphObject.stretch</a> 属性来控制其位置和大小
+							如果希望元素在水平Panel中从右到左或在垂直Panel中从下到上排列，请将 <a href="Panel.html#isOpposite">isOpposite</a> 设置为true</p>
+						<p><a href="Panel.html#static-Spot">Panel.Spot</a> 和 <a href="Panel.html#static-Auto">Panel.Auto</a> panels 具有一个 &quot;主要&quot; 元素，由 <a href="GraphObject.html#isPanelMain">GraphObject.isPanelMain</a> 设置为true的Panel的第一个元素表示。如果没有这样的元素，它将使用第一个元素作为 &quot;主要&quot; 元素
+							使用 <a href="GraphObject.html#alignment">GraphObject.alignment</a> 属性相对于主元素定位元素。
+							使用 <a href="GraphObject.html#alignmentFocus">GraphObject.alignmentFocus</a> 属性可以进一步指定 to further specify the position within Spot Panels.
 						&quot;Spot&quot; and &quot;Auto&quot; Panels should have two or more elements in them.</p>
 						<p>In <a href="Panel.html#static-Table">Panel.Table</a> panels you will want to set the <a href="GraphObject.html#row">GraphObject.row</a> and <a href="GraphObject.html#column">GraphObject.column</a>
 							properties on each element.  The <a href="GraphObject.html#alignment">GraphObject.alignment</a> and <a href="GraphObject.html#stretch">GraphObject.stretch</a> properties are also
