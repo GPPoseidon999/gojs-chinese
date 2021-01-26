@@ -109,16 +109,16 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>The PanningTool supports manual panning, where the user can shift the
-					<a href="Diagram.html#position">Diagram.position</a> by dragging the mouse.</p>
-					<p>This tool is a standard mouse-move tool, the <a href="ToolManager.html#panningTool">ToolManager.panningTool</a>.
-						Although the <a href="ToolManager.html#dragSelectingTool">ToolManager.dragSelectingTool</a> takes precedence over this tool,
-						the <a href="DragSelectingTool.html">DragSelectingTool</a> only starts if there is a delay after a mouse-down event.
-					If it does not start, then this PanningTool gets a chance to start.</p>
-					<p>This tool does not utilize any <a href="Adornment.html">Adornment</a>s or tool handles.
-					This tool does not modify the model or conduct any transaction.</p>
-					<p>If you want to programmatically &quot;pan&quot; the diagram, you can just set <a href="Diagram.html#position">Diagram.position</a>
-					or call methods such as <a href="Diagram.html#scroll">Diagram.scroll</a>, <a href="Diagram.html#scrollToRect">Diagram.scrollToRect</a>, or <a href="Diagram.html#centerRect">Diagram.centerRect</a>.</p>
+					<p>PanningTool支持手动平移画布,用户可以通过拖拽鼠标来改变
+					<a href="Diagram.html#position">Diagram.position</a></p>
+					<p>该工具是个标准的鼠标-移动工具, <a href="ToolManager.html#panningTool">ToolManager.panningTool</a>.
+						尽管<a href="ToolManager.html#dragSelectingTool">ToolManager.dragSelectingTool</a> 触发优先级比该工具高,
+						<a href="DragSelectingTool.html">DragSelectingTool</a> 只会在mouse-down事件有延迟的情况下起作用.
+					如果DragSelectingTool没有触发,那么panningTool就有机会工作了</p>
+					<p>该工具不使用任何的<a href="Adornment.html">装饰层</a>或者其他工具手柄.
+					该工具不会修改model或者发起任何事务</p>
+					<p>如果你想通过代码 &quot;移动&quot; 画布, 你可以修改<a href="Diagram.html#position">Diagram.position</a>
+					或者调用像 <a href="Diagram.html#scroll">Diagram.scroll</a>, <a href="Diagram.html#scrollToRect">Diagram.scrollToRect</a>, or <a href="Diagram.html#centerRect">Diagram.centerRect</a>等方法.</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
