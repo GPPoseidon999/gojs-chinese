@@ -12,125 +12,103 @@
 <div id="container" class="container-fluid">
 <div id="content">
 
-<h1>Performance Considerations</h1>
+<h1>性能注意事项</h1>
 
 <p>
-  Getting good performance for your diagrams does not require any effort on your part when
-  the diagrams are limited to a few hundreds of nodes and links, especially on the desktop.
-  However when your app might deal with thousands or tens of thousands of nodes and links,
-  you may need to adapt your implementation to avoid expensive features.
+  当你的图被限制在几百个nodes和links时，你不需要付出任何努力就能获得良好的性能，尤其是在桌面上。
+  然而当你的应用可能要处理成千上万的nodes和links时，你可能需要调整你的实现以避免昂贵的功能。
 </p>
 
 <p>
-  The perceived performance of your diagram depends on many different factors.
+  图表的感知的性能取决于许多不同的因素
 </p>
 <ul>
-  <li>JavaScript code is normally several to many times slower than Java or .NET code
-      on the same hardware platform.</li>
-  <li>JavaScript code performance varies between different browsers and versions of browsers.</li>
-  <li>Memory limitations, particularly on mobile devices, affect performance.</li>
-  <li>There can be a wide variation of drawing performance on different platforms.</li>
-  <li>Drawing and animation effects take resources.</li>
-  <li>Complicated nodes or links are slower to build and update and draw than simple ones.</li>
-  <li>Some layouts are inherently slower than others.</li>
+  <li>在相同的硬件平台上，JavaScript代码通常比Java或.NET代码慢好几倍</li>
+  <li>不同浏览器和浏览器版本之间的JavaScript代码性能有所不同</li>
+  <li>内存限制（特别是在移动设备上）会影响性能</li>
+  <li>不同平台上的绘图性能可能会有很大差异</li>
+  <li>绘图和动画效果占用资源</li>
+  <li>复杂node或者link的构建，更新和绘制都比简单node和link慢</li>
+  <li>有些布局本来就比其他布局慢</li>
 </ul>
 
-<h2 id="EffectsAndAppearances">Effects and Appearances</h2>
+<h2 id="EffectsAndAppearances">效果和外观</h2>
 <p>
-  Shadows are relatively expensive to draw, so consider not setting <a>Part.isShadowed</a> to true.
-  Gradient <a>Brush</a>es are slower to draw than solid colors.
-  Complex <a>Shape</a> <a>Geometry</a>s are slower to draw than simpler ones, and they require more
-  computation when computing intersections.
+  绘制阴影的成本相对较高，因此请考虑不要将 <a>Part.isShadowed</a> 设置为true。
+  渐变 <a>Brush</a> 比纯色Brush绘制的慢。
+  复杂的 <a>Shape</a> <a>Geometry</a> 比简单的 Shape Geometry 绘制速度慢，并且在计算交集时需要更多的计算
 </p>
 <p>
-  Animation takes up resources; consider setting <a>AnimationManager.isEnabled</a> to false.
+ 动画占用资源; 请考虑将 <a>AnimationManager.isEnabled</a> 设置为false
 </p>
 
-<h2 id="ConstructingAndSizingNodes">Constructing and Sizing Nodes</h2>
+<h2 id="ConstructingAndSizingNodes">构造和调整node大小</h2>
 <p>
-  Keep your Nodes and Links as simple as you can make it.
-  Limit how many GraphObjects that you use in your templates.
-  Use simpler Panel types when feasible -- the "Table" Panel is the most featureful,
-  but maybe you can just use a "Horizontal" or a "Vertical" or a "Spot" or an "Auto" Panel.
-  A Panel should have two or more elements in them (although there can be exceptions).
-  If you have no elements in a Panel, delete the panel.
-  If you have only one element in a Panel, consider removing the panel and merging the element
-  into the panel's containing panel.
+  使您的Node和Link尽可能的简单。
+  限制模板中使用GraphObjects的数量。
+  在可行的情况下使用更简单的Panel类型 --  "Table" Panel 功能最强大,但是也许您可以只是用"Horizontal" 或 "Vertical" 或 "Spot" 或 "Auto" Panel。
+  Panel中应该包含两个或多个元素(尽管可能会有例外)。
+  如果Panel中没有元素，请删除该Panel。
+  如果Panel中只有一个元素，请考虑删除Panel并将该元素合并到Panel的包含Panel中
 </p>
 <p>
-  Do not include objects that not visible.
-  Limit how much data binding that you use, and avoid <a>Binding</a>s with no source property name
-  or that are <a>Binding.ofObject</a>.
+ 不要包括不可见的对象。
+ 限制使用的数据绑定量，避免没有源属性名称的 <a>Binding</a> 或 <a>Binding.ofObject</a>
 </p>
 <p>
-	If you have a <a>Picture</a> and you know its intended size beforehand,
-  it's best to set its <a>GraphObject.desiredSize</a>
-  (or <a>GraphObject.width</a> and <a>GraphObject.height</a>)
-  so that it does not have to re-measured once the image loads.
-  When nodes change size a <a>Layout</a> might need to be performed again,
-  so having fixed size nodes helps reduce diagram layouts.
-  In general, setting <a>GraphObject.desiredSize</a> on the elements of your nodes,
-  especially <a>Picture</a>s, will speed up how quickly <b>GoJS</b> can measure and arrange
-  the <a>Panel</a>s that form your Nodes or Links.
+	如果你有一张 <a>Picture</a> 并且你事先知道它的大小,
+  最好设置其 <a>GraphObject.desiredSize</a>
+  (或 <a>GraphObject.width</a> 和 <a>GraphObject.height</a>)
+  以便在图像加载后不必重新测量。
+  当Node更改大小时，可能需要再次执行 <a>Layout</a> ，因此具有固定大小的Node有助于减少图的布局。
+  通常, 在Node的元素（尤其是 <a>Picture</a>）上设置 <a>GraphObject.desiredSize</a> 可以加快 <b>GoJS</b> 测量和排列构成Node或Link的 <a>Panel</a> 的速度
 </p>
 
 <h2 id="Links">Links</h2>
 <p>
-  The <a>Link.routing</a> property value <a>Link,AvoidsNodes</a> can be slow in very large graphs.
-  Consider not using it in performance-minded large graphs,
-  or setting it only after the intial layout is completed (use "InitialLayoutCompleted" <a href="events.html">Diagram event listener</a>),
-  or ideally setting it at that time only on select Links.
+  <a>Link.routing</a> 属性值 <a>Link,AvoidsNodes</a> 在非常大的图中可能会变慢.
+  请考虑不要在注重性能的大型图中使用它，或者不打算在初始布局完成后进行设置 (使用 "InitialLayoutCompleted" <a href="events.html">Diagram event listener</a>),
+  或者理想情况下仅在选择的Link上进行设置
 </p>
 <p>
-  Using a <a>Link.curve</a> value of either <a>Link,JumpOver</a> or <a>Link,JumpGap</a> is a lot slower than not
-  having to compute all the points where such links cross and drawing the small arc or drawing a gap.
+  使用 <a>Link.curve</a> 值为 <a>Link,JumpOver</a> 或 <a>Link,JumpGap</a> 的速度比不必计算此类Link交叉并绘制小弧或绘制间隙的所有点要慢得多
 </p>
 
 <h2 id="Layouts">Layouts</h2>
 <p>
-  <a>GridLayout</a> and <a>TreeLayout</a> are fast. <a>LayeredDigraphLayout</a> is slow.
+  <a>GridLayout</a> 和 <a>TreeLayout</a> 很快。 <a>LayeredDigraphLayout</a> 很慢。
 </p>
 
 <h2 id="Virtualization">Virtualization</h2>
 <p>
-	For diagrams with many nodes and links that only display a fraction of them at a time,
-  you could implement some form of virtualization to optimize your diagram.
-	The <a href="../samples/virtualizedTree.html">Virtualized Tree sample</a> contains 123,456
-  total nodes, yet is fairly quick to load and render, because it only constructs nodes
-  and links that intersect with the viewport.
+	对于具有许多Node和Link的图表，这些Node和Link一次只显示其中的一小部分，您可以使用某种形式的虚拟化来优化您的图表
+	<a href="../samples/virtualizedTree.html">Virtualized Tree 示例</a> 总共包含 123,456
+  nodes, 但由于它仅构造与视口相交的Node和Link，因此加载和渲染的速度相当快。
 </p>
 <p>
-  But this does complicate the implementation of the diagram, because you need to use a
-  separate model from the <a>Diagram.model</a> and manage adding and removing Nodes and
-  Links when the viewport changes.
-  Furthermore layout is more complicated because it needs to work on <a>LayoutVertex</a>es
-  and <a>LayoutEdge</a>s, not on <a>Node</a>s and <a>Link</a>s.
+  但这确实使图的实现复杂化，因为您需要使用与 <a>Diagram.model</a> 不同的模型，并在视口更改时管理添加和删除Node和Link。
+  此外，布局更加复杂，因为它需要在 <a>LayoutVertex</a>es 和 <a>LayoutEdge</a>s上工作, 而不是在<a>Node</a>s 和 <a>Link</a>s上工作
 </p>
 <p>
-  Other virtualization samples are listed in the <a href="../samples/index.html#performance">samples index</a>.
+  其他虚拟化示例在 <a href="../samples/index.html#performance">示例索引</a> 中列出
 </p>
 
-<h2 id="OtherConsiderations">Other considerations</h2>
+<h2 id="OtherConsiderations">其他注意事项</h2>
 <p>
-  If you want to disassociate the Diagram from the HTML Div element, set <a>Diagram.div</a> to null.
-  If you remove a part of the HTML DOM containing a Div with a Diagram, you will need to
-  set <a>Diagram.div</a> to null in order for the page to garbage collect the memory.
+  如果你想取消图与HTML Div 元素关联,请将 <a>Diagram.div</a> 设置为 null。
+  如果删除HTML DOM的一部分，其中包含带有图的Div，则需要将 <a>Diagram.div</a> 设置为null，以使页面能够垃圾回收内存
 </p>
 <p>
-	Depending on your app, it may be worthwhile to selectively toggle off some features
-  (like shadows and animation) or to use simpler templates altogether,
-  when slower environments are present, such as on mobile devices.
+	根据您的应用程序，当存在较慢的环境（例如在移动设备上）时，有选择地关闭某些功能（例如阴影和动画）或完全使用更简单的模板可能是值得的
 </p>
 <p>
-	You can use multiple templates depending on your zoom level.
-  If you are zoomed out far enough (and therefore have a lot of nodes on the screen)
-  you can switch to a simplified template so that rendering (when panning, dragging, etc) is faster.
-  The process of switching templates has a performance cost, though,
-  since Parts have to rebuild themselves.
+  您可以使用多个模板，具体取决于您的缩放级别。
+  如果缩小得足够远（因此屏幕上有很多node），则可以切换到简化的模板，以便渲染（在平移，拖动等时）更快。
+  但是，切换模板的过程有性能成本，因为Part必须自行重建
 </p>
 
 <p>
-  If you think you have a unique or high node count Diagramming situation that may benefit from other drawing optimizations, <a href="https://www.nwoods.com/contact.html">contact support</a>.
+  如果您认为自己可能有其他独特的图形优化可能会受益于独特或大量Node的制图情况，请于 <a href="https://www.nwoods.com/contact.html">支持部门联系</a>。
 </p>
 
 </div>

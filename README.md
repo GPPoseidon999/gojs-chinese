@@ -10,7 +10,7 @@
 | ----| :----: | ---- |
 | Basics | ✅ | |
 | Building | ✅ | |
-| Using Models | ✅ | |
+| Using Models |  | |
 | Data Binding |  | |
 | GoJs with React |  | |
 | GoJs with Angular | | |
@@ -67,7 +67,7 @@
 | Server-side Images | | |
 | GoJS in Node.js | | |
 | Storage | | |
-| Performance | | |
+| Performance | ✅ | |
 | Building from Source | | |
 | Deployment | | |
 
