@@ -109,19 +109,15 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>This interface defines properties and methods for iterating over a collection;
-						it provides the <a href="Iterator.html#next">next</a> predicate and the <a href="Iterator.html#value">value</a> read-only property.
-					Some Iterators also provide <code>key</code> property values along with each <code>value</code>.</p>
-					<p>Typical usage is:</p>
+					<p>该接口定义了迭代集合的属性和方法。它提供了 <a href="Iterator.html#next">next</a> 谓词和 <a href="Iterator.html#value">value</a> 只读属性。
+					一些迭代器还提供 <code>key</code> 属性以及每个 <code>value</code></p>
+					<p>典型用法是:</p>
 					<pre><code class="hljs js"> <span class="hljs-keyword">var</span> it = anIterableCollection.iterator;
  <span class="hljs-keyword">while</span> (it.next()) {
    <span class="hljs-keyword">var</span> item = it.value;
  }</code></pre>
-					<p>Many iterators will signal an error if <a href="Iterator.html#next">next</a> is called
-					after the underlying collection has been modified.</p>
-					<p>To avoid confusion when dealing with <a href="Iterable.html">Iterable</a>s,
-						iterators implement the <a href="Iterable.html#iterator">Iterable.iterator</a> property
-					by just returning themselves.</p>
+					<p>如果在修改基础集合之后调用 <a href="Iterator.html#next">next</a> 则许多迭代器将发出错误信息</p>
+					<p>为避免在处理 <a href="Iterable.html">Iterable</a> 时造成混乱，迭代器仅返回自己即可实现 <a href="Iterable.html#iterator">Iterable.iterator</a> 属性</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-type-parameters">
@@ -168,7 +164,7 @@
 						count
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>This read-only property is the total number of items in the iterated collection.</p>
+						<p>此只读属性是迭代集合中的项目总数</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -178,8 +174,7 @@
 						iterator
 					<span class="tsd-signature-symbol">: </span><a href="Iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>Returns itself, which is convenient for code that expects an <a href="Iterable.html">Iterable</a>
-						instead of an <a href="Iterator.html">Iterator</a>.</p>
+						<p>返回自身，这对于期望使用 <a href="Iterable.html">Iterable</a> 而不是 <a href="Iterator.html">Iterator</a> 的代码很方便</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -188,7 +183,7 @@
 						key
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>Gets the current index to the item in the collection, assuming <a href="Iterator.html#next">next</a> has just returned true.</p>
+						<p>假设 <a href="Iterator.html#next">next</a> 刚刚返回true，则获取集合中该项的当前索引</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -197,7 +192,7 @@
 						value
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>Gets the current item in the collection, assuming <a href="Iterator.html#next">next</a> has just returned true.</p>
+						<p>假设 <a href="Iterator.html#next">next</a> 刚刚返回true，则获取集合中的当前项目</p>
 					</div>
 				</section>
 			</section>
@@ -215,12 +210,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This is true if all invocations of the given predicate on items in the collection are true.</p>
-								<p>Call the given predicate on each item in the collection.
-									As soon as a call returns false, this returns false.
-									Otherwise this returns true.
-								For an empty collection this returns true.</p>
-								<p>This automatically <a href="Iterator.html#reset">reset</a>&#39;s itself when it is called.</p>
+								<p>如果对集合项目调用给定函数都为true，则为true</p>
+								<p>在集合中的每个项目上调用给定函数，返回false时，将立刻返回false，否则返回true， 对于空集合，它返回true</p>
+								<p>调用时会自动 <a href="Iterator.html#reset">reset</a> 自身</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.4</p>
@@ -232,14 +224,14 @@
 								<li>
 									<h5>pred: <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">x</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>This function must not have any side-effects.</p>
+										<p>此函数不得有任何副作用</p>
 									</div>
 									<ul class="tsd-parameters">
 									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if all predicate calls are true; false otherwise.</p>
+							<p>如果所有函数调用为true，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -255,12 +247,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This is true if any invocation of the given predicate on items in the collection is true.</p>
-								<p>Call the given predicate on each item in the collection.
-									As soon as a call returns true, this returns true.
-									Otherwise this returns false.
-								For an empty collection this returns false.</p>
-								<p>This automatically <a href="Iterator.html#reset">reset</a>&#39;s itself when it is called.</p>
+								<p>如果对任何集合项目调用给定函数为true，则为true</p>
+								<p>在集合中的每个项目上调用给定函数，一次调用返回true，则返回true，否则返回false，对于空集合，它返回false</p>
+								<p>调用时会自动 <a href="Iterator.html#reset">reset</a> 自身</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.4</p>
@@ -272,14 +261,14 @@
 								<li>
 									<h5>pred: <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">x</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>This function must not have any side-effects.</p>
+										<p>此函数不得有任何副作用</p>
 									</div>
 									<ul class="tsd-parameters">
 									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if any predicate call is true; false otherwise.</p>
+							<p>如果任何函数调用为true，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -295,8 +284,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Call the given function on each item in the collection.</p>
-								<p>This automatically <a href="Iterator.html#reset">reset</a>&#39;s itself when it is called.</p>
+								<p>在集合中的每个项目上调用给定函数</p>
+								<p>调用时会自动 <a href="Iterator.html#reset">reset</a> 自身</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.4</p>
@@ -331,8 +320,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Advance if needed to the first item in the collection and return it, or return null if there is none.</p>
-								<p>Caution: this returns a <em>key/value pair</em>, not a <em>value</em>, for <a href="Map.html">Map</a> iterators.</p>
+								<p>如果需要，则前进到集合中的第一项并返回它，如果没有，则返回null</p>
+								<p>注意: 这将返回 <a href="Map.html">Map</a>  迭代器的 <em>key/value 对</em>, 而不是 <em>value</em></p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.1</p>
@@ -358,11 +347,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Call this method to advance the iterator to the next item in the collection.
-								This should be called before accessing any <a href="Iterator.html#value">value</a>.</p>
+								<p>调用此方法可将迭代器前进到集合中的下一项。在访问任何 <a href="Iterator.html#value">value</a> 之前应该调用此方.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>whether another item is available; when true the value of <a href="Iterator.html#value">value</a> will be that item.</p>
+							<p>是否有其他项目可用，当 <a href="Iterator.html#value">value</a> 为true时，值就是改该项目</p>
 						</li>
 					</ul>
 				</section>
@@ -377,7 +365,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Start this iterator all over again.</p>
+								<p>重新启动改迭代器</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>

@@ -174,7 +174,7 @@
 | Map | | |
 | Set | | |
 | Iterable | | |
-| Iterator | | |
+| Iterator | ✅ | |
 
 #### 扩展类
 
