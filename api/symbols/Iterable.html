@@ -109,9 +109,9 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>This interface is implemented by the <a href="List.html">List</a>, <a href="Set.html">Set</a>, and <a href="Map.html">Map</a>
-					classes; it provides the <a href="Iterable.html#iterator">iterator</a> read-only property that returns an <a href="Iterator.html">Iterator</a>.</p>
-					<p>Typical usage is:</p>
+					<p>此接口由 <a href="List.html">List</a>, <a href="Set.html">Set</a>, 和 <a href="Map.html">Map</a> 类实现；
+					它提供了 <a href="Iterable.html#iterator">iterator</a> 只读属性，该属性返回一个 <a href="Iterator.html">Iterator</a></p>
+					<p>典型用法是:</p>
 					<pre><code class="hljs js"><span class="hljs-keyword">var</span> it = anIterableCollection.iterator;
 <span class="hljs-keyword">while</span> (it.next()) {
   <span class="hljs-keyword">var</span> item = it.value;
@@ -161,7 +161,7 @@
 						count
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>This read-only property is the number of elements in the collection.</p>
+						<p>此只读属性是集合中元素的数量</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -170,8 +170,8 @@
 						iterator
 					<span class="tsd-signature-symbol">: </span><a href="Iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>Gets an <a href="Iterator.html">Iterator</a> that can iterate over the items in the collection.</p>
-						<p>Typical usage is:</p>
+						<p>获取一个 <a href="Iterator.html">Iterator</a> 该迭代器可以迭代集合中的项目</p>
+						<p>典型用法是:</p>
 						<pre><code class="hljs js"> <span class="hljs-keyword">var</span> it = anIterableCollection.iterator;
  <span class="hljs-keyword">while</span> (it.next()) {
    <span class="hljs-keyword">var</span> item = it.value;
@@ -192,14 +192,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns the first item in the list, or null if there is none.</p>
+								<p>返回List中的第一项，如果没有则返回null</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns
 								<span class="tsd-signature-type">T</span>
 								<span class="tsd-signature-symbol"> | </span>
 								<span class="tsd-signature-type">null</span>
 							</h4>
-							<p>This returns null if there are no items in the list.</p>
+							<p>如果列表中没有项目，则返回null</p>
 						</li>
 					</ul>
 				</section>
