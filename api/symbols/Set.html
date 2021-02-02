@@ -104,11 +104,10 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p><span style="color: red; font-weight: bold;">NOTE: For 2.0 the <a href="Set.html#constructor">constructor</a> argument has changed.
-					Set now optionally accepts a collection, and only checks types in TypeScript.</span></p>
-					<p>An unordered iterable collection that cannot contain two instances of the same value.
-					In TypeScript it is a generic class that enforces at compile-time the type of elements that may be added to the Set.</p>
-					<p>An example usage:</p>
+					<p><span style="color: red; font-weight: bold;">注意: 在2.0版本中 <a href="Set.html#constructor">constructor</a> 参数发生了变化。Set现在可以选择接受一个集合，并且只检查TypeScript中的类型。</span></p>
+					<p>一个无序的可迭代集合，不能包含两个具有相同值的实例。
+					在TypeScript中，它是一个通用类，在编译时强制执行可能添加到Set中的元素类型</p>
+					<p>用法示例:</p>
 					<pre><code class="hljs js">  <span class="hljs-keyword">var</span> <span class="hljs-keyword">set</span> = new go.Set();  // In TypeScript: new go.Set&lt;string&gt;();
   <span class="hljs-keyword">set</span>.add("orange");
   <span class="hljs-keyword">set</span>.add("apple");
@@ -116,17 +115,17 @@
   // now <span class="hljs-keyword">set</span>.count === 2
   // and <span class="hljs-keyword">set</span>.contains("orange") === true
   // and <span class="hljs-keyword">set</span>.contains("banana") === false</code></pre>
-					<p>You can iterate over the items in a Set:</p>
+					<p>你可以遍历Set中的项目:</p>
 					<pre><code class="hljs js">  <span class="hljs-keyword">var</span> it = aSet.iterator;
   <span class="hljs-keyword">while</span> (it.next()) {
     . . . it.value . . .
   }</code></pre>
-					<p>Or:</p>
+					<p>或者:</p>
 					<pre><code class="hljs js">  aSet.each(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">val</span>) </span>{
       . . . val . . .
     });</code></pre>
-					<p>Although not precisely implementing the features of the EcmaScript 6 <strong>Set</strong> class,
-					this <strong>GoJS</strong> Set class has synonyms for the following methods and property:</p>
+					<p>尽管无法精确实现EcmaScript 6 <strong>Set</strong> 类的功能,
+					此<strong>GoJS</strong> Set 类具有以下方法和属性的同义词:</p>
 					<ul>
 						<li><strong>add(val)</strong>: <a href="Set.html#add">add</a></li>
 						<li><strong>delete(val)</strong>: <a href="Set.html#remove">remove</a></li>
@@ -134,9 +133,8 @@
 						<li><strong>clear()</strong>: <a href="Set.html#clear">clear</a></li>
 						<li><strong>size</strong>: <a href="Set.html#count">count</a></li>
 					</ul>
-					<p>The constructor now takes an optional Iterable or Array argument that provides the initial elements for the new Set.</p>
-					<p>Note that GoJS iteration is quite different than ES6 iteration, so that functionality has not been made somewhat compatible.
-					These collection classes were defined in GoJS before the ES6 collection classes were proposed.</p>
+					<p>现在，构造函数接受一个可选的 Iterable 或 Array 参数，该参数为新Set提供了初始元素</p>
+					<p>请注意，GoJS迭代与ES6迭代完全不同，因此尚未使功能具有某种程度的兼容性。这些集合类是在ES6集合类被提出之前在GoJS中定义的。</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-type-parameters">
@@ -210,22 +208,21 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>There are two possible constructors:</p>
-								<p><code>new go.Set()</code>, for JavaScript</p>
-								<p><code>new go.Set&lt;T&gt;()</code> for TypeScript</p>
-								<p>In TypeScript, the optional generic argument describes the type of values
-								that this Set may hold.</p>
-								<p>For example, the expression:</p>
+								<p>有两种可能的构造函数:</p>
+								<p><code>new go.Set()</code>, 用于JavaScript</p>
+								<p><code>new go.Set&lt;T&gt;()</code> 用于TypeScript</p>
+								<p>在TypeScript中，可选的通用参数描述此Set可以保存的值的类型</p>
+								<p>例如，表达式:</p>
 								<pre><code class="hljs js"><span class="hljs-comment">// TypeScript:</span>
 <span class="hljs-keyword">new</span> go.Set&lt;go.Point&gt;()</code></pre>
-								<p>Creates a new Set that may only contain <a href="Point.html">Point</a>s.</p>
+								<p>创建一个仅包含 <a href="Point.html">Point</a> 的新Set</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> coll: <a href="Iterable.html" class="tsd-signature-type">Iterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>an optional collection of items to add.</p>
+										<p>要添加的可选项目集合</p>
 									</div>
 								</li>
 							</ul>
@@ -245,7 +242,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This read-only property is the number of elements in the Set.</p>
+								<p>此只读属性是Set中元素的数量</p>
 							</div>
 						</li>
 					</ul>
@@ -259,9 +256,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets an object that you can use for iterating over the Set.
-									The value will be a member of the Set.
-								Typical usage:</p>
+								<p>获取可用于迭代Set的对象，该值将是Set的成员。典型用法:</p>
 								<pre><code class="hljs js">  <span class="hljs-keyword">var</span> it = aSet.iterator;
   <span class="hljs-keyword">while</span> (it.next()) {
     . . . <span class="hljs-string">" value: "</span> + it.value . . .
@@ -279,7 +274,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This read-only property is the number of elements in the Set.</p>
+								<p>此只读属性是Set中元素的数量</p>
 							</div>
 						</li>
 					</ul>
@@ -298,20 +293,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Adds a given value to the Set, if not already present.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>将给定值添加到Set（如果尚不存在）</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The value to add to the Set; must not be null.</p>
+										<p>要添加到Set中的值，不能为null</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Set.html" class="tsd-signature-type">Set</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>This modified Set.</p>
+							<p>修改后的Set</p>
 						</li>
 					</ul>
 				</section>
@@ -326,20 +321,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Adds all of the values of a collection to this Set.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>将集合的所有值添加到此Set</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>coll: <a href="Iterable.html" class="tsd-signature-type">Iterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the collection of items to add.</p>
+										<p>要添加的项目集合</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Set.html" class="tsd-signature-type">Set</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>This modified Set.</p>
+							<p>修改后的Set</p>
 						</li>
 					</ul>
 				</section>
@@ -355,11 +350,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This is true if all invocations of the given predicate on items in the collection are true.</p>
-								<p>Call the given predicate on each item in the collection.
-									As soon as a call returns false, this returns false.
-									Otherwise this returns true.
-								For an empty collection this returns true.</p>
+								<p>如果对集合中所有的项调用给定函数都为true，则为true</p>
+								<p>在集合中的每个项目上调用给定函数，一旦返回false时，将立即返回false，否则返回true。对于空集合它返回true</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.4</p>
@@ -371,14 +363,14 @@
 								<li>
 									<h5>pred: <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">a</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>This function must not have any side-effects.</p>
+										<p>此函数不得有任何副作用</p>
 									</div>
 									<ul class="tsd-parameters">
 									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if all predicate calls are true; false otherwise.</p>
+							<p>如果所有函数调用为true，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -394,11 +386,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This is true if any invocation of the given predicate on items in the collection is true.</p>
-								<p>Call the given predicate on each item in the collection.
-									As soon as a call returns true, this returns true.
-									Otherwise this returns false.
-								For an empty collection this returns false.</p>
+								<p>如果对任意集合的项目调用给定函数为true，则为true</p>
+								<p>在集合中的每个项目上调用给定函数，一次调用返回true，则返回true，否则返回false。对于空集合，它返回false</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.4</p>
@@ -410,14 +399,14 @@
 								<li>
 									<h5>pred: <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">a</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>This function must not have any side-effects.</p>
+										<p>此函数不得有任何副作用</p>
 									</div>
 									<ul class="tsd-parameters">
 									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if any predicate call is true; false otherwise.</p>
+							<p>如果任何函数调用为true，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -432,9 +421,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Clears the Set.
-								This sets the <a href="Set.html#count">count</a> to zero.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>清除Set。
+								这会将 <a href="Set.html#count">count</a> 设置为0</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -451,19 +440,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns whether the given value is in this Set.</p>
+								<p>返回给定值是否在此Set中</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The value to check.</p>
+										<p>要检查的值</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>Whether or not the value is contained within the Set.</p>
+							<p>该值是否包含在Set中</p>
 						</li>
 					</ul>
 				</section>
@@ -478,14 +467,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns true if all of the values of a given collection are in this Set.</p>
+								<p>如果给定集合的所有值都在此Set中，则返回true</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>coll: <a href="Iterable.html" class="tsd-signature-type">Iterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the collection of items to check for.</p>
+										<p>要检查的项目集合</p>
 									</div>
 								</li>
 							</ul>
@@ -504,14 +493,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns true if any of the values of a given collection are in this Set.</p>
+								<p>如果给定集合的任何值在此Set中，则返回true</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>coll: <a href="Iterable.html" class="tsd-signature-type">Iterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the collection of items to check for.</p>
+										<p>要检查的项目集合</p>
 									</div>
 								</li>
 							</ul>
@@ -531,12 +520,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Makes a shallow copy of this Set.
-									The values are not copied,
-								so if they are objects they may continue to be shared with the original Set.</p>
+								<p>对此Set进行浅拷贝。这些值不会被复制，因此，如果它们是对象，则可以继续与原始Set共享</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="Set.html" class="tsd-signature-type">Set</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>The new Set with the same elements.</p>
+							<p>具有相同元素的新Set</p>
 						</li>
 					</ul>
 				</section>
@@ -551,20 +538,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Removes a value (if found) from the Set.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>从Set中删除一个值（如果找到）</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The value to insert.</p>
+										<p>要插入的值</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>true if the value was found and removed, false otherwise.</p>
+							<p>如果找到并删除该值，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -580,7 +567,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Call the given function on each item in the collection.</p>
+								<p>在集合中的每个项目上调用给定函数</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.4</p>
@@ -592,14 +579,14 @@
 								<li>
 									<h5>func: <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">a</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>This function must not modify the collection.</p>
+										<p>此函数不得修改集合</p>
 									</div>
 									<ul class="tsd-parameters">
 									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Set.html" class="tsd-signature-type">Set</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>This Set itself.</p>
+							<p>Set自身</p>
 						</li>
 					</ul>
 				</section>
@@ -614,14 +601,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns the first item in the collection, or null if there is none.</p>
+								<p>返回集合中的第一项，如果没有，则返回null</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns
 								<span class="tsd-signature-type">T</span>
 								<span class="tsd-signature-symbol"> | </span>
 								<span class="tsd-signature-type">null</span>
 							</h4>
-							<p>This returns null if there are no items in the collection.</p>
+							<p>如果集合中没有任何项目，则返回null</p>
 						</li>
 					</ul>
 				</section>
@@ -636,19 +623,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns whether the given value is in this Set.</p>
+								<p>返回给定值是否在此Set中</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The value to check.</p>
+										<p>要检查的值</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>Whether or not the value is contained within the Set.</p>
+							<p>该值是否包含在Set中</p>
 						</li>
 					</ul>
 				</section>
@@ -663,20 +650,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Removes a value (if found) from the Set.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>从集合中删除一个值（如果找到）</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The value to remove.</p>
+										<p>要删除的值</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>true if the value was found and removed, false otherwise.</p>
+							<p>如果找到并删除该值，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -691,20 +678,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Removes all of the values of a collection from this Set.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>从此Set中删除集合的所有值</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>coll: <a href="Iterable.html" class="tsd-signature-type">Iterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the collection of items to remove.</p>
+										<p>要删除的项目集合</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Set.html" class="tsd-signature-type">Set</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>This modified Set.</p>
+							<p>修改后的Set</p>
 						</li>
 					</ul>
 				</section>
@@ -719,20 +706,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Removes from this Set all items that are not in the given collection.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>从此Set中移除所有不在给定集合中的项目</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>coll: <a href="Iterable.html" class="tsd-signature-type">Iterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the collection of items that should be kept in this Set.</p>
+										<p>此Set中应保留的项目的集合</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Set.html" class="tsd-signature-type">Set</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>This modified Set.</p>
+							<p>修改后的Set</p>
 						</li>
 					</ul>
 				</section>
@@ -747,10 +734,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Produces a JavaScript Array from the contents of this Set.</p>
+								<p>从此Set的内容中产生一个JavaScript数组</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A copy of the Set in Array form.</p>
+							<p>数组形式的Set的副本</p>
 						</li>
 					</ul>
 				</section>
@@ -765,12 +752,11 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Converts the Set to a <a href="List.html">List</a>.
-									Because there is no ordering within a Set,
-								the values in the List may be in any order.</p>
+								<p>将Set转换为 <a href="List.html">List</a>。
+								由于Set内没有排序，因此List中的值可以按任何顺序排列</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="List.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A copy of the contents of this Set in List form.</p>
+							<p>此Set内容的List形式的副本</p>
 						</li>
 					</ul>
 				</section>
