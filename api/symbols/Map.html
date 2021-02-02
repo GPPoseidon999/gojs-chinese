@@ -104,11 +104,11 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p><span style="color: red; font-weight: bold;">NOTE: For 2.0 the <a href="Map.html#constructor">constructor</a> arguments have changed.
-					Map now optionally accepts a collection, and only checks types in TypeScript.</span></p>
-					<p>An unordered iterable collection of key/value pairs that cannot contain two instances of the same key.
-					In TypeScript it is a generic class that enforces at compile-time the type of the key and the type of the associated value.</p>
-					<p>To create a Map:</p>
+					<p><span style="color: red; font-weight: bold;">注意: 在2.0版本中 <a href="Map.html#constructor">constructor</a> 参数发生了变化。
+					Map 现在可以选择接受一个集合，并且只检查TypeScript中的类型</span></p>
+					<p>key/value对的无序可迭代集合，不能包含相同key的两个实例。
+					在TypeScript中，它是一个通用类，在编译时强制执行key的类型和value的类型</p>
+					<p>创建一个Map:</p>
 					<pre><code class="hljs js">  <span class="hljs-keyword">var</span> map = <span class="hljs-keyword">new</span> go.Map(); <span class="hljs-comment">// In TypeScript: new go.Map&lt;string, number&gt;();</span>
   map.add(<span class="hljs-string">"one"</span>, <span class="hljs-number">1</span>);
   map.add(<span class="hljs-string">"two"</span>, <span class="hljs-number">2</span>);
@@ -116,31 +116,30 @@
   <span class="hljs-comment">// now map.count === 3</span>
   <span class="hljs-comment">// and map.getValue("two") === 2</span>
   <span class="hljs-comment">// and map.contains("zero") === false</span></code></pre>
-					<p>You can iterate over the key/value pairs in a Map:</p>
+					<p>你可以遍历Map中的key/value对:</p>
 					<pre><code class="hljs js">  <span class="hljs-keyword">var</span> it = aMap.iterator;
   <span class="hljs-keyword">while</span> (it.next()) {
     <span class="hljs-built_in">console</span>.log(it.key + <span class="hljs-string">": "</span> + it.value);
   }</code></pre>
-					<p>Or:</p>
+					<p>或者:</p>
 					<pre><code class="hljs js">  aMap.each(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">kvp</span>) </span>{
     <span class="hljs-built_in">console</span>.log(kvp.key + <span class="hljs-string">": "</span> + kvp.value);
   });</code></pre>
-					<p>But note that there is no guaranteed ordering amongst the key/value pairs.</p>
-					<p>Call <a href="Map.html#toKeySet">toKeySet</a> to get a read-only <a href="Set.html">Set</a> that holds all of the keys of a Map.
-					Iterating over that Set will produce values that are the keys in the Map.</p>
-					<p>Although not precisely implementing the features and semantics of the EcmaScript 6 <strong>Map</strong> class,
-					this <strong>GoJS</strong> Map class has synonyms for the following methods and property:</p>
+					<p>但是请注意，key/value对之间没有保证的顺序</p>
+					<p>调用 <a href="Map.html#toKeySet">toKeySet</a> 以获取一个只读 <a href="Set.html">Set</a> ，其中包含Map的所有keys。
+					对该Set进行迭代将产生作为Map中的Key的值</p>
+					<p>尽管未精确实现EcmaScript 6 <strong>Map</strong> 类的功能和语义,
+					但 <strong>GoJS</strong> Map 类具有以下方法和属性的同义词:</p>
 					<ul>
-						<li><strong>get(key)</strong>: <a href="Map.html#getValue">getValue</a>, but returns null instead of undefined when key is not present</li>
+						<li><strong>get(key)</strong>: <a href="Map.html#getValue">getValue</a>, 但是当不存在key时返回null而不是undefined</li>
 						<li><strong>set(key,val)</strong>: <a href="Map.html#add">add</a></li>
 						<li><strong>has(key)</strong>: <a href="Map.html#contains">contains</a></li>
 						<li><strong>delete(key)</strong>: <a href="Map.html#remove">remove</a></li>
 						<li><strong>clear()</strong>: <a href="Map.html#clear">clear</a></li>
 						<li><strong>size</strong>: <a href="Map.html#count">count</a></li>
 					</ul>
-					<p>The constructor now takes an optional Iterable or Array argument that provides the initial entries for the new Map.</p>
-					<p>Note that GoJS iteration is quite different than ES6 iteration, so that functionality has not been made somewhat compatible.
-					These collection classes were defined in GoJS before the ES6 collection classes were proposed.</p>
+					<p>现在，构造函数接受一个可选的Iterable 或 Array参数，该参数为新Map提供了初始条目</p>
+					<p>请注意，GoJS迭代与ES6迭代完全不同，因此尚未使功能具有某种程度的兼容性。这些集合类是在ES6集合类被提出之前在GoJS中定义的。 </p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-type-parameters">
@@ -212,24 +211,21 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>There are two possible constructors:</p>
-								<p><code>new go.Map()</code>, for JavaScript</p>
-								<p><code>new go.Map&lt;K, V&gt;()</code> for TypeScript</p>
-								<p>In TypeScript, the two optional generic arguments describe the types of keys
-								and the types of values that this Map may hold.</p>
-								<p>For example, the expression:</p>
+								<p>有两种可能的构造函数:</p>
+								<p><code>new go.Map()</code>, 用于JavaScript</p>
+								<p><code>new go.Map&lt;K, V&gt;()</code> 用于TypeScript</p>
+								<p>在TypeScript中,两个可选的通用参数描述了此Map可能包含的key的类型和value的类型</p>
+								<p>例如，表达式:</p>
 								<pre><code class="hljs js"><span class="hljs-comment">// TypeScript:</span>
 <span class="hljs-keyword">new</span> go.Map&lt;string, go.Point&gt;()</code></pre>
-								<p>produces a Map that has keys that must be strings and whose associated values
-								must be <a href="Point.html">Point</a>s.</p>
+								<p>生成一个Map，该Map的key必须是一个字符串，并且其关联值必须是 <a href="Point.html">Point</a></p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> coll: <a href="Iterable.html" class="tsd-signature-type">Iterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">KeyValuePair</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">KeyValuePair</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>an optional collection of keys/values to add, or an Array of { key: ..., value: ... } objects.
-										Note that the key/value pairs are objects with &quot;key&quot; and &quot;value&quot; properties, not Arrays of length 2.</p>
+										<p>要添加的keys/values的可选集合，或 { key: ..., value: ... } 对象的数组。请注意，key/value对是具有&quot;key&quot; 和 &quot;value&quot;属性的对象，而不是长度为2的数组</p>
 									</div>
 								</li>
 							</ul>
@@ -249,7 +245,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This read-only property is the number of associations in the Map.</p>
+								<p>此只读属性是Map中的关联数</p>
 							</div>
 						</li>
 					</ul>
@@ -263,8 +259,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets an object that you can use for iterating over the key-value pairs of a Map.
-								Typical usage:</p>
+								<p>获取一个对象，该对象可用于迭代Map的键值对。典型用法:</p>
 								<pre><code class="hljs js">  <span class="hljs-keyword">var</span> it = aMap.iterator;
   <span class="hljs-keyword">while</span> (it.next()) {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"the key: "</span> + it.key + <span class="hljs-string">" has value: "</span> + it.value);
@@ -282,8 +277,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets an object that you can use for iterating over the keys of a Map.
-								Typical usage:</p>
+								<p>获取一个对象，该对象可用于迭代Map的key，典型用法:</p>
 								<pre><code class="hljs js">  <span class="hljs-keyword">var</span> it = aMap.iteratorKeys;
   <span class="hljs-keyword">while</span> (it.next()) {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"key: "</span> + it.value);
@@ -306,8 +300,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets an object that you can use for iterating over the values of a Map.
-								Typical usage:</p>
+								<p>获取一个可用于迭代Map值的对象，典型用法:</p>
 								<pre><code class="hljs js">  <span class="hljs-keyword">var</span> it = aMap.iteratorValues;
   <span class="hljs-keyword">while</span> (it.next()) {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"value: "</span> + it.value);
@@ -330,7 +323,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This read-only property is the number of associations in the Map.</p>
+								<p>此只读属性是Map中的关联数</p>
 							</div>
 						</li>
 					</ul>
@@ -349,27 +342,26 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Adds a key-value association to the Map, or replaces the value associated with the key
-								if the key was already present in the map.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>向Map添加键值关系, 或替换key中与key相关联的值（如果key已经存在于Map中）</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>key: <span class="tsd-signature-type">K</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The key or index for storing the value in the Map.</p>
+										<p>用于将值存储在Map中的key</p>
 									</div>
 								</li>
 								<li>
 									<h5>val: <span class="tsd-signature-type">V</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The value to add to the Map, associated with the key.</p>
+										<p>与key关联的要添加到Map中的值</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>This modified Map.</p>
+							<p>修改后的Map.</p>
 						</li>
 					</ul>
 				</section>
@@ -384,22 +376,21 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Adds all of the key-value pairs of another Map to this Map.
-									If a key is already present in this Map,
-								its value is replaced with the corresponding value from the given map.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>将另一个Map的所有键值对添加到此Map。
+									如果此Map中已经存在key，则其值将替换为给定Map中的相应值</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>coll: <a href="Iterable.html" class="tsd-signature-type">Iterable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">KeyValuePair</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">KeyValuePair</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the collection of keys/values to add, or an Array of { key: ..., value: ... } objects.</p>
+										<p>要添加的keys/values的集合或 { key: ..., value: ... } 对象的数组</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>This modified Map.</p>
+							<p>修改后的Map.</p>
 						</li>
 					</ul>
 				</section>
@@ -415,11 +406,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This is true if all invocations of the given predicate on items in the collection are true.</p>
-								<p>Call the given predicate on each key/value pair in the collection.
-									As soon as a call returns false, this returns false.
-									Otherwise this returns true.
-								For an empty collection this returns true.</p>
+								<p>如果对集合中所有的项调用给定函数都为true，则为true</p>
+								<p>在集合中的每个键值对上调用给定的函数，一旦返回false时，将立即返回false，否则返回true。对于空集合它返回true</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.4</p>
@@ -431,15 +419,14 @@
 								<li>
 									<h5>pred: <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">a</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">KeyValuePair</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The argument to the predicate will be an object with both &quot;key&quot; and &quot;value&quot; properties.
-										This function must not have any side-effects.</p>
+										<p>函数的参数是同时具有&quot;key&quot; 和 &quot;value&quot; 属性的对象。此函数不得有任何副作用</p>
 									</div>
 									<ul class="tsd-parameters">
 									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if all predicate calls are true; false otherwise.</p>
+							<p>如果所有函数调用为true，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -455,11 +442,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This is true if any invocation of the given predicate on items in the collection is true.</p>
-								<p>Call the given predicate on each key/value pair in the collection.
-									As soon as a call returns true, this returns true.
-									Otherwise this returns false.
-								For an empty collection this returns false.</p>
+								<p>如果对任意集合的项目调用给定函数为true，则为true</p>
+								<p>在集合中的每个键值对上调用给定函数，一旦调用返回true，则返回true，否则返回false。对于空集合，它返回false</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.4</p>
@@ -471,15 +455,14 @@
 								<li>
 									<h5>pred: <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">a</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">KeyValuePair</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The argument to the predicate will be an object with both &quot;key&quot; and &quot;value&quot; properties.
-										This function must not have any side-effects.</p>
+										<p>函数的参数是同时具有&quot;key&quot; 和 &quot;value&quot; 属性的对象。此函数不得有任何副作用</p>
 									</div>
 									<ul class="tsd-parameters">
 									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if any predicate call is true; false otherwise.</p>
+							<p>如果任何给定函数调用为true，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -494,9 +477,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Clears the Map, removing all key-value associations.
-								This sets the <a href="Map.html#count">count</a> to zero.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>清除Map, 删除所有键值关系。这会将 <a href="Map.html#count">count</a> 设置为0</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -513,19 +495,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns whether the given key is in this Map.</p>
+								<p>返回给定key是否在此Map中</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>key: <span class="tsd-signature-type">K</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The key to look up in the Map.</p>
+										<p>在Map中查找的key</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>Whether or not the key is contained within the Map.</p>
+							<p>key是否包含在Map中</p>
 						</li>
 					</ul>
 				</section>
@@ -541,12 +523,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Makes a shallow copy of this Map.
-									The keys and their values are not copied,
-								so if they are objects they may continue to be shared with the original Map.</p>
+								<p>对Map进行浅拷贝，key及其值不会被复制，因此，如果它们是对象，则它们可能会继续与原始Map共享</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>The new Map with copies of the same entries.</p>
+							<p>具有相同条目副本的新Map</p>
 						</li>
 					</ul>
 				</section>
@@ -561,20 +541,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Removes a key (if found) from the Map.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>从Map中删除key（如果找到）</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>key: <span class="tsd-signature-type">K</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The key to insert.</p>
+										<p>插入key</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>true if the key was found and removed, false otherwise.</p>
+							<p>如果找到并删除了key，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -590,7 +570,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Call the given function on each key/value pair in the collection.</p>
+								<p>在集合中的每个键值对上调用给定的函数</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.4</p>
@@ -602,15 +582,14 @@
 								<li>
 									<h5>func: <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">a</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">KeyValuePair</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The argument to the function will be an object with both &quot;key&quot; and &quot;value&quot; properties.
-										This function must not modify the collection.</p>
+										<p>函数的参数是同时具有&quot;key&quot; 和 &quot;value&quot; 属性的对象。此函数不得有任何副作用</p>
 									</div>
 									<ul class="tsd-parameters">
 									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>This Map itself</p>
+							<p>Map自身</p>
 						</li>
 					</ul>
 				</section>
@@ -625,7 +604,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns the first key/value pair in the collection, or null if there is none.</p>
+								<p>返回集合中的第一个键值对。如果不存在，则返回null</p>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.4</p>
@@ -633,7 +612,7 @@
 								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">KeyValuePair</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>This returns null if there are no items in the collection.</p>
+							<p>如果集合中没有任何项目，则返回null</p>
 						</li>
 					</ul>
 				</section>
@@ -648,14 +627,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns the value associated with a key.</p>
+								<p>返回与key关联的值</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>key: <span class="tsd-signature-type">K</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The key to look up in the Map.</p>
+										<p>在Map中查找的key</p>
 									</div>
 								</li>
 							</ul>
@@ -664,7 +643,7 @@
 								<span class="tsd-signature-symbol"> | </span>
 								<span class="tsd-signature-type">null</span>
 							</h4>
-							<p>The value associated with the given key, or null if not present in the Map.</p>
+							<p>与给定key关联的值，如果Map中不存在，则返回null</p>
 						</li>
 					</ul>
 				</section>
@@ -679,14 +658,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns the value associated with a key.</p>
+								<p>返回与key关联的值</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>key: <span class="tsd-signature-type">K</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The key to look up in the Map.</p>
+										<p>在Map中查找的key</p>
 									</div>
 								</li>
 							</ul>
@@ -695,7 +674,7 @@
 								<span class="tsd-signature-symbol"> | </span>
 								<span class="tsd-signature-type">null</span>
 							</h4>
-							<p>The value associated with the given key, or null if not present in the Map.</p>
+							<p>与给定key关联的值，如果Map中不存在，则返回null</p>
 						</li>
 					</ul>
 				</section>
@@ -710,19 +689,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Returns whether the given key is in this Map.</p>
+								<p>返回给定key是否在此Map中</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>key: <span class="tsd-signature-type">K</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The key to look up in the Map.</p>
+										<p>在Map中查找的key</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>Whether or not the key is contained within the Map.</p>
+							<p>key是否包含在Map中</p>
 						</li>
 					</ul>
 				</section>
@@ -737,20 +716,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Removes a key (if found) from the Map.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>从Map中删除key（如果找到）</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>key: <span class="tsd-signature-type">K</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The key to remove.</p>
+										<p>删除的key</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>true if the key was found and removed, false otherwise.</p>
+							<p>如果找到并删除了key，则为true，否则为false</p>
 						</li>
 					</ul>
 				</section>
@@ -765,27 +744,26 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Adds a key-value association to the Map, or replaces the value associated with the key
-								if the key was already present in the map.</p>
-								<p>Be careful not to call this method while iterating over the collection.</p>
+								<p>将键值关联添加到Map，如果key已存在于Map中，则替换与key关联的值</p>
+								<p>迭代集合时，请注意不要调用此方法</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>key: <span class="tsd-signature-type">K</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The key or index for storing the value in the Map.</p>
+										<p>用于在Map中存储值的key</p>
 									</div>
 								</li>
 								<li>
 									<h5>val: <span class="tsd-signature-type">V</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The value to add to the Map, associated with the key.</p>
+										<p>与key关联的要添加到Map中的值</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="Map.html" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>This modified Map.</p>
+							<p>修改后的Map</p>
 						</li>
 					</ul>
 				</section>
@@ -800,11 +778,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Produces a JavaScript Array of key/value pair objects from the contents of this Map.</p>
+								<p>根据此Map的内容产生一个键值对对象的JavaScript数组</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">KeyValuePair</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A copy of the Map in Array form,
-							each element being an Object with &#39;key&#39; and &#39;value&#39; properties.</p>
+							<p>数组形式的Map的副本，每个元素都是具有 &#39;key&#39; 和 &#39;value&#39; 属性的对象</p>
 						</li>
 					</ul>
 				</section>
@@ -819,8 +796,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Produces a <a href="Set.html">Set</a> that provides a read-only view onto the keys of this Map.
-								The collection of keys is not copied.</p>
+								<p>产生一个 <a href="Set.html">Set</a> 该Set提供对该Map的key的只读视图，key集合未复制</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="Set.html" class="tsd-signature-type">Set</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
