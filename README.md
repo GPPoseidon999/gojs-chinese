@@ -128,7 +128,7 @@
 | Transaction | | |
 | TreeModel | | |
 | UndoManager | | |
-| IncrementalData | | |
+| IncrementalData | ✅ | |
 
 #### 布局类
 
