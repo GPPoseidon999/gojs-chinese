@@ -80,7 +80,7 @@
 					<b>GoJS</b>&reg; Diagramming Components<br/>version 2.1.26<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>
 				</div>
 				<div>
-					<h1>Class Binding</h1>
+					<h1>Binding 类</h1>
 				</div>
 			</div>
 		</div>
@@ -99,39 +99,32 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>A Binding describes how to automatically set a property on a <a href="GraphObject.html">GraphObject</a>
-						to a value of a property of data in the model.
-						The target property name and the data source property name are strings.
-					All name matching is case-sensitive.</p>
-					<p>Register bindings by calling <a href="GraphObject.html#bind">GraphObject.bind</a> with a new Binding.
-						Existing bindings become read-only, and no new bindings may be added,
-						when a template (a <a href="Part.html">Part</a>) is copied.
-					Bindings will be shared by all copies of the template&#39;s GraphObjects.</p>
-					<p>For example, your node data might be like:</p>
+					<p>Binding描述了如何自动将 <a href="GraphObject.html">GraphObject</a> 上的属性设置为model中data的属性值。
+						目标属性名称和数据源属性名称是字符串。所有名称匹配均区分大小写</p>
+					<p>通过调用 <a href="GraphObject.html#bind">GraphObject.bind</a> 来注册新的Binding。
+						复制template (<a href="Part.html">Part</a>) 时，现有的Binding变为只读，并且不能添加新的Binding，
+					Binding将由template的GraphObjects的所有副本共享</p>
+					<p>例如，您的node数据可能是这样的:</p>
 					<pre><code class="hljs js">{ <span class="hljs-attr">key</span>: <span class="hljs-number">23</span>, <span class="hljs-attr">say</span>: <span class="hljs-string">"hello!"</span> }</code></pre>
-					<p>Your simple node template might be like:</p>
+					<p>您的简单node template 可能如下所示:</p>
 					<pre><code class="hljs js">  <span class="hljs-keyword">var</span> template = <span class="hljs-keyword">new</span> go.Node(go.Panel.Auto);
   <span class="hljs-comment">// . . . define the rest of the Node's visual tree . . .</span>
   <span class="hljs-keyword">var</span> txt = <span class="hljs-keyword">new</span> go.TextBlock();
   txt.bind(<span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"say"</span>));
   template.add(txt);
   myDiagram.nodeTemplate = template;</code></pre>
-					<p>Using <a href="GraphObject.html#static-make">GraphObject.make</a> it might look like:</p>
+					<p>使用 <a href="GraphObject.html#static-make">GraphObject.make</a> 可能如下所示:</p>
 					<pre><code class="hljs js">  <span class="hljs-keyword">var</span> $ = go.GraphObject.make;
   myDiagram.nodeTemplate =
     $(go.Node, <span class="hljs-string">"Auto"</span>,
       . . .
       $(go.TextBlock, <span class="hljs-keyword">new</span> go.Binding(<span class="hljs-string">"text"</span>, <span class="hljs-string">"say"</span>))
     )</code></pre>
-					<p>The data binding causes the <a href="TextBlock.html#text">TextBlock.text</a> property of
-						the TextBlock to be set to the value of the data&#39;s &quot;say&quot; property.
-						If the value of the &quot;say&quot; property of a particular data object is undefined,
-						the binding is not evaluated: the target property is not set.
-						If there is an error with the binding, you may see a message in the console log.
-						For this reason you may want to explicitly set the initial value for a property
-						when defining the GraphObject, since that value will remain as the default value
-					if the Binding is not evaluated.</p>
-					<p>Bindings are not necessarily evaluated in any particular order.
+					<p>数据绑定使TextBlock的 <a href="TextBlock.html#text">TextBlock.text</a> 属性设置为data的&quot;say&quot; 属性的值。
+						如果特定数据对象的&quot;say&quot;属性的值为undefined，则不会计算Binding: 未设置target属性。
+						如果Binding有错误，您可能会看到一条console log 信息。因此，在定义GraphObject时，您可能希望显式地设置属性的初始值，因为如果不计算Binding，该值将保留为默认值
+					</p>
+					<p>Binding不一定按照任何特定的顺序计算。
 						Binding sources should not be (or depend in a conversion function on) the category of the data
 						if you might be modifying the category (e.g. by calling <a href="Model.html#setCategoryForNodeData">Model.setCategoryForNodeData</a>),
 					because then some bindings might be evaluated before or after the category has been changed.</p>
