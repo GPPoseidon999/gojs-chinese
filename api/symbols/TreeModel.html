@@ -85,7 +85,7 @@
 					<b>GoJS</b>&reg; Diagramming Components<br/>version 2.1.26<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>
 				</div>
 				<div>
-					<h1>Class TreeModel</h1>
+					<h1>TreeModel 类</h1>
 				</div>
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
+				<h3>层次结构</h3>
 				<ul class="tsd-hierarchy">
 					<li>
 						<a href="Model.html" class="tsd-signature-type">Model</a>
@@ -109,26 +109,21 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>TreeModels support tree-structured graphs of nodes and links.
-						Each node can have at most one &quot;tree parent&quot;; cycles are not permitted.
-					The reference to the parent node&#39;s key is a property of the child node data.</p>
-					<p>TreeModels, unlike <a href="GraphLinksModel.html">GraphLinksModel</a>s, do not support arbitrary link relationships between nodes,
-						nor is there a separate link data object for each parent-child relationship.
-					Furthermore there is no support for grouping or label nodes.</p>
-					<p>The <a href="TreeModel.html#nodeParentKeyProperty">nodeParentKeyProperty</a> property names the property on the node data whose value
-						is the key of the &quot;tree parent&quot; node.
-					The default value for this property is &quot;parent&quot;.</p>
-					<p>For example, one can define a graph consisting of one parent node with two child nodes:</p>
+					<p>TreeModels 支持node和link的树状图。
+						每个node最多可以有一个 &quot;tree parent&quot;; 不允许循环。父node的key是子node data的属性</p>
+					<p>
+          与 <a href="GraphLinksModel.html">GraphLinksModel</a>s 不同，TreeModels不支持节点之间的任意链接关系，每个父子关系也没有单独的链接数据对象。
+					此外，不支持对节点进行分组或标记</p>
+					<p><a href="TreeModel.html#nodeParentKeyProperty">nodeParentKeyProperty</a> 属性命名node data上的属性，该属性的值是 &quot;tree parent&quot; node的key
+					此属性的默认值为&quot;parent&quot;</p>
+					<p>例如，可以定义由一个父节点和两个子节点组成的图:</p>
 					<pre><code class="hljs js"> model.nodeDataArray = [
    { <span class="hljs-attr">key</span>: <span class="hljs-string">"Alpha"</span> },
    { <span class="hljs-attr">key</span>: <span class="hljs-string">"Beta"</span>, <span class="hljs-attr">parent</span>: <span class="hljs-string">"Alpha"</span> },
    { <span class="hljs-attr">key</span>: <span class="hljs-string">"Gamma"</span>, <span class="hljs-attr">parent</span>: <span class="hljs-string">"Alpha"</span> }
  ];</code></pre>
-					<p>If you need to show a more complicated graph structure than a tree, use a <a href="GraphLinksModel.html">GraphLinksModel</a>.
-						If you want to have multiple links between the same pair of nodes,
-						or if you want to associate more information with each link and cannot put the information on the child node,
-						you will need to have a separate link data object for each link,
-					and that would require the use of <a href="GraphLinksModel.html">GraphLinksModel</a>.</p>
+					<p>如果需要显示比树更复杂的图结构，请使用 <a href="GraphLinksModel.html">GraphLinksModel</a>。
+						如果要在同一对节点之间有多个链接，或者要与每个链接关联更多信息并且不能将信息放在子节点上，则每个链接都需要有一个单独的链接数据对象，并且，这需要使用 <a href="GraphLinksModel.html">GraphLinksModel</a></p>
 					<dl class="tsd-comment-tags">
 						<dt>since</dt>
 						<dd><p>1.1</p>
@@ -180,15 +175,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This constructs an empty TreeModel unless one provides arguments as the initial data array values
-								for the <a href="Model.html#nodeDataArray">Model.nodeDataArray</a> property.</p>
+								<p>除非提供一个参数作为 <a href="Model.html#nodeDataArray">Model.nodeDataArray</a> 属性的初始数据，否则这将构造一个空的TreeModel</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> nodedataarray: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="ObjectData.html" class="tsd-signature-type">ObjectData</a><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>an optional Array containing JavaScript objects to be represented by Nodes.</p>
+										<p>一个可选的Array，其中包含要由Nodes表示的JavaScript对象</p>
 									</div>
 								</li>
 							</ul>
