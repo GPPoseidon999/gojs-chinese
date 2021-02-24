@@ -232,7 +232,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>The ChangedEvent class constructor produces an empty ChangedEvent object.</p>
+								<p>ChangedEvent类的构造函数产生一个空的ChangedEvent对象</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="ChangedEvent.html" class="tsd-signature-type">ChangedEvent</a></h4>
 						</li>
@@ -249,9 +249,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the nature of change that occurred.
-									The default is <a href="ChangedEvent.html#static-Property">ChangedEvent.Property</a>.
-									Other values are <a href="ChangedEvent.html#static-Insert">ChangedEvent.Insert</a>, <a href="ChangedEvent.html#static-Remove">ChangedEvent.Remove</a>,
+								<p>获取或设置发生更改的性质。默认值为 <a href="ChangedEvent.html#static-Property">ChangedEvent.Property</a>。
+									其他值是 <a href="ChangedEvent.html#static-Insert">ChangedEvent.Insert</a>, <a href="ChangedEvent.html#static-Remove">ChangedEvent.Remove</a>,
 								and <a href="ChangedEvent.html#static-Transaction">ChangedEvent.Transaction</a>.</p>
 							</div>
 						</li>
@@ -265,10 +264,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the <a href="Diagram.html">Diagram</a> that was modified.
-									When this property is non-null, the <a href="ChangedEvent.html#model">model</a> property will be null.
-									However this property and the <a href="ChangedEvent.html#model">model</a> property may both be null simultaneously,
-								when no particular model or diagram applies.</p>
+								<p>获取或设置已修改的 <a href="Diagram.html">Diagram</a>。
+									如果此属性非null <a href="ChangedEvent.html#model">model</a> 属性将为null。
+									但是，当没有特定的model或diagram适用时，此属性和 <a href="ChangedEvent.html#model">model</a> 属性可能同时为null</p>
 							</div>
 						</li>
 					</ul>
@@ -282,8 +280,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This read-only property is true when this ChangedEvent is of type <a href="ChangedEvent.html#static-Transaction">ChangedEvent.Transaction</a> and represents the end of a transactional change.
-								It is implemented as:</p>
+                <p>当此ChangedEvent类型为 <a href="ChangedEvent.html#static-Transaction">ChangedEvent.Transaction</a> 并表示事务更改结束时，此只读属性为true。
+                  它实现为:</p>
 								<pre><code class="hljs js"><span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>.change === ChangedEvent.Transaction &amp;&amp;
         (<span class="hljs-keyword">this</span>.propertyName === <span class="hljs-string">"CommittedTransaction"</span> ||
          <span class="hljs-keyword">this</span>.propertyName === <span class="hljs-string">"FinishedUndo"</span> ||
@@ -300,10 +298,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the <a href="Model.html">Model</a> or <a href="TreeModel.html">TreeModel</a> or <a href="GraphLinksModel.html">GraphLinksModel</a> that was modified.
-									When this property is non-null, the <a href="ChangedEvent.html#diagram">diagram</a> property will be null.
-									However this property and the <a href="ChangedEvent.html#diagram">diagram</a> property may both be null simultaneously,
-								when no particular model or diagram applies.</p>
+								<p>获取或设置已修改的 <a href="Model.html">Model</a> 或 <a href="TreeModel.html">TreeModel</a> 或 <a href="GraphLinksModel.html">GraphLinksModel</a>。
+									如果此属性非null，则 <a href="ChangedEvent.html#diagram">diagram</a> 属性也将为null。
+									但是，当没有特定的model或diagram适用时，此属性和 <a href="ChangedEvent.html#diagram">diagram</a> 属性可能同时为null。
+								</p>
 							</div>
 						</li>
 					</ul>
@@ -316,12 +314,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the name of the model change, reflecting a change to
-								model data in addition to a change to the model itself.</p>
-								<p>The default is an empty string, which indicates that this is just
-									a regular change to some object&#39;s state, probably its property.
-									For a list of possible model change names, see the documentation for <a href="ChangedEvent.html">ChangedEvent</a>.
-								The names are compared in a case-sensitive manner.</p>
+								<p>获取或设置model更改的名称，除了对model本身进行更改之外，还反映对model data的更改</p>
+								<p>默认值为空字符串，表示这只是对某个对象状态（可能是其属性）的定期更改。
+                  有关可能的model更改名称的列表，请参见 <a href="ChangedEvent.html">ChangedEvent</a> 文档。
+								名称以区分大小写的方式进行比较</p>
 							</div>
 						</li>
 					</ul>
@@ -334,11 +330,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets an optional value associated with the new value.
-									Most properties do not require any parameter to describe the change.
-									This is typically a value that helps distinguish the new value, such as an index into an array.
-									It is null if it is not used.
-								The default is null.</p>
+								<p>获取或设置与新值关联的可选值。大多属性不需要任何参数来描述更改。通常，这是一个有助于区分新值的值，例如数组的索引。如果不使用，则为null。默认为null</p>
 							</div>
 						</li>
 					</ul>
@@ -351,8 +343,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the next or current value that the property has.
-								The default is null.</p>
+								<p>获取或设置属性具有下一个或当前值，默认为null</p>
 							</div>
 						</li>
 					</ul>
@@ -365,9 +356,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the Object that was modified.
-								The default is null.</p>
-								<p>For <a href="ChangedEvent.html#static-Transaction">ChangedEvent.Transaction</a> changes, this may be the <a href="Transaction.html">Transaction</a>.</p>
+								<p>获取或设置已修改的对象，默认为null</p>
+								<p>对于 <a href="ChangedEvent.html#static-Transaction">ChangedEvent.Transaction</a> 的更改, 这可能是 <a href="Transaction.html">Transaction</a>.</p>
 							</div>
 						</li>
 					</ul>
@@ -380,11 +370,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets an optional value associated with the old value.
-									Most properties do not require any parameter to describe the change.
-									This is typically a value that helps distinguish the old value, such as an index into an array.
-									It is null if it is not used.
-								The default is null.</p>
+								<p>获取或设置与旧值关联的可选值。大多数属性不需要任何参数来描述更改。通常，这是一个有助于区分旧值的值，例如数组的索引。如果不使用，则为null。默认为null</p>
 							</div>
 						</li>
 					</ul>
@@ -397,8 +383,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the previous or old value that the property had.
-								The default is null.</p>
+								<p>获取或设置属性具有的先前值或旧值。默认为null</p>
 							</div>
 						</li>
 					</ul>
@@ -411,13 +396,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the name of the property change.
-									The default is an empty string, which is not a valid property name.
-									This property can be useful even when the type of change is
-									not <a href="ChangedEvent.html#static-Property">ChangedEvent.Property</a>, because it can help identify
-									the collection in the <a href="ChangedEvent.html#object">object</a> that was modified
-									(for <a href="ChangedEvent.html#static-Insert">ChangedEvent.Insert</a> or <a href="ChangedEvent.html#static-Remove">ChangedEvent.Remove</a>)
-								or the stage of the current transaction (for <a href="ChangedEvent.html#static-Transaction">ChangedEvent.Transaction</a>).</p>
+								<p>获取或设置属性更改的名称。默认值为空字符串，它不是有效的属性名称。
+                  即使更改的类型不是 <a href="ChangedEvent.html#static-Property">ChangedEvent.Property</a> ，此属性也很有用，因为它可以帮助标识已修改的 <a href="ChangedEvent.html#object">object</a> 
+                  （ <a href="ChangedEvent.html#static-Insert">ChangedEvent.Insert</a> 或 <a href="ChangedEvent.html#static-Remove">ChangedEvent.Remove</a>）
+                  或当前事务阶段( <a href="ChangedEvent.html#static-Transaction">ChangedEvent.Transaction</a>)
 							</div>
 						</li>
 					</ul>
@@ -436,10 +418,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This predicate returns true if you can call redo().</p>
+								<p>如果可以调用redo()，则返回true</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if ready for redo() to be called.</p>
+							<p>如果准备好调用redo()，则为true</p>
 						</li>
 					</ul>
 				</section>
@@ -454,10 +436,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This predicate returns true if you can call undo().</p>
+								<p>如果可以调用undo()，则返回true</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>True if ready for undo() to be called.</p>
+							<p>如果准备好调用undo()，则为true</p>
 						</li>
 					</ul>
 				</section>
@@ -472,7 +454,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Forget any object references that this ChangedEvent may have.</p>
+								<p>忘记此ChangedEvent可能具有的任何对象引用</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -489,8 +471,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Make a copy of this ChangedEvent.
-								ChangedEvents are copied when the <a href="UndoManager.html">UndoManager</a> adds to a <a href="Transaction.html">Transaction</a>.</p>
+								<p>复制此ChangedEvent。
+								<a href="UndoManager.html">UndoManager</a> 添加到 <a href="Transaction.html">Transaction</a> 时，将复制ChangedEvents</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="ChangedEvent.html" class="tsd-signature-type">ChangedEvent</a></h4>
 						</li>
@@ -507,20 +489,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This is a convenient method to get the right parameter value, depending on the value of undo,
-								when implementing a state change as part of an undo or a redo.</p>
+								<p>在作为撤销或重做的一部分实现状态变更时，这是一种方便的方法，以获得正确的参数值。</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>undo: <span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>If true, returns the oldParam, otherwise returns the newParam.</p>
+										<p>如果为true，则返回oldParam,否则返回newParam</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-							<p>Either the oldParam or the newParam.</p>
+							<p>oldParam 或者 newParam.</p>
 						</li>
 					</ul>
 				</section>
@@ -535,20 +516,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This is a convenient method to get the right value, depending on the value of undo,
-								when implementing a state change as part of an undo or a redo.</p>
+								<p>在作为撤销或重做的一部分实现状态变更时，这是一种方便的方法，以获得正确的参数值。</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>undo: <span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>If true, returns the oldValue, otherwise returns the newValue.</p>
+										<p>如果为true，则返回oldValue，否则返回newValue</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-							<p>Either the oldValue or the newValue.</p>
+							<p>oldValue 或者 newValue.</p>
 						</li>
 					</ul>
 				</section>
@@ -563,8 +543,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Re-perform this object change after an undo().
-								canRedo() must be true for this method to have any effect.</p>
+								<p>在undo()之后重新执行此对象更改。
+								canRedo()必须为true才能使此方法生效</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -581,8 +561,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Reverse the effects of this object change.
-								canUndo() must be true for this method to have any effect.</p>
+								<p>反转此对象更改的效果。
+								canUndo()必须为true才能使此方法生效</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -598,12 +578,11 @@
 						Insert
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For inserting into collections,
-							and used as the value for <a href="ChangedEvent.html#change">ChangedEvent.change</a>.
-							The modified object is given by <a href="ChangedEvent.html#object">ChangedEvent.object</a>.
-							Use the optional <a href="ChangedEvent.html#propertyName">ChangedEvent.propertyName</a> to distinguish between different collections on the object.
-							Use the <a href="ChangedEvent.html#newValue">ChangedEvent.newValue</a> property to indicate the value that was inserted.
-						Use the optional <a href="ChangedEvent.html#newParam">ChangedEvent.newParam</a> property to indicate where or how, such as an array index or dictionary key.</p>
+						<p>用于插入集合中，并用作 <a href="ChangedEvent.html#change">ChangedEvent.change</a> 的值。
+							修改后的对象由 <a href="ChangedEvent.html#object">ChangedEvent.object</a> 给出。
+							使用可选的 <a href="ChangedEvent.html#propertyName">ChangedEvent.propertyName</a> 可以区分对象上的不同集合。
+							使用 <a href="ChangedEvent.html#newValue">ChangedEvent.newValue</a> 属性表示插入的值。
+						  使用可选的 <a href="ChangedEvent.html#newParam">ChangedEvent.newParam</a> 属性来表示位置或方式，例如数组的索引或字典的键</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -613,12 +592,11 @@
 						Property
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For simple property changes,
-							and used as the value for <a href="ChangedEvent.html#change">ChangedEvent.change</a>.
-							The name of the property is given by <a href="ChangedEvent.html#propertyName">ChangedEvent.propertyName</a>.
-							The modified object is given by <a href="ChangedEvent.html#object">ChangedEvent.object</a>.
-						Use the <a href="ChangedEvent.html#oldValue">ChangedEvent.oldValue</a> and <a href="ChangedEvent.html#newValue">ChangedEvent.newValue</a> properties for the previous and next property values.</p>
-						<p>For model changes, the <a href="ChangedEvent.html#modelChange">ChangedEvent.modelChange</a> may be non-empty, indicating a structural change to the model.</p>
+						<p>用于简单的属性更改，并用作 <a href="ChangedEvent.html#change">ChangedEvent.change</a> 的值。
+							属性的名称由 <a href="ChangedEvent.html#propertyName">ChangedEvent.propertyName</a> 给出。
+							修改后的对象由 <a href="ChangedEvent.html#object">ChangedEvent.object</a> 给出。
+						将 <a href="ChangedEvent.html#oldValue">ChangedEvent.oldValue</a> 和 <a href="ChangedEvent.html#newValue">ChangedEvent.newValue</a> 属性用于上一个和下一个属性值</p>
+						<p>对于model的更改 <a href="ChangedEvent.html#modelChange">ChangedEvent.modelChange</a> 可以是非空的，表示对model的结构更改</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -628,12 +606,11 @@
 						Remove
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For removing from collections,
-							and used as the value for <a href="ChangedEvent.html#change">ChangedEvent.change</a>.
-							The modified object is given by <a href="ChangedEvent.html#object">ChangedEvent.object</a>.
-							Use the optional <a href="ChangedEvent.html#propertyName">ChangedEvent.propertyName</a> to distinguish between different collections on the object.
-							Use the <a href="ChangedEvent.html#oldValue">ChangedEvent.oldValue</a> property to indicate the value that was removed.
-						Use the optional <a href="ChangedEvent.html#oldParam">ChangedEvent.oldParam</a> property to indicate where or how, such as an array index or dictionary key.</p>
+						<p>用于从集合中移除，并用作 <a href="ChangedEvent.html#change">ChangedEvent.change</a> 的值。
+							修改后的对象由 <a href="ChangedEvent.html#object">ChangedEvent.object</a> 给出。
+							使用可选的 <a href="ChangedEvent.html#propertyName">ChangedEvent.propertyName</a> 可以区分对象上的不同集合。
+							使用 <a href="ChangedEvent.html#oldValue">ChangedEvent.oldValue</a> 属性表示已删除的值。
+						  使用可选的 <a href="ChangedEvent.html#oldParam">ChangedEvent.oldParam</a> 属性来表示位置或方式，例如数组的索引或字典的键</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-constant tsd-parent-kind-class tsd-is-static">
@@ -643,11 +620,10 @@
 						Transaction
 					<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumValue</span>        </h3>
 					<div class="tsd-comment tsd-typography">
-						<p>For informational events, such as transactions and undo/redo operations,
-							and used as the value for <a href="ChangedEvent.html#change">ChangedEvent.change</a>.
-							The <a href="ChangedEvent.html#object">ChangedEvent.object</a> refers to the <a href="Transaction.html">Transaction</a> affected, if any.
-							The <a href="ChangedEvent.html#propertyName">ChangedEvent.propertyName</a> distinguishes the different transaction or undo or redo stages.
-						The <a href="ChangedEvent.html#oldValue">ChangedEvent.oldValue</a> may provide the transaction name, if available, as given to <a href="UndoManager.html#commitTransaction">UndoManager.commitTransaction</a>.</p>
+						<p>用于信息事件，例如事务和撤销/重做操作，并用作 <a href="ChangedEvent.html#change">ChangedEvent.change</a> 的值。
+							<a href="ChangedEvent.html#object">ChangedEvent.object</a> 引用受 <a href="Transaction.html">Transaction</a> 影响（如果有）。
+							<a href="ChangedEvent.html#propertyName">ChangedEvent.propertyName</a> 区分不同的事务或撤销或重做阶段。
+						  <a href="ChangedEvent.html#oldValue">ChangedEvent.oldValue</a> 可以提供事务名称（如果有），如 <a href="UndoManager.html#commitTransaction">UndoManager.commitTransaction</a> 所提供的</p>
 					</div>
 				</section>
 			</section>

@@ -122,7 +122,7 @@
 |  | 翻译状态 | 校验核对状态 |
 | ---- | :----: | :----: |
 | Binding | | |
-| ChangedEvent | | |
+| ChangedEvent | ✅ | |
 | GraphLinksModel | | |
 | Model | | |
 | Transaction | | |
