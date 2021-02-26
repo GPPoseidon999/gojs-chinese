@@ -126,7 +126,7 @@
 | GraphLinksModel | | |
 | Model | | |
 | Transaction | | |
-| TreeModel | | |
+| TreeModel | ✅ | |
 | UndoManager | | |
 | IncrementalData | ✅ | |
 
