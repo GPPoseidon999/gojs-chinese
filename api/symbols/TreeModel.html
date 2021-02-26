@@ -201,18 +201,16 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the name of the property on node data that specifies
-									the string or number key of the node data that acts as the &quot;parent&quot; for this &quot;child&quot; node data.
-									The value may also be a function taking two arguments, where the first argument will be a node data object.
-									If the second argument is not supplied, the function should return the string or number key for the parent node data object of which the given data object is a child;
-									if the second argument is supplied, the function should modify the node data object so that it has that new key
-									(which may be undefined to refer to no node) as the parent key for that node..
-									The default value is the name &#39;parent&#39;, meaning that it expects the data to have a property named &#39;parent&#39; if the node wants to refer to the parent node by its key.
-								The value must not be null nor an empty string.</p>
-								<p>If you want to set this property you must do so before using the model, and especially before you assign <a href="Diagram.html#model">Diagram.model</a>.
-									Note that functions cannot be serialized into JSON-formatted text, so if you are using <a href="Model.html#toJson">toJson</a> and <a href="Model.html#static-fromJson">Model.fromJson</a>,
-									and if you want this property to be a function, you will need to assign this property to your desired function
-								immediately after creating the model, including when it is created by <a href="Model.html#static-fromJson">Model.fromJson</a>.</p>
+								<p>
+                  获取或设置node data上属性的名称，该属性指定充当此&quot;child&quot;node data的&quot;parent&quot;的node data的字符串或数据key。
+                  该值也可以是带有两个参数的函数，其中第一个参数将是node data对象。
+                  如果未提供第二个参数，则函数应返回给定数据对象是child node的parent node 数据对象的字符串或数字key
+                  如果提供了第二个参数，则函数应该修改node data对象，使其具有该新key
+                  （可能undefined不指向任何node）作为该node的parent key
+								默认名 &#39;parent&#39;, 这意味着如果node希望通过其他key引用parent node，则它希望数据具有名为&#39;parent&#39;的属性。
+								该值不能为null或空字符串</p>
+                <p>如果要设置此属性，则必须在使用model之前进行设置，尤其是在分配 <a href="Diagram.html#model">Diagram.model</a> 之前。
+                  注意，函数无法序列化为JSON格式的文本，因此如果您使用的是 <a href="Model.html#toJson">toJson</a> 和 <a href="Model.html#static-fromJson">Model.fromJson</a>,并且希望将此属性作为函数，则需要在创建model后立即将此属性分配给所需要的函数，包括何时由 <a href="Model.html#static-fromJson">Model.fromJson</a> 创建</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="TreeModel.html#getParentKeyForNodeData">getParentKeyForNodeData</a>, <a href="TreeModel.html#setParentKeyForNodeData">setParentKeyForNodeData</a></p>
@@ -230,19 +228,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the name of the data property that returns a string describing that node data&#39;s parent link&#39;s category.
-									The value may also be a function taking two arguments, where the first argument will be a node data object.
-									If the second argument is not supplied, the function should return the category name for any parent link;
-									if the second argument is supplied, the function should modify the node data object so that its parent link has that new category name.
-									The default value is the name &#39;parentLinkCategory&#39;.
-									This is used by the diagram to distinguish between different kinds of links.
-									The name must not be null.
-									If the value is an empty string,
-								<a href="TreeModel.html#getParentLinkCategoryForNodeData">getParentLinkCategoryForNodeData</a> will return an empty string for all node data objects.</p>
-								<p>If you want to set this property you must do so before using the model, and especially before you assign <a href="Diagram.html#model">Diagram.model</a>.
-									Note that functions cannot be serialized into JSON-formatted text, so if you are using <a href="Model.html#toJson">toJson</a> and <a href="Model.html#static-fromJson">Model.fromJson</a>,
-									and if you want this property to be a function, you will need to assign this property to your desired function
-								immediately after creating the model, including when it is created by <a href="Model.html#static-fromJson">Model.fromJson</a>.</p>
+								<p>
+                  获取或设置数据属性的名称，该属性返回一个字符串，该字符串描述该node数据的&#39;s parent link&#39;的类别。
+                  该值也可以是带有两个参数的函数，其中第一个参数将是node data对象
+                  如果未提供第二个参数，则该函数应返回任何parent link的类别名称，否则，该函数将返回类别名称。
+                  如果提供了第二个参数，则函数应该修改node data对象，以便其parent link具有该新的类别名称
+                  默认名为 &#39;parentLinkCategory&#39;。
+									图表使用它来区分不同种类的link。
+									名称不能为null。
+                  如果该值为空字符串，则
+								<a href="TreeModel.html#getParentLinkCategoryForNodeData">getParentLinkCategoryForNodeData</a> 将为所有node data对象返回一个空字符串</p>
+								<p>
+                  如果要设置此属性，则必须在使用model之前进行设置，尤其是在分配 <a href="Diagram.html#model">Diagram.model</a> 之前。
+                  注意，函数无法序列化为JSON格式的文本，因此，如果您使用的是 <a href="Model.html#toJson">toJson</a> 和 <a href="Model.html#static-fromJson">Model.fromJson</a>,并且希望将此属性作为函数，则需要在创建model后立即将此属性分配给所需的函数，包括何时由 <a href="Model.html#static-fromJson">Model.fromJson</a> 创建</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="TreeModel.html#getParentLinkCategoryForNodeData">getParentLinkCategoryForNodeData</a>, <a href="TreeModel.html#setParentLinkCategoryForNodeData">setParentLinkCategoryForNodeData</a></p>
@@ -267,7 +265,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This override also makes sure any copied node data does not have a reference to a parent node.</p>
+								<p>此替代还确保任何复制的node data都没有对父node的引用</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Model.html#copyNodeData">Model.copyNodeData</a></p>
@@ -279,7 +277,7 @@
 								<li>
 									<h5>nodedata: <a href="ObjectData.html" class="tsd-signature-type">ObjectData</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>a JavaScript object represented by a node, group, or non-link.</p>
+										<p>由node,group,non-link表示的JavaScript对象</p>
 									</div>
 								</li>
 							</ul>
@@ -302,7 +300,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>If there is a parent node for the given node data, return the parent&#39;s key.</p>
+								<p>如果给定node data是父node，则返回父node的key</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="TreeModel.html#nodeParentKeyProperty">nodeParentKeyProperty</a>, <a href="TreeModel.html#setParentKeyForNodeData">setParentKeyForNodeData</a></p>
@@ -314,12 +312,12 @@
 								<li>
 									<h5>nodedata: <a href="ObjectData.html" class="tsd-signature-type">ObjectData</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>a JavaScript object represented by a node.</p>
+										<p>node表示的JavaScript对象</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../index.html#Key" class="tsd-signature-type">Key</a></h4>
-							<p>This returns undefined if there is no parent node data object.</p>
+							<p>如果没有父node data对象，则返回undefined</p>
 						</li>
 					</ul>
 				</section>
@@ -334,8 +332,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Find the category for the parent link of a given child node data, a string naming the link template
-								that the <a href="Diagram.html">Diagram</a> should use to represent the link.</p>
+								<p>查找给定的子node data的父link的类别，该字符串命名该 <a href="Diagram.html">Diagram</a> 应用来表示link的链接模板</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="TreeModel.html#parentLinkCategoryProperty">parentLinkCategoryProperty</a>, <a href="TreeModel.html#setParentLinkCategoryForNodeData">setParentLinkCategoryForNodeData</a></p>
@@ -347,7 +344,7 @@
 								<li>
 									<h5>childdata: <a href="ObjectData.html" class="tsd-signature-type">ObjectData</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>a JavaScript object represented by a node data.</p>
+										<p>由node data表示的JavaScript对象</p>
 									</div>
 								</li>
 							</ul>
@@ -367,9 +364,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This override changes the value of some property of a node data or an item data, given a string naming the property
-								and the new value, in a manner that can be undone/redone and that automatically updates any bindings.</p>
-								<p>This gets the old value of the property; if the value is the same as the new value, no side-effects occur.</p>
+								<p>此覆盖改变node data或数据项的一些属性的值，给定的一个字符串命名属性和新值，在可撤销/恢复，并且自动更新任何绑定的方式</p>
+								<p>这将获得该属性的旧值；如果该值是相同的新的值，不发生副作用</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="Model.html#setDataProperty">Model.setDataProperty</a></p>
@@ -381,20 +377,20 @@
 								<li>
 									<h5>data: <a href="ObjectData.html" class="tsd-signature-type">ObjectData</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>a JavaScript object typically the value of a <a href="Panel.html#data">Panel.data</a> and represented by a Node, Link, Group, simple Part,
-										or item in a <a href="Panel.html#itemArray">Panel.itemArray</a>; or this model&#39;s <a href="Model.html#modelData">modelData</a>.</p>
+										<p>一个JavaScript对象，通常是 <a href="Panel.html#data">Panel.data</a> 的值，并由 <a href="Panel.html#itemArray">Panel.itemArray</a> 中的Node, Link, Group, simple Part,
+                      或 item 表示;或者是 model&#39; <a href="Model.html#modelData">modelData</a>.</p>
 									</div>
 								</li>
 								<li>
 									<h5>propname: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>a string that is not null or the empty string.</p>
+										<p>不能为null或空字符串</p>
 									</div>
 								</li>
 								<li>
 									<h5>val: <span class="tsd-signature-type">any</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>the new value for the property.</p>
+										<p>属性的新值</p>
 									</div>
 								</li>
 							</ul>
@@ -413,7 +409,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Change the parent node for the given node data, given a key for the new parent, or undefined if there should be no parent.</p>
+								<p>通过给定的node data更改父node的key，如果没有父node，则为undefined</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="TreeModel.html#nodeParentKeyProperty">nodeParentKeyProperty</a>, <a href="TreeModel.html#getParentKeyForNodeData">getParentKeyForNodeData</a></p>
@@ -425,13 +421,13 @@
 								<li>
 									<h5>nodedata: <a href="ObjectData.html" class="tsd-signature-type">ObjectData</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>a JavaScript object represented by a node.</p>
+										<p>由node表示的JavaScript对象</p>
 									</div>
 								</li>
 								<li>
 									<h5>key: <a href="../index.html#Key" class="tsd-signature-type">Key</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>This may be undefined if there should be no parent node data.</p>
+										<p>如果没有父node data ，则可能为undefined</p>
 									</div>
 								</li>
 							</ul>
@@ -450,14 +446,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Change the category for the parent link of a given child node data, a string naming the link template
-								that the <a href="Diagram.html">Diagram</a> should use to represent the link.</p>
-								<p>Changing the link template will cause any existing <a href="Link.html">Link</a>
-									to be removed from the <a href="Diagram.html">Diagram</a> and replaced with a new <a href="Link.html">Link</a>
-									created by copying the new link template and applying any data-bindings.
-									Note that the new template must be an instance of the same class as the original link.
-									Thus one cannot change the category of a link from an instance of <a href="Link.html">Link</a>
-								to an instance of a subclass of Link, nor vice-versa.</p>
+								<p>更改给定子node data的父link的类别，这是一个字符串，用于命名该 <a href="Diagram.html">Diagram</a> 应用于表示该link的模板</p>
+								<p>更改link模板将导致将所有现有的 <a href="Link.html">Link</a> 从 <a href="Diagram.html">Diagram</a> 中删除，并替换为通过复制新link模板并应用任何数据绑定而创建的新link。
+									注意，新模板必须是与原始link相同类的实例。因此不能将link的类别从 <a href="Link.html">Link</a> 的实例更改为Link的子类的实例，反之亦然。</p>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
 									<dd><p><a href="TreeModel.html#parentLinkCategoryProperty">parentLinkCategoryProperty</a>, <a href="TreeModel.html#getParentLinkCategoryForNodeData">getParentLinkCategoryForNodeData</a></p>
@@ -469,13 +460,13 @@
 								<li>
 									<h5>childdata: <a href="ObjectData.html" class="tsd-signature-type">ObjectData</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>a JavaScript object represented by a node data.</p>
+										<p>由node表示的JavaScript对象</p>
 									</div>
 								</li>
 								<li>
 									<h5>cat: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Must not be null.</p>
+										<p>不能为null</p>
 									</div>
 								</li>
 							</ul>
