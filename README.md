@@ -125,7 +125,7 @@
 | ChangedEvent | ✅ | |
 | GraphLinksModel | | |
 | Model | | |
-| Transaction | | |
+| Transaction | ✅ | |
 | TreeModel | ✅ | |
 | UndoManager | | |
 | IncrementalData | ✅ | |

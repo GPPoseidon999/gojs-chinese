@@ -85,7 +85,7 @@
 					<b>GoJS</b>&reg; Diagramming Components<br/>version 2.1.26<br/>by <a href="https://www.nwoods.com/">Northwoods Software&reg;</a>
 				</div>
 				<div>
-					<h1>Class Transaction</h1>
+					<h1>Transaction 类</h1>
 				</div>
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
+				<h3>层次结构</h3>
 				<ul class="tsd-hierarchy">
 					<li>
 						<span class="target">Transaction</span>
@@ -104,23 +104,19 @@
 			</section>
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
-					<p>A Transaction holds a list of <a href="ChangedEvent.html">ChangedEvent</a>s collected during a transaction,
-					as the value of the read-only <a href="Transaction.html#changes">changes</a> property.</p>
-					<p>Start a transaction by calling <a href="UndoManager.html#startTransaction">UndoManager.startTransaction</a>
-						(or <a href="Model.html#startTransaction">Model.startTransaction</a> or <a href="Diagram.html#startTransaction">Diagram.startTransaction</a>, which call that method).
-						Be sure to finish a transaction with a matching call to <a href="UndoManager.html#commitTransaction">UndoManager.commitTransaction</a>
-						(or <a href="Model.html#commitTransaction">Model.commitTransaction</a> or <a href="Diagram.html#commitTransaction">Diagram.commitTransaction</a>),
-						or a call to <a href="UndoManager.html#rollbackTransaction">UndoManager.rollbackTransaction</a>
-					(or the same named methods on <a href="Model.html">Model</a> or <a href="Diagram.html">Diagram</a>).</p>
-					<p>If you are performing multiple or repeated changes to a model or diagram,
-						surround all of the code with calls to start and commit the transaction --
-						do not perform repeated calls to start-commit-start-commit.
-						Typically each change caused by the user, such as a button click or a change of focus or a mouse drag,
-						should perform one transaction in which all changes are made.
-					All of the predefined commands and tools perform transactions.</p>
-					<p>Undoing or redoing a transaction is done by calling <a href="UndoManager.html#undo">UndoManager.undo</a> or <a href="UndoManager.html#redo">UndoManager.redo</a>.
-					Those methods call the <a href="Transaction.html#undo">undo</a> or <a href="Transaction.html#redo">redo</a> methods here.</p>
-					<p>The <a href="UndoManager.html">UndoManager</a> holds a list of Transactions in its <a href="UndoManager.html#history">UndoManager.history</a>.</p>
+					<p>事务保存在事务期间收集的 <a href="ChangedEvent.html">ChangedEvent</a>s 列表，作为只读 <a href="Transaction.html#changes">changes</a> 属性的值</p>
+					<p>通过调用 <a href="UndoManager.html#startTransaction">UndoManager.startTransaction</a>
+						(或调用方法 <a href="Model.html#startTransaction">Model.startTransaction</a> 或 <a href="Diagram.html#startTransaction">Diagram.startTransaction</a>) 来启动事务。
+						确保通过匹配调用 <a href="UndoManager.html#commitTransaction">UndoManager.commitTransaction</a>
+						(或 <a href="Model.html#commitTransaction">Model.commitTransaction</a> 或 <a href="Diagram.html#commitTransaction">Diagram.commitTransaction</a>),
+						或调用 <a href="UndoManager.html#rollbackTransaction">UndoManager.rollbackTransaction</a>
+					(或 <a href="Model.html">Model</a> 或 <a href="Diagram.html">Diagram</a> 上相同的命名方法) 来完成事务</p>
+					<p>如果要对model或diagram执行多次更改或重复更改，请在所有代码周围都包含start和commit事务的调用，不要重复调用start-commit-start-commit。
+						通常，由用户引起的每项更改（例如按钮单击或焦点更改或鼠标拖动）都应执行一个事务，在该事务中进行所有更改。
+					所有预定义的命令和工具都执行事务。</p>
+					<p>撤销或重做事务时通过调用 <a href="UndoManager.html#undo">UndoManager.undo</a> 或 <a href="UndoManager.html#redo">UndoManager.redo</a>.
+					来完成的。这些方法调用这里的 <a href="Transaction.html#undo">undo</a> 或 <a href="Transaction.html#redo">redo</a> 方法</p>
+					<p> <a href="UndoManager.html">UndoManager</a> 在其 <a href="UndoManager.html#history">UndoManager.history</a> 中保存一个事务列表</p>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -167,8 +163,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Construct an object holding an empty list of <a href="ChangedEvent.html">ChangedEvent</a>s
-								and no <a href="Transaction.html#name">name</a>.</p>
+								<p>构造一个对象，其中包含一个空的 <a href="ChangedEvent.html">ChangedEvent</a>s 列表且没有 <a href="Transaction.html#name">name</a></p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="Transaction.html" class="tsd-signature-type">Transaction</a></h4>
 						</li>
@@ -186,9 +181,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This read-only property returns the list of <a href="ChangedEvent.html">ChangedEvent</a>s.
-								The changes are stored in order of occurrence.</p>
-								<p>You should not modify this list.</p>
+								<p>此只读属性返回 <a href="ChangedEvent.html">ChangedEvent</a>s的列表。更改按发生顺序储存</p>
+								<p>你不应该修改此列表</p>
 							</div>
 						</li>
 					</ul>
@@ -201,9 +195,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets whether we can add more <a href="ChangedEvent.html">ChangedEvent</a>s to this list of changes.
-									This is initially false.
-								It is set to true by <a href="UndoManager.html#commitTransaction">UndoManager.commitTransaction</a> and <a href="UndoManager.html#rollbackTransaction">UndoManager.rollbackTransaction</a>.</p>
+								<p>获取或设置是否可以向此更改列表添加更多 <a href="ChangedEvent.html">ChangedEvent</a>s。
+									最初这是错误的。
+								<a href="UndoManager.html#commitTransaction">UndoManager.commitTransaction</a> 和 <a href="UndoManager.html#rollbackTransaction">UndoManager.rollbackTransaction</a> 将其设置为true</p>
 							</div>
 						</li>
 					</ul>
@@ -216,8 +210,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Gets or sets the transaction name for this collection of changes.
-								This is set by a top-level call to <a href="UndoManager.html#commitTransaction">UndoManager.commitTransaction</a>.</p>
+								<p>获取或设置此更改集合的事务名称。这是通过对 <a href="UndoManager.html#commitTransaction">UndoManager.commitTransaction</a> 的顶级调用来设置的</p>
 							</div>
 						</li>
 					</ul>
@@ -236,11 +229,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This predicate returns true if you can call <a href="Transaction.html#redo">redo</a>,
-								namely when <a href="Transaction.html#isComplete">isComplete</a> is true.</p>
+								<p>如果可以调用 <a href="Transaction.html#redo">redo</a>，即  <a href="Transaction.html#isComplete">isComplete</a> 为true，这个谓词返回true</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>true if ready for <a href="Transaction.html#redo">redo</a> to be called.</p>
+							<p>如果准备好调用 <a href="Transaction.html#redo">redo</a> 则为true</p>
 						</li>
 					</ul>
 				</section>
@@ -255,11 +247,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>This predicate returns true if you can call <a href="Transaction.html#undo">undo</a>,
-								namely when <a href="Transaction.html#isComplete">isComplete</a> is true.</p>
+								<p>如果可以调用 <a href="Transaction.html#undo">undo</a>, 即 <a href="Transaction.html#isComplete">isComplete</a> 为true，这个谓词返回true</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>true if ready for <a href="Transaction.html#undo">undo</a> to be called.</p>
+							<p>如果准备好调用 <a href="Transaction.html#undo">undo</a> 则为true</p>
 						</li>
 					</ul>
 				</section>
@@ -274,7 +265,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Clear all of the saved changes.</p>
+								<p>清楚所有已保存的更改</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -291,9 +282,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Re-perform these changes after an <a href="Transaction.html#undo">undo</a>.
-									This is normally called only by the <a href="UndoManager.html">UndoManager</a>.
-								<a href="Transaction.html#canRedo">canRedo</a> must be true for this method to have any effect.</p>
+								<p><a href="Transaction.html#undo">undo</a> 后重新执行这些更改。
+									通常仅由 <a href="UndoManager.html">UndoManager</a> 调用。
+								<a href="Transaction.html#canRedo">canRedo</a> 必须为true才能使用此方法</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -310,9 +301,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
-								<p>Undo all of the changes, in reverse order.
-									This is normally called only by the <a href="UndoManager.html">UndoManager</a>.
-								<a href="Transaction.html#canUndo">canUndo</a> must be true for this method to have any effect.</p>
+								<p>以相反的顺序撤销所有更改。
+									通常仅由 <a href="UndoManager.html">UndoManager</a> 调用。
+								<a href="Transaction.html#canUndo">canUndo</a> 必须为true才能使此方法生效</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
